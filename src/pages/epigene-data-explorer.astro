@@ -1,16 +1,17 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import Layout from "../layouts/Layout.astro";
 ---
+
 <Layout
   title="Data Explorer Redesign — Epigene Labs | Célia Lafond"
   description="How I redesigned the Data Explorer at Epigene Labs to surface 50,000+ datasets and align the interface with a new data strategy."
 >
   <div class="cs-page">
-
     <main class="cs-main">
-
       <a href="/" class="cs-back">
-        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        <svg viewBox="0 0 24 24"
+          ><polyline points="15 18 9 12 15 6"></polyline></svg
+        >
         <span class="en">Case Studies</span>
         <span class="fr">Études de cas</span>
       </a>
@@ -22,7 +23,11 @@ import Layout from '../layouts/Layout.astro'
       <p class="cs-page-company reveal">Epigene Labs &middot; 2025</p>
 
       <div class="cs-hero-img reveal">
-        <img src="/_assets/data-explorer-v2.jpg" alt="Data Explorer — redesigned interface" onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\'>Data Explorer — V2</div>'">
+        <img
+          src="/_assets/data-explorer-v2.jpg"
+          alt="Data Explorer — redesigned interface"
+          onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\'>Data Explorer — V2</div>'"
+        />
       </div>
 
       <div class="cs-metadata reveal">
@@ -31,11 +36,15 @@ import Layout from '../layouts/Layout.astro'
             <span class="en">Role</span>
             <span class="fr">Rôle</span>
           </span>
-          <span class="cs-meta-value">Product Designer &amp; Frontend Engineer</span>
+          <span class="cs-meta-value"
+            >Product Designer &amp; Frontend Engineer</span
+          >
         </div>
         <div>
           <span class="cs-meta-label">Tools / Stack</span>
-          <span class="cs-meta-value">Figma &middot; FigJam &middot; React.js &middot; ReScript</span>
+          <span class="cs-meta-value"
+            >Figma &middot; FigJam &middot; React.js &middot; ReScript</span
+          >
         </div>
         <div>
           <span class="cs-meta-label">
@@ -43,14 +52,26 @@ import Layout from '../layouts/Layout.astro'
             <span class="fr">Équipe</span>
           </span>
           <span class="cs-meta-value">
-            <span class="en">1 PM &middot; 1 designer (me!) &middot; 1 engineer (me!) &middot; 3 domain experts</span>
-            <span class="fr">1 PM &middot; 1 designer (moi&nbsp;!) &middot; 1 développeuse (moi&nbsp;!) &middot; 3 experts métier</span>
+            <span class="en"
+              >1 PM &middot; 1 designer (me!) &middot; 1 engineer (me!) &middot;
+              3 domain experts</span
+            >
+            <span class="fr"
+              >1 PM &middot; 1 designer (moi&nbsp;!) &middot; 1 développeuse
+              (moi&nbsp;!) &middot; 3 experts métier</span
+            >
           </span>
         </div>
         <div>
           <span class="cs-meta-label">Skills</span>
-          <span class="cs-meta-value en">Product Strategy &middot; Workshop Facilitation &middot; Information Architecture</span>
-          <span class="cs-meta-value fr">Stratégie produit &middot; Animation de workshop &middot; Architecture de l'information</span>
+          <span class="cs-meta-value en"
+            >Product Strategy &middot; Workshop Facilitation &middot;
+            Information Architecture</span
+          >
+          <span class="cs-meta-value fr"
+            >Stratégie produit &middot; Animation de workshop &middot;
+            Architecture de l'information</span
+          >
         </div>
       </div>
 
@@ -60,14 +81,50 @@ import Layout from '../layouts/Layout.astro'
           <span class="fr">Contexte</span>
         </h2>
 
-        <p class="en">Epigene Labs had over 50,000 cancer omics datasets in its database. Only 2,000 were visible on the platform.</p>
-        <p class="fr">Epigene Labs disposait de plus de 50&nbsp;000 datasets omiques cancer dans sa base de données. Seulement 2&nbsp;000 étaient visibles sur la plateforme.</p>
+        <p class="en">
+          Epigene Labs had over 50,000 cancer omics datasets in its database.
+          Only 2,000 were visible on the platform.
+        </p>
+        <p class="fr">
+          Epigene Labs disposait de plus de 50&nbsp;000 datasets omiques cancer
+          dans sa base de données. Seulement 2&nbsp;000 étaient visibles sur la
+          plateforme.
+        </p>
 
-        <p class="en">The reason: the rest hadn't gone through the internal curation and review process, so they were kept out of reach. Scientifically, they still held value — but users never saw them. As the company scaled, this gap became a competitive liability: prospects were comparing mCUBE's data coverage to competitors and finding it lacking.</p>
-        <p class="fr">La raison&nbsp;: les autres n'avaient pas encore été soumis au processus interne de curation et de review, ils restaient donc inaccessibles. Scientifiquement, ils avaient de la valeur — mais les utilisateurs ne les voyaient jamais. À mesure que la société se développait, cet écart devenait un handicap commercial&nbsp;: les prospects comparaient la couverture data de mCUBE à celle des concurrents et la trouvaient insuffisante.</p>
+        <p class="en">
+          The reason: the rest hadn't gone through the internal curation and
+          review process, so they were kept out of reach. Scientifically, they
+          still held value — but users never saw them. As the company scaled,
+          this gap became a competitive liability: prospects were comparing
+          mCUBE's data coverage to competitors and finding it lacking.
+        </p>
+        <p class="fr">
+          La raison&nbsp;: les autres n'avaient pas encore été soumis au
+          processus interne de curation et de review, ils restaient donc
+          inaccessibles. Scientifiquement, ils avaient de la valeur — mais les
+          utilisateurs ne les voyaient jamais. À mesure que la société se
+          développait, cet écart devenait un handicap commercial&nbsp;: les
+          prospects comparaient la couverture data de mCUBE à celle des
+          concurrents et la trouvaient insuffisante.
+        </p>
 
-        <p class="en">This feature was part of a larger business pivot: showcasing the richness of Epigene's database as a core value proposition. When the request came to integrate unreviewed datasets, the PM and I saw it as an opportunity to go further. Rather than patching the existing interface, we used this moment to rethink the Data Explorer entirely — aligning the design with the new strategic direction.</p>
-        <p class="fr">Cette feature s'inscrit dans un projet plus large&nbsp;: mettre en avant la richesse de la base de données d'Epigene comme proposition de valeur centrale. Quand la demande d'intégrer les datasets non reviewés est arrivée, le PM et moi y avons vu une opportunité d'aller plus loin. Plutôt que de patcher l'interface existante, nous avons saisi ce moment pour repenser entièrement le Data Explorer — en alignant le design avec la nouvelle orientation stratégique.</p>
+        <p class="en">
+          This feature was part of a larger business pivot: showcasing the
+          richness of Epigene's database as a core value proposition. When the
+          request came to integrate unreviewed datasets, the PM and I saw it as
+          an opportunity to go further. Rather than patching the existing
+          interface, we used this moment to rethink the Data Explorer entirely —
+          aligning the design with the new strategic direction.
+        </p>
+        <p class="fr">
+          Cette feature s'inscrit dans un projet plus large&nbsp;: mettre en
+          avant la richesse de la base de données d'Epigene comme proposition de
+          valeur centrale. Quand la demande d'intégrer les datasets non reviewés
+          est arrivée, le PM et moi y avons vu une opportunité d'aller plus
+          loin. Plutôt que de patcher l'interface existante, nous avons saisi ce
+          moment pour repenser entièrement le Data Explorer — en alignant le
+          design avec la nouvelle orientation stratégique.
+        </p>
       </section>
 
       <section class="cs-section reveal" id="problem">
@@ -77,17 +134,48 @@ import Layout from '../layouts/Layout.astro'
         </h2>
 
         <div class="cs-img">
-          <img src="/_assets/data-explorer-v1.jpg" alt="Data Explorer V1" onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer — V1</div>'">
+          <img
+            src="/_assets/data-explorer-v1.jpg"
+            alt="Data Explorer V1"
+            onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer — V1</div>'"
+          />
         </div>
 
-        <p class="en">The V1 Data Explorer was functional but limited in a way that had become increasingly visible.</p>
-        <p class="fr">Le Data Explorer V1 était fonctionnel, mais ses limites étaient de plus en plus visibles.</p>
+        <p class="en">
+          The V1 Data Explorer was functional but limited in a way that had
+          become increasingly visible.
+        </p>
+        <p class="fr">
+          Le Data Explorer V1 était fonctionnel, mais ses limites étaient de
+          plus en plus visibles.
+        </p>
 
-        <p class="en">Datasets were identified by technical IDs — alphanumeric strings that meant nothing to most users. There were no titles, no descriptions. Finding a specific dataset meant already knowing what you were looking for. Search was shallow. Filters were flat. And with only reviewed datasets shown, the interface gave no sense of the actual scale of the data available.</p>
-        <p class="fr">Les datasets étaient identifiés par des identifiants techniques — des chaînes alphanumériques qui ne signifiaient rien pour la plupart des utilisateurs. Pas de titres, pas de descriptions. Trouver un dataset précis supposait de savoir déjà ce qu'on cherchait. La recherche était limitée. Les filtres étaient plats. Et avec seulement les datasets reviewés affichés, l'interface ne donnait aucune idée de l'échelle réelle des données disponibles.</p>
+        <p class="en">
+          Datasets were identified by technical IDs — alphanumeric strings that
+          meant nothing to most users. There were no titles, no descriptions.
+          Finding a specific dataset meant already knowing what you were looking
+          for. Search was shallow. Filters were flat. And with only reviewed
+          datasets shown, the interface gave no sense of the actual scale of the
+          data available.
+        </p>
+        <p class="fr">
+          Les datasets étaient identifiés par des identifiants techniques — des
+          chaînes alphanumériques qui ne signifiaient rien pour la plupart des
+          utilisateurs. Pas de titres, pas de descriptions. Trouver un dataset
+          précis supposait de savoir déjà ce qu'on cherchait. La recherche était
+          limitée. Les filtres étaient plats. Et avec seulement les datasets
+          reviewés affichés, l'interface ne donnait aucune idée de l'échelle
+          réelle des données disponibles.
+        </p>
 
-        <p class="en">For a product repositioning itself around data richness, the existing explorer was telling the wrong story.</p>
-        <p class="fr">Pour un produit qui se repositionnait autour de la richesse de ses données, l'explorateur existant racontait la mauvaise histoire.</p>
+        <p class="en">
+          For a product repositioning itself around data richness, the existing
+          explorer was telling the wrong story.
+        </p>
+        <p class="fr">
+          Pour un produit qui se repositionnait autour de la richesse de ses
+          données, l'explorateur existant racontait la mauvaise histoire.
+        </p>
       </section>
 
       <section class="cs-section reveal" id="approach">
@@ -96,32 +184,78 @@ import Layout from '../layouts/Layout.astro'
           <span class="fr">Approche</span>
         </h2>
 
-        <p class="en">We ran a workshop bringing together five people from across the company — product, engineering, and domain experts from the scientific and curation teams. The session followed three phases: brainstorming, reorganisation, and prioritisation.</p>
-        <p class="fr">Nous avons animé un workshop réunissant cinq personnes de différentes équipes — produit, ingénierie, et experts métier des équipes scientifiques et de curation. La session s'est déroulée en trois phases&nbsp;: brainstorming, réorganisation et priorisation.</p>
+        <p class="en">
+          We ran a workshop bringing together five people from across the
+          company — product, engineering, and domain experts from the scientific
+          and curation teams. The session followed three phases: brainstorming,
+          reorganisation, and prioritisation.
+        </p>
+        <p class="fr">
+          Nous avons animé un workshop réunissant cinq personnes de différentes
+          équipes — produit, ingénierie, et experts métier des équipes
+          scientifiques et de curation. La session s'est déroulée en trois
+          phases&nbsp;: brainstorming, réorganisation et priorisation.
+        </p>
 
         <div class="cs-img">
-          <img src="/_assets/workshop-data-explorer.jpg" alt="Workshop — Data Explorer" onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Workshop</div>'">
+          <img
+            src="/_assets/workshop-data-explorer.jpg"
+            alt="Workshop — Data Explorer"
+            onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Workshop</div>'"
+          />
         </div>
 
-        <p class="en">I designed and facilitated the workshop format. Each phase had a specific output: generate ideas without constraints first, then group and structure them, then force a prioritisation. By the end, we had a shared, ranked view of what mattered most — and alignment across teams that would have taken weeks of back-and-forth otherwise.</p>
-        <p class="fr">J'ai conçu et animé le format du workshop. Chaque phase avait un output spécifique&nbsp;: générer des idées sans contraintes d'abord, puis les regrouper et les structurer, puis forcer une priorisation. À la fin, nous avions une vision partagée et classée de ce qui importait le plus — et une convergence entre équipes qui aurait pris des semaines d'allers-retours autrement.</p>
+        <p class="en">
+          I designed and facilitated the workshop format. Each phase had a
+          specific output: generate ideas without constraints first, then group
+          and structure them, then force a prioritisation. By the end, we had a
+          shared, ranked view of what mattered most — and alignment across teams
+          that would have taken weeks of back-and-forth otherwise.
+        </p>
+        <p class="fr">
+          J'ai conçu et animé le format du workshop. Chaque phase avait un
+          output spécifique&nbsp;: générer des idées sans contraintes d'abord,
+          puis les regrouper et les structurer, puis forcer une priorisation. À
+          la fin, nous avions une vision partagée et classée de ce qui importait
+          le plus — et une convergence entre équipes qui aurait pris des
+          semaines d'allers-retours autrement.
+        </p>
 
-        <p class="en">We combined this with existing user feedback to validate the directions before moving into design.</p>
-        <p class="fr">Nous avons combiné cela avec les retours utilisateurs existants pour valider les orientations avant de passer au design.</p>
+        <p class="en">
+          We combined this with existing user feedback to validate the
+          directions before moving into design.
+        </p>
+        <p class="fr">
+          Nous avons combiné cela avec les retours utilisateurs existants pour
+          valider les orientations avant de passer au design.
+        </p>
       </section>
 
       <section class="cs-section reveal" id="solution">
         <h2>Solution</h2>
 
         <div class="cs-subsections">
-
           <div class="cs-subsection">
             <h3>
               <span class="en">Reviewed &amp; Unreviewed</span>
               <span class="fr">Reviewed &amp; Unreviewed</span>
             </h3>
-            <p class="en">The core decision: expose all 50,000+ datasets, but with a clear distinction. Reviewed datasets — curated, quality-checked — give full access to analysis tools. Unreviewed datasets open up for exploration, with transparent labelling so users understand what they're working with. No hidden data, no false equivalence.</p>
-            <p class="fr">La décision centrale&nbsp;: exposer l'ensemble des 50&nbsp;000+ datasets, mais avec une distinction claire. Les datasets reviewés — curés, vérifiés — donnent un accès complet aux outils d'analyse. Les datasets non reviewés s'ouvrent à l'exploration, avec un étiquetage transparent pour que les utilisateurs comprennent ce avec quoi ils travaillent. Pas de données cachées, pas de fausse équivalence.</p>
+            <p class="en">
+              The core decision: expose all 50,000+ datasets, but with a clear
+              distinction. Reviewed datasets — curated, quality-checked — give
+              full access to analysis tools. Unreviewed datasets open up for
+              exploration, with transparent labelling so users understand what
+              they're working with. No hidden data, no false equivalence.
+            </p>
+            <p class="fr">
+              La décision centrale&nbsp;: exposer l'ensemble des 50&nbsp;000+
+              datasets, mais avec une distinction claire. Les datasets reviewés
+              — curés, vérifiés — donnent un accès complet aux outils d'analyse.
+              Les datasets non reviewés s'ouvrent à l'exploration, avec un
+              étiquetage transparent pour que les utilisateurs comprennent ce
+              avec quoi ils travaillent. Pas de données cachées, pas de fausse
+              équivalence.
+            </p>
           </div>
 
           <div class="cs-subsection">
@@ -129,10 +263,29 @@ import Layout from '../layouts/Layout.astro'
               <span class="en">Richer dataset context</span>
               <span class="fr">Contexte enrichi</span>
             </h3>
-            <p class="en">Datasets now have titles and descriptions — searchable, human-readable, connected to their source publications. Two views let users switch between a condensed table and an expanded listing depending on their workflow. Clicking a dataset opens an overview panel for a first level of exploration — visualising the data distribution before deciding whether to go deeper.</p>
-            <p class="fr">Les datasets ont désormais des titres et des descriptions — consultables, lisibles, liés à leurs publications sources. Deux vues permettent de basculer entre un tableau condensé et un listing étendu selon le flux de travail. Un clic sur un dataset ouvre un panneau d'aperçu pour un premier niveau d'exploration — visualiser la distribution des données avant de décider d'aller plus loin.</p>
+            <p class="en">
+              Datasets now have titles and descriptions — searchable,
+              human-readable, connected to their source publications. Two views
+              let users switch between a condensed table and an expanded listing
+              depending on their workflow. Clicking a dataset opens an overview
+              panel for a first level of exploration — visualising the data
+              distribution before deciding whether to go deeper.
+            </p>
+            <p class="fr">
+              Les datasets ont désormais des titres et des descriptions —
+              consultables, lisibles, liés à leurs publications sources. Deux
+              vues permettent de basculer entre un tableau condensé et un
+              listing étendu selon le flux de travail. Un clic sur un dataset
+              ouvre un panneau d'aperçu pour un premier niveau d'exploration —
+              visualiser la distribution des données avant de décider d'aller
+              plus loin.
+            </p>
             <div class="cs-img">
-              <img src="/_assets/data-explorer-panel.jpg" alt="Dataset overview panel" onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Overview panel</div>'">
+              <img
+                src="/_assets/data-explorer-panel.jpg"
+                alt="Dataset overview panel"
+                onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Overview panel</div>'"
+              />
             </div>
           </div>
 
@@ -141,8 +294,21 @@ import Layout from '../layouts/Layout.astro'
               <span class="en">Smarter search</span>
               <span class="fr">Recherche améliorée</span>
             </h3>
-            <p class="en">The search bar now runs across the full content of each dataset: title, description, metadata. Results highlight the matching keywords inline, so users can immediately see <em>where</em> in the data their query landed — not just <em>that</em> it matched.</p>
-            <p class="fr">La barre de recherche couvre désormais l'ensemble du contenu de chaque dataset&nbsp;: titre, description, métadonnées. Les résultats mettent en évidence les mots-clés correspondants en ligne, pour que les utilisateurs voient immédiatement <em>où</em> dans la donnée leur requête a trouvé une correspondance — pas seulement <em>qu'elle</em> en a trouvé une.</p>
+            <p class="en">
+              The search bar now runs across the full content of each dataset:
+              title, description, metadata. Results highlight the matching
+              keywords inline, so users can immediately see <em>where</em> in the
+              data their query landed — not just <em>that</em> it matched.
+            </p>
+            <p class="fr">
+              La barre de recherche couvre désormais l'ensemble du contenu de
+              chaque dataset&nbsp;: titre, description, métadonnées. Les
+              résultats mettent en évidence les mots-clés correspondants en
+              ligne, pour que les utilisateurs voient immédiatement <em>où</em> dans
+              la donnée leur requête a trouvé une correspondance — pas seulement <em
+                >qu'elle</em
+              > en a trouvé une.
+            </p>
           </div>
 
           <div class="cs-subsection">
@@ -150,8 +316,19 @@ import Layout from '../layouts/Layout.astro'
               <span class="en">Filters, restructured</span>
               <span class="fr">Filtres restructurés</span>
             </h3>
-            <p class="en">Filters moved to a dedicated sidebar and were reorganised into categories reflecting how users actually think about data selection — by cancer type, technology, sample characteristics. The flat list is gone; the structure follows the mental model.</p>
-            <p class="fr">Les filtres ont été déplacés dans une sidebar dédiée et réorganisés en catégories reflétant la façon dont les utilisateurs pensent réellement la sélection des données — par type de cancer, technologie, caractéristiques des échantillons. La liste plate a disparu&nbsp;; la structure suit le modèle mental.</p>
+            <p class="en">
+              Filters moved to a dedicated sidebar and were reorganised into
+              categories reflecting how users actually think about data
+              selection — by cancer type, technology, sample characteristics.
+              The flat list is gone; the structure follows the mental model.
+            </p>
+            <p class="fr">
+              Les filtres ont été déplacés dans une sidebar dédiée et
+              réorganisés en catégories reflétant la façon dont les utilisateurs
+              pensent réellement la sélection des données — par type de cancer,
+              technologie, caractéristiques des échantillons. La liste plate a
+              disparu&nbsp;; la structure suit le modèle mental.
+            </p>
           </div>
 
           <div class="cs-subsection">
@@ -159,8 +336,19 @@ import Layout from '../layouts/Layout.astro'
               <span class="en">Metrics that matter</span>
               <span class="fr">Métriques pertinentes</span>
             </h3>
-            <p class="en">The global metrics at the top of the explorer were redesigned to surface what users actually need at a glance: total datasets, samples, cancer types covered, omics types. Numbers that immediately communicate the scale and scope of the database.</p>
-            <p class="fr">Les métriques globales en haut de l'explorateur ont été repensées pour afficher ce dont les utilisateurs ont réellement besoin d'un coup d'œil&nbsp;: total des datasets, échantillons, types de cancer couverts, types d'omiques. Des chiffres qui communiquent immédiatement l'échelle et la portée de la base de données.</p>
+            <p class="en">
+              The global metrics at the top of the explorer were redesigned to
+              surface what users actually need at a glance: total datasets,
+              samples, cancer types covered, omics types. Numbers that
+              immediately communicate the scale and scope of the database.
+            </p>
+            <p class="fr">
+              Les métriques globales en haut de l'explorateur ont été repensées
+              pour afficher ce dont les utilisateurs ont réellement besoin d'un
+              coup d'œil&nbsp;: total des datasets, échantillons, types de
+              cancer couverts, types d'omiques. Des chiffres qui communiquent
+              immédiatement l'échelle et la portée de la base de données.
+            </p>
           </div>
 
           <div class="cs-subsection">
@@ -168,33 +356,72 @@ import Layout from '../layouts/Layout.astro'
               <span class="en">Saved datasets</span>
               <span class="fr">Datasets favoris</span>
             </h3>
-            <p class="en">Users can now favourite datasets and retrieve them directly — no re-searching, no rebuilding filters. A small feature with a disproportionate impact on workflows for users who return to the same data repeatedly.</p>
-            <p class="fr">Les utilisateurs peuvent désormais mettre des datasets en favoris et les retrouver directement — sans re-recherche, sans reconstruire les filtres. Une petite feature avec un impact disproportionné sur les workflows des utilisateurs qui reviennent régulièrement aux mêmes données.</p>
+            <p class="en">
+              Users can now favourite datasets and retrieve them directly — no
+              re-searching, no rebuilding filters. A small feature with a
+              disproportionate impact on workflows for users who return to the
+              same data repeatedly.
+            </p>
+            <p class="fr">
+              Les utilisateurs peuvent désormais mettre des datasets en favoris
+              et les retrouver directement — sans re-recherche, sans
+              reconstruire les filtres. Une petite feature avec un impact
+              disproportionné sur les workflows des utilisateurs qui reviennent
+              régulièrement aux mêmes données.
+            </p>
           </div>
-
         </div>
 
         <div class="cs-img" style="margin-top: var(--s4);">
-          <img src="/_assets/data-explorer-final.jpg" alt="Data Explorer — final design" onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer — Final</div>'">
+          <img
+            src="/_assets/data-explorer-final.jpg"
+            alt="Data Explorer — final design"
+            onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer — Final</div>'"
+          />
         </div>
-
       </section>
 
       <section class="cs-section reveal" id="impact">
         <h2>Impact</h2>
 
-        <p class="en">This redesign was part of the broader data strategy that defined Epigene's end of 2025. In December of that year, the company announced reaching 2 million cancer omics profiles — a 20× increase in one year. The expanded Data Explorer was the interface through which that data became accessible.</p>
-        <p class="fr">Cette refonte s'inscrit dans la stratégie data plus large qui a défini la fin 2025 d'Epigene. En décembre de cette année, la société a annoncé avoir atteint 2 millions de profils omiques cancer — une multiplication par 20 en un an. Le Data Explorer étendu était l'interface par laquelle ces données sont devenues accessibles.</p>
+        <p class="en">
+          This redesign was part of the broader data strategy that defined
+          Epigene's end of 2025. In December of that year, the company announced
+          reaching 2 million cancer omics profiles — a 20× increase in one year.
+          The expanded Data Explorer was the interface through which that data
+          became accessible.
+        </p>
+        <p class="fr">
+          Cette refonte s'inscrit dans la stratégie data plus large qui a défini
+          la fin 2025 d'Epigene. En décembre de cette année, la société a
+          annoncé avoir atteint 2 millions de profils omiques cancer — une
+          multiplication par 20 en un an. Le Data Explorer étendu était
+          l'interface par laquelle ces données sont devenues accessibles.
+        </p>
 
         <div class="cs-pullquote">
-          <p class="en">"Streamlined exploration through the company's user-friendly web app"</p>
-          <p class="fr">«&nbsp;Une exploration simplifiée via la web app user-friendly de la société&nbsp;»</p>
+          <p class="en">
+            "Streamlined exploration through the company's user-friendly web
+            app"
+          </p>
+          <p class="fr">
+            «&nbsp;Une exploration simplifiée via la web app user-friendly de la
+            société&nbsp;»
+          </p>
         </div>
 
-        <p class="en">The phrase appeared in Epigene's official communications to biopharma partners, positioning the interface as a core part of the value proposition alongside the data itself.</p>
-        <p class="fr">Cette formulation est apparue dans les communications officielles d'Epigene aux partenaires biopharma, positionnant l'interface comme une composante centrale de la proposition de valeur, aux côtés des données elles-mêmes.</p>
+        <p class="en">
+          The phrase appeared in Epigene's official communications to biopharma
+          partners, positioning the interface as a core part of the value
+          proposition alongside the data itself.
+        </p>
+        <p class="fr">
+          Cette formulation est apparue dans les communications officielles
+          d'Epigene aux partenaires biopharma, positionnant l'interface comme
+          une composante centrale de la proposition de valeur, aux côtés des
+          données elles-mêmes.
+        </p>
       </section>
-
     </main>
 
     <aside class="cs-sidebar">
@@ -215,6 +442,5 @@ import Layout from '../layouts/Layout.astro'
         <a href="#impact">Impact</a>
       </nav>
     </aside>
-
   </div>
 </Layout>
