@@ -1,0 +1,1 @@
+Lance le serveur de développement Astro avec `node_modules/.bin/astro dev` dans /Users/celia/Projets/portfolio/ en arrière-plan. Si un serveur tourne déjà sur le port 4321, signale-le sans en lancer un nouveau.
