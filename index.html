@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Célia Lafond — Product Designer & Frontend Engineer</title>
+  <meta name="description" content="Portfolio of Célia Lafond, Senior Product Designer & Frontend Engineer.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="lang-en">
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="site-logo">CL</a>
+      <nav class="site-nav">
+        <a href="index.html" class="active">
+          <span class="en">Work</span>
+          <span class="fr">Work</span>
+        </a>
+        <a href="assets/CeliaLafond_CV_EN.pdf" target="_blank">
+          <span class="en">Resume</span>
+          <span class="fr">CV</span>
+        </a>
+      </nav>
+      <div class="lang-toggle">
+        <button data-lang="en" onclick="setLang('en')" class="active">EN</button>
+        <span class="lang-sep">/</span>
+        <button data-lang="fr" onclick="setLang('fr')">FR</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN ==================== -->
+  <main>
+
+    <!-- Hero -->
+    <section class="home-hero">
+      <div class="container">
+        <h1 class="reveal">
+          <span class="en">I'm Célia, a Product Designer <em>who engineers.</em></span>
+          <span class="fr">Je suis Célia, Product Designer <em>qui code.</em></span>
+        </h1>
+      </div>
+    </section>
+
+    <!-- Case studies grid -->
+    <section class="cs-grid-section">
+      <div class="container">
+        <div class="cs-grid">
+
+          <!-- Card 1 — Core Redesign & Design System -->
+          <a href="case-study-1.html" class="cs-card reveal">
+            <div class="cs-card-image">
+              <img
+                src="_assets/hero-login.jpg"
+                alt="mCUBE login screen"
+                onerror="this.style.display='none'"
+              >
+            </div>
+            <div class="cs-card-info">
+              <h2 class="cs-card-title">
+                <span class="en">Core Redesign & Design System</span>
+                <span class="fr">Refonte & Design System</span>
+              </h2>
+              <p class="cs-card-meta">Epigene Labs &middot; 2022</p>
+            </div>
+          </a>
+
+          <!-- Card 2 — Data Explorer Redesign -->
+          <a href="case-study-2.html" class="cs-card reveal">
+            <div class="cs-card-image">
+              <img
+                src="_assets/data-explorer-v2.jpg"
+                alt="Data Explorer redesign"
+                onerror="this.style.display='none'"
+              >
+            </div>
+            <div class="cs-card-info">
+              <h2 class="cs-card-title">
+                <span class="en">Data Explorer Redesign</span>
+                <span class="fr">Refonte du Data Explorer</span>
+              </h2>
+              <p class="cs-card-meta">Epigene Labs &middot; 2025</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-theme">
+        <button data-theme="light" onclick="setTheme('light')" class="active">Light</button>
+        <span class="lang-sep">/</span>
+        <button data-theme="dark" onclick="setTheme('dark')">Dark</button>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/CeliaLfd" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://dribbble.com/Celia_Lafond" target="_blank" rel="noopener">Dribbble</a>
+        <a href="https://linkedin.com/in/lafondcelia" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
