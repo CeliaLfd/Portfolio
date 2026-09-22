@@ -53,11 +53,72 @@ function initReveal() {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.08 });
+  }, { threshold: 0.06 });
 
   els.forEach((el, i) => {
-    el.style.transitionDelay = (i * 0.05) + 's';
+    el.style.transitionDelay = (i * 0.03) + 's';
     observer.observe(el);
+  });
+}
+
+/* ============================================
+   IMAGE LIGHTBOX
+============================================ */
+
+function initLightbox() {
+  const modal    = document.getElementById('imgModal');
+  const modalImg = document.getElementById('imgModalImg');
+  const closeBtn = document.getElementById('imgModalClose');
+  if (!modal) return;
+
+  function open(src, alt) {
+    modalImg.src = src;
+    modalImg.alt = alt;
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.cs-img img').forEach(img => {
+    img.addEventListener('click', () => open(img.src, img.alt));
+  });
+
+  closeBtn.addEventListener('click', close);
+  modal.addEventListener('click', e => { if (e.target === modal) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+}
+
+/* ============================================
+   CUSTOM CURSOR — CASE STUDY CARDS
+============================================ */
+
+function initCardCursor() {
+  const label = document.querySelector('.cs-cursor-label');
+  const cards = document.querySelectorAll('.cs-card');
+  if (!label || !cards.length) return;
+
+  function onMove(e) {
+    label.style.left = e.clientX + 'px';
+    label.style.top  = e.clientY + 'px';
+  }
+
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      label.classList.add('visible');
+      document.addEventListener('mousemove', onMove);
+    });
+    card.addEventListener('mouseleave', () => {
+      label.classList.remove('visible', 'pressed');
+      document.removeEventListener('mousemove', onMove);
+    });
+    card.addEventListener('mousedown', () => label.classList.add('pressed'));
+    card.addEventListener('mouseup',   () => label.classList.remove('pressed'));
   });
 }
 
@@ -100,4 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initLang();
   initReveal();
   initSidebar();
+  initCardCursor();
+  initLightbox();
 });

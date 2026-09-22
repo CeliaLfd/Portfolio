@@ -1,0 +1,29 @@
+---
+interface Props {
+  href: string;
+  image: string;
+  imageAlt: string;
+  titleEn: string;
+  titleFr: string;
+  meta: string;
+  imageVariant?: string;
+}
+
+const { href, image, imageAlt, titleEn, titleFr, meta, imageVariant } =
+  Astro.props;
+---
+
+<a href={href} class="cs-card reveal">
+  <div
+    class={`cs-card-image cs-hero-image ${imageVariant ? `cs-hero-image-${imageVariant}` : ""}`}
+  >
+    <img src={image} alt={imageAlt} onerror="this.style.display='none'" />
+  </div>
+  <div class="cs-card-info">
+    <h2 class="cs-card-title">
+      <span class="en">{titleEn}</span>
+      <span class="fr">{titleFr}</span>
+    </h2>
+    <p class="cs-card-meta">{meta}</p>
+  </div>
+</a>

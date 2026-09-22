@@ -1,0 +1,138 @@
+/* ============================================
+   FONTS
+============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Condensed+One&family=Host+Grotesk:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap');
+
+/* ============================================
+   VARIABLES
+============================================ */
+
+:root {
+  /* Monochrome palette */
+  --bg:       #f7f7f6;
+  --ink:      #111111;
+  --accent:   #322f2e;
+  --muted:    #847d78;
+  --border:   #e0e0e0;
+  --surface:  #e8e7e5;
+  --surface-quote: #f0efec;
+  --black: var(--ink);
+  --bg-image: var(--surface);
+}
+
+body.dark {
+  --bg:       #181616;
+  --ink:      #f0f0f0;
+  --accent:   #cccccc;
+  --muted:    #847d78;
+  --border:   #2a2a2a;
+  --surface:  #201c1c;
+  --surface-quote:  #1f1d1d;
+  --bg-image: var(--surface);
+}
+
+:root {
+  /* Typography */
+  --display: 'Special Gothic Condensed One', 'Arial Narrow', sans-serif;
+  --sans:    'Inclusive Sans', 'Host Grotesk', system-ui, -apple-system, sans-serif;
+  --serif:    'Literata', serif;
+
+  /* Layout */
+  --container:  1400px;
+  --container-lg:  1480px;
+  --header-h:   64px;
+
+  /* Spacing */
+  --s0:  4px;
+  --s1:  8px;
+  --s2:  16px;
+  --s3:  24px;
+  --s4:  40px;
+  --s5:  56px;
+  --s6:  80px;
+  --s7:  112px;
+  --s8:  120px;
+  --s9:  168px;
+
+  /* Radius */
+  --radius: 8px;
+
+  /* Font size */
+  --fs-10: 0.625rem;
+  --fs-12: 0.75rem;
+  --fs-14: 0.875rem;
+  --fs-16: 1rem;
+  --fs-18: 1.125rem;
+  --fs-24: 1.5rem;
+
+}
+
+/* ============================================
+   RESET & BASE
+============================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 32px);
+  margin:0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: var(--fs-16);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  margin:0;
+}
+
+img   { display: block; max-width: 100%; height: auto; }
+a     { color: inherit; text-decoration: none; }
+
+button { font-family: inherit; }
+
+h1, h2, h3, h4, p {margin-top: 0;}
+
+
+
+/* ============================================
+   BILINGUAL
+============================================ */
+
+body.lang-en .fr { display: none; }
+body.lang-fr .en { display: none; }
+
+/* ============================================
+   CONTAINER
+============================================ */
+
+.container, [class^="container-"] {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--s3);
+}
+
+.container-lg {
+  max-width: var(--container-lg);
+}
+
+/* ============================================
+   SCROLL REVEAL
+============================================ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+}
+
+.reveal.visible { opacity: 1; transform: none; }

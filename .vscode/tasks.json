@@ -5,7 +5,7 @@
       "label": "Dev Server",
       "type": "shell",
       "command": "node_modules/.bin/astro dev",
-      "group": "build",
+      "group": { "kind": "build", "isDefault": true },
       "isBackground": true,
       "presentation": {
         "reveal": "always",
