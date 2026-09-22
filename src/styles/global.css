@@ -27,9 +27,9 @@ body.dark {
   --bg:       #181616;
   --ink:      #f0f0f0;
   --accent:   #cccccc;
-  --muted:    #847d78;
+  --muted:    #9b9997;
   --border:   #2a2a2a;
-  --surface:  #201c1c;
+  --surface:  #322e2e;
   --surface-quote:  #1f1d1d;
   --bg-image: var(--surface);
 }
