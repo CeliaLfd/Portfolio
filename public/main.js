@@ -99,16 +99,18 @@ function initLightbox() {
 ============================================ */
 
 function initCardCursor() {
-  const label = document.querySelector('.cs-cursor-label');
   const cards = document.querySelectorAll('.cs-card');
-  if (!label || !cards.length) return;
-
-  function onMove(e) {
-    label.style.left = e.clientX + 'px';
-    label.style.top  = e.clientY + 'px';
-  }
+  if (!cards.length) return;
 
   cards.forEach(card => {
+    const label = card.querySelector('.cs-cursor-label');
+    if (!label) return;
+
+    function onMove(e) {
+      label.style.left = e.clientX + 'px';
+      label.style.top  = e.clientY + 'px';
+    }
+
     card.addEventListener('mouseenter', () => {
       label.classList.add('visible');
       document.addEventListener('mousemove', onMove);

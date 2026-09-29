@@ -1,21 +1,31 @@
 ---
 interface Props {
-  href: string;
+  href?: string;
   image: string;
   imageAlt: string;
   titleEn: string;
   titleFr: string;
   meta: string;
   imageVariant?: string;
+  backgroundColor?: string;
 }
 
-const { href, image, imageAlt, titleEn, titleFr, meta, imageVariant } =
-  Astro.props;
+const {
+  href,
+  image,
+  imageAlt,
+  titleEn,
+  titleFr,
+  meta,
+  imageVariant,
+  backgroundColor,
+} = Astro.props;
 ---
 
-<a href={href} class="cs-card reveal">
+<a {...href ? { href } : {}} class="cs-card reveal">
   <div
     class={`cs-card-image cs-hero-image ${imageVariant ? `cs-hero-image-${imageVariant}` : ""}`}
+    style={backgroundColor ? { backgroundColor } : undefined}
   >
     <img src={image} alt={imageAlt} onerror="this.style.display='none'" />
   </div>
@@ -25,5 +35,20 @@ const { href, image, imageAlt, titleEn, titleFr, meta, imageVariant } =
       <span class="fr">{titleFr}</span>
     </h2>
     <p class="cs-card-meta">{meta}</p>
+  </div>
+  <div class="cs-cursor-label" aria-hidden="true">
+    {
+      href ? (
+        <>
+          <span class="en">View case study</span>
+          <span class="fr">Voir le projet</span>
+        </>
+      ) : (
+        <>
+          <span class="en">Coming soon</span>
+          <span class="fr">Bientôt</span>
+        </>
+      )
+    }
   </div>
 </a>
