@@ -131,19 +131,7 @@
   padding: 0 var(--s3);
 }
 
-.cs-page-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
-  align-items: start;
-}
 
-@media (min-width: 980px) {
-  .cs-page-content {
-    grid-template-columns: 110px 1fr 110px;
-    gap: var(--s6);
-  }
-}
 
 
 
@@ -151,7 +139,11 @@
    CASE STUDY — MAIN CONTENT
 ============================================ */
 
-.cs-main { min-width: 0; grid-column-start: 2;}
+.cs-main {
+  max-width: var(--content);
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .cs-back {
   display: inline-flex;
@@ -351,6 +343,10 @@
   margin-bottom: var(--s3);
 }
 
+.cs-list li:not(:last-child) {
+  margin-bottom: var(--s2);
+}
+
 
 .cs-section p {
   margin-bottom: var(--s2);
@@ -409,9 +405,9 @@
 }
 
 .grid-2 {
-  display: inline-grid;
+  display: grid;
   align-items: baseline;
-  column-gap: var(--s2);
+  column-gap: var(--s5);
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 

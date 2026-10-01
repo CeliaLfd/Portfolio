@@ -180,552 +180,526 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
     </div>
-    <div class="cs-page-content">
-      <main class="cs-main">
-        <section class="cs-section reveal" id="context">
-          <h2 class="cs-section-title">
-            <span class="en">Context</span>
-            <span class="fr">Contexte</span>
-          </h2>
-          <p class="cs-section-legend">
-            <span class="en">
-              Epigene Labs had over 50,000 cancer omics datasets in its
-              database. Only 2,000 were visible on the platform.
-            </span>
-            <span class="fr">
-              Epigene Labs disposait de plus de 50&nbsp;000 datasets omiques en
-              oncologie dans sa base de données. Seulement 2&nbsp;000 étaient
-              visibles sur la plateforme.
-            </span>
-          </p>
-          <p class="en">
+    <main class="cs-main">
+      <section class="cs-section reveal" id="context">
+        <h2 class="cs-section-title">
+          <span class="en">Context</span>
+          <span class="fr">Contexte</span>
+        </h2>
+        <p class="cs-section-legend">
+          <span class="en">
             Epigene Labs had over 50,000 cancer omics datasets in its database.
             Only 2,000 were visible on the platform.
-          </p>
-          <p class="fr">
+          </span>
+          <span class="fr">
             Epigene Labs disposait de plus de 50&nbsp;000 datasets omiques en
             oncologie dans sa base de données. Seulement 2&nbsp;000 étaient
             visibles sur la plateforme.
-          </p>
-          <p class="en">
-            The reason: the rest hadn't gone through the internal curation and
-            review process, so they were kept out of reach. Scientifically, they
-            still held value, but users never saw them. As the company scaled,
-            this gap became a competitive liability: prospects were comparing
-            mCUBE's data coverage to competitors and finding it lacking.
-          </p>
-          <p class="fr">
-            La raison&nbsp;: les autres n'avaient pas encore été soumis au
-            processus interne de curation et de review, ils restaient donc
-            inaccessibles. Scientifiquement, ils avaient de la valeur, mais les
-            utilisateurs ne les voyaient jamais. À mesure que la société se
-            développait, cet écart devenait un handicap commercial&nbsp;: les
-            prospects comparaient la couverture data de mCUBE à celle des
-            concurrents et la trouvaient insuffisante.
-          </p>
-          <p class="en">
-            This feature was part of a larger business pivot: showcasing the
-            richness of Epigene's database as a core value proposition. When the
-            request came to integrate unreviewed datasets, the PM and I saw it
-            as an opportunity to go further. Rather than patching the existing
-            interface, we used this moment to rethink the Data Explorer
-            entirely, aligning the design with the new strategic direction.
-          </p>
-          <p class="fr">
-            Cette feature s'inscrit dans un projet plus large&nbsp;: mettre en
-            avant la richesse de la base de données d'Epigene comme proposition
-            de valeur centrale. Quand la demande d'intégrer les datasets non
-            reviewés est arrivée, le PM et moi y avons vu une opportunité
-            d'aller plus loin. Plutôt que de corriger l'interface existante,
-            nous avons saisi ce moment pour repenser entièrement le Data
-            Explorer, en alignant le design avec la nouvelle orientation
-            stratégique.
-          </p>
-          <div class="cs-content-extented">
-            <div class="cs-subsections">
-              <div class="cs-subsection cs-subsection-grid">
-                <div class="cs-img">
-                  <img
-                    src="/assets/data-explorer-context.jpg"
-                    alt="Data Explorer: context"
-                    onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\'>Data Explorer: Context</div>'"
-                  />
-                </div>
+          </span>
+        </p>
+        <p class="en">
+          Epigene Labs had over 50,000 cancer omics datasets in its database.
+          Only 2,000 were visible on the platform.
+        </p>
+        <p class="fr">
+          Epigene Labs disposait de plus de 50&nbsp;000 datasets omiques en
+          oncologie dans sa base de données. Seulement 2&nbsp;000 étaient
+          visibles sur la plateforme.
+        </p>
+        <p class="en">
+          The reason: the rest hadn't gone through the internal curation and
+          review process, so they were kept out of reach. Scientifically, they
+          still held value, but users never saw them. As the company scaled,
+          this gap became a competitive liability: prospects were comparing
+          mCUBE's data coverage to competitors and finding it lacking.
+        </p>
+        <p class="fr">
+          La raison&nbsp;: les autres n'avaient pas encore été soumis au
+          processus interne de curation et de validation, ils restaient donc
+          inaccessibles. Scientifiquement, ils avaient de la valeur, mais les
+          utilisateurs ne les voyaient jamais. À mesure que la société se
+          développait, cet écart devenait un handicap commercial&nbsp;: les
+          prospects comparaient la couverture data de mCUBE à celle des
+          concurrents et la trouvaient insuffisante.
+        </p>
+        <p class="en">
+          This feature was part of a larger business pivot: showcasing the
+          richness of Epigene's database as a core value proposition. When the
+          request came to integrate unreviewed datasets, the PM and I saw it as
+          an opportunity to go further. Rather than patching the existing
+          interface, we used this moment to rethink the Data Explorer entirely,
+          aligning the design with the new strategic direction.
+        </p>
+        <p class="fr">
+          Cette feature s'inscrit dans un projet plus large&nbsp;: mettre en
+          avant la richesse de la base de données d'Epigene comme proposition de
+          valeur centrale. Quand la demande d'intégrer les datasets non validés
+          est arrivée, le PM et moi y avons vu une opportunité d'aller plus
+          loin. Plutôt que de corriger l'interface existante, nous avons saisi
+          ce moment pour repenser entièrement le Data Explorer, en alignant le
+          design avec la nouvelle orientation stratégique.
+        </p>
+        <div class="cs-content-extented">
+          <div class="cs-subsections">
+            <div class="cs-subsection cs-subsection-grid">
+              <div class="cs-img">
+                <img
+                  src="/assets/data-explorer-context.jpg"
+                  alt="Data Explorer: context"
+                  onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\'>Data Explorer: Context</div>'"
+                />
+              </div>
+              <div>
+                <h3 class="cs-subsection-label">
+                  <span class="en">The need for a redesign</span>
+                  <span class="fr">la nécessité d'une refonte</span>
+                </h3>
+                <p class="en">
+                  The Data Explorer had been built for a small catalog of
+                  curated datasets. As the database grew, that architecture
+                  limited both what users could discover and how the product
+                  could be positioned commercially.
+                </p>
+                <p class="fr">
+                  Le Data Explorer avait été conçu pour un catalogue restreint
+                  de datasets curés. À mesure que la base de données
+                  grandissait, cette architecture limitait autant la découverte
+                  côté utilisateurs que le positionnement commercial du produit.
+                </p>
                 <div>
-                  <h3 class="cs-subsection-label">
-                    <span class="en">The need for a redesign</span>
-                    <span class="fr">la nécessité d'une refonte</span>
-                  </h3>
-                  <p class="en">
-                    The Data Explorer had been built for a small catalog of
-                    curated datasets. As the database grew, that architecture
-                    limited both what users could discover and how the product
-                    could be positioned commercially.
-                  </p>
-                  <p class="fr">
-                    Le Data Explorer avait été conçu pour un catalogue restreint
-                    de datasets curés. À mesure que la base de données
-                    grandissait, cette architecture limitait autant la
-                    découverte côté utilisateurs que le positionnement
-                    commercial du produit.
-                  </p>
-                  <div>
-                    <div class="cs-subsection-card">
-                      <span class="cs-summary-title">
-                        <span class="en">Business needs</span>
-                        <span class="fr">Besoins de l'entreprise</span>
-                      </span>
-                      <p class="cs-summary-value">
-                        <span class="en"
-                          >A platform that reflects the true scale of the
-                          database, and holds up when prospects compare data
-                          coverage against competitors.</span
-                        >
-                        <span class="fr"
-                          >Une plateforme qui reflète l'échelle réelle de la
-                          base de données, et qui tient la comparaison face aux
-                          concurrents sur la couverture data.</span
-                        >
-                      </p>
-                    </div>
-                    <div class="cs-subsection-card">
-                      <span class="cs-summary-title">
-                        <span class="en">User needs</span>
-                        <span class="fr">Besoins des utilisateurs</span>
-                      </span>
-                      <p class="cs-summary-value">
-                        <span class="en"
-                          >A way to find relevant datasets without knowing their
-                          technical identifiers in advance.</span
-                        >
-                        <span class="fr"
-                          >Un moyen de trouver les datasets pertinents sans
-                          connaître leurs identifiants techniques à l'avance.</span
-                        >
-                      </p>
-                    </div>
+                  <div class="cs-subsection-card">
+                    <span class="cs-summary-title">
+                      <span class="en">Business needs</span>
+                      <span class="fr">Besoins de l'entreprise</span>
+                    </span>
+                    <p class="cs-summary-value">
+                      <span class="en"
+                        >A platform that reflects the true scale of the
+                        database, and holds up when prospects compare data
+                        coverage against competitors.</span
+                      >
+                      <span class="fr"
+                        >Une plateforme qui reflète l'échelle réelle de la base
+                        de données, et qui tient la comparaison face aux
+                        concurrents sur la couverture data.</span
+                      >
+                    </p>
+                  </div>
+                  <div class="cs-subsection-card">
+                    <span class="cs-summary-title">
+                      <span class="en">User needs</span>
+                      <span class="fr">Besoins des utilisateurs</span>
+                    </span>
+                    <p class="cs-summary-value">
+                      <span class="en"
+                        >A way to find relevant datasets without knowing their
+                        technical identifiers in advance.</span
+                      >
+                      <span class="fr"
+                        >Un moyen de trouver les datasets pertinents sans
+                        connaître leurs identifiants techniques à l'avance.</span
+                      >
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-        <section class="cs-section reveal" id="problem">
-          <h2 class="cs-section-title">
-            <span class="en">Problem</span>
-            <span class="fr">Problème</span>
-          </h2>
-          <p class="cs-section-legend">
-            <span class="en">
-              The explorer required users to already know what they were looking
-              for, and showed them only 4% of the available data.
-            </span>
-            <span class="fr">
-              Le Data Explorer exigeait des utilisateurs qu'ils sachent déjà ce
-              qu'ils cherchaient, et ne leur montrait que 4 % des données
-              disponibles.
-            </span>
-          </p>
-          <div class="cs-img-wrapper">
-            <div class="cs-img">
-              <img
-                src="/assets/data-explorer-old.jpg"
-                alt="Data Explorer V1"
-                onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: V1</div>'"
-              />
-            </div>
-            <p class="cs-img-legend">
-              <span class="en">Data Explorer: Version 1</span>
-              <span class="fr">Data Explorer : Version 1</span>
-            </p>
+        </div>
+      </section>
+      <section class="cs-section reveal" id="problem">
+        <h2 class="cs-section-title">
+          <span class="en">Problem</span>
+          <span class="fr">Problème</span>
+        </h2>
+        <p class="cs-section-legend">
+          <span class="en">
+            The explorer required users to already know what they were looking
+            for, and showed them only 4% of the available data.
+          </span>
+          <span class="fr">
+            Le Data Explorer exigeait des utilisateurs qu'ils sachent déjà ce
+            qu'ils cherchaient, et ne leur montrait que 4 % des données
+            disponibles.
+          </span>
+        </p>
+        <div class="cs-img-wrapper">
+          <div class="cs-img">
+            <img
+              src="/assets/data-explorer-old.jpg"
+              alt="Data Explorer V1"
+              onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: V1</div>'"
+            />
           </div>
-          <p class="en">
-            Datasets were identified by technical IDs, alphanumeric strings that
-            meant nothing to most users. No titles, no descriptions. Search was
-            shallow. Filters were flat. And with only reviewed datasets shown,
-            the interface gave no sense of the actual scale of the data
-            available.
+          <p class="cs-img-legend">
+            <span class="en">Data Explorer: Version 1</span>
+            <span class="fr">Data Explorer : Version 1</span>
           </p>
-          <p class="fr">
-            Les datasets étaient identifiés par des identifiants techniques, des
-            chaînes alphanumériques qui ne signifiaient rien pour la plupart des
-            utilisateurs. Pas de titres, pas de descriptions. La recherche était
-            limitée. Les filtres étaient plats. Et avec seulement les datasets
-            reviewés affichés, l'interface ne donnait aucune idée de l'échelle
-            réelle des données disponibles.
-          </p>
-          <p class="en">
-            A product repositioning around data richness, built on a Data
-            Explorer showing 4% of it.
-          </p>
-          <p class="fr">
-            Un produit qui se repositionnait autour de la richesse de ses
-            données, avec un Data Explorer qui n'en montrait que 4&nbsp;%.
-          </p>
-        </section>
-        <section class="cs-section reveal" id="approach">
-          <h2 class="cs-section-title">
-            <span class="en">Approach</span>
-            <span class="fr">Approche</span>
-          </h2>
-          <p class="cs-section-legend">
-            <span class="en">
-              Before designing anything, we ran a cross-team workshop to align
-              product, engineering, and domain experts on what mattered most.
-            </span>
-            <span class="fr">
-              Avant toute conception, nous avons animé un workshop réunissant
-              produit, ingénierie et experts métier pour aligner les priorités.
-            </span>
-          </p>
-          <p class="en">
-            Five people from across the company took part: product, engineering,
-            and domain experts from the scientific and curation teams. The
-            session followed three phases: brainstorming, reorganization, and
-            prioritization.
-          </p>
-          <p class="fr">
-            Cinq personnes de différentes équipes y ont participé : produit,
-            ingénierie, et experts métier des équipes scientifiques et de
-            curation. La session s'est déroulée en trois phases : brainstorming,
-            réorganisation et priorisation.
-          </p>
-          <div class="cs-img-wrapper">
-            <div class="cs-img">
-              <img
-                src="/assets/data-explorer-workshop.jpg"
-                alt="Workshop: Data Explorer"
-                onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Workshop</div>'"
-              />
-            </div>
+        </div>
+        <p class="en">
+          Datasets were identified by technical IDs, alphanumeric strings that
+          meant nothing to most users. No titles, no descriptions. Search was
+          shallow. Filters were flat. And with only reviewed datasets shown, the
+          interface gave no sense of the actual scale of the data available.
+        </p>
+        <p class="fr">
+          Les datasets étaient identifiés par des identifiants techniques, des
+          chaînes alphanumériques qui ne signifiaient rien pour la plupart des
+          utilisateurs. Pas de titres, pas de descriptions. La recherche était
+          limitée. Les filtres étaient plats. Et avec seulement les datasets
+          validés affichés, l'interface ne donnait aucune idée de l'échelle
+          réelle des données disponibles.
+        </p>
+        <p class="en">
+          A product repositioning around data richness, built on a Data Explorer
+          showing 4% of it.
+        </p>
+        <p class="fr">
+          Un produit qui se repositionnait autour de la richesse de ses données,
+          avec un Data Explorer qui n'en montrait que 4&nbsp;%.
+        </p>
+      </section>
+      <section class="cs-section reveal" id="approach">
+        <h2 class="cs-section-title">
+          <span class="en">Approach</span>
+          <span class="fr">Approche</span>
+        </h2>
+        <p class="cs-section-legend">
+          <span class="en">
+            Before designing anything, we ran a cross-team workshop to align
+            product, engineering, and domain experts on what mattered most.
+          </span>
+          <span class="fr">
+            Avant toute conception, nous avons animé un workshop réunissant
+            produit, ingénierie et experts métier pour aligner les priorités.
+          </span>
+        </p>
+        <p class="en">
+          Five people from across the company took part: product, engineering,
+          and domain experts from the scientific and curation teams. The session
+          followed three phases: brainstorming, reorganization, and
+          prioritization.
+        </p>
+        <p class="fr">
+          Cinq personnes de différentes équipes y ont participé : produit,
+          ingénierie, et experts métier des équipes scientifiques et de
+          curation. La session s'est déroulée en trois phases : brainstorming,
+          réorganisation et priorisation.
+        </p>
+        <div class="cs-img-wrapper">
+          <div class="cs-img">
+            <img
+              src="/assets/data-explorer-workshop.jpg"
+              alt="Workshop: Data Explorer"
+              onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Workshop</div>'"
+            />
           </div>
-          <p class="en">
-            I designed and facilitated the format. Each phase had a specific
-            output: generate ideas without constraints first, then group and
-            structure them, then force a prioritisation. By the end, everyone
-            had ranked the same priorities, engineering and domain experts
-            included.
-          </p>
-          <p class="fr">
-            J'ai conçu le format. Chaque phase avait un objectif précis :
-            générer des idées sans contraintes d'abord, puis les regrouper et
-            les structurer, puis trancher les priorités. À la fin, tout le monde
-            avait classé les mêmes priorités, ingénierie et experts métier
-            compris.
-          </p>
-        </section>
-        <section class="cs-section reveal" id="solution">
-          <h2 class="cs-section-title">Solution</h2>
-          <p class="cs-section-legend">
-            <span class="en">
-              Six decisions, each addressing a specific gap in the V1 explorer.
-            </span>
-            <span class="fr">
-              Six décisions, chacune répondant à une limite précise du Data
-              Explorer V1.
-            </span>
-          </p>
+        </div>
+        <p class="en">
+          I designed and facilitated the format. Each phase had a specific
+          output: generate ideas without constraints first, then group and
+          structure them, then force a prioritisation. By the end, everyone had
+          ranked the same priorities, engineering and domain experts included.
+        </p>
+        <p class="fr">
+          J'ai conçu le format. Chaque phase avait un objectif précis : générer
+          des idées sans contraintes d'abord, puis les regrouper et les
+          structurer, puis trancher les priorités. À la fin, tout le monde avait
+          classé les mêmes priorités, ingénierie et experts métier compris.
+        </p>
+      </section>
+      <section class="cs-section reveal" id="solution">
+        <h2 class="cs-section-title">Solution</h2>
+        <p class="cs-section-legend">
+          <span class="en">
+            Six decisions, each addressing a specific gap in the V1 explorer.
+          </span>
+          <span class="fr">
+            Six décisions, chacune répondant à une limite précise du Data
+            Explorer V1.
+          </span>
+        </p>
 
-          <div class="cs-subsections">
-            <div class="cs-subsection">
-              <div>
-                <span class="cs-subsection-label sublabel">Solution 1/6</span>
-                <div class="grid-2">
-                  <h3 class="cs-subsection-title">
-                    <span class="en">Reviewed &amp; Unreviewed</span>
-                    <span class="fr">Reviewed &amp; Unreviewed</span>
-                  </h3>
-                  <p class="en">
-                    The core decision: expose all 50,000+ datasets, but with a
-                    clear distinction. Reviewed datasets (curated,
-                    quality-checked) give full access to analysis tools.
-                    Unreviewed datasets open up for exploration, with
-                    transparent labeling so users understand what they're
-                    working with. No hidden data, no false equivalence.
-                  </p>
-                  <p class="fr">
-                    La décision centrale&nbsp;: exposer l'ensemble des
-                    50&nbsp;000+ datasets, mais avec une distinction claire. Les
-                    datasets reviewés (curés, vérifiés) donnent un accès complet
-                    aux outils d'analyse. Les datasets non reviewés s'ouvrent à
-                    l'exploration, avec un étiquetage transparent pour que les
-                    utilisateurs comprennent ce avec quoi ils travaillent. Pas
-                    de données cachées, pas de fausse équivalence.
-                  </p>
-                </div>
+        <div class="cs-subsections">
+          <div class="cs-subsection">
+            <div>
+              <span class="cs-subsection-label sublabel">Solution 1/6</span>
+              <div class="grid-2">
+                <h3 class="cs-subsection-title">
+                  <span class="en">Reviewed &amp; Unreviewed</span>
+                  <span class="fr">Validés &amp; Non validés</span>
+                </h3>
+                <p class="en">
+                  The core decision: expose all 50,000+ datasets, but with a
+                  clear distinction. Reviewed datasets (curated,
+                  quality-checked) give full access to analysis tools.
+                  Unreviewed datasets open up for exploration, with transparent
+                  labeling so users understand what they're working with. No
+                  hidden data, no false equivalence.
+                </p>
+                <p class="fr">
+                  La décision centrale&nbsp;: exposer l'ensemble des
+                  50&nbsp;000+ datasets, mais avec une distinction claire. Les
+                  datasets validés (curés, vérifiés) donnent un accès complet
+                  aux outils d'analyse. Les datasets non validés s'ouvrent à
+                  l'exploration, avec un étiquetage transparent pour que les
+                  utilisateurs comprennent ce avec quoi ils travaillent. Pas de
+                  données cachées, pas de fausse équivalence.
+                </p>
+              </div>
+            </div>
+            <div class="cs-img">
+              <img
+                src="/assets/data-explorer-solution-reviewed.jpg"
+                alt="Data Explorer: Reviewed & Unreviewed"
+                onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: Reviewed & Unreviewed</div>'"
+              />
+            </div>
+          </div>
+          <div class="cs-subsection">
+            <div>
+              <span class="cs-subsection-label sublabel">Solution 2/6</span>
+              <div class="grid-2">
+                <h3 class="cs-subsection-title">
+                  <span class="en">Richer dataset context</span>
+                  <span class="fr">Contexte enrichi</span>
+                </h3>
+                <p class="en">
+                  Datasets now have titles and descriptions, searchable and
+                  human-readable, connected to their source publications. Two
+                  views let users switch between a condensed table and an
+                  expanded listing depending on their workflow. Clicking a
+                  dataset opens an overview panel for a first level of
+                  exploration, visualising the data distribution before deciding
+                  whether to go deeper.
+                </p>
+                <p class="fr">
+                  Les datasets ont désormais des titres et des descriptions,
+                  consultables, lisibles, liés à leurs publications sources.
+                  Deux vues permettent de basculer entre un tableau condensé et
+                  un listing étendu selon le flux de travail. Un clic sur un
+                  dataset ouvre un panneau d'aperçu pour un premier niveau
+                  d'exploration, visualiser la distribution des données avant de
+                  décider d'aller plus loin.
+                </p>
+              </div>
+            </div>
+            <div class="cs-img-grid cs-img-grid-2">
+              <div class="cs-img">
+                <img
+                  src="/assets/data-explorer-solution-richer-context-1.jpg"
+                  alt="Data Explorer: Richer dataset context"
+                  onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: Richer dataset context</div>'"
+                />
               </div>
               <div class="cs-img">
                 <img
-                  src="/assets/data-explorer-solution-reviewed.jpg"
-                  alt="Data Explorer: Reviewed & Unreviewed"
-                  onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: Reviewed & Unreviewed</div>'"
+                  src="/assets/data-explorer-solution-richer-context-2.jpg"
+                  alt="Data Explorer: Richer dataset context"
+                  onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: Richer dataset context</div>'"
                 />
-              </div>
-            </div>
-            <div class="cs-subsection">
-              <div>
-                <span class="cs-subsection-label sublabel">Solution 2/6</span>
-                <div class="grid-2">
-                  <h3 class="cs-subsection-title">
-                    <span class="en">Richer dataset context</span>
-                    <span class="fr">Contexte enrichi</span>
-                  </h3>
-                  <p class="en">
-                    Datasets now have titles and descriptions, searchable and
-                    human-readable, connected to their source publications. Two
-                    views let users switch between a condensed table and an
-                    expanded listing depending on their workflow. Clicking a
-                    dataset opens an overview panel for a first level of
-                    exploration, visualising the data distribution before
-                    deciding whether to go deeper.
-                  </p>
-                  <p class="fr">
-                    Les datasets ont désormais des titres et des descriptions,
-                    consultables, lisibles, liés à leurs publications sources.
-                    Deux vues permettent de basculer entre un tableau condensé
-                    et un listing étendu selon le flux de travail. Un clic sur
-                    un dataset ouvre un panneau d'aperçu pour un premier niveau
-                    d'exploration, visualiser la distribution des données avant
-                    de décider d'aller plus loin.
-                  </p>
-                </div>
-              </div>
-              <div class="cs-img-grid cs-img-grid-2">
-                <div class="cs-img">
-                  <img
-                    src="/assets/data-explorer-solution-richer-context-1.jpg"
-                    alt="Data Explorer: Richer dataset context"
-                    onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: Richer dataset context</div>'"
-                  />
-                </div>
-                <div class="cs-img">
-                  <img
-                    src="/assets/data-explorer-solution-richer-context-2.jpg"
-                    alt="Data Explorer: Richer dataset context"
-                    onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: Richer dataset context</div>'"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="cs-subsection">
-              <div>
-                <span class="cs-subsection-label sublabel">Solution 3/6</span>
-                <div class="grid-2">
-                  <h3 class="cs-subsection-title">
-                    <span class="en">Smarter search</span>
-                    <span class="fr">Recherche améliorée</span>
-                  </h3>
-                  <p class="en">
-                    The search bar now runs across the full content of each
-                    dataset: title, description, metadata. Results highlight the
-                    matching keywords inline, so users can immediately see <em
-                      >where</em
-                    > in the data their query landed, not just <em>that</em> it matched.
-                  </p>
-                  <p class="fr">
-                    La barre de recherche couvre désormais l'ensemble du contenu
-                    de chaque dataset&nbsp;: titre, description, métadonnées.
-                    Les résultats mettent en évidence les mots-clés
-                    correspondants en ligne, pour que les utilisateurs voient
-                    immédiatement <em>où</em> dans la donnée leur requête a trouvé
-                    une correspondance, pas seulement
-                    <em>qu'elle</em> en a trouvé une.
-                  </p>
-                </div>
-              </div>
-              <div class="cs-img">
-                <img
-                  src="/assets/data-explorer-solution-smarter-search.jpg"
-                  alt="Data Explorer: Smarter search"
-                  onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: Smarter search</div>'"
-                />
-              </div>
-            </div>
-            <div class="cs-subsection">
-              <div>
-                <span class="cs-subsection-label sublabel">Solution 4/6</span>
-                <div class="grid-2">
-                  <h3 class="cs-subsection-title">
-                    <span class="en">Filters, restructured</span>
-                    <span class="fr">Filtres restructurés</span>
-                  </h3>
-                  <p class="en">
-                    Filters moved to a dedicated sidebar and were reorganised
-                    into categories reflecting how users actually think about
-                    data selection: by cancer type, technology, sample
-                    characteristics. The flat list is gone; the structure
-                    follows the mental model.
-                  </p>
-                  <p class="fr">
-                    Les filtres ont été déplacés dans une sidebar dédiée et
-                    réorganisés en catégories reflétant la façon dont les
-                    utilisateurs pensent réellement la sélection des données :
-                    par type de cancer, technologie, caractéristiques des
-                    échantillons. La liste plate a disparu&nbsp;; la structure
-                    suit le modèle mental.
-                  </p>
-                </div>
-              </div>
-              <div class="cs-img-grid cs-img-grid-2">
-                <div class="cs-img">
-                  <img
-                    src="/assets/data-explorer-solution-filters-1.jpg"
-                    alt="Data Explorer: Filters, restructured"
-                    onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: Filters, restructured</div>'"
-                  />
-                </div>
-                <div class="cs-img">
-                  <img
-                    src="/assets/data-explorer-solution-filters-2.jpg"
-                    alt="Data Explorer: Filters, restructured"
-                    onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: Filters, restructured</div>'"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="cs-subsection">
-              <div>
-                <span class="cs-subsection-label sublabel">Solution 5/6</span>
-                <div class="grid-2">
-                  <h3 class="cs-subsection-title">
-                    <span class="en">Metrics that matter</span>
-                    <span class="fr">Métriques pertinentes</span>
-                  </h3>
-                  <p class="en">
-                    The global metrics at the top of the explorer were
-                    redesigned to surface what users actually need at a glance:
-                    total datasets, samples, cancer types covered, omics types.
-                    Numbers that immediately communicate the scale and scope of
-                    the database.
-                  </p>
-                  <p class="fr">
-                    Les métriques globales en haut du Data Explorer ont été
-                    repensées pour afficher ce dont les utilisateurs ont
-                    réellement besoin d'un coup d'œil&nbsp;: total des datasets,
-                    échantillons, types de cancer couverts, types d'omiques. Des
-                    chiffres qui communiquent immédiatement l'échelle et la
-                    portée de la base de données.
-                  </p>
-                </div>
-              </div>
-              <div class="cs-img">
-                <img
-                  src="/assets/data-explorer-solution-metrics.jpg"
-                  alt="Data Explorer: Metrics that matter"
-                  onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: Metrics that matter</div>'"
-                />
-              </div>
-            </div>
-            <div class="cs-subsection">
-              <div>
-                <span class="cs-subsection-label sublabel">Solution 6/6</span>
-                <div class="grid-2">
-                  <h3 class="cs-subsection-title">
-                    <span class="en">Saved datasets</span>
-                    <span class="fr">Datasets sauvegardés</span>
-                  </h3>
-                  <p class="en">
-                    Users can now save datasets and retrieve them directly, with
-                    no re-searching and no rebuilding filters. A small feature
-                    with a disproportionate impact on workflows for users who
-                    return to the same data repeatedly.
-                  </p>
-                  <p class="fr">
-                    Les utilisateurs peuvent désormais sauvegarder des datasets
-                    et les retrouver directement, sans re-recherche et sans
-                    reconstruire les filtres. Une petite feature avec un impact
-                    disproportionné sur les workflows des utilisateurs qui
-                    reviennent régulièrement aux mêmes données.
-                  </p>
-                </div>
-              </div>
-              <div class="cs-img-grid cs-img-grid-2">
-                <div class="cs-img">
-                  <img
-                    src="/assets/data-explorer-solution-bookmarks-1.jpg"
-                    alt="Data Explorer: Saved datasets"
-                    onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: Saved datasets</div>'"
-                  />
-                </div>
-                <div class="cs-img">
-                  <img
-                    src="/assets/data-explorer-solution-bookmarks-2.jpg"
-                    alt="Data Explorer: Saved datasets"
-                    onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: Saved datasets</div>'"
-                  />
-                </div>
               </div>
             </div>
           </div>
-        </section>
-        <section class="cs-section reveal" id="impact">
-          <h2 class="cs-section-title">Impact</h2>
-          <p class="cs-section-legend">
-            <span class="en">
-              From 2,000 visible datasets to 50,000+: the redesign made the
-              database's actual scale visible for the first time.
-            </span>
-            <span class="fr">
-              De 2&nbsp;000 datasets visibles à plus de 50&nbsp;000 : la refonte
-              a rendu l'échelle réelle de la base de données visible pour la
-              première fois.
-            </span>
-          </p>
-          <p class="en">
-            This redesign was part of the broader data strategy Epigene pursued
-            through late 2025. In December of that year, the company announced
-            reaching 2 million cancer omics profiles, a 20× increase in one
-            year. The expanded Data Explorer was the interface through which
-            that data became accessible.
-          </p>
-          <p class="fr">
-            Cette refonte s'inscrit dans la stratégie data plus large qu'Epigene
-            a menée fin 2025. En décembre de cette année, la société a annoncé
-            avoir atteint 2 millions de profils omiques en oncologie, une
-            multiplication par 20 en un an. Le Data Explorer étendu était
-            l'interface par laquelle ces données sont devenues accessibles.
-          </p>
-          <div class="cs-pullquote">
-            <p class="en">
-              "Streamlined exploration through the company's user-friendly web
-              app"
-            </p>
-            <p class="fr">
-              «&nbsp;Une exploration simplifiée via la web app user-friendly de
-              la société&nbsp;»
-            </p>
+          <div class="cs-subsection">
+            <div>
+              <span class="cs-subsection-label sublabel">Solution 3/6</span>
+              <div class="grid-2">
+                <h3 class="cs-subsection-title">
+                  <span class="en">Smarter search</span>
+                  <span class="fr">Recherche améliorée</span>
+                </h3>
+                <p class="en">
+                  The search bar now runs across the full content of each
+                  dataset: title, description, metadata. Results highlight the
+                  matching keywords inline, so users can immediately see <em
+                    >where</em
+                  > in the data their query landed, not just <em>that</em> it matched.
+                </p>
+                <p class="fr">
+                  La barre de recherche couvre désormais l'ensemble du contenu
+                  de chaque dataset&nbsp;: titre, description, métadonnées. Les
+                  résultats mettent en évidence les mots-clés correspondants en
+                  ligne, pour que les utilisateurs voient immédiatement <em
+                    >où</em
+                  > dans la donnée leur requête a trouvé une correspondance, pas seulement
+                  <em>qu'elle</em> en a trouvé une.
+                </p>
+              </div>
+            </div>
+            <div class="cs-img">
+              <img
+                src="/assets/data-explorer-solution-smarter-search.jpg"
+                alt="Data Explorer: Smarter search"
+                onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: Smarter search</div>'"
+              />
+            </div>
           </div>
+          <div class="cs-subsection">
+            <div>
+              <span class="cs-subsection-label sublabel">Solution 4/6</span>
+              <div class="grid-2">
+                <h3 class="cs-subsection-title">
+                  <span class="en">Filters, restructured</span>
+                  <span class="fr">Filtres restructurés</span>
+                </h3>
+                <p class="en">
+                  Filters moved to a dedicated sidebar and were reorganised into
+                  categories reflecting how users actually think about data
+                  selection: by cancer type, technology, sample characteristics.
+                  The flat list is gone; the structure follows the mental model.
+                </p>
+                <p class="fr">
+                  Les filtres ont été déplacés dans une sidebar dédiée et
+                  réorganisés en catégories reflétant la façon dont les
+                  utilisateurs pensent réellement la sélection des données : par
+                  type de cancer, technologie, caractéristiques des
+                  échantillons. La liste plate a disparu&nbsp;; la structure
+                  suit le modèle mental.
+                </p>
+              </div>
+            </div>
+            <div class="cs-img-grid cs-img-grid-2">
+              <div class="cs-img">
+                <img
+                  src="/assets/data-explorer-solution-filters-1.jpg"
+                  alt="Data Explorer: Filters, restructured"
+                  onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: Filters, restructured</div>'"
+                />
+              </div>
+              <div class="cs-img">
+                <img
+                  src="/assets/data-explorer-solution-filters-2.jpg"
+                  alt="Data Explorer: Filters, restructured"
+                  onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: Filters, restructured</div>'"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="cs-subsection">
+            <div>
+              <span class="cs-subsection-label sublabel">Solution 5/6</span>
+              <div class="grid-2">
+                <h3 class="cs-subsection-title">
+                  <span class="en">Metrics that matter</span>
+                  <span class="fr">Métriques pertinentes</span>
+                </h3>
+                <p class="en">
+                  The global metrics at the top of the explorer were redesigned
+                  to surface what users actually need at a glance: total
+                  datasets, samples, cancer types covered, omics types. Numbers
+                  that immediately communicate the scale and scope of the
+                  database.
+                </p>
+                <p class="fr">
+                  Les métriques globales en haut du Data Explorer ont été
+                  repensées pour afficher ce dont les utilisateurs ont
+                  réellement besoin d'un coup d'œil&nbsp;: total des datasets,
+                  échantillons, types de cancer couverts, types d'omiques. Des
+                  chiffres qui communiquent immédiatement l'échelle et la portée
+                  de la base de données.
+                </p>
+              </div>
+            </div>
+            <div class="cs-img">
+              <img
+                src="/assets/data-explorer-solution-metrics.jpg"
+                alt="Data Explorer: Metrics that matter"
+                onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: Metrics that matter</div>'"
+              />
+            </div>
+          </div>
+          <div class="cs-subsection">
+            <div>
+              <span class="cs-subsection-label sublabel">Solution 6/6</span>
+              <div class="grid-2">
+                <h3 class="cs-subsection-title">
+                  <span class="en">Saved datasets</span>
+                  <span class="fr">Datasets sauvegardés</span>
+                </h3>
+                <p class="en">
+                  Users can now save datasets and retrieve them directly, with
+                  no re-searching and no rebuilding filters. A small feature
+                  with a disproportionate impact on workflows for users who
+                  return to the same data repeatedly.
+                </p>
+                <p class="fr">
+                  Les utilisateurs peuvent désormais sauvegarder des datasets et
+                  les retrouver directement, sans re-recherche et sans
+                  reconstruire les filtres. Une petite feature avec un impact
+                  disproportionné sur les workflows des utilisateurs qui
+                  reviennent régulièrement aux mêmes données.
+                </p>
+              </div>
+            </div>
+            <div class="cs-img-grid cs-img-grid-2">
+              <div class="cs-img">
+                <img
+                  src="/assets/data-explorer-solution-bookmarks-1.jpg"
+                  alt="Data Explorer: Saved datasets"
+                  onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: Saved datasets</div>'"
+                />
+              </div>
+              <div class="cs-img">
+                <img
+                  src="/assets/data-explorer-solution-bookmarks-2.jpg"
+                  alt="Data Explorer: Saved datasets"
+                  onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: Saved datasets</div>'"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="cs-section reveal" id="impact">
+        <h2 class="cs-section-title">Impact</h2>
+        <p class="cs-section-legend">
+          <span class="en">
+            From 2,000 visible datasets to 50,000+: the redesign made the
+            database's actual scale visible for the first time.
+          </span>
+          <span class="fr">
+            De 2&nbsp;000 datasets visibles à plus de 50&nbsp;000 : la refonte a
+            rendu l'échelle réelle de la base de données visible pour la
+            première fois.
+          </span>
+        </p>
+        <p class="en">
+          This redesign was part of the broader data strategy Epigene pursued
+          through late 2025. In December of that year, the company announced
+          reaching 2 million cancer omics profiles, a 20× increase in one year.
+          The expanded Data Explorer was the interface through which that data
+          became accessible.
+        </p>
+        <p class="fr">
+          Cette refonte s'inscrit dans la stratégie data plus large qu'Epigene a
+          menée fin 2025. En décembre de cette année, la société a annoncé avoir
+          atteint 2 millions de profils omiques en oncologie, une multiplication
+          par 20 en un an. Le Data Explorer étendu était l'interface par
+          laquelle ces données sont devenues accessibles.
+        </p>
+        <div class="cs-pullquote">
           <p class="en">
-            The phrase appeared in Epigene's official communications to
-            biopharma partners, positioning the interface as a core part of the
-            value proposition alongside the data itself.
+            "Streamlined exploration through the company's user-friendly web
+            app"
           </p>
           <p class="fr">
-            Cette formulation est apparue dans les communications officielles
-            d'Epigene aux partenaires biopharma, positionnant l'interface comme
-            une composante centrale de la proposition de valeur, aux côtés des
-            données elles-mêmes.
+            «&nbsp;Une exploration simplifiée via la web app user-friendly de la
+            société&nbsp;»
           </p>
-        </section>
-      </main>
-      <aside class="cs-sidebar">
-        <nav class="cs-sidebar-nav">
-          <a href="#context">
-            <span class="en">Context</span>
-            <span class="fr">Contexte</span>
-          </a>
-          <a href="#problem">
-            <span class="en">Problem</span>
-            <span class="fr">Problème</span>
-          </a>
-          <a href="#approach">
-            <span class="en">Approach</span>
-            <span class="fr">Approche</span>
-          </a>
-          <a href="#solution">Solution</a>
-          <a href="#impact">Impact</a>
-        </nav>
-      </aside>
-    </div>
+        </div>
+        <p class="en">
+          The phrase appeared in Epigene's official communications to biopharma
+          partners, positioning the interface as a core part of the value
+          proposition alongside the data itself.
+        </p>
+        <p class="fr">
+          Cette formulation est apparue dans les communications officielles
+          d'Epigene aux partenaires biopharma, positionnant l'interface comme
+          une composante centrale de la proposition de valeur, aux côtés des
+          données elles-mêmes.
+        </p>
+      </section>
+    </main>
   </div>
 </Layout>

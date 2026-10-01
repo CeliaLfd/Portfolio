@@ -42,6 +42,7 @@ body.dark {
 
   /* Layout */
   --container:  1400px;
+  --content: 1200px;
   --container-lg:  1480px;
   --header-h:   64px;
 

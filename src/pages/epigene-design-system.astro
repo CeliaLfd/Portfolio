@@ -116,16 +116,16 @@ import Layout from "../layouts/Layout.astro";
                 </span>
                 <p class="cs-summary-value">
                   <span class="en"
-                    >No navigation landmarks, no system feedback, no visual
-                    consistency, unmanaged density: four patterns making a
-                    scientifically complex tool harder to use than it needed to
-                    be.</span
+                    >An interface never designed for the people using it: no
+                    landmarks in the flows, primary actions hidden, no feedback,
+                    and components that behaved differently from one screen to
+                    the next.</span
                   >
                   <span class="fr"
-                    >Pas de repères de navigation, pas de feedback système, pas
-                    de cohérence visuelle, une densité non maîtrisée : quatre
-                    patterns rendant un outil scientifiquement complexe plus
-                    difficile à utiliser qu'il ne devrait l'être.</span
+                    >Une interface jamais pensée pour ses utilisateurs : pas de
+                    repères dans les parcours, des actions principales cachées,
+                    aucun feedback, et des composants incohérents d'un écran à
+                    l'autre.</span
                   >
                 </p>
               </div>
@@ -175,374 +175,446 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
     </div>
-    <div class="cs-page-content">
-      <main class="cs-main">
-        <section class="cs-section reveal" id="context">
-          <h2 class="cs-section-title">
-            <span class="en">Context</span>
-            <span class="fr">Contexte</span>
-          </h2>
+    <main class="cs-main">
+      <section class="cs-section reveal" id="context">
+        <h2 class="cs-section-title">
+          <span class="en">Context</span>
+          <span class="fr">Contexte</span>
+        </h2>
+        <div class="grid-2">
           <p class="cs-section-legend">
             <span class="en">
-              mCUBE is a genomic data analysis platform for oncology
-              researchers, built by engineers with no designer and no design
-              decisions documented anywhere.
+              Epigene Labs is a biotech company specializing in precision
+              oncology.
             </span>
             <span class="fr">
-              mCUBE est une plateforme d'analyse de données génomiques pour les
-              chercheurs en oncologie, construite par des ingénieurs, sans
-              designer et sans aucune décision de design documentée.
+              Epigene Labs est une entreprise biotech spécialisée en oncologie de
+              précision.
             </span>
           </p>
-          <p class="en">
-            When I joined Epigene Labs in February 2022 as a Front-end Engineer,
-            mCUBE was already live. Scientifically solid. But built by
-            engineers, with no designer, no PM, and no Figma file. In my first
-            week, I ran a UI/UX audit of the product and presented my findings
-            to the VP and CTO. I got the green light to lead a full redesign.
-          </p>
-          <p class="fr">
-            En février 2022, j'ai rejoint Epigene Labs en tant que Front-end
-            Engineer. mCUBE était déjà en production. Scientifiquement solide.
-            Mais construite par des ingénieurs, sans designer, sans PM, et sans
-            fichier Figma. Dès ma première semaine, j'ai réalisé un audit UI/UX
-            du produit et présenté mes conclusions au VP et au CTO. J'ai obtenu
-            le feu vert pour piloter une refonte complète.
-          </p>
-        </section>
-        <section class="cs-section reveal" id="problem">
-          <h2 class="cs-section-title">
-            <span class="en">Problem</span>
-            <span class="fr">Problème</span>
-          </h2>
+          <div>
+            <p class="en">
+              Its product, mCUBE, is a genomic data analysis platform for
+              oncology researchers. In practice, mCUBE lets a researcher run an
+              analysis on transcriptomic data: build a cohort, define rules, then
+              generate indicators. In 2022, the product was in its early days. A
+              single type of analysis, one client, a handful of users. The code
+              was clean and well-architected, but the product remained visually
+              immature, built by engineers without a designer ever stepping in.
+            </p>
+            <p class="fr">
+              Son produit, mCUBE, est une plateforme d'analyse de données
+              génomiques pour les chercheurs en oncologie. Concrètement, mCUBE
+              permet à un chercheur de mener une analyse sur des données
+              transcriptomiques : constituer une cohorte, définir des règles,
+              puis générer des indicateurs. En 2022, le produit en était à ses
+              débuts. Un seul type d'analyse possible, un seul client, une poignée
+              d'utilisateurs. Le code était propre et bien architecturé, mais le
+              produit restait visuellement immature, construit par des ingénieurs
+              sans qu'aucun designer n'y soit jamais passé.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="cs-section reveal" id="starting-point">
+        <h2 class="cs-section-title">
+          <span class="en">The starting point</span>
+          <span class="fr">Le point de départ</span>
+        </h2>
+        <div class="grid-2">
           <p class="cs-section-legend">
             <span class="en">
-              A scientifically rigorous tool, undermined by structural gaps a UI
-              audit made hard to ignore.
+              My first week began with an audit of the product, screen by screen.
             </span>
             <span class="fr">
-              Un outil scientifiquement rigoureux, fragilisé par des lacunes
-              structurelles qu'un audit UI a rendues impossibles à ignorer.
+              Ma première semaine a commencé par un audit du produit, écran par
+              écran.
             </span>
           </p>
-          <div class="cs-img-wrapper cs-img-grid cs-img-grid-2">
-            <div class="cs-img">
-              <img
-                src="/assets/design-system-problem-before-1.jpg"
-                alt="UI Audit epigene labs"
-                onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:4/3\'>UI Audit: Before</div>'"
-              />
-            </div>
-            <div class="cs-img">
-              <img
-                src="/assets/design-system-problem-before-2.jpg"
-                alt="UI Audit epigene labs"
-                onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:4/3\'>UI Audit: Before</div>'"
-              />
-            </div>
-            <div class="cs-img">
-              <img
-                src="/assets/design-system-problem-before-3.jpg"
-                alt="UI Audit epigene labs"
-                onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:4/3\'>UI Audit: Before</div>'"
-              />
-            </div>
-            <div class="cs-img">
-              <img
-                src="/assets/design-system-problem-before-4.jpg"
-                alt="UI Audit epigene labs"
-                onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:4/3\'>UI Audit: Before</div>'"
-              />
-            </div>
+          <div>
+            <p class="en">
+              I joined Epigene Labs in February 2022 as a Front-end Engineer. One
+              or two days going through every screen. I presented it to the VP and
+              CTO, and got the green light to lead a full redesign.
+            </p>
+            <p class="fr">
+              J'ai rejoint Epigene Labs en février 2022 comme Front-end Engineer.
+              Un ou deux jours à passer chaque écran au crible. Je l'ai présenté
+              au VP et au CTO, et j'ai obtenu le feu vert pour piloter une refonte
+              complète.
+            </p>
           </div>
-          <p class="en">The audit surfaced four recurring issues:</p>
-          <p class="fr">
-            L'audit a mis en évidence quatre problèmes récurrents&nbsp;:
-          </p>
-          <ul class="cs-list en">
-            <li>
-              <strong>Lost navigation</strong>: no persistent landmarks, users
-              lost track of where they were in a multi-step analysis
-            </li>
-            <li>
-              <strong>Missing feedback</strong>: actions completed silently, no
-              confirmation or error states
-            </li>
-            <li>
-              <strong>No visual consistency</strong>: components built
-              independently, no shared language across screens
-            </li>
-            <li>
-              <strong>Unmanaged density</strong>: all information treated
-              equally, nothing prioritized
-            </li>
-          </ul>
-          <ul class="cs-list fr">
-            <li>
-              <strong>Navigation perdue</strong> : pas de repères persistants, les
-              utilisateurs perdaient le fil dans une analyse multi-étapes
-            </li>
-            <li>
-              <strong>Feedback absent</strong> : les actions se terminaient silencieusement,
-              sans confirmation ni état d'erreur
-            </li>
-            <li>
-              <strong>Aucune cohérence visuelle</strong> : composants construits indépendamment,
-              pas de langage commun entre les écrans
-            </li>
-            <li>
-              <strong>Densité non maîtrisée</strong> : toutes les informations traitées
-              à égalité, rien de priorisé
-            </li>
-          </ul>
-        </section>
-        <section class="cs-section reveal" id="approach">
-          <h2 class="cs-section-title">
-            <span class="en">Approach</span>
-            <span class="fr">Approche</span>
-          </h2>
+        </div>
+      </section>
+      <section class="cs-section reveal" id="problem">
+        <h2 class="cs-section-title">
+          <span class="en">Problem</span>
+          <span class="fr">Problème</span>
+        </h2>
+        <p class="cs-section-legend">
+          <span class="en">
+            An interface never designed for the people using it.
+          </span>
+          <span class="fr">
+            Une interface jamais pensée pour ceux qui l'utilisaient.
+          </span>
+        </p>
+        <div class="cs-img-wrapper cs-img-grid cs-img-grid-2">
+          <div class="cs-img">
+            <img
+              src="/assets/design-system-problem-before-1.jpg"
+              alt="UI Audit epigene labs"
+              onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:4/3\'>UI Audit: Before</div>'"
+            />
+          </div>
+          <div class="cs-img">
+            <img
+              src="/assets/design-system-problem-before-2.jpg"
+              alt="UI Audit epigene labs"
+              onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:4/3\'>UI Audit: Before</div>'"
+            />
+          </div>
+          <div class="cs-img">
+            <img
+              src="/assets/design-system-problem-before-3.jpg"
+              alt="UI Audit epigene labs"
+              onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:4/3\'>UI Audit: Before</div>'"
+            />
+          </div>
+          <div class="cs-img">
+            <img
+              src="/assets/design-system-problem-before-4.jpg"
+              alt="UI Audit epigene labs"
+              onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:4/3\'>UI Audit: Before</div>'"
+            />
+          </div>
+        </div>
+        <p class="en">
+          The audit followed the product's only flow, from login to generating
+          the indicators, through building a cohort and defining the rules. The
+          same gaps came back at every step:
+        </p>
+        <p class="fr">
+          L'audit a suivi l'unique parcours du produit, de la connexion à la
+          génération des indicateurs, en passant par la constitution d'une
+          cohorte et la définition des règles. Les mêmes manques revenaient à
+          chaque étape&nbsp;:
+        </p>
+        <ul class="cs-list en">
+          <li>
+            <strong>No landmarks in the flow.</strong> An analysis ran across several
+            steps, with no breadcrumb: no way to know how many steps were left, or
+            to go back.
+          </li>
+          <li>
+            <strong>The main action nowhere to be found.</strong> The "Compute
+            indicator score" button, the very thing the researcher came to do,
+            wasn't visible on the page. Other actions stayed ambiguous: the "load"
+            button and the eye icon led to the same screen, some icons had no
+            label.
+          </li>
+          <li>
+            <strong>No feedback.</strong> Changing a data element changed nothing
+            on screen, with no confirmation the change had registered. Work was
+            lost when leaving the flow, and loading times gave no indication of
+            anything.
+          </li>
+          <li>
+            <strong>No consistency.</strong> Button order and placement varied
+            from one screen to the next, gray meant "selected" in one place and
+            "disabled" in another, and components like the switch or the modal
+            were used against their purpose.
+          </li>
+        </ul>
+        <ul class="cs-list fr">
+          <li>
+            <strong>Aucun repère dans le parcours.</strong> Une analyse se
+            faisait en plusieurs étapes, sans fil d'Ariane : impossible de savoir
+            combien d'étapes restaient, ni de revenir en arrière.
+          </li>
+          <li>
+            <strong>L'action principale introuvable.</strong> Le bouton
+            «&nbsp;Compute indicator score&nbsp;», le geste que le chercheur
+            venait précisément accomplir, n'apparaissait pas sur la page. D'autres
+            actions restaient ambiguës : le bouton «&nbsp;load&nbsp;» et l'icône
+            œil menaient au même écran, certaines icônes n'avaient aucun label.
+          </li>
+          <li>
+            <strong>Pas de feedback.</strong> Modifier une donnée ne changeait
+            rien à l'écran, sans confirmation que le changement avait été pris en
+            compte. On perdait son travail en quittant le parcours, et les temps
+            de chargement n'indiquaient rien.
+          </li>
+          <li>
+            <strong>Aucune cohérence.</strong> L'ordre et la position des boutons
+            variaient d'un écran à l'autre, le gris signalait tantôt
+            «&nbsp;sélectionné&nbsp;» tantôt «&nbsp;désactivé&nbsp;», et des
+            composants comme le switch ou la modale étaient détournés de leur
+            usage.
+          </li>
+        </ul>
+      </section>
+      <section class="cs-section reveal" id="goals">
+        <h2 class="cs-section-title">
+          <span class="en">Goals</span>
+          <span class="fr">Objectifs</span>
+        </h2>
+        <div class="grid-2">
           <p class="cs-section-legend">
             <span class="en">
-              I started with a UI audit, then built the design system
-              foundations before redesigning a single screen.
+              Give the product a coherent foundation, and its users a sense of
+              place.
             </span>
             <span class="fr">
-              J'ai commencé par un audit UI, puis posé les fondations du design
-              system avant de redesigner le moindre écran.
+              Donner au produit une base cohérente, et à ses utilisateurs des
+              repères.
             </span>
           </p>
-          <p class="en">
-            There was no shared visual language: no color system, no spacing
-            scale, no component library. Starting with the interface itself
-            would have produced inconsistency from day one. So I started with
-            the design system.
-          </p>
-          <p class="fr">
-            Il n'existait aucun langage visuel commun : pas de système de
-            couleurs, pas d'échelle d'espacement, pas de bibliothèque de
-            composants. Commencer par l'interface aurait produit de
-            l'incohérence dès le départ. J'ai donc démarré par le design system.
-          </p>
-          <div class="cs-img-wrapper">
+          <div>
+            <ul class="cs-list en">
+              <li>
+                <strong>Orient.</strong> Make every flow legible: where you are,
+                what you can do, what just happened.
+              </li>
+              <li>
+                <strong>Make actions obvious.</strong> Bring primary actions out
+                of hiding, remove the ambiguity.
+              </li>
+              <li>
+                <strong>Establish consistency.</strong> One component, one
+                behavior, everywhere.
+              </li>
+              <li>
+                <strong>Lay reusable foundations.</strong> A visual language to
+                build on, on the design side as much as the code side.
+              </li>
+            </ul>
+            <ul class="cs-list fr">
+              <li>
+                <strong>Orienter.</strong> Rendre chaque parcours lisible : où on
+                est, ce qu'on peut faire, ce qui vient de se passer.
+              </li>
+              <li>
+                <strong>Rendre les actions évidentes.</strong> Sortir les actions
+                principales de l'ombre, lever les ambiguïtés.
+              </li>
+              <li>
+                <strong>Instaurer une cohérence.</strong> Un même composant, un
+                même comportement, partout.
+              </li>
+              <li>
+                <strong>Poser des fondations réutilisables.</strong> Un langage
+                visuel sur lequel construire, côté design comme côté code.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="cs-section reveal" id="approach">
+        <h2 class="cs-section-title">
+          <span class="en">Approach</span>
+          <span class="fr">Approche</span>
+        </h2>
+        <p class="cs-section-legend">
+          <span class="en">
+            Rather than fixing screen by screen, I started by building the
+            language that was missing.
+          </span>
+          <span class="fr">
+            Plutôt que de corriger écran par écran, j'ai commencé par construire
+            le langage qui manquait.
+          </span>
+        </p>
+        <p class="en">
+          There was no shared visual language: no color system, no spacing
+          scale, no component library. Reworking the screens one by one would
+          have reproduced the same inconsistency. So I laid the foundations
+          first: the design system.
+        </p>
+        <p class="fr">
+          Il n'existait aucun langage visuel commun : pas de système de
+          couleurs, pas d'échelle d'espacement, pas de bibliothèque de
+          composants. Reprendre les écrans un à un aurait reproduit la même
+          incohérence. J'ai donc d'abord posé les fondations : le design system.
+        </p>
+        <div class="cs-img-wrapper">
+          <div class="cs-img">
+            <img
+              src="/assets/design-system-preview.jpg"
+              alt="Design System: Core (palette, spacings)"
+              onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Design System: Core</div>'"
+            />
+          </div>
+        </div>
+        <p class="en">
+          Because I code, I implemented it directly in the front-end. Design and
+          code moved together: no file to hand off to a developer, nothing lost
+          in translation, and every decision tested against technical
+          constraints in real time.
+        </p>
+        <p class="fr">
+          Parce que je code, je l'ai implémenté directement en front-end. Design
+          et code avançaient ensemble : aucun fichier à transmettre à un
+          développeur, aucune perte dans la traduction, et chaque décision
+          confrontée aux contraintes techniques en temps réel.
+        </p>
+        <p class="en">
+          The audit had surfaced dozens of one-off problems. Rather than fixing
+          them one by one, I turned each recurring issue into a rule: a defined
+          empty state, a consistent button hierarchy, standardized feedback
+          states. The fixes became components, reusable across the whole product.
+        </p>
+        <p class="fr">
+          L'audit avait relevé des dizaines de problèmes ponctuels. Plutôt que de
+          les corriger un par un, j'ai transformé chaque récurrence en règle :
+          un état vide défini, une hiérarchie de boutons constante, des états de
+          feedback standardisés. Les correctifs devenaient des composants
+          réutilisables sur tout le produit.
+        </p>
+      </section>
+      <section class="cs-section reveal" id="solution">
+        <h2 class="cs-section-title">
+          <span class="en">Solution</span>
+          <span class="fr">Solution</span>
+        </h2>
+        <p class="cs-section-legend">
+          <span class="en">
+            A complete design system, built to scale with the product, shared
+            across design and code, documented in Figma and implemented in the
+            codebase.
+          </span>
+          <span class="fr"
+            >Un design system complet, conçu pour évoluer avec le produit,
+            partagé entre design et code, documenté dans Figma et implémenté
+            dans la codebase.
+          </span>
+        </p>
+        <p class="en">The system covers:</p>
+        <p class="fr">Le système couvre&nbsp;:</p>
+        <ul class="cs-list en">
+          <li>Color palette &amp; tokens</li>
+          <li>Typography scale &amp; text styles</li>
+          <li>Spacing system</li>
+          <li>
+            Component library: alerts, empty states, tabs, modals,
+            multi-criteria filters...
+          </li>
+          <li>Grid &amp; layout patterns</li>
+        </ul>
+        <ul class="cs-list fr">
+          <li>Palette de couleurs &amp; tokens</li>
+          <li>Échelle typographique &amp; text styles</li>
+          <li>Système d'espacement</li>
+          <li>
+            Bibliothèque de composants : alertes, états vides, tabs, modales,
+            filtres multi-critères...
+          </li>
+          <li>Patterns de grille &amp; layout</li>
+        </ul>
+        <p class="en">
+          The redesigned interface applied these foundations across the full
+          product. The guiding principles were clarity, consistency, and trust:
+          every screen should tell you where you are, what you can do, and what
+          just happened. In a domain where interfaces are often overwhelming by
+          default, the goal was to make complexity feel navigable: not hidden,
+          not simplified away, but structured.
+        </p>
+        <p class="fr">
+          Ces fondations ont ensuite guidé la refonte de l'ensemble du produit.
+          Les principes directeurs étaient la clarté, la cohérence et la
+          confiance : chaque écran doit indiquer où vous êtes, ce que vous
+          pouvez faire, et ce qui vient de se passer. Dans un domaine où les
+          interfaces sont souvent surchargées par défaut, l'objectif était de
+          rendre la complexité navigable : non pas cachée ou simplifiée à
+          l'excès, mais structurée.
+        </p>
+        <div class="cs-img-wrapper">
+          <div>
             <div class="cs-img">
               <img
-                src="/assets/design-system-preview.jpg"
-                alt="Design System: Core (palette, spacings)"
-                onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Design System: Core</div>'"
-              />
-            </div>
-          </div>
-          <p class="en">
-            Because I code, I implemented it directly in the front-end. I kept
-            design and code in sync as the product evolved, and could fix UI
-            issues without a handoff bottleneck. Design decisions were tested
-            against technical constraints in real time.
-          </p>
-          <p class="fr">
-            Parce que je code, je l'ai implémenté directement en front-end. J'ai
-            maintenu la cohérence entre design et code au fil de l'évolution du
-            produit, et j'ai pu corriger les problèmes UI sans créer de goulot
-            d'étranglement. Les décisions de design étaient confrontées aux
-            contraintes techniques en temps réel.
-          </p>
-          <p class="en">
-            Density was the hardest problem. mCUBE is data-heavy by nature, and
-            removing information wasn't an option. The work was ranking it:
-            anchoring primary actions so they stayed reachable through long
-            workflows, pushing contextual data into secondary layers, giving
-            every screen a clear entry point. That meant reworking layouts,
-            scroll behavior, and the placement of key actions at each step.
-          </p>
-          <p class="fr">
-            La densité était le problème le plus difficile. mCUBE est dense par
-            nature, et supprimer de l'information n'était pas une option. Le
-            travail consistait à la hiérarchiser : ancrer les actions
-            principales pour qu'elles restent accessibles tout au long de
-            workflows longs, déplacer les données contextuelles vers des niveaux
-            secondaires, donner à chaque écran un point d'entrée clair. Cela a
-            impliqué de revoir les mises en page, le comportement au défilement,
-            et le placement des actions clés à chaque étape.
-          </p>
-        </section>
-        <section class="cs-section reveal" id="solution">
-          <h2 class="cs-section-title">
-            <span class="en">Solution</span>
-            <span class="fr">Solution</span>
-          </h2>
-          <p class="cs-section-legend">
-            <span class="en">
-              A complete design system, built to scale with the product, shared
-              across design and code, documented in Figma and implemented in the
-              codebase.
-            </span>
-            <span class="fr"
-              >Un design system complet, conçu pour évoluer avec le produit,
-              partagé entre design et code, documenté dans Figma et implémenté
-              dans la codebase.
-            </span>
-          </p>
-          <p class="en">The system covers:</p>
-          <p class="fr">Le système couvre&nbsp;:</p>
-          <ul class="cs-list en">
-            <li>Color palette &amp; tokens</li>
-            <li>Typography scale &amp; text styles</li>
-            <li>Spacing system</li>
-            <li>
-              Component library: alerts, empty states, tabs, modals,
-              multi-criteria filters...
-            </li>
-            <li>Grid &amp; layout patterns</li>
-          </ul>
-          <ul class="cs-list fr">
-            <li>Palette de couleurs &amp; tokens</li>
-            <li>Échelle typographique &amp; text styles</li>
-            <li>Système d'espacement</li>
-            <li>
-              Bibliothèque de composants : alertes, états vides, tabs, modales,
-              filtres multi-critères...
-            </li>
-            <li>Patterns de grille &amp; layout</li>
-          </ul>
-          <p class="en">
-            The redesigned interface applied these foundations across the full
-            product. The guiding principles were clarity, consistency, and
-            trust: every screen should tell you where you are, what you can do,
-            and what just happened. In a domain where interfaces are often
-            overwhelming by default, the goal was to make complexity feel
-            navigable: not hidden, not simplified away, but structured.
-          </p>
-          <p class="fr">
-            Ces fondations ont ensuite guidé la refonte de l'ensemble du
-            produit. Les principes directeurs étaient la clarté, la cohérence et
-            la confiance : chaque écran doit indiquer où vous êtes, ce que vous
-            pouvez faire, et ce qui vient de se passer. Dans un domaine où les
-            interfaces sont souvent surchargée par défaut, l'objectif était de
-            rendre la complexité navigable : non pas cachée ou simplifiée à
-            l'excès, mais structurée.
-          </p>
-          <div class="cs-img-wrapper">
-            <div>
-              <div class="cs-img">
-                <img
-                  src="/assets/design-system-solution-1.jpg"
-                  alt="Redesign Epigene Labs: Analysis list"
-                  onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Redesign Epigene Labs: Analysis list</div>'"
-                />
-              </div>
-              <p class="cs-img-legend">
-                <span class="en">Analysis list: empty state</span>
-                <span class="fr">Liste des analyses : état vide</span>
-              </p>
-            </div>
-          </div>
-          <div class="cs-img-wrapper">
-            <div class="cs-img">
-              <img
-                src="/assets/design-system-solution-2.jpg"
-                alt="Redesign Epigene Labs: Cohort selection"
-                onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Redesign Epigene Labs: Cohort selection</div>'"
+                src="/assets/design-system-solution-1.jpg"
+                alt="Redesign Epigene Labs: Analysis list"
+                onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Redesign Epigene Labs: Analysis list</div>'"
               />
             </div>
             <p class="cs-img-legend">
-              <span class="en">Cohort selection for a new analysis</span>
-              <span class="fr"
-                >Sélection de la cohorte pour une nouvelle analyse</span
-              >
+              <span class="en">Analysis list: empty state</span>
+              <span class="fr">Liste des analyses : état vide</span>
             </p>
           </div>
-        </section>
-        <section class="cs-section reveal" id="impact">
-          <h2 class="cs-section-title">
-            <span class="en">Impact</span>
-            <span class="fr">Impact</span>
-          </h2>
-          <p class="en">
-            <strong>The product's first design system.</strong> Engineering already
-            maintained components in the codebase, but with no design rules behind
-            them: no tokens, no hierarchy, no consistency from one screen to the next.
-            The design system gave that existing layer structure: centralized variables,
-            documented components, patterns defined in Figma and implemented in code.
-            Features built afterwards start from that base instead of adding to the
-            technical debt.
-          </p>
-          <p class="fr">
-            <strong>Le premier design system du produit.</strong> L'engineering maintenait
-            déjà des composants dans la codebase, mais sans règles de design derrière
-            : pas de tokens, pas de hiérarchie, aucune cohérence d'un écran à l'autre.
-            Le design system a donné une logique à cette couche existante : variables
-            centralisées, composants documentés, patterns définis en Figma et implémentés
-            en code. Les features suivantes partent de cette base au lieu d'alimenter
-            la dette.
-          </p>
-          <p class="en">
-            <strong>The first user interviews.</strong> No user testing had ever been
-            done at Epigene. Once the design system and the redesigned interfaces
-            shipped, I proposed and ran a series of user interviews. Three themes
-            came back consistently: clarity, consistency, ease of use.
-          </p>
-          <p class="fr">
-            <strong>Les premiers retours utilisateurs.</strong> Aucun test utilisateur
-            n'avait été mené chez Epigene. Après la mise en place du design system
-            et des nouvelles interfaces, proposition et conduite d'une série d'interviews
-            utilisateurs. Trois retours reviennent systématiquement : la clarté, la
-            cohérence, la facilité d'utilisation.
-          </p>
-
-          <div class="cs-pullquote">
-            <p class="en">
-              “The feedback we kept hearing, both from the client and
-              internally: the clarity of the interface, the fact that it wasn't
-              overwhelming. In healthcare, design is often neglected, which
-              makes data-dense interfaces hard to use. On mCUBE, it became a
-              differentiator.”
-            </p>
-            <p class="fr">
-              “&nbsp;Le retour qui revenait, autant côté client qu'en
-              interne&nbsp;: la clarté de l'interface, le fait que ce ne soit
-              pas surchargé. Dans la santé, le design est souvent négligé, ce
-              qui rend les interfaces data-denses très complexes à utiliser. Sur
-              mCUBE, c'est devenu un point différenciant.&nbsp;”
-            </p>
+        </div>
+        <div class="cs-img-wrapper">
+          <div class="cs-img">
+            <img
+              src="/assets/design-system-solution-2.jpg"
+              alt="Redesign Epigene Labs: Cohort selection"
+              onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Redesign Epigene Labs: Cohort selection</div>'"
+            />
           </div>
-          <p class="en">
-            From that point, "user-friendly" entered the business language. In
-            December 2025, as Epigene Labs announced reaching 2 million cancer
-            omics profiles, their official communications listed <em
-              >"streamlined exploration through the company's user-friendly web
-              app"</em
-            > alongside cloud architecture and data coverage as a core value proposition
-            in a pitch aimed at leading biopharma organizations.
+          <p class="cs-img-legend">
+            <span class="en">Cohort selection for a new analysis</span>
+            <span class="fr"
+              >Sélection de la cohorte pour une nouvelle analyse</span
+            >
           </p>
-          <p class="fr">
-            À partir de là, «&nbsp;user-friendly&nbsp;» est entré dans le
-            langage commercial. En décembre 2025, lorsqu'Epigene Labs a annoncé
-            avoir atteint 2 millions de profils omiques en oncologie, ses
-            communications officielles mentionnaient <em
-              >«&nbsp;une exploration simplifiée via la web app user-friendly de
-              la société&nbsp;»</em
-            > aux côtés de l'architecture cloud et de la couverture data, dans un
-            pitch destiné aux grandes organisations biopharma.
-          </p>
-        </section>
-      </main>
-      <aside class="cs-sidebar">
-        <nav class="cs-sidebar-nav">
-          <a href="#context">
-            <span class="en">Context</span>
-            <span class="fr">Contexte</span>
-          </a>
-          <a href="#problem">
-            <span class="en">Problem</span>
-            <span class="fr">Problème</span>
-          </a>
-          <a href="#approach">
-            <span class="en">Approach</span>
-            <span class="fr">Approche</span>
-          </a>
-          <a href="#solution">Solution</a>
-          <a href="#impact">Impact</a>
-        </nav>
-      </aside>
-    </div>
+        </div>
+      </section>
+      <section class="cs-section reveal" id="impact">
+        <h2 class="cs-section-title">
+          <span class="en">Impact</span>
+          <span class="fr">Impact</span>
+        </h2>
+        <p class="en">
+          <strong>The product's first design system.</strong> Engineering already
+          maintained components in the codebase, but with no design rules behind them:
+          no tokens, no hierarchy, no consistency from one screen to the next. The
+          design system gave that existing layer structure: centralized variables,
+          documented components, patterns defined in Figma and implemented in code.
+          Features built afterwards start from that base instead of adding to the
+          technical debt.
+        </p>
+        <p class="fr">
+          <strong>Le premier design system du produit.</strong> L'engineering maintenait
+          déjà des composants dans la codebase, mais sans règles de design derrière
+          : pas de tokens, pas de hiérarchie, aucune cohérence d'un écran à l'autre.
+          Le design system a donné une logique à cette couche existante : variables
+          centralisées, composants documentés, patterns définis en Figma et implémentés
+          en code. Les features suivantes partent de cette base au lieu d'alimenter
+          la dette technique.
+        </p>
+        <p class="en">
+          <strong>The first user interviews.</strong> No user testing had ever been
+          done at Epigene. Once the design system and the redesigned interfaces shipped,
+          I proposed and ran a series of user interviews. Three themes came back consistently:
+          clarity, consistency, ease of use.
+        </p>
+        <p class="fr">
+          <strong>Les premiers retours utilisateurs.</strong> Aucun test utilisateur
+          n'avait été mené chez Epigene. Après la mise en place du design system et
+          des nouvelles interfaces, proposition et conduite d'une série d'interviews
+          utilisateurs. Trois retours sont revenus systématiquement : la clarté,
+          la cohérence, la facilité d'utilisation.
+        </p>
+        <p class="en">
+          From that point, "user-friendly" entered the business language. In
+          December 2025, as Epigene Labs announced reaching 2 million cancer
+          omics profiles, their official communications listed <em
+            >"streamlined exploration through the company's user-friendly web
+            app"</em
+          > alongside cloud architecture and data coverage as a core value proposition
+          in a pitch aimed at leading biopharma organizations.
+        </p>
+        <p class="fr">
+          À partir de là, «&nbsp;user-friendly&nbsp;» est entré dans le langage
+          commercial. En décembre 2025, lorsqu'Epigene Labs a annoncé avoir
+          atteint 2 millions de profils omiques en oncologie, ses communications
+          officielles mentionnaient <em
+            >«&nbsp;une exploration simplifiée via la web app user-friendly de
+            la société&nbsp;»</em
+          > aux côtés de l'architecture cloud et de la couverture data, dans un pitch
+          destiné aux grandes organisations biopharma.
+        </p>
+      </section>
+    </main>
   </div>
 </Layout>
