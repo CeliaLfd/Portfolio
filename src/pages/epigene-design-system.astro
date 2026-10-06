@@ -19,7 +19,7 @@ import Layout from "../layouts/Layout.astro";
         <span class="en">Core Redesign & Design System</span>
         <span class="fr">Refonte & Design System</span>
       </h1>
-      <p class="cs-page-company reveal">Epigene Labs &middot; 2022</p>
+      <p class="cs-page-company reveal">Epigene Labs &middot; 2022 – 2026</p>
 
       <div class="cs-hero-image reveal">
         <img
@@ -84,9 +84,13 @@ import Layout from "../layouts/Layout.astro";
               </div>
               <div class="cs-summary-item">
                 <p class="cs-summary-value">
-                  <span class="en">1 designer (me!) ∙ 1 engineer (me!)</span>
+                  <span class="en"
+                    >1 product designer & front-end engineer (me) ∙ VP & CTO as
+                    stakeholders</span
+                  >
                   <span class="fr"
-                    >1 designeuse (moi!) ∙ 1 développeuse (moi!)</span
+                    >1 designeuse & front-end développeuse (moi) ∙ VP & CTO
+                    comme parties prenantes</span
                   >
                 </p>
                 <span class="cs-summary-detail-label">
@@ -188,19 +192,20 @@ import Layout from "../layouts/Layout.astro";
               oncology.
             </span>
             <span class="fr">
-              Epigene Labs est une entreprise biotech spécialisée en oncologie de
-              précision.
+              Epigene Labs est une entreprise biotech spécialisée en oncologie
+              de précision.
             </span>
           </p>
           <div>
             <p class="en">
               Its product, mCUBE, is a genomic data analysis platform for
               oncology researchers. In practice, mCUBE lets a researcher run an
-              analysis on transcriptomic data: build a cohort, define rules, then
-              generate indicators. In 2022, the product was in its early days. A
-              single type of analysis, one client, a handful of users. The code
-              was clean and well-architected, but the product remained visually
-              immature, built by engineers without a designer ever stepping in.
+              analysis on transcriptomic data: build a cohort, define rules,
+              then generate indicators. In 2022, the product was in its early
+              days. A single type of analysis, one client, a handful of users.
+              The code was clean and well-architected, but the product remained
+              visually immature, built by engineers without a designer ever
+              stepping in.
             </p>
             <p class="fr">
               Son produit, mCUBE, est une plateforme d'analyse de données
@@ -208,10 +213,10 @@ import Layout from "../layouts/Layout.astro";
               permet à un chercheur de mener une analyse sur des données
               transcriptomiques : constituer une cohorte, définir des règles,
               puis générer des indicateurs. En 2022, le produit en était à ses
-              débuts. Un seul type d'analyse possible, un seul client, une poignée
-              d'utilisateurs. Le code était propre et bien architecturé, mais le
-              produit restait visuellement immature, construit par des ingénieurs
-              sans qu'aucun designer n'y soit jamais passé.
+              débuts. Un seul type d'analyse possible, un seul client, une
+              poignée d'utilisateurs. Le code était propre et bien architecturé,
+              mais le produit restait visuellement immature, construit par des
+              ingénieurs sans qu'aucun designer n'y soit jamais passé.
             </p>
           </div>
         </div>
@@ -224,7 +229,8 @@ import Layout from "../layouts/Layout.astro";
         <div class="grid-2">
           <p class="cs-section-legend">
             <span class="en">
-              My first week began with an audit of the product, screen by screen.
+              My first week began with an audit of the product, screen by
+              screen.
             </span>
             <span class="fr">
               Ma première semaine a commencé par un audit du produit, écran par
@@ -233,15 +239,15 @@ import Layout from "../layouts/Layout.astro";
           </p>
           <div>
             <p class="en">
-              I joined Epigene Labs in February 2022 as a Front-end Engineer. One
-              or two days going through every screen. I presented it to the VP and
-              CTO, and got the green light to lead a full redesign.
+              I joined Epigene Labs in February 2022 as a Front-end Engineer.
+              One or two days going through every screen. I presented it to the
+              VP and CTO, and got the green light to lead a full redesign.
             </p>
             <p class="fr">
-              J'ai rejoint Epigene Labs en février 2022 comme Front-end Engineer.
-              Un ou deux jours à passer chaque écran au crible. Je l'ai présenté
-              au VP et au CTO, et j'ai obtenu le feu vert pour piloter une refonte
-              complète.
+              J'ai rejoint Epigene Labs en février 2022 comme Front-end
+              Engineer. Un ou deux jours à passer chaque écran au crible. Je
+              l'ai présenté au VP et au CTO, et j'ai obtenu le feu vert pour
+              piloter une refonte complète.
             </p>
           </div>
         </div>
@@ -307,50 +313,47 @@ import Layout from "../layouts/Layout.astro";
             to go back.
           </li>
           <li>
-            <strong>The main action nowhere to be found.</strong> The "Compute
-            indicator score" button, the very thing the researcher came to do,
-            wasn't visible on the page. Other actions stayed ambiguous: the "load"
-            button and the eye icon led to the same screen, some icons had no
-            label.
+            <strong>The main action nowhere to be found.</strong> The "Compute indicator
+            score" button, the very thing the researcher came to do, wasn't visible
+            on the page. Other actions stayed ambiguous: the "load" button and the
+            eye icon led to the same screen, some icons had no label.
           </li>
           <li>
             <strong>No feedback.</strong> Changing a data element changed nothing
-            on screen, with no confirmation the change had registered. Work was
-            lost when leaving the flow, and loading times gave no indication of
-            anything.
+            on screen, with no confirmation the change had registered. Work was lost
+            when leaving the flow, and loading times gave no indication of anything.
           </li>
           <li>
-            <strong>No consistency.</strong> Button order and placement varied
-            from one screen to the next, gray meant "selected" in one place and
-            "disabled" in another, and components like the switch or the modal
-            were used against their purpose.
+            <strong>No consistency.</strong> Button order and placement varied from
+            one screen to the next, gray meant "selected" in one place and "disabled"
+            in another, and components like the switch or the modal were used against
+            their purpose.
           </li>
         </ul>
         <ul class="cs-list fr">
           <li>
-            <strong>Aucun repère dans le parcours.</strong> Une analyse se
-            faisait en plusieurs étapes, sans fil d'Ariane : impossible de savoir
-            combien d'étapes restaient, ni de revenir en arrière.
+            <strong>Aucun repère dans le parcours.</strong> Une analyse se faisait
+            en plusieurs étapes, sans fil d'Ariane : impossible de savoir combien
+            d'étapes restaient, ni de revenir en arrière.
           </li>
           <li>
-            <strong>L'action principale introuvable.</strong> Le bouton
-            «&nbsp;Compute indicator score&nbsp;», le geste que le chercheur
-            venait précisément accomplir, n'apparaissait pas sur la page. D'autres
-            actions restaient ambiguës : le bouton «&nbsp;load&nbsp;» et l'icône
-            œil menaient au même écran, certaines icônes n'avaient aucun label.
+            <strong>L'action principale introuvable.</strong> Le bouton «&nbsp;Compute
+            indicator score&nbsp;», le geste que le chercheur venait précisément accomplir,
+            n'apparaissait pas sur la page. D'autres actions restaient ambiguës :
+            le bouton «&nbsp;load&nbsp;» et l'icône œil menaient au même écran, certaines
+            icônes n'avaient aucun label.
           </li>
           <li>
-            <strong>Pas de feedback.</strong> Modifier une donnée ne changeait
-            rien à l'écran, sans confirmation que le changement avait été pris en
-            compte. On perdait son travail en quittant le parcours, et les temps
-            de chargement n'indiquaient rien.
+            <strong>Pas de feedback.</strong> Modifier une donnée ne changeait rien
+            à l'écran, sans confirmation que le changement avait été pris en compte.
+            On perdait son travail en quittant le parcours, et les temps de chargement
+            n'indiquaient rien.
           </li>
           <li>
             <strong>Aucune cohérence.</strong> L'ordre et la position des boutons
-            variaient d'un écran à l'autre, le gris signalait tantôt
-            «&nbsp;sélectionné&nbsp;» tantôt «&nbsp;désactivé&nbsp;», et des
-            composants comme le switch ou la modale étaient détournés de leur
-            usage.
+            variaient d'un écran à l'autre, le gris signalait tantôt «&nbsp;sélectionné&nbsp;»
+            tantôt «&nbsp;désactivé&nbsp;», et des composants comme le switch ou la
+            modale étaient détournés de leur usage.
           </li>
         </ul>
       </section>
@@ -373,20 +376,20 @@ import Layout from "../layouts/Layout.astro";
           <div>
             <ul class="cs-list en">
               <li>
-                <strong>Orient.</strong> Make every flow legible: where you are,
-                what you can do, what just happened.
+                <strong>Orient.</strong> Make every flow legible: where you are, what
+                you can do, what just happened.
               </li>
               <li>
-                <strong>Make actions obvious.</strong> Bring primary actions out
-                of hiding, remove the ambiguity.
+                <strong>Make actions obvious.</strong> Bring primary actions out of
+                hiding, remove the ambiguity.
               </li>
               <li>
-                <strong>Establish consistency.</strong> One component, one
-                behavior, everywhere.
+                <strong>Establish consistency.</strong> One component, one behavior,
+                everywhere.
               </li>
               <li>
-                <strong>Lay reusable foundations.</strong> A visual language to
-                build on, on the design side as much as the code side.
+                <strong>Lay reusable foundations.</strong> A visual language to build
+                on, on the design side as much as the code side.
               </li>
             </ul>
             <ul class="cs-list fr">
@@ -399,12 +402,12 @@ import Layout from "../layouts/Layout.astro";
                 principales de l'ombre, lever les ambiguïtés.
               </li>
               <li>
-                <strong>Instaurer une cohérence.</strong> Un même composant, un
-                même comportement, partout.
+                <strong>Instaurer une cohérence.</strong> Un même composant, un même
+                comportement, partout.
               </li>
               <li>
-                <strong>Poser des fondations réutilisables.</strong> Un langage
-                visuel sur lequel construire, côté design comme côté code.
+                <strong>Poser des fondations réutilisables.</strong> Un langage visuel
+                sur lequel construire, côté design comme côté code.
               </li>
             </ul>
           </div>
@@ -462,14 +465,26 @@ import Layout from "../layouts/Layout.astro";
           The audit had surfaced dozens of one-off problems. Rather than fixing
           them one by one, I turned each recurring issue into a rule: a defined
           empty state, a consistent button hierarchy, standardized feedback
-          states. The fixes became components, reusable across the whole product.
+          states. The fixes became components, reusable across the whole
+          product.
         </p>
         <p class="fr">
-          L'audit avait relevé des dizaines de problèmes ponctuels. Plutôt que de
-          les corriger un par un, j'ai transformé chaque récurrence en règle :
-          un état vide défini, une hiérarchie de boutons constante, des états de
-          feedback standardisés. Les correctifs devenaient des composants
+          L'audit avait relevé des dizaines de problèmes ponctuels. Plutôt que
+          de les corriger un par un, j'ai transformé chaque récurrence en règle
+          : un état vide défini, une hiérarchie de boutons constante, des états
+          de feedback standardisés. Les correctifs devenaient des composants
           réutilisables sur tout le produit.
+        </p>
+        <p class="en">
+          In 2022, there was no PM and no direct access to users. My decisions
+          were based on the audit and on UX best practices. That's why, as soon
+          as a PM joined, introducing user testing became my next priority.
+        </p>
+        <p class="fr">
+          En 2022, il n'y avait ni PM ni accès direct aux utilisateurs. Mes
+          décisions s'appuyaient sur l'audit et sur les bonnes pratiques UX.
+          C'est pourquoi, dès l'arrivée d'un PM, introduire des tests
+          utilisateurs est devenu ma priorité suivante.
         </p>
       </section>
       <section class="cs-section reveal" id="solution">
@@ -592,8 +607,8 @@ import Layout from "../layouts/Layout.astro";
           <strong>Les premiers retours utilisateurs.</strong> Aucun test utilisateur
           n'avait été mené chez Epigene. Après la mise en place du design system et
           des nouvelles interfaces, proposition et conduite d'une série d'interviews
-          utilisateurs. Trois retours sont revenus systématiquement : la clarté,
-          la cohérence, la facilité d'utilisation.
+          utilisateurs. Trois retours sont revenus systématiquement : la clarté, la
+          cohérence, la facilité d'utilisation.
         </p>
         <p class="en">
           From that point, "user-friendly" entered the business language. In
