@@ -377,11 +377,9 @@
 
 .cs-subsection-grid {
   align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
   flex-direction: row;
 }
-
-
 
 .cs-subsection-label {
   display: block;
@@ -408,7 +406,7 @@
   display: grid;
   align-items: baseline;
   column-gap: var(--s5);
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
 }
 
 
