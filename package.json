@@ -9,5 +9,9 @@
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
     "astro": "^4.16.0"
+  },
+  "allowScripts": {
+    "esbuild@0.21.5": true,
+    "sharp@0.33.5": true
   }
 }
