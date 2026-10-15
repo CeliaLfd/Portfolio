@@ -1,4 +1,6 @@
 @import './global.css';
+@import './grid.css';
+@import './text.css';
 @import './header.css';
 @import './footer.css';
 @import './case-study.css';
