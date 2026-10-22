@@ -1,6 +1,9 @@
 @import './global.css';
 @import './grid.css';
 @import './text.css';
+@import './hero.css';
 @import './header.css';
 @import './footer.css';
+@import './case-study-card.css';
 @import './case-study.css';
+@import './before-after.css';

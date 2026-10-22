@@ -1,0 +1,61 @@
+/* ============================================
+   CASE STUDY — BEFORE / AFTER SLIDER
+============================================ */
+
+.cs-ba-stage {
+  position: relative;
+  display: flex;
+  gap: var(--s0);
+  aspect-ratio: 16 / 9;
+  user-select: none;
+  cursor: ew-resize;
+  touch-action: none;
+}
+
+.cs-ba-pane {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  min-width: 0;
+}
+
+.cs-ba-before {
+  width: 50%;
+  flex: none;
+}
+
+.cs-ba-after {
+  flex: 1;
+}
+
+.cs-ba-pane img {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: auto;
+  max-width: none;
+  display: block;
+}
+
+.cs-ba-before img { left: 0; }
+.cs-ba-after img { right: 0; }
+
+.cs-ba-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: var(--fs-12);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2px 8px;
+  z-index: 2;
+}
+
+.cs-ba-tag-after {
+  left: auto;
+  right: 10px;
+}

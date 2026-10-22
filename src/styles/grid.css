@@ -5,6 +5,28 @@
   row-gap: var(--s2);
 }
 
+/* 2 columns, 2fr / 3fr ratio — stacks below 720px */
+.grid-2-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: var(--s5);
+  row-gap: var(--s2);
+}
+
+@media (min-width: 720px) {
+  .grid-2-3 {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  }
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.items-center {
+  align-items: center;
+}
+
 /* Gap utilities — based on spacing tokens (--s0 → --s9) */
 .gap-none { gap: 0; }
 .gap-0 { gap: var(--s0); }

@@ -62,6 +62,26 @@ function initReveal() {
 }
 
 /* ============================================
+   PLAY VIDEO ONCE WHEN VISIBLE
+============================================ */
+
+function initPlayOnView() {
+  const videos = document.querySelectorAll('video[data-play-on-view]');
+  if (!videos.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.play().catch(() => {});
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  videos.forEach(video => observer.observe(video));
+}
+
+/* ============================================
    IMAGE LIGHTBOX
 ============================================ */
 
@@ -125,33 +145,28 @@ function initCardCursor() {
 }
 
 /* ============================================
-   SIDEBAR ACTIVE STATE
+   BEFORE / AFTER SLIDER
 ============================================ */
 
-function initSidebar() {
-  const nav = document.querySelector('.cs-sidebar-nav');
-  if (!nav) return;
+function initBeforeAfter() {
+  document.querySelectorAll('[data-ba]').forEach(ba => {
+    const stage  = ba.querySelector('.cs-ba-stage');
+    const before = ba.querySelector('[data-ba-before]');
+    if (!stage || !before) return;
 
-  const links = Array.from(nav.querySelectorAll('a'));
-  const sectionIds = links.map(a => a.getAttribute('href').replace('#', ''));
-  const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+    function setPct(pct) {
+      pct = Math.max(6, Math.min(94, pct));
+      before.style.width = pct + '%';
+    }
 
-  if (!sections.length) return;
+    function onMove(e) {
+      const rect = stage.getBoundingClientRect();
+      setPct((e.clientX - rect.left) / rect.width * 100);
+    }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.id;
-        links.forEach(link => {
-          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
-        });
-      }
-    });
-  }, {
-    rootMargin: '-20% 0px -70% 0px'
+    stage.addEventListener('pointermove', onMove);
+    setPct(50);
   });
-
-  sections.forEach(s => observer.observe(s));
 }
 
 /* ============================================
@@ -162,7 +177,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initLang();
   initReveal();
-  initSidebar();
+  initPlayOnView();
   initCardCursor();
   initLightbox();
+  initBeforeAfter();
 });

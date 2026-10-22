@@ -1,0 +1,83 @@
+/* ============================================
+   HOMEPAGE — CASE STUDY GRID
+============================================ */
+
+.cs-grid-section {
+  padding-bottom: var(--s7);
+}
+
+.cs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s4);
+}
+
+@media (min-width: 980px) {
+  .cs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--s3);
+  }
+}
+
+.cs-card { display: block; cursor: none; }
+
+.cs-card .cs-card-image img {
+  transition: all 0.1s ease-out;
+}
+
+.cs-card:hover .cs-card-image img {
+  transform: scale(1.05);
+}
+
+.cs-cursor-label {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background: var(--accent);
+  border-radius: 100px;
+  padding: calc(var(--s0) + 1px) var(--s2) var(--s0);
+  font-size: var(--fs-12);
+  font-weight: 500;
+  text-transform: uppercase;
+  color: white;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.85);
+  transition: opacity 0.1s, transform 0.1s;
+  z-index: 9999;
+  box-shadow: 2px 1px 8px 0px rgba(0,0,0, 0.2);
+}
+
+.cs-cursor-label.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.cs-cursor-label.visible.pressed {
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+.cs-card-info { 
+  display: flex; 
+  flex-direction: row; 
+  flex-wrap: wrap; 
+  align-items: baseline; 
+  justify-content: space-between; 
+}
+
+.cs-card-title {
+  font-size: var(--fs-18);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 4px;
+  transition: color 0.15s;
+}
+
+
+
+.cs-card-meta {
+  font-size: var(--fs-14);
+  color: var(--muted);
+}

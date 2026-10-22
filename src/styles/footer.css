@@ -37,7 +37,7 @@
   border: none;
   cursor: pointer;
   padding: 4px 8px;
-  font-size: 0.8125rem;
+  font-size: var(--fs-14);
   font-weight: 500;
   letter-spacing: 0.05em;
   color: var(--muted);

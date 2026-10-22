@@ -18,7 +18,7 @@
 
 .site-logo {
   font-family: var(--display);
-  font-size: 1.25rem;
+  font-size: var(--fs-18);
   font-weight: 400;
   color: var(--ink);
   letter-spacing: 0.02em;
@@ -41,7 +41,7 @@
 }
 
 .site-nav a:hover,
-.site-nav a.active { color: var(--ink); }
+.site-nav a.active { color: var(--accent); }
 
 .lang-toggle { justify-self: end; }
 
@@ -56,7 +56,7 @@
   border: none;
   cursor: pointer;
   padding: 4px 8px;
-  font-size: 0.8125rem;
+  font-size: var(--fs-12);
   font-weight: 500;
   letter-spacing: 0.05em;
   color: var(--muted);
@@ -67,7 +67,7 @@
 .lang-toggle button.active { color: var(--ink); font-weight: 600; }
 
 .lang-sep {
-  font-size: 0.8125rem;
+  font-size: var(--fs-12);
   color: var(--border);
   user-select: none;
 }
