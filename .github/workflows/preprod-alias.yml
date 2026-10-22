@@ -1,0 +1,27 @@
+# Keeps https://portfolio-celia-preprod-main.vercel.app pointed at the latest
+# successful Vercel build of main. Production is only updated by a manual
+# "Promote" in the Vercel dashboard.
+name: Update preprod alias
+
+on: deployment_status
+
+jobs:
+  alias:
+    if: >-
+      github.event.deployment_status.state == 'success' &&
+      github.event.deployment.environment == 'Production'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Point preprod alias to the new deployment
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          DEPLOYMENT_URL: ${{ github.event.deployment_status.environment_url || github.event.deployment_status.target_url }}
+          TEAM_ID: team_CFGfyW0rUoeZDmQwqP4lqtoA
+          ALIAS: portfolio-celia-preprod-main.vercel.app
+        run: |
+          host="${DEPLOYMENT_URL#https://}"
+          id=$(curl -sS --fail-with-body -H "Authorization: Bearer $VERCEL_TOKEN" \
+            "https://api.vercel.com/v13/deployments/$host?teamId=$TEAM_ID" | jq -r .id)
+          curl -sS --fail-with-body -X POST -H "Authorization: Bearer $VERCEL_TOKEN" -H "Content-Type: application/json" \
+            -d "{\"alias\":\"$ALIAS\"}" \
+            "https://api.vercel.com/v2/deployments/$id/aliases?teamId=$TEAM_ID"
