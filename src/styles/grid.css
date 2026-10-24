@@ -1,11 +1,10 @@
 .grid-2 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr));
   column-gap: var(--s5);
   row-gap: var(--s2);
 }
 
-/* 2 columns, 2fr / 3fr ratio — stacks below 720px */
 .grid-2-3 {
   display: grid;
   grid-template-columns: 1fr;
@@ -13,7 +12,7 @@
   row-gap: var(--s2);
 }
 
-@media (min-width: 720px) {
+@media (min-width: 820px) {
   .grid-2-3 {
     grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
   }

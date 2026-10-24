@@ -22,9 +22,17 @@
 ============================================ */
 
 .cs-main {
+  display: flex;
+  flex-direction: column;
   max-width: var(--content);
   margin-left: auto;
   margin-right: auto;
+  gap: var(--s6);
+}
+@media (min-width: 720px) {
+  .cs-main {
+    gap: calc(var(--s6) * 2);
+  }
 }
 
 .cs-back {
@@ -57,6 +65,7 @@
   letter-spacing: -0.06em;
   margin:0 auto  var(--s2) auto;
   text-align: center;
+  text-wrap: balance;
   width: 95%;
 }
 
@@ -88,7 +97,6 @@
   background: var(--bg-image);
   border-radius: var(--radius);
   overflow: hidden;
-  margin-bottom: var(--s1);
 }
 
 .cs-hero-image img {
@@ -181,11 +189,7 @@
    CASE STUDY — CONTENT SECTIONS
 ============================================ */
 
-.cs-section {
-  padding-top: var(--s6);
-  margin-top: var(--s6);
 
-}
 
 @media (min-width: 980px) {
   .cs-section {
@@ -201,11 +205,6 @@
   }
 }
 
-.cs-section:first-of-type {
-  margin-top: 0;
-  padding-top: 0;
-}
-
 .cs-section-content {
   display: flex;
   flex-direction: column;
@@ -218,6 +217,7 @@
   letter-spacing: 0.06em;
   color: var(--accent);
   font-weight: 450;
+  margin-bottom: var(--s2);
 }
 
 
@@ -231,9 +231,6 @@
   color: var(--ink);
 }
 
-.cs-list {
-  margin-bottom: var(--s3);
-}
 
 .cs-list li:not(:last-child) {
   margin-bottom: var(--s2);
@@ -409,7 +406,7 @@
 
 /* 750px = --bp-mobile */
 @media (min-width: 750px) {
-.cs-img img { cursor: zoom-in; }
+  .cs-img img { cursor: zoom-in; }
 }
 
 /* ============================================

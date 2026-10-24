@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout
   title="Data Explorer Redesign | Epigene Labs | Célia Lafond"
-  description="How I redesigned the Data Explorer at Epigene Labs to surface 50,000+ datasets and align the interface with a new data strategy."
+  description="How I redesigned the Data Explorer at Epigene Labs to surface 20,000+ datasets and align the interface with a new data strategy."
 >
   <div class="cs-page">
     <div class="cs-page-hero">
@@ -16,8 +16,14 @@ import Layout from "../layouts/Layout.astro";
         <span class="fr">Projets</span>
       </a>
       <h1 class="cs-page-title reveal">
-        <span class="en">Data Explorer</span>
-        <span class="fr">Data Explorer</span>
+        <span class="en"
+          >Redesigning the Data Explorer to handle 10× more datasets, from 2,000
+          to 20,000+</span
+        >
+        <span class="fr"
+          >Repenser le Data Explorer pour accueillir 10 fois plus de datasets,
+          de 2&nbsp;000 à plus de 20&nbsp;000</span
+        >
       </h1>
       <p class="cs-page-company reveal">Epigene Labs &middot; 2025</p>
       <div class="cs-hero-image reveal">
@@ -52,9 +58,9 @@ import Layout from "../layouts/Layout.astro";
                 evaluate omic datasets.</span
               >
               <span class="fr"
-                >mCUBE est une plateforme de précision oncologie. Elle rassemble
-                des données omiques en oncologie dans une ressource unifiée,
-                offrant aux équipes R&D une lecture fine de la biologie
+                >mCUBE est une plateforme d'oncologie de précision. Elle
+                rassemble des données omiques en oncologie dans une ressource
+                unifiée, offrant aux équipes R&D une lecture fine de la biologie
                 tumorale. Le Data Explorer est la porte d'entrée de mCUBE :
                 l'espace où les chercheurs explorent, filtrent et évaluent les
                 datasets omiques.</span
@@ -88,17 +94,38 @@ import Layout from "../layouts/Layout.astro";
               <div class="cs-summary-item">
                 <p class="cs-summary-value">
                   <span class="en"
-                    >1 PM ∙ 1 designer ∙ 2 front-end engineers ∙ 1 back-end
-                    engineer ∙ 3 domain experts</span
+                    >1 PM ∙ 1 designer (me) ∙ 2 front-end engineers (incl. me) ∙
+                    1 back-end engineer ∙ 3 domain experts</span
                   >
                   <span class="fr"
-                    >1 PM ∙ 1 designeur ∙ 2 développeurs front-end ∙ 1
-                    développeur back-end ∙ 3 experts métier</span
+                    >1 PM ∙ 1 designeuse (moi) ∙ 2 développeurs front-end (dont
+                    moi) ∙ 1 développeur back-end ∙ 3 experts métier</span
                   >
                 </p>
                 <span class="cs-summary-detail-label">
                   <span class="en">Team</span>
                   <span class="fr">Équipe</span>
+                </span>
+              </div>
+              <div class="cs-summary-item">
+                <p class="cs-summary-value">
+                  <span class="en"
+                    >Design of the whole explorer. In code: the new layout
+                    (filter sidebar, updated components, restructured table),
+                    the detail panel and saved datasets. The other front-end
+                    engineer built the rest.</span
+                  >
+                  <span class="fr"
+                    >Design de l'ensemble du Data Explorer. Côté code : la
+                    nouvelle structure (sidebar de filtres, mise à jour des
+                    composants, restructuration du tableau), le panneau de
+                    détails et les datasets sauvegardés. L'autre développeur
+                    front-end a construit le reste.</span
+                  >
+                </p>
+                <span class="cs-summary-detail-label">
+                  <span class="en">My part</span>
+                  <span class="fr">Ma part</span>
                 </span>
               </div>
               <div class="cs-summary-item">
@@ -164,12 +191,12 @@ import Layout from "../layouts/Layout.astro";
                 <p class="cs-summary-value">
                   <span class="en"
                     >The redesign made the full scale of Epigene's database
-                    visible and explorable for the first time: 25× more datasets
+                    visible and explorable for the first time: 10× more datasets
                     accessible, searchable by content rather than by memory.</span
                   >
                   <span class="fr">
                     La refonte a rendu l'intégralité de la base de données
-                    d'Epigene visible et explorable pour la première fois : 25
+                    d'Epigene visible et explorable pour la première fois : 10
                     fois plus de datasets accessibles, trouvables par contenu
                     plutôt que par mémorisation.</span
                   >
@@ -189,26 +216,17 @@ import Layout from "../layouts/Layout.astro";
         <div class="cs-section-content">
           <p class="cs-section-legend">
             <span class="en">
-              Epigene Labs had over <span>50,000 cancer omics datasets</span> in its
+              Epigene Labs had over <span>20,000 cancer omics datasets</span> in its
               database. Only 2,000 were visible on the platform.
             </span>
             <span class="fr">
               Epigene Labs disposait de <span>
-                plus de 50&nbsp;000 datasets omiques en oncologie
+                plus de 20&nbsp;000 datasets omiques en oncologie
               </span> dans sa base de données. Seulement 2&nbsp;000 étaient visibles
               sur la plateforme.
             </span>
           </p>
           <div>
-            <p class="en">
-              Epigene Labs had over 50,000 cancer omics datasets in its
-              database. Only 2,000 were visible on the platform.
-            </p>
-            <p class="fr">
-              Epigene Labs disposait de plus de 50&nbsp;000 datasets omiques en
-              oncologie dans sa base de données. Seulement 2&nbsp;000 étaient
-              visibles sur la plateforme.
-            </p>
             <p class="en">
               The reason: the rest hadn't gone through the internal curation and
               review process, so they were kept out of reach. Scientifically,
@@ -322,17 +340,17 @@ import Layout from "../layouts/Layout.astro";
           <div class="grid-2 items-baseline">
             <p class="cs-section-legend">
               <span class="en">
-                The explorer <span class="accent">
-                  required users to already know what they were looking for
-                </span>, and <span class="accent"
-                  >showed them only 4% of the available data</span
+                The explorer <span class="accent"
+                  >required users to already know what they were looking for</span
+                >, and <span class="accent"
+                  >showed them only 10% of the available data</span
                 >.
               </span>
               <span class="fr">
                 Le Data Explorer exigeait des utilisateurs qu'ils sachent déjà
-                ce qu'ils cherchaient, et ne leur <span class="accent">
-                  montrait que 4 % des données disponibles
-                </span>.
+                ce qu'ils cherchaient, et ne leur <span class="accent"
+                  >montrait que 10 % des données disponibles</span
+                >.
               </span>
             </p>
             <div>
@@ -353,11 +371,11 @@ import Layout from "../layouts/Layout.astro";
               </p>
               <p class="en">
                 A product repositioning around data richness, built on a Data
-                Explorer showing 4% of it.
+                Explorer showing 10% of it.
               </p>
               <p class="fr">
                 Un produit qui se repositionnait autour de la richesse de ses
-                données, avec un Data Explorer qui n'en montrait que 4&nbsp;%.
+                données, avec un Data Explorer qui n'en montrait que 10&nbsp;%.
               </p>
             </div>
           </div>
@@ -384,14 +402,63 @@ import Layout from "../layouts/Layout.astro";
         <div class="cs-section-content">
           <p class="cs-section-legend">
             <span class="en">
-              Before designing anything, we ran a cross-team workshop to align
-              product, engineering, and domain experts on what mattered most.
+              Before designing anything, we <span class="accent"
+                >ran a cross-team workshop</span
+              > to <span class="accent"
+                >align product, engineering, and domain experts on what mattered
+                most</span
+              >.
             </span>
             <span class="fr">
               Avant toute conception, nous avons animé un workshop réunissant
               produit, ingénierie et experts métier pour aligner les priorités.
             </span>
           </p>
+          <p class="en">
+            User interviews gave the workshop its starting point. They surfaced
+            two blockers in the V1 explorer.
+          </p>
+          <p class="fr">
+            Les interviews utilisateurs ont servi de point de départ au
+            workshop. Elles ont fait ressortir deux blocages dans le Data
+            Explorer V1.
+          </p>
+          <div class="cs-cards">
+            <div class="cs-subsection-card">
+              <span class="cs-summary-title">
+                <span class="en">Filters went unused</span>
+                <span class="fr">Des filtres peu utilisés</span>
+              </span>
+              <p class="cs-summary-value">
+                <span class="en"
+                  >No organisation, terms too technical for some profiles, no
+                  help, and long lists that were hard to use.</span
+                >
+                <span class="fr"
+                  >Aucune organisation, des termes trop techniques pour certains
+                  profils, pas d'aide, et des listes à rallonge compliquées à
+                  utiliser.</span
+                >
+              </p>
+            </div>
+            <div class="cs-subsection-card">
+              <span class="cs-summary-title">
+                <span class="en">Datasets were opaque</span>
+                <span class="fr">Des datasets opaques</span>
+              </span>
+              <p class="cs-summary-value">
+                <span class="en"
+                  >Users didn't know what a dataset contained. To find out, they
+                  had to click it and leave the list for a separate page.</span
+                >
+                <span class="fr"
+                  >Les utilisateurs ne savaient pas ce que contenait un dataset.
+                  Pour le savoir, il fallait cliquer dessus et quitter la liste
+                  pour une nouvelle page.</span
+                >
+              </p>
+            </div>
+          </div>
           <p class="en">
             Five people from across the company took part: product, engineering,
             and domain experts from the scientific and curation teams. The
@@ -452,7 +519,7 @@ import Layout from "../layouts/Layout.astro";
                     <span class="fr">Validés &amp; Non validés</span>
                   </h3>
                   <p class="en">
-                    The core decision: expose all 50,000+ datasets, but with a
+                    The core decision: expose all 20,000+ datasets, but with a
                     clear distinction. Reviewed datasets (curated,
                     quality-checked) give full access to analysis tools.
                     Unreviewed datasets open up for exploration, with
@@ -461,7 +528,7 @@ import Layout from "../layouts/Layout.astro";
                   </p>
                   <p class="fr">
                     La décision centrale&nbsp;: exposer l'ensemble des
-                    50&nbsp;000+ datasets, mais avec une distinction claire. Les
+                    20&nbsp;000+ datasets, mais avec une distinction claire. Les
                     datasets validés (curés, vérifiés) donnent un accès complet
                     aux outils d'analyse. Les datasets non validés s'ouvrent à
                     l'exploration, avec un étiquetage transparent pour que les
@@ -493,7 +560,9 @@ import Layout from "../layouts/Layout.astro";
                     expanded listing depending on their workflow. Clicking a
                     dataset opens an overview panel for a first level of
                     exploration, visualising the data distribution before
-                    deciding whether to go deeper.
+                    deciding whether to go deeper. Interviews showed users had
+                    to leave the list to understand a dataset; the panel answers
+                    that in place.
                   </p>
                   <p class="fr">
                     Les datasets ont désormais des titres et des descriptions,
@@ -502,7 +571,9 @@ import Layout from "../layouts/Layout.astro";
                     et un listing étendu selon le flux de travail. Un clic sur
                     un dataset ouvre un panneau d'aperçu pour un premier niveau
                     d'exploration, visualiser la distribution des données avant
-                    de décider d'aller plus loin.
+                    de décider d'aller plus loin. Les interviews montraient
+                    qu'il fallait quitter la liste pour comprendre un dataset ;
+                    le panneau y répond sur place.
                   </p>
                 </div>
               </div>
@@ -570,7 +641,9 @@ import Layout from "../layouts/Layout.astro";
                     into categories reflecting how users actually think about
                     data selection: by cancer type, technology, sample
                     characteristics. The flat list is gone; the structure
-                    follows the mental model.
+                    follows the mental model. This answers what interviews
+                    showed: filters went unused because they were unorganised,
+                    too technical and too long.
                   </p>
                   <p class="fr">
                     Les filtres ont été déplacés dans une sidebar dédiée et
@@ -578,7 +651,9 @@ import Layout from "../layouts/Layout.astro";
                     utilisateurs pensent réellement la sélection des données :
                     par type de cancer, technologie, caractéristiques des
                     échantillons. La liste plate a disparu&nbsp;; la structure
-                    suit le modèle mental.
+                    suit le modèle mental. C'est la réponse à ce que montraient
+                    les interviews : des filtres délaissés car désorganisés,
+                    trop techniques et trop longs.
                   </p>
                 </div>
               </div>
@@ -680,11 +755,15 @@ import Layout from "../layouts/Layout.astro";
         <div class="grid-2">
           <p class="cs-section-legend">
             <span class="en">
-              From 2,000 visible datasets to 50,000+: the redesign made the
-              database's actual scale visible for the first time.
+              From <span class="accent">2,000</span> visible datasets to <span
+                class="accent">20,000+</span
+              >: the <span class="accent">
+                redesign made the database's actual scale visible for the first
+                time.
+              </span>
             </span>
             <span class="fr">
-              De 2&nbsp;000 datasets visibles à plus de 50&nbsp;000 : la refonte
+              De 2&nbsp;000 datasets visibles à plus de 20&nbsp;000 : la refonte
               a rendu l'échelle réelle de la base de données visible pour la
               première fois.
             </span>
@@ -694,16 +773,17 @@ import Layout from "../layouts/Layout.astro";
               This redesign was part of the broader data strategy Epigene
               pursued through late 2025. In December of that year, the company
               announced reaching 2 million cancer omics profiles, a 20× increase
-              in one year. The expanded Data Explorer was the interface through
-              which that data became accessible.
+              in one year. That milestone belongs to the data teams; the
+              redesign's part was making sure users could actually find and read
+              that data.
             </p>
             <p class="fr">
               Cette refonte s'inscrit dans la stratégie data plus large
               qu'Epigene a menée fin 2025. En décembre de cette année, la
               société a annoncé avoir atteint 2 millions de profils omiques en
-              oncologie, une multiplication par 20 en un an. Le Data Explorer
-              étendu était l'interface par laquelle ces données sont devenues
-              accessibles.
+              oncologie, une multiplication par 20 en un an. Ce cap revient aux
+              équipes data ; le rôle de la refonte était de faire en sorte que
+              les utilisateurs puissent réellement trouver et lire ces données.
             </p>
           </div>
         </div>
