@@ -40,6 +40,10 @@ body.dark {
   --container-lg:  1480px;
   --header-h:   64px;
 
+  /* Breakpoints — read by JS (main.js).
+     var() is not allowed in @media: keep CSS media queries in sync by hand. */
+  --bp-mobile: 750px;
+
   /* Spacing */
   --s0:  4px;
   --s1:  8px;

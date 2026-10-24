@@ -1,0 +1,68 @@
+/* ============================================
+   MOBILE SLIDER — [data-slider-mobile]
+   Horizontal scroll-snap slider below 750px,
+   bleeding to the viewport edges out of .cs-page padding.
+
+   Only applied when CSS Scroll Snap (standard syntax) is supported;
+   other browsers keep the default stacked layout.
+
+   Compatibility choices:
+   - flexbox with gap (flex gap: Safari 14.1+, Chrome 84+, Firefox 63+)
+   - physical properties instead of logical ones (margin-inline: Safari 14.1+)
+   - an ::after spacer for the right edge instead of padding-right
+     (padding-end of scroll containers is ignored by older browsers)
+============================================ */
+
+/* 749px = --bp-mobile - 1 */
+@media (max-width: 749px) {
+  @supports (scroll-snap-type: x mandatory) and (scroll-snap-align: start) {
+    [data-slider-mobile] {
+      --slider-gutter: var(--s3); /* = .cs-page horizontal padding */
+      --slider-gap: var(--s1);
+
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      gap: var(--slider-gap);
+
+      margin-left: calc(-1 * var(--slider-gutter));
+      margin-right: calc(-1 * var(--slider-gutter));
+      padding-left: var(--slider-gutter);
+      padding-right: 0;
+      scroll-padding-left: var(--slider-gutter);
+
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+
+      /* Progressive enhancements (non-essential) */
+      overscroll-behavior-x: contain;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    [data-slider-mobile]::-webkit-scrollbar {
+      display: none;
+    }
+
+    [data-slider-mobile] > * {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 90%;
+      flex: 0 0 90%;
+      min-width: 0;
+      scroll-snap-align: start;
+    }
+
+    /* Right spacing after the last item (gap already adds --slider-gap before it) */
+    [data-slider-mobile]::after {
+      content: "";
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(var(--slider-gutter) - var(--slider-gap));
+      flex: 0 0 calc(var(--slider-gutter) - var(--slider-gap));
+    }
+  }
+}
