@@ -6,6 +6,8 @@ interface Props {
   titleEn: string;
   titleFr: string;
   meta: string;
+  contextEn?: string;
+  contextFr?: string;
   imageVariant?: string;
   backgroundColor?: string;
 }
@@ -17,6 +19,8 @@ const {
   titleEn,
   titleFr,
   meta,
+  contextEn,
+  contextFr,
   imageVariant,
   backgroundColor,
 } = Astro.props;
@@ -35,6 +39,14 @@ const {
       <span class="fr">{titleFr}</span>
     </h2>
     <p class="cs-card-meta">{meta}</p>
+    {
+      contextEn && (
+        <p class="cs-card-context">
+          <span class="en">{contextEn}</span>
+          <span class="fr">{contextFr}</span>
+        </p>
+      )
+    }
   </div>
   <div class="cs-cursor-label" aria-hidden="true">
     {

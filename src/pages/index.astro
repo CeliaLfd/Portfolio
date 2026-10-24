@@ -3,7 +3,7 @@ import CaseStudyCard from "../components/CaseStudyCard.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Célia Lafond — Product Designer & Frontend Engineer">
+<Layout title="Célia Lafond — Senior Product Designer & Frontend Engineer">
   <main>
     <section class="home-hero">
       <div class="container">
@@ -17,6 +17,21 @@ import Layout from "../layouts/Layout.astro";
             <span class="hero-title-embed">qui code.</span>
           </span>
         </h1>
+        <p class="home-hero-intro reveal">
+          <span class="en">
+            Senior Product Designer &amp; Front-end Engineer based in Lyon,
+            France. For 10 years I've designed and built B2B products: 4 years
+            at Epigene Labs on a cancer genomics platform, and 6 years at Link
+            Value on SaaS products, design systems and internal tools.
+          </span>
+          <span class="fr">
+            Senior Product Designer &amp; Front-end Engineer basée à Lyon.
+            Depuis 10 ans, je conçois et développe des produits B2B : 4 ans chez
+            Epigene Labs sur une plateforme de génomique du cancer, et 6 ans
+            chez Link Value sur des produits SaaS, des design systems et des
+            outils internes.
+          </span>
+        </p>
       </div>
     </section>
 
@@ -27,19 +42,23 @@ import Layout from "../layouts/Layout.astro";
             href="/epigene-data-explorer"
             image="/assets/cover-data-explorer.png"
             imageAlt="Data Explorer redesign"
-            titleEn="Data Explorer Redesign"
-            titleFr="Refonte du Data Explorer"
+            titleEn="Redesigning the Data Explorer for 10× more datasets"
+            titleFr="Repenser le Data Explorer pour 10 fois plus de datasets"
             meta="Epigene Labs · 2025"
+            contextEn="Turning a limited list of untitled, undescribed datasets into a discovery space where researchers can explore 20,000+ datasets."
+            contextFr="Transformer une liste limitée de datasets sans titre ni description en un espace de découverte où les chercheurs explorent plus de 20 000 datasets."
             imageVariant="data-explorer"
             backgroundColor="#6661D6"
           />
           <CaseStudyCard
             href="/epigene-design-system"
             image="/assets/cover-design-system.png"
-            imageAlt="mCUBE login screen"
-            titleEn="Design System"
-            titleFr=" Design System"
+            imageAlt="mCUBE design system"
+            titleEn="Building mCUBE's first design system, from audit to code"
+            titleFr="Construire le premier design system de mCUBE, de l'audit au code"
             meta="Epigene Labs · 2022 - 2026"
+            contextEn="Creating the product's first design system, a single source of truth for design and code, to bring consistency to every screen and autonomy to the team."
+            contextFr="Créer le premier design system du produit, source unique de vérité entre design et code, pour une expérience cohérente d'un écran à l'autre et des équipes plus autonomes."
             imageVariant="design-system"
           />
         </div>

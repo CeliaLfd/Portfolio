@@ -19,7 +19,7 @@
   }
 }
 
-.cs-card { display: block; cursor: none; }
+.cs-card { display: block; cursor: none; display: flex; flex-direction: column; gap: var(--s2)}
 
 .cs-card .cs-card-image img {
   transition: all 0.1s ease-out;
@@ -61,6 +61,7 @@
 .cs-card-info { 
   display: flex; 
   flex-direction: row; 
+  gap: var(--s1);
   flex-wrap: wrap; 
   align-items: baseline; 
   justify-content: space-between; 
@@ -68,16 +69,19 @@
 
 .cs-card-title {
   font-size: var(--fs-18);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.15;
-  letter-spacing: -0.03em;
-  margin-bottom: 4px;
   transition: color 0.15s;
+  font-family: var(--serif);
 }
 
-
-
 .cs-card-meta {
+  font-size: var(--fs-14);
+  color: var(--muted);
+}
+
+.cs-card-context {
+  flex-basis: 100%;
   font-size: var(--fs-14);
   color: var(--muted);
 }
