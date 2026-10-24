@@ -10,6 +10,7 @@ interface Props {
   contextFr?: string;
   imageVariant?: string;
   backgroundColor?: string;
+  loading?: "lazy" | "eager";
 }
 
 const {
@@ -23,6 +24,7 @@ const {
   contextFr,
   imageVariant,
   backgroundColor,
+  loading = "lazy",
 } = Astro.props;
 ---
 
@@ -31,7 +33,7 @@ const {
     class={`cs-card-image cs-hero-image ${imageVariant ? `cs-hero-image-${imageVariant}` : ""}`}
     style={backgroundColor ? { backgroundColor } : undefined}
   >
-    <img src={image} alt={imageAlt} onerror="this.style.display='none'" />
+    <img src={image} alt={imageAlt} loading={loading} decoding="async" onerror="this.style.display='none'" />
   </div>
   <div class="cs-card-info">
     <h2 class="cs-card-title">
