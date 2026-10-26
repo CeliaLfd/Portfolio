@@ -11,8 +11,15 @@
   flex-direction: column;
   gap: var(--s6);
   max-width: var(--container);
-  margin: var(--s5) auto 40vh;
-  padding: 0 var(--s3);
+  margin: var(--s4) auto;
+  padding: 0 var(--s2);
+}
+
+@media (min-width: 720px) {
+  .cs-page {
+    margin: var(--s5) auto 40vh;
+    padding: 0 var(--s3);
+  }
 }
 
 
@@ -41,8 +48,14 @@
   gap: 6px;
   font-size: var(--fs-14);
   color: var(--muted);
-  margin-bottom: var(--s4);
+  margin-bottom: var(--s2);
   transition: color 0.15s;
+}
+
+@media (min-width: 720px) {
+  .cs-back {
+     margin-bottom: var(--s4);
+  }
 }
 
 .cs-back:hover { color: var(--ink); }
@@ -59,7 +72,7 @@
 
 .cs-page-title {
   font-family: var(--serif);
-  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-size: clamp(var(--fs-24), 4vw, 3.5rem);
   font-weight: 500;
   line-height: 1.20;
   letter-spacing: -0.06em;
@@ -223,6 +236,7 @@
 
 .cs-section-legend {
   font-size: var(--fs-24);
+  font-size: clamp(var(--fs-22), var(--fs-24), var(--fs-24));
   line-height: 1.3;
   font-family: var(--serif);
   color: var(--muted);

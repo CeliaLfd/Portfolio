@@ -30,7 +30,15 @@
 .site-nav {
   display: flex;
   align-items: center;
-  gap: var(--s4);
+  gap: var(--s2);
+}
+
+@media (min-width: 720px){ 
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--s4);
+  } 
 }
 
 .site-nav a {
@@ -40,8 +48,12 @@
   transition: color 0.15s;
 }
 
-.site-nav a:hover,
-.site-nav a.active { color: var(--accent); }
+
+.site-nav a.active {
+  color: var(--ink);
+}
+
+.site-nav a:hover { color: var(--accent); }
 
 .lang-toggle { justify-self: end; }
 

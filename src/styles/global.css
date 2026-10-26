@@ -11,6 +11,7 @@
   --muted:    hsl(20 4.1% 42.9%);
   --border:   hsl(0 0% 87.8%);
   --surface:  hsl(34 21% 94%);
+  --on-accent: hsl(0 0% 100%);
   --black: var(--ink);
   --bg-image: var(--surface);
   --bg-card: var(--bg);
@@ -33,6 +34,8 @@ body.dark {
   --display: 'Special Gothic Condensed One', 'Arial Narrow', sans-serif;
   --sans:    'Inclusive Sans', 'Host Grotesk', system-ui, -apple-system, sans-serif;
   --serif:    'Averia Serif Libre', 'Literata',serif;
+  --mono:    'JetBrains Mono', ui-monospace, 'SF Mono', SFMono-Regular, Menlo,
+             Consolas, 'Liberation Mono', monospace;
 
   /* Layout */
   --container:  1550px;
@@ -58,6 +61,7 @@ body.dark {
 
   /* Radius */
   --radius: 8px;
+  --radius-pill: 999px;
 
   /* Font size */
   --fs-10: 0.625rem;

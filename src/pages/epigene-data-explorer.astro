@@ -216,13 +216,18 @@ import Layout from "../layouts/Layout.astro";
         <div class="cs-section-content">
           <p class="cs-section-legend">
             <span class="en">
-              Epigene Labs had over <span>20,000 cancer omics datasets</span> in its
-              database. Only 2,000 were visible on the platform.
+              Epigene Labs had over <span class="accent"
+                >20,000 cancer omics datasets</span
+              > in its database. <span class="accent"
+                >Only 2,000 were visible</span
+              > on the platform.
             </span>
             <span class="fr">
-              Epigene Labs disposait de <span>
+              Epigene Labs disposait de <span class="accent">
                 plus de 20&nbsp;000 datasets omiques en oncologie
-              </span> dans sa base de données. Seulement 2&nbsp;000 étaient visibles
+              </span> dans sa base de données. <span class="accent"
+                >Seulement 2&nbsp;000 étaient visibles</span
+              >
               sur la plateforme.
             </span>
           </p>
@@ -267,7 +272,9 @@ import Layout from "../layouts/Layout.astro";
           <div class="cs-subsections">
             <div class="cs-subsection cs-subsection-grid">
               <div class="cs-img">
-                <img loading="lazy" decoding="async"
+                <img
+                  loading="lazy"
+                  decoding="async"
                   src="/assets/data-explorer-context.webp"
                   alt="Data Explorer: context"
                   onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\'>Data Explorer: Context</div>'"
@@ -278,52 +285,55 @@ import Layout from "../layouts/Layout.astro";
                   <span class="en">The need for a redesign</span>
                   <span class="fr">la nécessité d'une refonte</span>
                 </h3>
-                <p class="en">
-                  The Data Explorer had been built for a small catalog of
-                  curated datasets. As the database grew, that architecture
-                  limited both what users could discover and how the product
-                  could be positioned commercially.
-                </p>
-                <p class="fr">
-                  Le Data Explorer avait été conçu pour un catalogue restreint
-                  de datasets curés. À mesure que la base de données
-                  grandissait, cette architecture limitait autant la découverte
-                  côté utilisateurs que le positionnement commercial du produit.
-                </p>
-                <div class="cs-cards">
-                  <div class="cs-subsection-card">
-                    <span class="cs-summary-title">
-                      <span class="en">Business needs</span>
-                      <span class="fr">Besoins de l'entreprise</span>
-                    </span>
-                    <p class="cs-summary-value">
-                      <span class="en"
-                        >A platform that reflects the true scale of the
-                        database, and holds up when prospects compare data
-                        coverage against competitors.</span
-                      >
-                      <span class="fr"
-                        >Une plateforme qui reflète l'échelle réelle de la base
-                        de données, et qui tient la comparaison face aux
-                        concurrents sur la couverture data.</span
-                      >
-                    </p>
-                  </div>
-                  <div class="cs-subsection-card">
-                    <span class="cs-summary-title">
-                      <span class="en">User needs</span>
-                      <span class="fr">Besoins des utilisateurs</span>
-                    </span>
-                    <p class="cs-summary-value">
-                      <span class="en"
-                        >A way to find relevant datasets without knowing their
-                        technical identifiers in advance.</span
-                      >
-                      <span class="fr"
-                        >Un moyen de trouver les datasets pertinents sans
-                        connaître leurs identifiants techniques à l'avance.</span
-                      >
-                    </p>
+                <div class="flex flex-col gap-2">
+                  <p class="en">
+                    The Data Explorer had been built for a small catalog of
+                    curated datasets. As the database grew, that architecture
+                    limited both what users could discover and how the product
+                    could be positioned commercially.
+                  </p>
+                  <p class="fr">
+                    Le Data Explorer avait été conçu pour un catalogue restreint
+                    de datasets curés. À mesure que la base de données
+                    grandissait, cette architecture limitait autant la
+                    découverte côté utilisateurs que le positionnement
+                    commercial du produit.
+                  </p>
+                  <div class="cs-cards">
+                    <div class="cs-subsection-card">
+                      <span class="cs-summary-title">
+                        <span class="en">Business needs</span>
+                        <span class="fr">Besoins de l'entreprise</span>
+                      </span>
+                      <p class="cs-summary-value">
+                        <span class="en"
+                          >A platform that reflects the true scale of the
+                          database, and holds up when prospects compare data
+                          coverage against competitors.</span
+                        >
+                        <span class="fr"
+                          >Une plateforme qui reflète l'échelle réelle de la
+                          base de données, et qui tient la comparaison face aux
+                          concurrents sur la couverture data.</span
+                        >
+                      </p>
+                    </div>
+                    <div class="cs-subsection-card">
+                      <span class="cs-summary-title">
+                        <span class="en">User needs</span>
+                        <span class="fr">Besoins des utilisateurs</span>
+                      </span>
+                      <p class="cs-summary-value">
+                        <span class="en"
+                          >A way to find relevant datasets without knowing their
+                          technical identifiers in advance.</span
+                        >
+                        <span class="fr"
+                          >Un moyen de trouver les datasets pertinents sans
+                          connaître leurs identifiants techniques à l'avance.</span
+                        >
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -381,7 +391,9 @@ import Layout from "../layouts/Layout.astro";
           </div>
           <div class="cs-img-wrapper">
             <div class="cs-img">
-              <img loading="lazy" decoding="async"
+              <img
+                loading="lazy"
+                decoding="async"
                 src="/assets/data-explorer-old.webp"
                 alt="Data Explorer V1"
                 onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: V1</div>'"
@@ -414,49 +426,51 @@ import Layout from "../layouts/Layout.astro";
               produit, ingénierie et experts métier pour aligner les priorités.
             </span>
           </p>
-          <p class="en">
-            User interviews gave the workshop its starting point. They surfaced
-            two blockers in the V1 explorer.
-          </p>
-          <p class="fr">
-            Les interviews utilisateurs ont servi de point de départ au
-            workshop. Elles ont fait ressortir deux blocages dans le Data
-            Explorer V1.
-          </p>
-          <div class="cs-cards">
-            <div class="cs-subsection-card">
-              <span class="cs-summary-title">
-                <span class="en">Filters went unused</span>
-                <span class="fr">Des filtres peu utilisés</span>
-              </span>
-              <p class="cs-summary-value">
-                <span class="en"
-                  >No organisation, terms too technical for some profiles, no
-                  help, and long lists that were hard to use.</span
-                >
-                <span class="fr"
-                  >Aucune organisation, des termes trop techniques pour certains
-                  profils, pas d'aide, et des listes à rallonge compliquées à
-                  utiliser.</span
-                >
-              </p>
-            </div>
-            <div class="cs-subsection-card">
-              <span class="cs-summary-title">
-                <span class="en">Datasets were opaque</span>
-                <span class="fr">Des datasets opaques</span>
-              </span>
-              <p class="cs-summary-value">
-                <span class="en"
-                  >Users didn't know what a dataset contained. To find out, they
-                  had to click it and leave the list for a separate page.</span
-                >
-                <span class="fr"
-                  >Les utilisateurs ne savaient pas ce que contenait un dataset.
-                  Pour le savoir, il fallait cliquer dessus et quitter la liste
-                  pour une nouvelle page.</span
-                >
-              </p>
+          <div class="flex flex-col gap-2">
+            <p class="en">
+              User interviews gave the workshop its starting point. They
+              surfaced two blockers in the V1 explorer.
+            </p>
+            <p class="fr">
+              Les interviews utilisateurs ont servi de point de départ au
+              workshop. Elles ont fait ressortir deux blocages dans le Data
+              Explorer V1.
+            </p>
+            <div class="cs-cards grid-2">
+              <div class="cs-subsection-card">
+                <span class="cs-summary-title">
+                  <span class="en">Filters went unused</span>
+                  <span class="fr">Des filtres peu utilisés</span>
+                </span>
+                <p class="cs-summary-value">
+                  <span class="en"
+                    >No organisation, terms too technical for some profiles, no
+                    help, and long lists that were hard to use.</span
+                  >
+                  <span class="fr"
+                    >Aucune organisation, des termes trop techniques pour
+                    certains profils, pas d'aide, et des listes à rallonge
+                    compliquées à utiliser.</span
+                  >
+                </p>
+              </div>
+              <div class="cs-subsection-card">
+                <span class="cs-summary-title">
+                  <span class="en">Datasets were opaque</span>
+                  <span class="fr">Des datasets opaques</span>
+                </span>
+                <p class="cs-summary-value">
+                  <span class="en"
+                    >Users didn't know what a dataset contained. To find out,
+                    they had to click it and leave the list for a separate page.</span
+                  >
+                  <span class="fr"
+                    >Les utilisateurs ne savaient pas ce que contenait un
+                    dataset. Pour le savoir, il fallait cliquer dessus et
+                    quitter la liste pour une nouvelle page.</span
+                  >
+                </p>
+              </div>
             </div>
           </div>
           <p class="en">
@@ -473,7 +487,9 @@ import Layout from "../layouts/Layout.astro";
           </p>
           <div class="cs-img-wrapper">
             <div class="cs-img">
-              <img loading="lazy" decoding="async"
+              <img
+                loading="lazy"
+                decoding="async"
                 src="/assets/data-explorer-workshop.webp"
                 alt="Workshop: Data Explorer"
                 onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Workshop</div>'"
@@ -538,7 +554,9 @@ import Layout from "../layouts/Layout.astro";
                 </div>
               </div>
               <div class="cs-img">
-                <img loading="lazy" decoding="async"
+                <img
+                  loading="lazy"
+                  decoding="async"
                   src="/assets/data-explorer-solution-reviewed.webp"
                   alt="Data Explorer: Reviewed & Unreviewed"
                   onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: Reviewed & Unreviewed</div>'"
@@ -579,14 +597,18 @@ import Layout from "../layouts/Layout.astro";
               </div>
               <div class="cs-img-grid cs-img-grid-2" data-slider-mobile>
                 <div class="cs-img">
-                  <img loading="lazy" decoding="async"
+                  <img
+                    loading="lazy"
+                    decoding="async"
                     src="/assets/data-explorer-solution-richer-context-1.webp"
                     alt="Data Explorer: Richer dataset context"
                     onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: Richer dataset context</div>'"
                   />
                 </div>
                 <div class="cs-img">
-                  <img loading="lazy" decoding="async"
+                  <img
+                    loading="lazy"
+                    decoding="async"
                     src="/assets/data-explorer-solution-richer-context-2.webp"
                     alt="Data Explorer: Richer dataset context"
                     onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: Richer dataset context</div>'"
@@ -621,7 +643,9 @@ import Layout from "../layouts/Layout.astro";
                 </div>
               </div>
               <div class="cs-img">
-                <img loading="lazy" decoding="async"
+                <img
+                  loading="lazy"
+                  decoding="async"
                   src="/assets/data-explorer-solution-smarter-search.webp"
                   alt="Data Explorer: Smarter search"
                   onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: Smarter search</div>'"
@@ -659,14 +683,18 @@ import Layout from "../layouts/Layout.astro";
               </div>
               <div class="cs-img-grid cs-img-grid-2" data-slider-mobile>
                 <div class="cs-img">
-                  <img loading="lazy" decoding="async"
+                  <img
+                    loading="lazy"
+                    decoding="async"
                     src="/assets/data-explorer-solution-filters-1.webp"
                     alt="Data Explorer: Filters, restructured"
                     onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: Filters, restructured</div>'"
                   />
                 </div>
                 <div class="cs-img">
-                  <img loading="lazy" decoding="async"
+                  <img
+                    loading="lazy"
+                    decoding="async"
                     src="/assets/data-explorer-solution-filters-2.webp"
                     alt="Data Explorer: Filters, restructured"
                     onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: Filters, restructured</div>'"
@@ -700,7 +728,9 @@ import Layout from "../layouts/Layout.astro";
                 </div>
               </div>
               <div class="cs-img">
-                <img loading="lazy" decoding="async"
+                <img
+                  loading="lazy"
+                  decoding="async"
                   src="/assets/data-explorer-solution-metrics.webp"
                   alt="Data Explorer: Metrics that matter"
                   onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: Metrics that matter</div>'"
@@ -732,14 +762,18 @@ import Layout from "../layouts/Layout.astro";
               </div>
               <div class="cs-img-grid cs-img-grid-2" data-slider-mobile>
                 <div class="cs-img">
-                  <img loading="lazy" decoding="async"
+                  <img
+                    loading="lazy"
+                    decoding="async"
                     src="/assets/data-explorer-solution-bookmarks-1.webp"
                     alt="Data Explorer: Saved datasets"
                     onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: Saved datasets</div>'"
                   />
                 </div>
                 <div class="cs-img">
-                  <img loading="lazy" decoding="async"
+                  <img
+                    loading="lazy"
+                    decoding="async"
                     src="/assets/data-explorer-solution-bookmarks-2.webp"
                     alt="Data Explorer: Saved datasets"
                     onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: Saved datasets</div>'"
