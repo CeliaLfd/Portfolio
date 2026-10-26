@@ -1,5 +1,60 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Icon from "../components/Icon.astro";
+import type { IconName } from "../components/icons";
+
+const cells = Array.from({ length: 100 }, (_, i) => i);
+
+const steps: {
+  icon: IconName;
+  en: { title: string; text: string };
+  fr: { title: string; text: string };
+}[] = [
+  {
+    icon: "database",
+    en: {
+      title: "A new data strategy",
+      text: "The company chose to open its whole database, unreviewed datasets included.",
+    },
+    fr: {
+      title: "Une nouvelle stratégie data",
+      text: "L'entreprise choisit d'ouvrir toute sa base, datasets non validés compris.",
+    },
+  },
+  {
+    icon: "speechBubble",
+    en: {
+      title: "User interviews",
+      text: "Understand how researchers searched for and chose datasets in the V1 explorer.",
+    },
+    fr: {
+      title: "Interviews utilisateurs",
+      text: "Comprendre comment les chercheurs cherchaient et choisissaient leurs datasets dans le Data Explorer V1.",
+    },
+  },
+  {
+    icon: "group",
+    en: {
+      title: "Cross-team workshop",
+      text: "Align product, engineering and scientific teams on what mattered most.",
+    },
+    fr: {
+      title: "Workshop transverse",
+      text: "Aligner produit, ingénierie et équipes scientifiques sur les priorités.",
+    },
+  },
+  {
+    icon: "layout",
+    en: {
+      title: "The redesign",
+      text: "Rethink the Data Explorer for the new scale of the database.",
+    },
+    fr: {
+      title: "La refonte",
+      text: "Repenser le Data Explorer pour la nouvelle échelle de la base.",
+    },
+  },
+];
 ---
 
 <Layout
@@ -213,131 +268,170 @@ import Layout from "../layouts/Layout.astro";
           <span class="en">Context</span>
           <span class="fr">Contexte</span>
         </h2>
-        <div class="cs-section-content">
-          <p class="cs-section-legend">
-            <span class="en">
-              Epigene Labs had over <span class="accent"
-                >20,000 cancer omics datasets</span
-              > in its database. <span class="accent"
-                >Only 2,000 were visible</span
-              > on the platform.
-            </span>
-            <span class="fr">
-              Epigene Labs disposait de <span class="accent">
-                plus de 20&nbsp;000 datasets omiques en oncologie
-              </span> dans sa base de données. <span class="accent"
-                >Seulement 2&nbsp;000 étaient visibles</span
-              >
-              sur la plateforme.
-            </span>
-          </p>
-          <div>
-            <p class="en">
-              The reason: the rest hadn't gone through the internal curation and
-              review process, so they were kept out of reach. Scientifically,
-              they still held value, but users never saw them. As the company
-              scaled, this gap became a competitive liability: prospects were
-              comparing mCUBE's data coverage to competitors and finding it
-              lacking.
+        <div class="cs-subsections">
+          <div class="flex flex-col gap-y-2">
+            <p class="cs-section-heading-legend">
+              <span class="en">
+                Epigene Labs had over <span class="text-accent"
+                  >20,000 cancer omics datasets</span
+                > in its database. <br /><span class="text-accent"
+                  >Only 2,000 were visible</span
+                > on the platform.
+              </span>
+              <span class="fr">
+                Epigene Labs disposait de <span class="text-accent">
+                  plus de 20&nbsp;000 datasets omiques en oncologie
+                </span> dans sa base de données.<br /><span class="text-accent"
+                  >Seulement 2&nbsp;000 étaient visibles</span
+                >
+                sur la plateforme.
+              </span>
             </p>
-            <p class="fr">
-              La raison&nbsp;: les autres n'avaient pas encore été soumis au
-              processus interne de curation et de validation, ils restaient donc
-              inaccessibles. Scientifiquement, ils avaient de la valeur, mais
-              les utilisateurs ne les voyaient jamais. À mesure que la société
-              se développait, cet écart devenait un handicap commercial&nbsp;:
-              les prospects comparaient la couverture data de mCUBE à celle des
-              concurrents et la trouvaient insuffisante.
-            </p>
-            <p class="en">
-              This feature was part of a larger business pivot: showcasing the
-              richness of Epigene's database as a core value proposition. When
-              the request came to integrate unreviewed datasets, the PM and I
-              saw it as an opportunity to go further. Rather than patching the
-              existing interface, we used this moment to rethink the Data
-              Explorer entirely, aligning the design with the new strategic
-              direction.
-            </p>
-            <p class="fr">
-              Cette feature s'inscrit dans un projet plus large&nbsp;: mettre en
-              avant la richesse de la base de données d'Epigene comme
-              proposition de valeur centrale. Quand la demande d'intégrer les
-              datasets non validés est arrivée, le PM et moi y avons vu une
-              opportunité d'aller plus loin. Plutôt que de corriger l'interface
-              existante, nous avons saisi ce moment pour repenser entièrement le
-              Data Explorer, en alignant le design avec la nouvelle orientation
-              stratégique.
-            </p>
+            <div class="grid-2">
+              <p class="en">
+                The reason: the rest hadn't gone through the internal curation
+                and review process, so they were kept out of reach.
+                Scientifically, they still held value, but users never saw them.
+                As the company scaled, this gap became a competitive liability:
+                prospects were comparing mCUBE's data coverage to competitors
+                and finding it lacking.
+              </p>
+              <p class="fr">
+                La raison&nbsp;: les autres n'avaient pas encore été soumis au
+                processus interne de curation et de validation, ils restaient
+                donc inaccessibles. Scientifiquement, ils avaient de la valeur,
+                mais les utilisateurs ne les voyaient jamais. À mesure que la
+                société se développait, cet écart devenait un handicap
+                commercial&nbsp;: les prospects comparaient la couverture data
+                de mCUBE à celle des concurrents et la trouvaient insuffisante.
+              </p>
+              <p class="en">
+                This feature was part of a larger business pivot: showcasing the
+                richness of Epigene's database as a core value proposition. When
+                the request came to integrate unreviewed datasets, the PM and I
+                saw it as an opportunity to go further. Rather than patching the
+                existing interface, we used this moment to rethink the Data
+                Explorer entirely, aligning the design with the new strategic
+                direction.
+              </p>
+              <p class="fr">
+                Cette feature s'inscrit dans un projet plus large&nbsp;: mettre
+                en avant la richesse de la base de données d'Epigene comme
+                proposition de valeur centrale. Quand la demande d'intégrer les
+                datasets non validés est arrivée, le PM et moi y avons vu une
+                opportunité d'aller plus loin. Plutôt que de corriger
+                l'interface existante, nous avons saisi ce moment pour repenser
+                entièrement le Data Explorer, en alignant le design avec la
+                nouvelle orientation stratégique.
+              </p>
+            </div>
           </div>
-          <div class="cs-subsections">
-            <div class="cs-subsection cs-subsection-grid">
-              <div class="cs-img">
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  src="/assets/data-explorer-context.webp"
-                  alt="Data Explorer: context"
-                  onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\'>Data Explorer: Context</div>'"
-                />
-              </div>
-              <div>
-                <h3 class="cs-subsection-subheading">
-                  <span class="en">The need for a redesign</span>
-                  <span class="fr">la nécessité d'une refonte</span>
-                </h3>
-                <div class="flex flex-col gap-2">
-                  <p class="en">
-                    The Data Explorer had been built for a small catalog of
-                    curated datasets. As the database grew, that architecture
-                    limited both what users could discover and how the product
-                    could be positioned commercially.
-                  </p>
-                  <p class="fr">
-                    Le Data Explorer avait été conçu pour un catalogue restreint
-                    de datasets curés. À mesure que la base de données
-                    grandissait, cette architecture limitait autant la
-                    découverte côté utilisateurs que le positionnement
-                    commercial du produit.
-                  </p>
-                  <div class="cs-cards">
-                    <div class="cs-subsection-card">
-                      <span class="cs-summary-title">
-                        <span class="en">Business needs</span>
-                        <span class="fr">Besoins de l'entreprise</span>
-                      </span>
-                      <p class="cs-summary-value">
-                        <span class="en"
-                          >A platform that reflects the true scale of the
-                          database, and holds up when prospects compare data
-                          coverage against competitors.</span
-                        >
-                        <span class="fr"
-                          >Une plateforme qui reflète l'échelle réelle de la
-                          base de données, et qui tient la comparaison face aux
-                          concurrents sur la couverture data.</span
-                        >
-                      </p>
-                    </div>
-                    <div class="cs-subsection-card">
-                      <span class="cs-summary-title">
-                        <span class="en">User needs</span>
-                        <span class="fr">Besoins des utilisateurs</span>
-                      </span>
-                      <p class="cs-summary-value">
-                        <span class="en"
-                          >A way to find relevant datasets without knowing their
-                          technical identifiers in advance.</span
-                        >
-                        <span class="fr"
-                          >Un moyen de trouver les datasets pertinents sans
-                          connaître leurs identifiants techniques à l'avance.</span
-                        >
-                      </p>
-                    </div>
-                  </div>
+          <div class="cs-section-content">
+            <div class="cs-de-scale-band" data-scale>
+              <div class="cs-de-scale-col" data-side="before">
+                <p class="cs-label">
+                  <span class="en">Before</span>
+                  <span class="fr">Avant</span>
+                </p>
+                <div class="cs-de-scale-grid" aria-hidden="true">
+                  {cells.map((i) => <span class={i < 10 ? "on" : ""} />)}
                 </div>
+                <p class="cs-de-scale-num">
+                  <span class="en" data-count="2000" data-locale="en-US"
+                    >2,000</span
+                  >
+                  <span class="fr" data-count="2000" data-locale="fr-FR"
+                    >2&nbsp;000</span
+                  >
+                </p>
+                <p class="cs-de-scale-cap">
+                  <span class="en"
+                    >curated datasets, the catalog the explorer was built for</span
+                  >
+                  <span class="fr"
+                    >datasets curés, le catalogue pour lequel l'explorer avait
+                    été conçu</span
+                  >
+                </p>
+              </div>
+              <div class="cs-de-scale-mid">
+                <p class="cs-de-scale-x">10×</p>
+                <p class="cs-de-scale-cap">
+                  <span class="en">more datasets to handle</span>
+                  <span class="fr">de datasets à accueillir</span>
+                </p>
+              </div>
+              <div class="cs-de-scale-col" data-side="after">
+                <p class="cs-label">
+                  <span class="en">New data strategy</span>
+                  <span class="fr">Nouvelle stratégie data</span>
+                </p>
+                <div class="cs-de-scale-grid" aria-hidden="true">
+                  {cells.map(() => <span class="on" />)}
+                </div>
+                <p class="cs-de-scale-num">
+                  <span
+                    class="en"
+                    data-count="20000"
+                    data-locale="en-US"
+                    data-suffix="+">20,000+</span
+                  >
+                  <span
+                    class="fr"
+                    data-count="20000"
+                    data-locale="fr-FR"
+                    data-suffix="+">20&nbsp;000+</span
+                  >
+                </p>
+                <p class="cs-de-scale-cap">
+                  <span class="en"
+                    >datasets made available, unreviewed included</span
+                  >
+                  <span class="fr"
+                    >datasets rendus disponibles, non validés compris</span
+                  >
+                </p>
               </div>
             </div>
+            <p class="cs-section-subheading text-align-center">
+              <span class="en"
+                >An explorer <span class="text-accent"
+                  >built for 2,000 curated datasets
+                </span><span class="cs-accent">now had to handle 20,000+.</span
+                ></span
+              >
+              <span class="fr"
+                >Un explorer <span class="text-accent"
+                  >pensé pour 2&nbsp;000 datasets curés</span
+                >
+                <span class="cs-accent"
+                  >devait désormais en accueillir plus de 20&nbsp;000.</span
+                ></span
+              >
+            </p>
+          </div>
+          <div class="cs-de-timeline" data-timeline>
+            <ol class="cs-de-timeline-cards">
+              {
+                steps.map((s, i) => (
+                  <li class="cs-de-timeline-card" style={`--i:${i}`}>
+                    <div class="cs-de-timeline-card-top">
+                      <span class="cs-de-timeline-icon" aria-hidden="true">
+                        <Icon name={s.icon} />
+                      </span>
+                    </div>
+                    <h3 class="cs-de-timeline-title">
+                      <span class="en">{s.en.title}</span>
+                      <span class="fr">{s.fr.title}</span>
+                    </h3>
+                    <p class="cs-de-timeline-text">
+                      <span class="en">{s.en.text}</span>
+                      <span class="fr">{s.fr.text}</span>
+                    </p>
+                  </li>
+                ))
+              }
+            </ol>
           </div>
         </div>
       </section>
@@ -346,95 +440,151 @@ import Layout from "../layouts/Layout.astro";
           <span class="en">Problem</span>
           <span class="fr">Problème</span>
         </h2>
-        <div class="cs-section-content">
+        <div class="cs-subsections">
           <div class="grid-2 items-baseline">
-            <p class="cs-section-legend">
-              <span class="en">
-                The explorer <span class="accent"
-                  >required users to already know what they were looking for</span
-                >, and <span class="accent"
-                  >showed them only 10% of the available data</span
-                >.
-              </span>
-              <span class="fr">
-                Le Data Explorer exigeait des utilisateurs qu'ils sachent déjà
-                ce qu'ils cherchaient, et ne leur <span class="accent"
-                  >montrait que 10 % des données disponibles</span
-                >.
-              </span>
+            <p class="cs-section-heading-legend">
+              <span class="en"
+                >The explorer relied on users <span class="text-accent"
+                  >already knowing what they were looking for</span
+                >, an approach that <span class="text-accent"
+                  >couldn't scale with the database</span
+                >.</span
+              >
+              <span class="fr"
+                >Le Data Explorer reposait sur des utilisateurs qui <span
+                  class="text-accent">savaient déjà ce qu'ils cherchaient</span
+                >, une approche qui <span class="text-accent"
+                  >ne pouvait pas suivre la croissance de la base de données</span
+                >.</span
+              >
             </p>
             <div>
               <p class="en">
-                Datasets were identified by technical IDs, alphanumeric strings
-                that meant nothing to most users. No titles, no descriptions.
-                Search was shallow. Filters were flat. And with only reviewed
-                datasets shown, the interface gave no sense of the actual scale
-                of the data available.
+                The product was repositioning around the richness of its data,
+                but the interface could neither show that richness nor help
+                anyone find their way through it.
               </p>
               <p class="fr">
-                Les datasets étaient identifiés par des identifiants techniques,
-                des chaînes alphanumériques qui ne signifiaient rien pour la
-                plupart des utilisateurs. Pas de titres, pas de descriptions. La
-                recherche était limitée. Les filtres étaient plats. Et avec
-                seulement les datasets validés affichés, l'interface ne donnait
-                aucune idée de l'échelle réelle des données disponibles.
-              </p>
-              <p class="en">
-                A product repositioning around data richness, built on a Data
-                Explorer showing 10% of it.
-              </p>
-              <p class="fr">
-                Un produit qui se repositionnait autour de la richesse de ses
-                données, avec un Data Explorer qui n'en montrait que 10&nbsp;%.
+                Le produit se repositionnait autour de la richesse de ses
+                données, mais l'interface ne permettait ni de la montrer, ni de
+                s'y retrouver.
               </p>
             </div>
           </div>
-          <div class="cs-img-wrapper">
-            <div class="cs-img">
-              <img
-                loading="lazy"
-                decoding="async"
-                src="/assets/data-explorer-old.webp"
-                alt="Data Explorer V1"
-                onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: V1</div>'"
-              />
+          <div class="flex flex-col gap-3">
+            <div class="cs-de-needs-intro">
+              <h3 class="cs-subsection-subheading text-align-center">
+                <span class="en">The need for a redesign</span>
+                <span class="fr">la nécessité d'une refonte</span>
+              </h3>
+              <p class="en text-align-center">
+                The Data Explorer had been built for a small catalog of curated
+                datasets. As the database grew, that architecture limited both
+                what users could discover and how the product could be
+                positioned commercially.
+              </p>
+              <p class="fr text-align-center">
+                Le Data Explorer avait été conçu pour un catalogue restreint de
+                datasets curés. À mesure que la base de données grandissait,
+                cette architecture limitait autant la découverte côté
+                utilisateurs que le positionnement commercial du produit.
+              </p>
             </div>
-            <p class="cs-img-legend">
-              <span class="en">Data Explorer: Version 1</span>
-              <span class="fr">Data Explorer : Version 1</span>
-            </p>
+            <div class="cs-de-needs" data-needs>
+              <figure class="cs-de-needs-stage">
+                <div class="cs-de-needs-shot">
+                  <img
+                    loading="lazy"
+                    decoding="async"
+                    width="2000"
+                    height="1427"
+                    src="/assets/data-explorer-context-needs.webp"
+                    alt="Data Explorer V1: dataset counters above a table of datasets named by technical IDs"
+                  />
+                  <span class="cs-de-needs-spot" aria-hidden="true"></span>
+                </div>
+                <figcaption class="cs-de-needs-notes">
+                  <p class="cs-de-needs-note" data-note="business">
+                    <span class="en"
+                      >The counters showed reviewed datasets only, a fraction of
+                      the database.</span
+                    >
+                    <span class="fr"
+                      >Les compteurs n'affichaient que les datasets validés, une
+                      fraction de la base.</span
+                    >
+                  </p>
+                  <p class="cs-de-needs-note" data-note="users">
+                    <span class="en"
+                      >Datasets named by technical IDs only: no title, no
+                      description.</span
+                    >
+                    <span class="fr"
+                      >Des datasets nommés par leur seul identifiant
+                      technique&nbsp;: ni titre, ni description.</span
+                    >
+                  </p>
+                </figcaption>
+              </figure>
+              <div class="cs-de-needs-cards">
+                <article class="cs-de-needs-card" data-need="business">
+                  <span class="cs-de-needs-tag">
+                    <span class="en">Business need</span>
+                    <span class="fr">Besoin business</span>
+                  </span>
+                  <h4 class="cs-de-needs-title">
+                    <span class="en">Show the full scale</span>
+                    <span class="fr">Montrer toute l'échelle</span>
+                  </h4>
+                  <p class="cs-de-needs-text">
+                    <span class="en"
+                      >A platform that reflects the real size of the database,
+                      and holds up when prospects compare data coverage with
+                      competitors.</span
+                    >
+                    <span class="fr"
+                      >Une plateforme qui reflète la taille réelle de la base,
+                      et qui tient la comparaison quand les prospects évaluent
+                      la couverture data face aux concurrents.</span
+                    >
+                  </p>
+                </article>
+                <article class="cs-de-needs-card" data-need="users">
+                  <span class="cs-de-needs-tag">
+                    <span class="en">Researchers need</span>
+                    <span class="fr">Besoin des chercheurs</span>
+                  </span>
+                  <h4 class="cs-de-needs-title">
+                    <span class="en">Make discovery easier</span>
+                    <span class="fr">Faciliter la découverte</span>
+                  </h4>
+                  <p class="cs-de-needs-text">
+                    <span class="en"
+                      >A way to find the right datasets by what they contain,
+                      not by technical identifiers they'd have to know in
+                      advance.</span
+                    >
+                    <span class="fr"
+                      >Pouvoir trouver les bons datasets par leur contenu, et
+                      non par des identifiants techniques à connaître à
+                      l'avance.</span
+                    >
+                  </p>
+                </article>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
-      <section class="cs-section reveal" id="approach">
-        <h2 class="cs-section-heading">
-          <span class="en">Approach</span>
-          <span class="fr">Approche</span>
-        </h2>
-        <div class="cs-section-content">
-          <p class="cs-section-legend">
-            <span class="en">
-              Before designing anything, we <span class="accent"
-                >ran a cross-team workshop</span
-              > to <span class="accent"
-                >align product, engineering, and domain experts on what mattered
-                most</span
-              >.
-            </span>
-            <span class="fr">
-              Avant toute conception, nous avons animé un workshop réunissant
-              produit, ingénierie et experts métier pour aligner les priorités.
-            </span>
-          </p>
           <div class="flex flex-col gap-2">
-            <p class="en">
-              User interviews gave the workshop its starting point. They
-              surfaced two blockers in the V1 explorer.
+            <h3 class="cs-subsection-subheading text-align-center">
+              <span class="en">User interviews</span>
+              <span class="fr">Interviews utilisateurs</span>
+            </h3>
+            <p class="en text-align-center">
+              User interviews surfaced two blockers in the V1 explorer.
             </p>
-            <p class="fr">
-              Les interviews utilisateurs ont servi de point de départ au
-              workshop. Elles ont fait ressortir deux blocages dans le Data
-              Explorer V1.
+            <p class="fr text-align-center">
+              Les interviews utilisateurs ont fait ressortir deux blocages dans
+              le Data Explorer V1.
             </p>
             <div class="cs-cards grid-2">
               <div class="cs-subsection-card">
@@ -473,14 +623,38 @@ import Layout from "../layouts/Layout.astro";
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section class="cs-section reveal" id="approach">
+        <h2 class="cs-section-heading">
+          <span class="en">Approach</span>
+          <span class="fr">Approche</span>
+        </h2>
+        <div class="cs-section-content">
+          <p class="cs-section-heading-legend">
+            <span class="en">
+              Before designing anything, we <span class="text-accent"
+                >ran a cross-team workshop</span
+              > to <span class="text-accent"
+                >align product, engineering, and domain experts on what mattered
+                most</span
+              >.
+            </span>
+            <span class="fr">
+              Avant toute conception, nous avons animé un workshop réunissant
+              produit, ingénierie et experts métier pour aligner les priorités.
+            </span>
+          </p>
           <p class="en">
-            Five people from across the company took part: product, engineering,
-            and domain experts from the scientific and curation teams. The
-            session followed three phases: brainstorming, reorganization, and
-            prioritization.
+            These two blockers became the workshop's starting point. Five people
+            from across the company took part: product, engineering, and domain
+            experts from the scientific and curation teams. The session followed
+            three phases: brainstorming, reorganization, and prioritization.
           </p>
           <p class="fr">
-            Cinq personnes de différentes équipes y ont participé : produit,
+            Ces deux blocages ont servi de point de départ au workshop. Cinq
+            personnes de différentes équipes y ont participé : produit,
             ingénierie, et experts métier des équipes scientifiques et de
             curation. La session s'est déroulée en trois phases : brainstorming,
             réorganisation et priorisation.
@@ -515,20 +689,20 @@ import Layout from "../layouts/Layout.astro";
       <section class="cs-section reveal" id="solution">
         <!-- <h2 class="cs-section-heading">Solution</h2> -->
         <div class="cs-section-content">
-          <p class="cs-section-legend text-align-center">
+          <p class="cs-section-heading-legend text-align-center">
             <span class="en">
-              <span class="accent">Six decisions</span>, each addressing a
+              <span class="text-accent">Six decisions</span>, each addressing a
               specific gap in the V1 explorer.
             </span>
             <span class="fr">
-              <span class="accent">Six décisions</span>, chacune répondant à une
-              limite précise du Data Explorer V1.
+              <span class="text-accent">Six décisions</span>, chacune répondant
+              à une limite précise du Data Explorer V1.
             </span>
           </p>
           <div class="cs-subsections">
             <div class="cs-subsection">
               <div>
-                <span class="cs-subsection-subheading">Solution 1/6</span>
+                <span class="cs-subsection-eyebrow">Solution 1/6</span>
                 <div class="grid-2 items-baseline">
                   <h3 class="cs-subsection-heading">
                     <span class="en">Reviewed &amp; Unreviewed</span>
@@ -565,7 +739,7 @@ import Layout from "../layouts/Layout.astro";
             </div>
             <div class="cs-subsection">
               <div>
-                <span class="cs-subsection-subheading">Solution 2/6</span>
+                <span class="cs-subsection-eyebrow">Solution 2/6</span>
                 <div class="grid-2 items-baseline">
                   <h3 class="cs-subsection-heading">
                     <span class="en">Richer dataset context</span>
@@ -618,7 +792,7 @@ import Layout from "../layouts/Layout.astro";
             </div>
             <div class="cs-subsection">
               <div>
-                <span class="cs-subsection-subheading">Solution 3/6</span>
+                <span class="cs-subsection-eyebrow">Solution 3/6</span>
                 <div class="grid-2 items-baseline">
                   <h3 class="cs-subsection-heading">
                     <span class="en">Smarter search</span>
@@ -654,7 +828,7 @@ import Layout from "../layouts/Layout.astro";
             </div>
             <div class="cs-subsection">
               <div>
-                <span class="cs-subsection-subheading">Solution 4/6</span>
+                <span class="cs-subsection-eyebrow">Solution 4/6</span>
                 <div class="grid-2 items-baseline">
                   <h3 class="cs-subsection-heading">
                     <span class="en">Filters, restructured</span>
@@ -704,7 +878,7 @@ import Layout from "../layouts/Layout.astro";
             </div>
             <div class="cs-subsection">
               <div>
-                <span class="cs-subsection-subheading">Solution 5/6</span>
+                <span class="cs-subsection-eyebrow">Solution 5/6</span>
                 <div class="grid-2 items-baseline">
                   <h3 class="cs-subsection-heading">
                     <span class="en">Metrics that matter</span>
@@ -739,7 +913,7 @@ import Layout from "../layouts/Layout.astro";
             </div>
             <div class="cs-subsection">
               <div>
-                <span class="cs-subsection-subheading">Solution 6/6</span>
+                <span class="cs-subsection-eyebrow">Solution 6/6</span>
                 <div class="grid-2 items-baseline">
                   <h3 class="cs-subsection-heading">
                     <span class="en">Saved datasets</span>
@@ -787,11 +961,11 @@ import Layout from "../layouts/Layout.astro";
       <section class="cs-section reveal" id="impact">
         <h2 class="cs-section-heading">Impact</h2>
         <div class="grid-2">
-          <p class="cs-section-legend">
+          <p class="cs-section-heading-legend">
             <span class="en">
-              From <span class="accent">2,000</span> visible datasets to <span
-                class="accent">20,000+</span
-              >: the <span class="accent">
+              From <span class="text-accent">2,000</span> visible datasets to <span
+                class="text-accent">20,000+</span
+              >: the <span class="text-accent">
                 redesign made the database's actual scale visible for the first
                 time.
               </span>

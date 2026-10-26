@@ -203,7 +203,6 @@
 ============================================ */
 
 
-
 @media (min-width: 980px) {
   .cs-section {
     --img-offsite: var(--s5);
@@ -233,18 +232,21 @@
   margin-bottom: var(--s2);
 }
 
-
-.cs-section-legend {
-  font-size: var(--fs-24);
-  font-size: clamp(var(--fs-22), var(--fs-24), var(--fs-24));
+.cs-section-heading-legend {
+  font-size: clamp(var(--fs-20), 2.8vw, var(--fs-32));
   line-height: 1.3;
   font-family: var(--serif);
   color: var(--muted);
 }
-.cs-section-legend .accent {
-  color: var(--ink);
+
+.cs-section-subheading {
+  font-family: var(--serif);
+  font-size: clamp(var(--fs-18), 2.2vw, var(--fs-24));
 }
 
+.text-accent {
+  color: var(--ink);
+}
 
 .cs-list li:not(:last-child) {
   margin-bottom: var(--s2);
@@ -277,7 +279,56 @@
   grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
 }
 
+/* Subsection title, highlighted with an animated marker stroke.
+   The stroke is 12px high with half-circle ends (6px radius) and follows a
+   slight upward arc (3px). It is built from three background layers so the
+   ends keep their 6px radius whatever the title length:
+   left cap · stretched arc · right cap. Colour: accent (#FF4F1F) at 30%. */
+@property --hl-p {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+
 .cs-subsection-subheading {
+  --hl-cap-l: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 15'%3E%3Cpath d='M6 3A6 6 0 0 0 6 15Z' fill='%23FF4F1F' fill-opacity='0.3'/%3E%3C/svg%3E");
+  --hl-cap-r: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 15'%3E%3Cpath d='M0 3A6 6 0 0 1 0 15Z' fill='%23FF4F1F' fill-opacity='0.3'/%3E%3C/svg%3E");
+  --hl-mid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 15' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q50 -3 100 3L100 15Q50 9 0 15Z' fill='%23FF4F1F' fill-opacity='0.3'/%3E%3C/svg%3E");
+  display: block;
+  font-size: var(--fs-18);
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: var(--s2);
+}
+
+.cs-subsection-subheading > span {
+  --hl-p: 1;
+  padding: 0 0.2em;
+  background-image: var(--hl-cap-l), var(--hl-mid), var(--hl-cap-r);
+  background-repeat: no-repeat;
+  background-size: 6px 15px, calc((100% - 12px) * var(--hl-p)) 15px, 6px 15px;
+  background-position:
+    left 0 bottom 1px,
+    left 6px bottom 1px,
+    left calc(6px + (100% - 6px) * var(--hl-p)) bottom 1px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* JS arms the marker, then draws it left to right when the title enters view */
+.cs-subsection-subheading.hl-armed > span {
+  --hl-p: 0;
+  background-image: none;
+  transition: --hl-p 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+
+.cs-subsection-subheading.hl-armed.is-lit > span {
+  --hl-p: 1;
+  background-image: var(--hl-cap-l), var(--hl-mid), var(--hl-cap-r);
+}
+
+/* Small counter label above a subsection title (Solution 1/6…) */
+.cs-subsection-eyebrow {
   display: block;
   letter-spacing: 0.06em;
   font-size: var(--fs-12);

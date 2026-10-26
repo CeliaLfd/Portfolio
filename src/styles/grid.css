@@ -63,6 +63,11 @@
 .gap-y-8 { row-gap: var(--s8); }
 .gap-y-9 { row-gap: var(--s9); }
 
+/* Grid cell position */
+.grid-column-1 {
+  grid-column: 1;
+}
+
 /* Flex display */
 .flex { display: flex; }
 .inline-flex { display: inline-flex; }

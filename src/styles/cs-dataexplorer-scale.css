@@ -1,0 +1,284 @@
+/* ============================================
+   CASE STUDY — SCALE BAND + TIMELINE
+============================================ */
+
+.cs-label {
+  display: flex;
+  align-items: center;
+  gap: var(--s1);
+  font-family: var(--display);
+  font-size: var(--fs-14);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: var(--s3);
+}
+
+.cs-label::before {
+  content: "";
+  width: var(--s3);
+  height: 1px;
+  background: var(--accent);
+}
+
+.cs-accent {
+  color: var(--accent);
+}
+
+/* ---------- Band ---------- */
+
+
+.cs-de-scale-col {
+  display: grid;
+  align-content: start;
+}
+
+.cs-de-scale-band {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) auto minmax(0, 3fr);
+  grid-template-rows: repeat(4, auto);
+  column-gap: var(--s2);
+  margin-left: var(--s2);
+  margin-right: var(--s2);
+}
+
+@media (min-width: 800px) {
+  .cs-de-scale-band {
+    column-gap: var(--s5);
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+.cs-de-scale-band .cs-de-scale-grid {
+  width: 100%;
+}
+
+.cs-de-scale-col {
+  grid-row: 1 / span 4;
+  grid-template-rows: subgrid;
+}
+
+.cs-de-scale-col[data-side="before"] { grid-column: 1; }
+.cs-de-scale-col[data-side="after"]  { grid-column: 3; }
+
+.cs-de-scale-mid {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: center;
+}
+
+
+.cs-de-scale-band .cs-label {
+  margin-bottom: var(--s2);
+}
+
+.cs-de-scale-band .cs-label::before {
+  display: none;
+}
+
+.cs-de-scale-grid {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 4px;
+  width: 75%;
+  margin-bottom: var(--s3);
+}
+
+.cs-de-scale-grid span {
+  aspect-ratio: 1;
+  border-radius: 3px;
+  background: var(--border);
+  transition: background-color 0.35s ease;
+}
+
+.cs-de-scale-grid span.on {
+  background: var(--accent);
+}
+
+.cs-de-scale-num {
+  font-family: var(--display);
+  font-size: clamp(var(--fs-18), 6vw, 4rem);
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: var(--s1);
+}
+
+.cs-de-scale-cap {
+  font-size: var(--fs-14);
+  line-height: 1.4;
+  color: var(--muted);
+  max-width: 28ch;
+}
+
+
+.cs-de-scale-mid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s1);
+  text-align: center;
+}
+
+.cs-de-scale-mid .cs-de-scale-cap {
+  max-width: 14ch;
+}
+
+
+.cs-de-scale-x {
+  font-family: var(--display);
+  font-size: clamp(var(--fs-20), 7vw, 6rem);
+  line-height: 0.85;
+  color: var(--accent);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.cs-de-scale-why {
+  margin-top: var(--s6);
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  max-width: 30ch;
+}
+
+/* Animation states, only when JS has armed the band */
+.cs-de-scale-band.is-armed .cs-de-scale-grid span.on {
+  background: var(--border);
+}
+
+.cs-de-scale-band.is-armed .cs-de-scale-x {
+  opacity: 0;
+  transform: scale(0.85);
+}
+
+.cs-de-scale-band.is-armed .cs-de-scale-grid span.lit {
+  background: var(--accent);
+}
+
+.cs-de-scale-band.is-armed .cs-de-scale-x.lit {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Timeline: 4 cards with arrows ---------- */
+
+
+.cs-de-timeline-cards {
+  --tl-gap: var(--s4);
+  display: grid;
+  gap: var(--tl-gap);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 1080px) {
+  .cs-de-timeline-cards {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.cs-de-timeline-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s1);
+  padding: var(--s3);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.cs-de-timeline-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: var(--s2);
+}
+
+.cs-de-timeline-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent);
+}
+
+.cs-de-timeline-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.cs-de-timeline-title {
+  font-family: var(--serif);
+  font-size: clamp(var(--fs-20), 1.8vw, var(--fs-24));
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.cs-de-timeline-text {
+  font-size: var(--fs-16);
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* Arrow between cards: down when stacked, right when in a row */
+.cs-de-timeline-card:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--s3) + 22px);
+  bottom: calc(var(--tl-gap) / -2);
+  width: 18px;
+  height: 18px;
+  background: var(--accent);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+  transform: translate(-50%, 50%) rotate(90deg);
+}
+
+@media (min-width: 1080px) {
+  .cs-de-timeline-card:not(:last-child)::after {
+    left: auto;
+    bottom: auto;
+    top: 50%;
+    right: calc(var(--tl-gap) / -2);
+    transform: translate(50%, -50%);
+  }
+}
+
+/* Entrance: cards then arrows, one after the other */
+.cs-de-timeline.is-armed .cs-de-timeline-card {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition-delay: calc(var(--i) * 220ms);
+}
+
+.cs-de-timeline.is-armed .cs-de-timeline-card::after {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  transition-delay: calc(var(--i) * 220ms + 260ms);
+}
+
+.cs-de-timeline.is-armed.is-in .cs-de-timeline-card {
+  opacity: 1;
+  transform: none;
+}
+
+.cs-de-timeline.is-armed.is-in .cs-de-timeline-card::after {
+  opacity: 1;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .cs-de-scale-grid span,
+  .cs-de-scale-x,
+  .cs-de-timeline.is-armed .cs-de-timeline-card,
+  .cs-de-timeline.is-armed .cs-de-timeline-card::after {
+    transition: none;
+  }
+}
