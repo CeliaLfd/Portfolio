@@ -22,16 +22,18 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Animation guard: html.js is set before first paint, so CSS can hide
-         content that main.js will reveal. If main.js fails to load or throws,
-         the class is removed and everything shows, without animation. -->
+         content that /js/main.js will reveal. If one of the /js/ modules fails
+         to load or throws, the class is removed and everything shows, without
+         animation. Browsers without ES modules never run main.js: no guard. -->
     <script is:inline>
       (() => {
         const root = document.documentElement;
         if (!('IntersectionObserver' in window)) return;
+        if (!('noModule' in HTMLScriptElement.prototype)) return;
         root.classList.add('js');
         addEventListener('error', (e) => {
           const src = e.filename || (e.target && e.target.src) || '';
-          if (src.includes('/main.js')) root.classList.remove('js');
+          if (src.includes('/js/')) root.classList.remove('js');
         }, true);
       })();
     </script>
@@ -55,6 +57,6 @@ const {
     <Footer />
     <ImageViewer id="imgModal" />
 
-    <script src="/main.js" is:inline></script>
+    <script type="module" src="/js/main.js" is:inline></script>
   </body>
 </html>
