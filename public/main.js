@@ -286,7 +286,6 @@ function initScaleBand() {
     const before = band.querySelector('[data-side="before"]');
     const after = band.querySelector('[data-side="after"]');
     const x = band.querySelector('.cs-de-scale-x');
-    band.classList.add('is-armed');
 
     const io = new IntersectionObserver((entries) => {
       if (!entries[0].isIntersecting) return;
@@ -309,6 +308,26 @@ function initScaleBand() {
 
 
 /* ============================================
+   TIMELINE (cards then arrows, one after the other)
+============================================ */
+
+function initTimeline() {
+  const timelines = document.querySelectorAll('[data-timeline]');
+  if (!timelines.length) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+
+  timelines.forEach((timeline) => {
+    const io = new IntersectionObserver((entries) => {
+      if (!entries[0].isIntersecting) return;
+      io.disconnect();
+      timeline.classList.add('is-in');
+    }, { rootMargin: '0px 0px -15% 0px' });
+    io.observe(timeline);
+  });
+}
+
+/* ============================================
    NEEDS LENS (Data Explorer: business / researcher view)
 ============================================ */
 
@@ -317,8 +336,6 @@ function initNeedsLens() {
     const stage = block.querySelector('.cs-de-needs-stage');
     const cards = block.querySelectorAll('.cs-de-needs-card');
     if (!stage || !cards.length) return;
-
-    block.classList.add('is-js');
 
     function set(need) {
       stage.dataset.active = need;
@@ -357,10 +374,7 @@ function initSubheadingHighlight() {
     });
   }, { threshold: 1, rootMargin: '0px 0px -15% 0px' });
 
-  titles.forEach((t) => {
-    t.classList.add('hl-armed');
-    io.observe(t);
-  });
+  titles.forEach((t) => io.observe(t));
 }
 
 /* ============================================
@@ -386,7 +400,6 @@ function initInterviews() {
 
   blocks.forEach((block) => {
     const cards = [...block.querySelectorAll('.cs-de-quote')];
-    block.classList.add('is-armed');
 
     if (multiCols.matches) {
       // Several cards per row: one staggered wave for the whole block
@@ -424,6 +437,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initBeforeAfter();
   initSliderWheel();
   initScaleBand();
+  initTimeline();
   initNeedsLens();
   initSubheadingHighlight();
   initInterviews();

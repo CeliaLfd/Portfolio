@@ -297,7 +297,6 @@ CONTACT
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .about-caret { animation: none; }
-  .about .reveal { opacity: 1; transform: none; transition: none; }
   .about-xp-years,
   .about-links a { transition: none; }
 }

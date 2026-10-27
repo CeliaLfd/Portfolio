@@ -79,7 +79,7 @@
     height 0.5s cubic-bezier(0.3, 0.7, 0.2, 1), opacity 0.4s ease;
 }
 
-.cs-de-needs.is-js .cs-de-needs-spot {
+.js .cs-de-needs .cs-de-needs-spot {
   display: block;
 }
 
@@ -101,30 +101,30 @@
   margin-bottom: 0;
 }
 
-.cs-de-needs.is-js .cs-de-needs-note {
+.js .cs-de-needs .cs-de-needs-note {
   display: none;
   color: var(--ink);
 }
 
-.cs-de-needs.is-js .cs-de-needs-stage[data-active="business"] [data-note="business"],
-.cs-de-needs.is-js .cs-de-needs-stage[data-active="users"] [data-note="users"] {
+.js .cs-de-needs .cs-de-needs-stage[data-active="business"] [data-note="business"],
+.js .cs-de-needs .cs-de-needs-stage[data-active="users"] [data-note="users"] {
   display: block;
 }
 
-.cs-de-needs.is-js .cs-de-needs-stage:not([data-active]) .cs-de-needs-notes {
+.js .cs-de-needs .cs-de-needs-stage:not([data-active]) .cs-de-needs-notes {
   visibility: hidden;
 }
 
 /* Desktop: the note floats next to the highlighted zone */
 @media (min-width: 900px) {
-  .cs-de-needs.is-js .cs-de-needs-notes {
+  .js .cs-de-needs .cs-de-needs-notes {
     position: absolute;
     inset: 0;
     padding: 0;
     pointer-events: none;
   }
 
-  .cs-de-needs.is-js .cs-de-needs-note {
+  .js .cs-de-needs .cs-de-needs-note {
     position: absolute;
     max-width: 30ch;
     padding: var(--s1) var(--s2);
@@ -134,12 +134,12 @@
     animation: cs-de-note-in 0.4s ease 0.25s both;
   }
 
-  .cs-de-needs.is-js [data-note="business"] {
+  .js .cs-de-needs [data-note="business"] {
     top: 19%;
     right: 3%;
   }
 
-  .cs-de-needs.is-js [data-note="users"] {
+  .js .cs-de-needs [data-note="users"] {
     top: 30%;
     left: 24%;
   }
@@ -178,7 +178,7 @@
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.cs-de-needs.is-js .cs-de-needs-card {
+.js .cs-de-needs .cs-de-needs-card {
   cursor: pointer;
 }
 
@@ -210,7 +210,7 @@
     transition: none;
   }
 
-  .cs-de-needs.is-js .cs-de-needs-note {
+  .js .cs-de-needs .cs-de-needs-note {
     animation: none;
   }
 }

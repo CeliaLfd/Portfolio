@@ -137,10 +137,17 @@ body.lang-fr .en { display: none; }
    SCROLL REVEAL
 ============================================ */
 
-.reveal {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
-}
+/* Animation guard, shared by every scroll animation:
+   - hidden states are scoped to .js (set in <head> by Layout.astro, removed
+     if main.js fails), so content stays visible without JS;
+   - motion-only hidden states also sit in (prefers-reduced-motion: no-preference),
+     where main.js skips the animation and content stays in its final state. */
+@media (prefers-reduced-motion: no-preference) {
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+  }
 
-.reveal.visible { opacity: 1; transform: none; }
+  .js .reveal.visible { opacity: 1; transform: none; }
+}

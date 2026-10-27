@@ -20,6 +20,20 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Animation guard: html.js is set before first paint, so CSS can hide
+         content that main.js will reveal. If main.js fails to load or throws,
+         the class is removed and everything shows, without animation. -->
+    <script is:inline>
+      (() => {
+        const root = document.documentElement;
+        if (!('IntersectionObserver' in window)) return;
+        root.classList.add('js');
+        addEventListener('error', (e) => {
+          const src = e.filename || (e.target && e.target.src) || '';
+          if (src.includes('/main.js')) root.classList.remove('js');
+        }, true);
+      })();
+    </script>
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />

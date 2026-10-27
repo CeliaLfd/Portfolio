@@ -137,43 +137,45 @@ body.dark .cs-de-quote {
   overflow: hidden;
 }
 
-/* ---------- Animation states (JS only) ---------- */
+/* ---------- Animation states (guard: see global.css) ---------- */
 
-.cs-de-interviews.is-armed .cs-de-quote {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.35s ease-out,
-    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-}
+@media (prefers-reduced-motion: no-preference) {
+  .js .cs-de-interviews .cs-de-quote {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.35s ease-out,
+      transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
 
-.cs-de-interviews.is-armed .cs-de-quote.is-in {
-  opacity: 1;
-  transform: none;
-}
+  .js .cs-de-interviews .cs-de-quote.is-in {
+    opacity: 1;
+    transform: none;
+  }
 
-.cs-de-interviews.is-armed .cs-de-quote-text p {
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-}
+  .js .cs-de-interviews .cs-de-quote-text p {
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  }
 
-.cs-de-interviews.is-armed .cs-de-quote-dots {
-  display: flex;
-}
+  .js .cs-de-interviews .cs-de-quote-dots {
+    display: flex;
+  }
 
-.cs-de-interviews.is-armed .cs-de-quote.is-said .cs-de-quote-text p {
-  opacity: 1;
-  transform: none;
-}
+  .js .cs-de-interviews .cs-de-quote.is-said .cs-de-quote-text p {
+    opacity: 1;
+    transform: none;
+  }
 
-.cs-de-interviews.is-armed .cs-de-quote.is-said .cs-de-quote-dots {
-  display: none;
-}
+  .js .cs-de-interviews .cs-de-quote.is-said .cs-de-quote-dots {
+    display: none;
+  }
 
-.cs-de-interviews.is-armed .cs-de-quote-take {
-  grid-template-rows: 0fr;
-}
+  .js .cs-de-interviews .cs-de-quote-take {
+    grid-template-rows: 0fr;
+  }
 
-.cs-de-interviews.is-armed .cs-de-quote.is-open .cs-de-quote-take {
-  grid-template-rows: 1fr;
+  .js .cs-de-interviews .cs-de-quote.is-open .cs-de-quote-take {
+    grid-template-rows: 1fr;
+  }
 }

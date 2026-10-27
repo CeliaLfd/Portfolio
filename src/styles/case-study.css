@@ -309,16 +309,18 @@
   box-decoration-break: clone;
 }
 
-/* JS arms the marker, then draws it left to right when the title enters view */
-.cs-subsection-subheading.hl-armed > span {
-  --hl-p: 0;
-  background-image: none;
-  transition: --hl-p 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
-}
+/* Marker drawn left to right when the title enters view (guard: see global.css) */
+@media (prefers-reduced-motion: no-preference) {
+  .js .cs-subsection-subheading > span {
+    --hl-p: 0;
+    background-image: none;
+    transition: --hl-p 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+  }
 
-.cs-subsection-subheading.hl-armed.is-lit > span {
-  --hl-p: 1;
-  background-image: var(--hl-cap-l), var(--hl-mid), var(--hl-cap-r);
+  .js .cs-subsection-subheading.is-lit > span {
+    --hl-p: 1;
+    background-image: var(--hl-cap-l), var(--hl-mid), var(--hl-cap-r);
+  }
 }
 
 /* Small counter label above a subsection title (Solution 1/6…) */

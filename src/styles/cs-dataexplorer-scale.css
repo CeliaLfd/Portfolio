@@ -143,23 +143,25 @@
   max-width: 30ch;
 }
 
-/* Animation states, only when JS has armed the band */
-.cs-de-scale-band.is-armed .cs-de-scale-grid span.on {
-  background: var(--border);
-}
+/* Animation states (guard: see global.css) */
+@media (prefers-reduced-motion: no-preference) {
+  .js .cs-de-scale-band .cs-de-scale-grid span.on {
+    background: var(--border);
+  }
 
-.cs-de-scale-band.is-armed .cs-de-scale-x {
-  opacity: 0;
-  transform: scale(0.85);
-}
+  .js .cs-de-scale-band .cs-de-scale-x {
+    opacity: 0;
+    transform: scale(0.85);
+  }
 
-.cs-de-scale-band.is-armed .cs-de-scale-grid span.lit {
-  background: var(--accent);
-}
+  .js .cs-de-scale-band .cs-de-scale-grid span.lit {
+    background: var(--accent);
+  }
 
-.cs-de-scale-band.is-armed .cs-de-scale-x.lit {
-  opacity: 1;
-  transform: none;
+  .js .cs-de-scale-band .cs-de-scale-x.lit {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* ---------- Timeline: 4 cards with arrows ---------- */
@@ -250,35 +252,35 @@
   }
 }
 
-/* Entrance: cards then arrows, one after the other */
-.cs-de-timeline.is-armed .cs-de-timeline-card {
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  transition-delay: calc(var(--i) * 220ms);
-}
+/* Entrance: cards then arrows, one after the other (guard: see global.css) */
+@media (prefers-reduced-motion: no-preference) {
+  .js .cs-de-timeline .cs-de-timeline-card {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition-delay: calc(var(--i) * 220ms);
+  }
 
-.cs-de-timeline.is-armed .cs-de-timeline-card::after {
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  transition-delay: calc(var(--i) * 220ms + 260ms);
-}
+  .js .cs-de-timeline .cs-de-timeline-card::after {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    transition-delay: calc(var(--i) * 220ms + 260ms);
+  }
 
-.cs-de-timeline.is-armed.is-in .cs-de-timeline-card {
-  opacity: 1;
-  transform: none;
-}
+  .js .cs-de-timeline.is-in .cs-de-timeline-card {
+    opacity: 1;
+    transform: none;
+  }
 
-.cs-de-timeline.is-armed.is-in .cs-de-timeline-card::after {
-  opacity: 1;
+  .js .cs-de-timeline.is-in .cs-de-timeline-card::after {
+    opacity: 1;
+  }
 }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .cs-de-scale-grid span,
-  .cs-de-scale-x,
-  .cs-de-timeline.is-armed .cs-de-timeline-card,
-  .cs-de-timeline.is-armed .cs-de-timeline-card::after {
+  .cs-de-scale-x {
     transition: none;
   }
 }
