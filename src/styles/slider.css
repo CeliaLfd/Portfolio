@@ -17,7 +17,7 @@
 @media (max-width: 749px) {
   @supports (scroll-snap-type: x mandatory) and (scroll-snap-align: start) {
     [data-slider-mobile] {
-      --slider-gutter: var(--s3); /* = .cs-page horizontal padding */
+      --slider-gutter: var(--page-gutter); /* = .cs-page horizontal padding */
       --slider-gap: var(--s1);
 
       display: -webkit-box;

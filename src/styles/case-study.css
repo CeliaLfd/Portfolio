@@ -7,18 +7,19 @@
 ============================================ */
 
 .cs-page {
+  --page-gutter: var(--s2); /* also read by [data-slider-mobile] */
   display: flex;
   flex-direction: column;
   gap: var(--s6);
   max-width: var(--container);
   margin: var(--s4) auto;
-  padding: 0 var(--s2);
+  padding: 0 var(--page-gutter);
 }
 
 @media (min-width: 720px) {
   .cs-page {
+    --page-gutter: var(--s3);
     margin: var(--s5) auto 40vh;
-    padding: 0 var(--s3);
   }
 }
 
