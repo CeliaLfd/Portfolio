@@ -171,13 +171,7 @@
   gap: var(--s2);
 }
 
-.cs-summary-detail-label {
-  display: block;
-  font-size: var(--fs-14);
-  font-family: var(--display);
-  letter-spacing: 0.04em;
-  color: var(--muted);
-}
+
 
 .cs-summary-value {
   font-size: var(--fs-16);

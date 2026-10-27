@@ -1,0 +1,179 @@
+/* ============================================
+   DATA EXPLORER — USER INTERVIEWS
+============================================ */
+
+.cs-de-interviews {
+  --iv-gap: var(--s2);
+  --iv-cols: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* centers the incomplete last row */
+  gap: var(--iv-gap);
+  margin-top: var(--s3);
+}
+
+.cs-de-interviews > .cs-de-quote {
+  flex: 0 0 calc((100% - (var(--iv-cols) - 1) * var(--iv-gap)) / var(--iv-cols));
+}
+
+@media (min-width: 720px) {
+  .cs-de-interviews {
+    --iv-cols: 2;
+    --iv-gap: var(--s3);
+  }
+}
+
+@media (min-width: 1080px) {
+  .cs-de-interviews {
+    --iv-cols: 3;
+  }
+}
+
+/* ---------- Card (message bubble) ---------- */
+
+.cs-de-quote {
+  --bubble: hsl(0 0% 100%);
+  position: relative;
+  padding: var(--s3);
+  background: var(--bubble);
+  border-radius: 22px 22px 22px 4px;
+  filter: drop-shadow(0 1px 1px hsl(17 20% 10% / 0.05))
+    drop-shadow(0 8px 18px hsl(17 20% 10% / 0.08));
+}
+
+body.dark .cs-de-quote {
+  --bubble: var(--bg-card);
+}
+
+/* Message tail, bottom left */
+.cs-de-quote::after {
+  content: "";
+  position: absolute;
+  left: -8px;
+  bottom: 0;
+  width: 20px;
+  height: 16px;
+  background: var(--bubble);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 16'%3E%3Cpath d='M8 0H20V16C14 16 6 15 0 16C5 12 8 7 8 0Z'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 16'%3E%3Cpath d='M8 0H20V16C14 16 6 15 0 16C5 12 8 7 8 0Z'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+  pointer-events: none;
+}
+
+.cs-de-quote-text {
+  position: relative;
+  margin: 0;
+}
+
+.cs-de-quote-text p {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(var(--fs-20), 1.8vw, var(--fs-22));
+  line-height: 1.35;
+}
+
+.cs-de-quote-label {
+  display: flex;
+  align-items: center;
+  gap: var(--s1);
+  margin: var(--s2) 0 var(--s0);
+  padding-top: var(--s2);
+  border-top: 1px solid var(--border);
+  font-size: var(--fs-14);
+  color: var(--muted);
+}
+
+.cs-de-quote-label::before {
+  content: "→";
+  color: var(--accent);
+}
+
+.cs-de-quote-insight {
+  margin: 0;
+  font-size: var(--fs-16);
+  line-height: 1.5;
+}
+
+.cs-de-interviews-note {
+  margin-top: var(--s2);
+  font-size: var(--fs-14);
+  color: var(--muted);
+}
+
+/* ---------- Typing dots ---------- */
+
+.cs-de-quote-dots {
+  display: none;
+  position: absolute;
+  top: 0.55em;
+  left: 0;
+  gap: 5px;
+}
+
+.cs-de-quote-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--muted);
+  animation: cs-de-typing 1s ease-in-out infinite;
+}
+
+.cs-de-quote-dots span:nth-child(2) { animation-delay: 0.15s; }
+.cs-de-quote-dots span:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes cs-de-typing {
+  0%, 100% { transform: none; opacity: 1; }
+  50% { transform: translateY(-4px); opacity: 0.4; }
+}
+
+/* ---------- Takeaway unfold ---------- */
+
+.cs-de-quote-take {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cs-de-quote-take > div {
+  overflow: hidden;
+}
+
+/* ---------- Animation states (JS only) ---------- */
+
+.cs-de-interviews.is-armed .cs-de-quote {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.35s ease-out,
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cs-de-interviews.is-armed .cs-de-quote.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+.cs-de-interviews.is-armed .cs-de-quote-text p {
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.cs-de-interviews.is-armed .cs-de-quote-dots {
+  display: flex;
+}
+
+.cs-de-interviews.is-armed .cs-de-quote.is-said .cs-de-quote-text p {
+  opacity: 1;
+  transform: none;
+}
+
+.cs-de-interviews.is-armed .cs-de-quote.is-said .cs-de-quote-dots {
+  display: none;
+}
+
+.cs-de-interviews.is-armed .cs-de-quote-take {
+  grid-template-rows: 0fr;
+}
+
+.cs-de-interviews.is-armed .cs-de-quote.is-open .cs-de-quote-take {
+  grid-template-rows: 1fr;
+}

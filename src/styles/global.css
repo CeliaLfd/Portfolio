@@ -139,7 +139,7 @@ body.lang-fr .en { display: none; }
 
 .reveal {
   opacity: 0;
-  transform: translateY(14px);
+  transform: translateY(10px);
   transition: opacity 0.2s ease-out, transform 0.2s ease-out;
 }
 

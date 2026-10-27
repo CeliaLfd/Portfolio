@@ -1,7 +1,19 @@
 /* ============================================
-   TEXT
+   UTILITARY CLASSES
 ============================================ */
 
 .text-align-center {
   text-align: center;
+}
+
+/* ============================================
+   TYPOGRAPHY
+============================================ */
+
+.heading-label {
+  display: block;
+  font-size: var(--fs-14);
+  font-family: var(--display);
+  letter-spacing: 0.04em;
+  color: var(--muted);
 }

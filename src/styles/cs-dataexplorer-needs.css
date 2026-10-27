@@ -187,15 +187,8 @@
   box-shadow: inset 0 0 0 1px var(--ink);
 }
 
-.cs-de-needs-card.is-active .cs-de-needs-tag {
+.cs-de-needs-card.is-active .heading-label {
   color: var(--accent);
-}
-
-.cs-de-needs-tag {
-  margin-bottom: 0;
-  font-family: var(--display);
-  font-size: var(--fs-14);
-  color: var(--muted);
 }
 
 .cs-de-needs-title {

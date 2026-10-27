@@ -132,7 +132,7 @@ const steps: {
                 <p class="cs-summary-value">
                   Product Designer ∙ Frontend Engineer
                 </p>
-                <span class="cs-summary-detail-label">
+                <span class="heading-label">
                   <span class="en">Role</span>
                   <span class="fr">Rôle</span>
                 </span>
@@ -141,7 +141,7 @@ const steps: {
                 <p class="cs-summary-value">
                   Figma ∙ FigJam ∙ React.js ∙ ReScript
                 </p>
-                <span class="cs-summary-detail-label">
+                <span class="heading-label">
                   <span class="en">Tools / Stack</span>
                   <span class="fr">Outils / Stack</span>
                 </span>
@@ -157,7 +157,7 @@ const steps: {
                     moi) ∙ 1 développeur back-end ∙ 3 experts métier</span
                   >
                 </p>
-                <span class="cs-summary-detail-label">
+                <span class="heading-label">
                   <span class="en">Team</span>
                   <span class="fr">Équipe</span>
                 </span>
@@ -178,7 +178,7 @@ const steps: {
                     front-end a construit le reste.</span
                   >
                 </p>
-                <span class="cs-summary-detail-label">
+                <span class="heading-label">
                   <span class="en">My part</span>
                   <span class="fr">Ma part</span>
                 </span>
@@ -192,7 +192,7 @@ const steps: {
                   Stratégie produit ∙ Animation de workshop ∙ Prototypage ∙
                   Architecture de l'information ∙ Développement Front-end
                 </p>
-                <span class="cs-summary-detail-label">Scope</span>
+                <span class="heading-label">Scope</span>
               </div>
             </div>
           </div>
@@ -528,7 +528,7 @@ const steps: {
               </figure>
               <div class="cs-de-needs-cards">
                 <article class="cs-de-needs-card" data-need="business">
-                  <span class="cs-de-needs-tag">
+                  <span class="heading-label">
                     <span class="en">Business need</span>
                     <span class="fr">Besoin business</span>
                   </span>
@@ -550,7 +550,7 @@ const steps: {
                   </p>
                 </article>
                 <article class="cs-de-needs-card" data-need="users">
-                  <span class="cs-de-needs-tag">
+                  <span class="heading-label">
                     <span class="en">Researchers need</span>
                     <span class="fr">Besoin des chercheurs</span>
                   </span>
@@ -580,48 +580,209 @@ const steps: {
               <span class="fr">Interviews utilisateurs</span>
             </h3>
             <p class="en text-align-center">
-              User interviews surfaced two blockers in the V1 explorer.
+              User interviews surfaced several blockers in the V1 explorer.
             </p>
             <p class="fr text-align-center">
-              Les interviews utilisateurs ont fait ressortir deux blocages dans
-              le Data Explorer V1.
+              Les interviews utilisateurs ont fait ressortir plusieurs points de
+              blocage dans le Data Explorer V1.
             </p>
-            <div class="cs-cards grid-2">
-              <div class="cs-subsection-card">
-                <span class="cs-summary-title">
-                  <span class="en">Filters went unused</span>
-                  <span class="fr">Des filtres peu utilisés</span>
-                </span>
-                <p class="cs-summary-value">
-                  <span class="en"
-                    >No organisation, terms too technical for some profiles, no
-                    help, and long lists that were hard to use.</span
-                  >
-                  <span class="fr"
-                    >Aucune organisation, des termes trop techniques pour
-                    certains profils, pas d'aide, et des listes à rallonge
-                    compliquées à utiliser.</span
-                  >
+            <div class="cs-de-interviews" data-interviews>
+              <article class="cs-de-quote">
+                <p class="heading-label">
+                  <span class="en">Filters</span>
+                  <span class="fr">Filtres</span>
                 </p>
-              </div>
-              <div class="cs-subsection-card">
-                <span class="cs-summary-title">
-                  <span class="en">Datasets were opaque</span>
-                  <span class="fr">Des datasets opaques</span>
-                </span>
-                <p class="cs-summary-value">
-                  <span class="en"
-                    >Users didn't know what a dataset contained. To find out,
-                    they had to click it and leave the list for a separate page.</span
+                <blockquote class="cs-de-quote-text">
+                  <span class="cs-de-quote-dots" aria-hidden="true"
+                    ><span></span><span></span><span></span></span
                   >
-                  <span class="fr"
-                    >Les utilisateurs ne savaient pas ce que contenait un
-                    dataset. Pour le savoir, il fallait cliquer dessus et
-                    quitter la liste pour une nouvelle page.</span
-                  >
+                  <p>
+                    <span class="en"
+                      >“There are way too many filters, and way too many values
+                      in each one.”</span
+                    >
+                    <span class="fr"
+                      >«&nbsp;Il y a beaucoup trop de filtres, et beaucoup trop
+                      de valeurs dans chacun.&nbsp;»</span
+                    >
+                  </p>
+                </blockquote>
+                <div class="cs-de-quote-take">
+                  <div>
+                    <p class="cs-de-quote-label">
+                      <span class="en">What we took from it</span>
+                      <span class="fr">Ce qu'on en retient</span>
+                    </p>
+                    <p class="cs-de-quote-insight">
+                      <span class="en"
+                        >The volume of filters and values overwhelms users.</span
+                      >
+                      <span class="fr"
+                        >Le volume de filtres et de valeurs submerge les
+                        utilisateurs.</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article class="cs-de-quote">
+                <p class="heading-label">
+                  <span class="en">Filters</span>
+                  <span class="fr">Filtres</span>
                 </p>
-              </div>
+                <blockquote class="cs-de-quote-text">
+                  <span class="cs-de-quote-dots" aria-hidden="true"
+                    ><span></span><span></span><span></span></span
+                  >
+                  <p>
+                    <span class="en"
+                      >“I don't always understand what each filter means, the
+                      terms are too scientific for me.”</span
+                    >
+                    <span class="fr"
+                      >«&nbsp;Je ne comprends pas toujours à quoi correspond
+                      chaque filtre, les termes sont trop scientifiques pour
+                      moi.&nbsp;»</span
+                    >
+                  </p>
+                </blockquote>
+                <div class="cs-de-quote-take">
+                  <div>
+                    <p class="cs-de-quote-label">
+                      <span class="en">What we took from it</span>
+                      <span class="fr">Ce qu'on en retient</span>
+                    </p>
+                    <p class="cs-de-quote-insight">
+                      <span class="en"
+                        >Scientific terminology isn't accessible to every
+                        profile.</span
+                      >
+                      <span class="fr"
+                        >La terminologie scientifique n'est pas accessible à
+                        tous les profils.</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article class="cs-de-quote">
+                <p class="heading-label">
+                  <span class="en">Filters</span>
+                  <span class="fr">Filtres</span>
+                </p>
+                <blockquote class="cs-de-quote-text">
+                  <span class="cs-de-quote-dots" aria-hidden="true"
+                    ><span></span><span></span><span></span></span
+                  >
+                  <p>
+                    <span class="en"
+                      >“I can't find the filters I use most often.”</span
+                    >
+                    <span class="fr"
+                      >«&nbsp;Je ne retrouve pas les filtres que j'utilise le
+                      plus souvent.&nbsp;»</span
+                    >
+                  </p>
+                </blockquote>
+                <div class="cs-de-quote-take">
+                  <div>
+                    <p class="cs-de-quote-label">
+                      <span class="en">What we took from it</span>
+                      <span class="fr">Ce qu'on en retient</span>
+                    </p>
+                    <p class="cs-de-quote-insight">
+                      <span class="en"
+                        >Frequently used filters aren't easy to reach.</span
+                      >
+                      <span class="fr"
+                        >Les filtres les plus utilisés ne sont pas faciles
+                        d'accès.</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article class="cs-de-quote">
+                <p class="heading-label">
+                  <span class="en">Datasets</span>
+                  <span class="fr">Datasets</span>
+                </p>
+                <blockquote class="cs-de-quote-text">
+                  <span class="cs-de-quote-dots" aria-hidden="true"
+                    ><span></span><span></span><span></span></span
+                  >
+                  <p>
+                    <span class="en"
+                      >“I can't find a dataset I've already looked at.”</span
+                    >
+                    <span class="fr"
+                      >«&nbsp;Je n'arrive pas à retrouver un dataset que j'ai
+                      déjà consulté.&nbsp;»</span
+                    >
+                  </p>
+                </blockquote>
+                <div class="cs-de-quote-take">
+                  <div>
+                    <p class="cs-de-quote-label">
+                      <span class="en">What we took from it</span>
+                      <span class="fr">Ce qu'on en retient</span>
+                    </p>
+                    <p class="cs-de-quote-insight">
+                      <span class="en"
+                        >Finding a dataset again relies on the user's memory.</span
+                      >
+                      <span class="fr"
+                        >Retrouver un dataset déjà consulté repose sur la
+                        mémoire de l'utilisateur.</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article class="cs-de-quote">
+                <p class="heading-label">
+                  <span class="en">Datasets</span>
+                  <span class="fr">Datasets</span>
+                </p>
+                <blockquote class="cs-de-quote-text">
+                  <span class="cs-de-quote-dots" aria-hidden="true"
+                    ><span></span><span></span><span></span></span
+                  >
+                  <p>
+                    <span class="en"
+                      >“I don't understand what each dataset is about: the title
+                      doesn't mean anything to me.”</span
+                    >
+                    <span class="fr"
+                      >«&nbsp;Je ne comprends pas à quoi correspond chaque
+                      dataset&nbsp;: le titre ne me parle pas.&nbsp;»</span
+                    >
+                  </p>
+                </blockquote>
+                <div class="cs-de-quote-take">
+                  <div>
+                    <p class="cs-de-quote-label">
+                      <span class="en">What we took from it</span>
+                      <span class="fr">Ce qu'on en retient</span>
+                    </p>
+                    <p class="cs-de-quote-insight">
+                      <span class="en"
+                        >Technical IDs as titles don't tell users what a dataset
+                        contains.</span
+                      >
+                      <span class="fr"
+                        >Des identifiants techniques en guise de titre ne disent
+                        pas ce que contient un dataset.</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </article>
             </div>
+            <p class="cs-de-interviews-note">
+              <span class="en">Feedback paraphrased from interviews</span>
+              <span class="fr">Retours reformulés à partir des interviews</span>
+            </p>
           </div>
         </div>
       </section>
@@ -642,18 +803,22 @@ const steps: {
               >.
             </span>
             <span class="fr">
-              Avant toute conception, nous avons animé un workshop réunissant
-              produit, ingénierie et experts métier pour aligner les priorités.
+              Avant toute conception, <span class="text-accent"
+                >nous avons animé un workshop</span
+              > réunissant <span class="text-accent">
+                produit, ingénierie et experts métier pour aligner les
+                priorités.
+              </span>
             </span>
           </p>
           <p class="en">
-            These two blockers became the workshop's starting point. Five people
+            These blockers became the workshop's starting point. Five people
             from across the company took part: product, engineering, and domain
             experts from the scientific and curation teams. The session followed
             three phases: brainstorming, reorganization, and prioritization.
           </p>
           <p class="fr">
-            Ces deux blocages ont servi de point de départ au workshop. Cinq
+            Ces points de blocage ont servi de point de départ au workshop. Cinq
             personnes de différentes équipes y ont participé : produit,
             ingénierie, et experts métier des équipes scientifiques et de
             curation. La session s'est déroulée en trois phases : brainstorming,
