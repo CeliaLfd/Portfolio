@@ -5,3 +5,6 @@ dist/
 .claude/settings.local.json
 .vercel
 .env*
+
+# Design sources (large exports), kept locally, not deployed
+_sources/

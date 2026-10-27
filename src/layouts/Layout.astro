@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import ImageViewer from "../components/ImageViewer.astro";
 import Analytics from "@vercel/analytics/astro";
 import "../styles/style.css";
 
@@ -52,18 +53,7 @@ const {
     <Header />
     <slot />
     <Footer />
-    <div class="img-modal" id="imgModal" aria-hidden="true">
-      <button class="img-modal-close" id="imgModalClose" aria-label="Close">
-        <svg viewBox="0 0 24 24"
-          ><line x1="18" y1="6" x2="6" y2="18"></line><line
-            x1="6"
-            y1="6"
-            x2="18"
-            y2="18"></line></svg
-        >
-      </button>
-      <img id="imgModalImg" src="" alt="" />
-    </div>
+    <ImageViewer id="imgModal" />
 
     <script src="/main.js" is:inline></script>
   </body>

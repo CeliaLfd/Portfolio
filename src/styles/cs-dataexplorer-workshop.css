@@ -1,0 +1,155 @@
+/* ============================================
+   DATA EXPLORER — WORKSHOP (sticky notes + board button)
+============================================ */
+
+.cs-de-workshop {
+  display: grid;
+  gap: var(--s2);
+}
+
+.cs-de-workshop > p {
+  max-width: 62ch;
+}
+
+/* ---------- Sticky notes ---------- */
+
+.cs-de-notes {
+  --note-gap: var(--s3);
+  display: grid;
+  gap: var(--note-gap);
+  margin: var(--s3) 0 var(--s2);
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 900px) {
+  .cs-de-notes {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch; /* same size, like real sticky notes */
+  }
+}
+
+.cs-de-note {
+  /* Sticky colors from the workshop board; text stays dark in both themes */
+  --note-bg: #ffd3a8;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s1);
+  min-height: 220px;
+  padding: var(--s3) var(--s3) var(--s4);
+  background: var(--note-bg);
+  color: #1f1b16;
+  border-radius: 4px;
+  transform: rotate(var(--r, 0deg));
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cs-de-note[data-color="blue"] { --note-bg: #a8daff; }
+.cs-de-note[data-color="green"] { --note-bg: #b3efbd; }
+
+/* Folded corner */
+.cs-de-note::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 22px;
+  height: 22px;
+  background: linear-gradient(135deg, var(--bg) 50%, hsl(0 0% 0% / 0.12) 50%);
+  border-top-left-radius: 4px;
+}
+
+.cs-de-note:hover {
+  transform: rotate(0deg) translateY(-4px);
+}
+
+.cs-de-note-eyebrow {
+  margin: 0;
+  font-size: var(--fs-14);
+  opacity: 0.7;
+}
+
+.cs-de-note-question {
+  margin: 0 0 var(--s1);
+  font-size: var(--fs-20);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.cs-de-note-text {
+  margin: 0;
+  font-size: var(--fs-16);
+  line-height: 1.45;
+}
+
+/* ---------- Board button (viewer wired later) ---------- */
+
+.cs-de-board-btn {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s1);
+  padding: 0.7em 1.15em;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--bg);
+  font: inherit;
+  font-size: var(--fs-16);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.cs-de-board-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.cs-de-board-btn:hover {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.cs-de-board-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ---------- Entrance: notes land one after the other (guard: see global.css) ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .js .cs-de-notes .cs-de-note {
+    opacity: 0;
+    transform: translateY(-16px) rotate(var(--r, 0deg)) scale(1.04);
+    transition: opacity 0.3s ease-out,
+      transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition-delay: calc(var(--i, 0) * 140ms);
+  }
+
+  .js .cs-de-notes.is-in .cs-de-note {
+    opacity: 1;
+    transform: rotate(var(--r, 0deg));
+  }
+
+  .js .cs-de-notes.is-in .cs-de-note:hover {
+    transform: rotate(0deg) translateY(-4px);
+  }
+
+  /* Once landed, hover reacts without the entrance delay */
+  .js .cs-de-notes.is-settled .cs-de-note {
+    transition-delay: 0s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-de-note,
+  .cs-de-board-btn {
+    transition: none;
+  }
+}

@@ -1,0 +1,112 @@
+---
+/**
+ * Full-screen image viewer (native <dialog>), shared by:
+ * - the case study lightbox (Layout.astro, id="imgModal": src filled on click)
+ * - the workshop board (zoom + title + caption)
+ *
+ * Open it with a button[data-viewer-open="<id>"], or from JS with openViewer().
+ * Options: title (top left), zoom (click to zoom, drag or scroll to pan),
+ * caption (bottom). Without them it behaves like the original img-modal.
+ */
+interface Props {
+  id: string;
+  /** Image shown when the viewer opens (fit to screen). Empty = set by JS */
+  src?: string;
+  /** Full-resolution image, loaded on the first zoom only */
+  srcFull?: string;
+  /** Natural width of the full image, in px (zoom size) */
+  fullWidth?: number;
+  alt?: string;
+  zoom?: boolean;
+  titleEn?: string;
+  titleFr?: string;
+  captionEn?: string;
+  captionFr?: string;
+}
+
+const {
+  id,
+  src,
+  srcFull,
+  fullWidth,
+  alt = "",
+  zoom = false,
+  titleEn,
+  titleFr,
+  captionEn,
+  captionFr,
+} = Astro.props;
+
+const titleId = `${id}-title`;
+const hasTitle = Boolean(titleEn || titleFr);
+const hasCaption = Boolean(captionEn || captionFr);
+---
+
+<dialog
+  id={id}
+  class="viewer"
+  data-viewer
+  data-zoom={zoom ? "" : undefined}
+  data-src={src}
+  data-src-full={srcFull}
+  data-full-width={fullWidth}
+  aria-labelledby={hasTitle ? titleId : undefined}
+  aria-label={hasTitle ? undefined : "Image"}
+>
+  <div class="viewer-bar">
+    {
+      hasTitle && (
+        <p id={titleId} class="viewer-title">
+          {titleEn && <span class="en">{titleEn}</span>}
+          {titleFr && <span class="fr">{titleFr}</span>}
+        </p>
+      )
+    }
+    <div class="viewer-actions">
+      {
+        zoom && (
+          <button
+            type="button"
+            class="viewer-zoom"
+            aria-pressed="false"
+            data-viewer-zoom
+          >
+            <span class="viewer-zoom-in">
+              <span class="en">Zoom in</span>
+              <span class="fr">Zoomer</span>
+            </span>
+            <span class="viewer-zoom-out">
+              <span class="en">Zoom out</span>
+              <span class="fr">Dézoomer</span>
+            </span>
+          </button>
+        )
+      }
+      <button type="button" class="viewer-close" data-viewer-close>
+        <svg viewBox="0 0 24 24" aria-hidden="true"
+          ><line x1="18" y1="6" x2="6" y2="18"></line><line
+            x1="6"
+            y1="6"
+            x2="18"
+            y2="18"></line></svg
+        >
+        <span class="sr-only"
+          ><span class="en">Close</span><span class="fr">Fermer</span></span
+        >
+      </button>
+    </div>
+  </div>
+
+  <div class="viewer-stage" tabindex={zoom ? 0 : undefined} data-viewer-stage>
+    <img alt={alt} draggable="false" decoding="async" data-viewer-img />
+  </div>
+
+  {
+    hasCaption && (
+      <p class="viewer-caption">
+        {captionEn && <span class="en">{captionEn}</span>}
+        {captionFr && <span class="fr">{captionFr}</span>}
+      </p>
+    )
+  }
+</dialog>

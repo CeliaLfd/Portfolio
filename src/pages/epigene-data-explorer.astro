@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ImageViewer from "../components/ImageViewer.astro";
 import Icon from "../components/Icon.astro";
 import type { IconName } from "../components/icons";
 
@@ -811,43 +812,102 @@ const steps: {
               </span>
             </span>
           </p>
-          <p class="en">
-            These blockers became the workshop's starting point. Five people
-            from across the company took part: product, engineering, and domain
-            experts from the scientific and curation teams. The session followed
-            three phases: brainstorming, reorganization, and prioritization.
-          </p>
-          <p class="fr">
-            Ces points de blocage ont servi de point de départ au workshop. Cinq
-            personnes de différentes équipes y ont participé : produit,
-            ingénierie, et experts métier des équipes scientifiques et de
-            curation. La session s'est déroulée en trois phases : brainstorming,
-            réorganisation et priorisation.
-          </p>
-          <div class="cs-img-wrapper">
-            <div class="cs-img">
-              <img
-                loading="lazy"
-                decoding="async"
-                src="/assets/data-explorer-workshop.webp"
-                alt="Workshop: Data Explorer"
-                onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Workshop</div>'"
-              />
-            </div>
+          <div class="cs-de-workshop">
+            <h3 class="cs-subsection-subheading">
+              <span class="en">Five of us, two questions, a lot of sticky notes</span>
+              <span class="fr">Cinq personnes, deux questions, beaucoup de post-it</span>
+            </h3>
+            <p class="en">
+              These blockers became the starting point. I designed the format
+              and facilitated the session. Five of us took part: product,
+              engineering, and domain experts from the scientific and curation
+              teams. We worked on two questions, grouped the ideas by theme,
+              then voted on what mattered most.
+            </p>
+            <p class="fr">
+              Ces points de blocage ont servi de point de départ. J'ai conçu le
+              format et animé la session. Nous étions cinq&nbsp;: produit,
+              ingénierie, et experts métier des équipes scientifiques et de
+              curation. Nous avons travaillé sur deux questions, regroupé les
+              idées par thème, puis voté pour ce qui comptait le plus.
+            </p>
+            <ul class="cs-de-notes" data-notes>
+              <li class="cs-de-note" data-color="orange" style="--r:-1.2deg;--i:0">
+                <p class="cs-de-note-eyebrow">
+                  <span class="en">Question 1</span>
+                  <span class="fr">Question 1</span>
+                </p>
+                <p class="cs-de-note-question">
+                  <span class="en">What should researchers see about a dataset?</span>
+                  <span class="fr">Que doivent voir les chercheurs d'un dataset&nbsp;?</span>
+                </p>
+                <p class="cs-de-note-text">
+                  <span class="en">Titles and descriptions instead of IDs, a clear reviewed status, key clinical info at a glance.</span>
+                  <span class="fr">Des titres et des descriptions plutôt que des identifiants, un statut validé clair, les infos cliniques clés d'un coup d'œil.</span>
+                </p>
+              </li>
+              <li class="cs-de-note" data-color="blue" style="--r:0.8deg;--i:1">
+                <p class="cs-de-note-eyebrow">
+                  <span class="en">Question 2</span>
+                  <span class="fr">Question 2</span>
+                </p>
+                <p class="cs-de-note-question">
+                  <span class="en">How should researchers find and move through datasets?</span>
+                  <span class="fr">Comment les chercheurs trouvent-ils et parcourent-ils les datasets&nbsp;?</span>
+                </p>
+                <p class="cs-de-note-text">
+                  <span class="en">Search inside descriptions, saved datasets, an expanded view, easier filters.</span>
+                  <span class="fr">Une recherche dans les descriptions, des datasets sauvegardés, une vue étendue, des filtres plus simples.</span>
+                </p>
+              </li>
+              <li class="cs-de-note" data-color="green" style="--r:-0.6deg;--i:2">
+                <p class="cs-de-note-eyebrow">
+                  <span class="en">Then</span>
+                  <span class="fr">Ensuite</span>
+                </p>
+                <p class="cs-de-note-question">
+                  <span class="en">What matters most?</span>
+                  <span class="fr">Qu'est-ce qui compte le plus&nbsp;?</span>
+                </p>
+                <p class="cs-de-note-text">
+                  <span class="en">Ideas grouped into themes, then each of us voted with stars on the groups to build first.</span>
+                  <span class="fr">Les idées regroupées par thème, puis chacun a voté avec des étoiles pour les groupes à construire en premier.</span>
+                </p>
+              </li>
+            </ul>
+            <button
+              type="button"
+              class="cs-de-board-btn"
+              data-viewer-open="workshop-board"
+              aria-haspopup="dialog"
+            >
+              <svg viewBox="0 0 16 16" aria-hidden="true"
+                ><path d="M9.5 2.5h4v4M6.5 13.5h-4v-4M13.5 2.5 9 7M2.5 13.5 7 9"
+                ></path></svg
+              >
+              <span class="en">See the full workshop board</span>
+              <span class="fr">Voir le board complet du workshop</span>
+            </button>
+            <ImageViewer
+              id="workshop-board"
+              src="/assets/data-explorer-workshop-board-preview.webp"
+              srcFull="/assets/data-explorer-workshop-board.webp"
+              fullWidth={9507}
+              zoom
+              alt="Workshop board: the brief, a brainstorm on two questions, then the ideas grouped by theme and voted on"
+              titleEn="Data Explorer redesign workshop"
+              titleFr="Workshop de refonte du Data Explorer"
+              captionEn="Click the image to zoom. Drag or scroll to look around, and press Esc to close."
+              captionFr="Cliquer sur l'image pour zoomer. Faire glisser ou défiler pour se déplacer, Échap pour fermer."
+            />
           </div>
           <p class="en">
-            I designed and facilitated the format. Each phase had a specific
-            output: generate ideas without constraints first, then group and
-            structure them, then force a prioritisation. By the end, everyone
-            had ranked the same priorities, engineering and domain experts
-            included.
+            By the end, everyone had ranked the same priorities, engineering
+            and domain experts included.
           </p>
           <p class="fr">
-            J'ai conçu le format. Chaque phase avait un objectif précis :
-            générer des idées sans contraintes d'abord, puis les regrouper et
-            les structurer, puis trancher les priorités. À la fin, tout le monde
-            avait classé les mêmes priorités, ingénierie et experts métier
-            compris.
+            À la fin, tout le monde avait classé les mêmes priorités, ingénierie
+            et experts métier compris.
           </p>
         </div>
       </section>
