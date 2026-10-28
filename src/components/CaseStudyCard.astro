@@ -36,17 +36,31 @@ const {
     <img src={image} alt={imageAlt} loading={loading} decoding="async" onerror="this.style.display='none'" />
   </div>
   <div class="cs-card-info">
+    <p class="cs-card-meta">{meta}</p>
     <h2 class="cs-card-title">
       <span class="en">{titleEn}</span>
       <span class="fr">{titleFr}</span>
     </h2>
-    <p class="cs-card-meta">{meta}</p>
     {
       contextEn && (
         <p class="cs-card-context">
           <span class="en">{contextEn}</span>
           <span class="fr">{contextFr}</span>
         </p>
+      )
+    }
+    {
+      href ? (
+        <span class="cs-card-cta">
+          <span class="en">Read the case study</span>
+          <span class="fr">Lire le case study</span>
+          <span aria-hidden="true">→</span>
+        </span>
+      ) : (
+        <span class="cs-card-cta is-soon">
+          <span class="en">Coming soon</span>
+          <span class="fr">Bientôt</span>
+        </span>
       )
     }
   </div>

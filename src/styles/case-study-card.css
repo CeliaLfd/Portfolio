@@ -6,20 +6,44 @@
   padding-bottom: var(--s7);
 }
 
+
 .cs-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--s4);
+  gap: var(--s6);
 }
 
-@media (min-width: 980px) {
+@media (min-width: 900px) {
   .cs-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--s3);
+    gap: var(--s8);
   }
 }
 
-.cs-card { display: block; cursor: none; display: flex; flex-direction: column; gap: var(--s2)}
+.cs-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  cursor: none;
+}
+
+@media (min-width: 900px) {
+  .cs-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+    align-items: center;
+    gap: var(--s6);
+  }
+
+  .cs-card > .cs-card-image { order: 2; }
+  .cs-card > .cs-card-info { order: 1; }
+
+  .cs-card:nth-child(even) {
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  }
+
+  .cs-card:nth-child(even) > .cs-card-image { order: 1; }
+  .cs-card:nth-child(even) > .cs-card-info { order: 2; }
+}
 
 .cs-card .cs-card-image img {
   transition: all 0.1s ease-out;
@@ -58,30 +82,57 @@
   transform: translate(-50%, -50%) scale(0.8);
 }
 
-.cs-card-info { 
-  display: flex; 
-  flex-direction: row; 
-  gap: var(--s1);
-  flex-wrap: wrap; 
-  align-items: baseline; 
-  justify-content: space-between; 
-}
-
-.cs-card-title {
-  font-size: var(--fs-18);
-  font-weight: 500;
-  line-height: 1.15;
-  transition: color 0.15s;
-  font-family: var(--serif);
+.cs-card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--s2);
 }
 
 .cs-card-meta {
+  margin: 0;
   font-size: var(--fs-14);
   color: var(--muted);
 }
 
+.cs-card-title {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(var(--fs-22), 2.8vw, var(--fs-32));
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  transition: color 0.2s ease;
+}
+
 .cs-card-context {
-  flex-basis: 100%;
-  font-size: var(--fs-14);
+  margin: 0;
+  max-width: 46ch;
+  font-size: var(--fs-18);
+  line-height: 1.5;
   color: var(--muted);
+}
+
+/* Text link, same look as the About page links */
+.cs-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s1);
+  margin-top: var(--s1);
+  font-size: var(--fs-16);
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease;
+}
+
+.cs-card:hover .cs-card-cta {
+  color: var(--accent);
+}
+
+.cs-card-cta.is-soon {
+  color: var(--muted);
+  text-decoration: none;
 }
