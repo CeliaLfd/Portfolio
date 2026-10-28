@@ -39,14 +39,22 @@
 }
 
 .cs-subsection-heading {
-  font-size: clamp(var(--fs-18), 2.2vw, var(--fs-24));
+  font-size: clamp(var(--fs-20), 2.2vw, var(--fs-24));
   font-family: var(--serif);
   font-weight: 500;
 }
 
 .card-heading {
-  font-size: var(--fs-20);
+  font-size: clamp(var(--fs-18), 2.2vw, var(--fs-20));
   font-family: var(--serif);
   font-weight: 500;
+}
+
+.body-sm {
+  font-size: var(--fs-16);
+  line-height: 1.45;
+}
+
+.paragraph {
   margin-bottom: var(--s1);
 }

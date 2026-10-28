@@ -68,11 +68,6 @@
   line-height: 1.25;
 }
 
-.cs-de-note-text {
-  margin: 0;
-  font-size: var(--fs-16);
-  line-height: 1.45;
-}
 
 /* ---------- Board button (viewer wired later) ---------- */
 

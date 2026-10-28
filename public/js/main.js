@@ -17,6 +17,7 @@ import { initSubheadingHighlight } from './subheading-highlight.js';
 import { initInterviews } from './interviews.js';
 import { initWorkshopNotes } from './workshop-notes.js';
 import { initViewers } from './image-viewer.js';
+import { initAuditTour } from './audit-tour.js';
 
 // Called from onclick attributes (Footer.astro, Header.astro)
 window.setTheme = setTheme;
@@ -41,4 +42,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initInterviews();
   initWorkshopNotes();
   initViewers();
+  initAuditTour();
 });

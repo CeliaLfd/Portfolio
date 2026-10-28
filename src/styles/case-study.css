@@ -179,10 +179,6 @@
 }
 
 
-.cs-section p {
-  margin-bottom: var(--s1);
-}
-
 .cs-section p:last-child { margin-bottom: 0; }
 
 .cs-section em { font-style: italic; }
@@ -350,8 +346,4 @@
 
 .cs-cards-3 {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-}
-
-.cs-section .cs-subsection-heading {
-  margin-bottom: var(--s2);
 }

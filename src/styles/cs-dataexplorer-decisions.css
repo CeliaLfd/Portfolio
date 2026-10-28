@@ -114,11 +114,6 @@ body.dark .cs-de-tag[data-tone="unreviewed"] {
   color: var(--muted);
 }
 
-.cs-de-level-text {
-  margin: 0;
-  font-size: var(--fs-16);
-  line-height: 1.5;
-}
 
 /* ---------- What we did next: Data Finder teaser ---------- */
 
@@ -145,14 +140,6 @@ body.dark .cs-de-tag[data-tone="unreviewed"] {
   gap: var(--s2);
 }
 
-.cs-de-next-text .cs-subsection-subheading,
-.cs-de-next-text .cs-subsection-heading {
-  margin-bottom: 0;
-}
-
-.cs-de-next-text p {
-  margin: 0;
-}
 
 .cs-de-next-pill {
   display: inline-flex;

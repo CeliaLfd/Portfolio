@@ -2,6 +2,265 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import CardSection from "../components/CardSection.astro";
+import AuditTour from "../components/AuditTour.astro";
+import Icon from "../components/Icon.astro";
+
+/* Audit walkthrough: the analysis flow in 2022, notes taken from the Figma audit.
+   pin = [x, y] and spot = [left, top, width, height], in % of the screenshot (2000×1200).
+   \u00a0 = non-breaking space before French punctuation. */
+const auditScreens = [
+  {
+    src: "/assets/design-system-audit-01-analysis-list.webp",
+    alt: "mCUBE in 2022: the My analyses page, empty except for a Create new Analysis card",
+    eyebrowEn: "Start",
+    eyebrowFr: "Départ",
+    titleEn: "The analysis list",
+    titleFr: "La liste des analyses",
+    notes: [
+      {
+        pin: [27, 21.3],
+        spot: [6, 21.3, 21.3, 21.7],
+        theme: "guide",
+        titleEn: `An empty state that doesn't guide`,
+        titleFr: `Un état vide qui ne guide pas`,
+        textEn: `The first screen shows a single card on an empty page, with no word on what an analysis is or where to start. It's the moment a new user needs guidance most, and the interface says nothing.`,
+        textFr: `Le premier écran affiche une seule carte sur une page vide, sans un mot sur ce qu'est une analyse ni par où commencer. C'est le moment où un nouvel utilisateur a le plus besoin d'être guidé, et l'interface ne dit rien.`,
+      },
+    ],
+  },
+  {
+    src: "/assets/design-system-audit-02-cohort-start.webp",
+    alt: "Step 1 in 2022: data elements to drag and drop into an empty cohort zone",
+    eyebrowEn: "Step 1 · Cohort",
+    eyebrowFr: "Étape 1 · Cohorte",
+    titleEn: "Building the cohort",
+    titleFr: "Construire la cohorte",
+    notes: [
+      {
+        pin: [27, 15.2],
+        spot: [4.5, 11, 45, 8.5],
+        theme: "guide",
+        titleEn: `No sense of progress`,
+        titleFr: `Aucun repère de progression`,
+        textEn: `The analysis runs over several steps, but no stepper or breadcrumb shows them. Users can't tell where they are or what's left.`,
+        textFr: `L'analyse se fait en plusieurs étapes, sans stepper ni fil d'Ariane pour les montrer\u00a0: l'utilisateur ne sait ni où il en est, ni ce qu'il reste.`,
+      },
+      {
+        pin: [48, 24],
+        spot: [5, 19.5, 43, 20],
+        theme: "experience",
+        titleEn: `Drag and drop as the only way in`,
+        titleFr: `Le glisser-déposer comme seule option`,
+        textEn: `Picking filters is a simple selection, yet dragging is the only way to add one: extra effort, and no way in for keyboard users.`,
+        textFr: `Choisir des filtres est une simple sélection, pourtant glisser est le seul moyen d'en ajouter\u00a0: un effort en plus, et aucun accès au clavier.`,
+      },
+      {
+        pin: [87.5, 79.3],
+        spot: [89, 76.8, 6.2, 5.2],
+        theme: "guide",
+        titleEn: `A button label that says nothing`,
+        titleFr: `Un libellé qui ne dit rien`,
+        textEn: `"Validate" doesn't say what comes next. A label should describe the outcome, like "Continue to rules".`,
+        textFr: `«\u00a0Validate\u00a0» n'annonce pas la suite. Un libellé doit décrire le résultat de l'action, comme «\u00a0Continue to rules\u00a0».`,
+      },
+    ],
+  },
+  {
+    src: "/assets/design-system-audit-03-cohort-selection.webp",
+    alt: "Step 1 in 2022: two filters dropped into the cohort, next to the data element table",
+    eyebrowEn: "Step 1 · Cohort",
+    eyebrowFr: "Étape 1 · Cohorte",
+    titleEn: "Picking values",
+    titleFr: "Choisir les valeurs",
+    notes: [
+      {
+        pin: [94.5, 18.5],
+        spot: [51.5, 18.5, 43, 44.5],
+        theme: "guide",
+        titleEn: `No feedback on changes`,
+        titleFr: `Aucun retour sur les changements`,
+        textEn: `The panel on the right doesn't react as the cohort is built, and nothing explains its role. Users can't tell if their choices worked.`,
+        textFr: `Le panneau de droite ne réagit pas quand la cohorte se construit, et rien n'explique son rôle\u00a0: l'utilisateur ne sait pas si ses choix sont pris en compte.`,
+      },
+      {
+        pin: [25.3, 42.6],
+        spot: [23.8, 45.6, 3, 4.4],
+        theme: "system",
+        titleEn: `A remove icon that reads as an error`,
+        titleFr: `Une icône de suppression lue comme une erreur`,
+        textEn: `A red X signals an error or a permanent deletion. The choice leaves room for interpretation and creates confusion.`,
+        textFr: `Un X rouge évoque une erreur ou une suppression définitive. Ce choix laisse place à l'interprétation et sème la confusion.`,
+      },
+      {
+        pin: [54, 62.5],
+        spot: [51.5, 22.5, 5, 40],
+        theme: "guide",
+        titleEn: `Details behind an arrow`,
+        titleFr: `Des détails derrière une flèche`,
+        textEn: `Each data element's details hide behind an arrow, so checking the cohort takes extra clicks for what should be visible at a glance.`,
+        textFr: `Le détail de chaque data element est caché derrière une flèche\u00a0: vérifier la cohorte demande des clics en plus pour l'essentiel.`,
+      },
+    ],
+  },
+  {
+    src: "/assets/design-system-audit-04-cohort-full.webp",
+    alt: "Step 1 in 2022: a cohort filled with filters, with a large empty space above it",
+    eyebrowEn: "Step 1 · Cohort",
+    eyebrowFr: "Étape 1 · Cohorte",
+    titleEn: "A cohort with many filters",
+    titleFr: "Une cohorte avec beaucoup de filtres",
+    notes: [
+      {
+        pin: [49, 64],
+        spot: [5, 40, 44, 48],
+        theme: "experience",
+        titleEn: `A layout that doesn't scale`,
+        titleFr: `Une structure qui ne tient pas la charge`,
+        textEn: `The drop zone grows with every filter and pushes "Validate" off the screen, making the button unreachable.`,
+        textFr: `La zone de dépôt grandit à chaque filtre et pousse «\u00a0Validate\u00a0» hors de l'écran, rendant le bouton inaccessible.`,
+      },
+      {
+        pin: [27, 30.5],
+        spot: [5, 21.5, 44.5, 18],
+        theme: "experience",
+        titleEn: `Gaps left behind`,
+        titleFr: `Des trous laissés derrière`,
+        textEn: `Every element dragged into the cohort leaves an empty space in the list above. The screen looks broken while the user is working.`,
+        textFr: `Chaque élément glissé dans la cohorte laisse un espace vide dans la liste du dessus. L'écran semble cassé pendant que l'utilisateur travaille.`,
+      },
+    ],
+  },
+  {
+    src: "/assets/design-system-audit-05-rules-list.webp",
+    alt: "Step 2 in 2022: an empty rule list with a single Create new Rule card and a collapsed side tab",
+    eyebrowEn: "Step 2 · Rules",
+    eyebrowFr: "Étape 2 · Règles",
+    titleEn: "The rule list",
+    titleFr: "La liste des règles",
+    notes: [
+      {
+        pin: [23, 25.5],
+        spot: [5.5, 25.5, 17.5, 18],
+        theme: "guide",
+        titleEn: `An empty state with no direction`,
+        titleFr: `Un état vide sans direction`,
+        textEn: `Step 2 opens on a single "Create new Rule" card surrounded by unused space. Nothing says what a rule is or why the analysis needs one.`,
+        textFr: `L'étape 2 s'ouvre sur une seule carte « Create new Rule », entourée d'espace inutilisé. Rien n'explique ce qu'est une règle ni pourquoi l'analyse en a besoin.`,
+      },
+      {
+        pin: [92.5, 15],
+        spot: [94.5, 11.8, 3.3, 6.2],
+        theme: "guide",
+        titleEn: `A summary out of sight`,
+        titleFr: `Un récapitulatif hors de vue`,
+        textEn: `The analysis summary hides behind a small, unlabeled toggle. Users have to remember their settings instead of seeing them.`,
+        textFr: `Le récapitulatif de l'analyse est caché derrière un petit toggle sans libellé. L'utilisateur doit se souvenir de ses réglages au lieu de les voir.`,
+      },
+    ],
+  },
+  {
+    src: "/assets/design-system-audit-06-rule-creation.webp",
+    alt: "Step 2 in 2022: the Add a rule modal, with a switch, scoring options and a boxplot",
+    eyebrowEn: "Step 2 · Rules",
+    eyebrowFr: "Étape 2 · Règles",
+    titleEn: "Adding a rule",
+    titleFr: "Ajouter une règle",
+    notes: [
+      {
+        pin: [85, 18.5],
+        spot: [15, 18.5, 70, 64.5],
+        theme: "system",
+        titleEn: `A modal for a full task`,
+        titleFr: `Une modale pour une tâche complète`,
+        textEn: `Modals suit short, focused dialogs. This one holds a full setup with a chart: it breaks the flow and hides the context needed to decide.`,
+        textFr: `Une modale convient à un échange court. Celle-ci porte toute une configuration et un graphique\u00a0: elle coupe le parcours et masque le contexte.`,
+      },
+      {
+        pin: [43, 46.2],
+        spot: [17, 43, 25, 6.5],
+        theme: "system",
+        titleEn: `A switch used the wrong way`,
+        titleFr: `Un switch à contre-emploi`,
+        textEn: `This switch chooses between two options, which is what radio buttons are for. Its label is also a negative: "No, make this rule unique".`,
+        textFr: `Ce switch sert à choisir entre deux options, alors que c'est le rôle des boutons radio. Son libellé est une négation\u00a0: «\u00a0No, make this rule unique\u00a0».`,
+      },
+      {
+        pin: [80.5, 65],
+        spot: [47.5, 55, 33, 10],
+        theme: "system",
+        titleEn: `A selection that looks disabled`,
+        titleFr: `Une sélection qui semble désactivée`,
+        textEn: `The selected range on the boxplot is gray, the color of disabled: the interface sends the opposite signal of what the user just did.`,
+        textFr: `Sur le boxplot, la zone sélectionnée est grise, la couleur du désactivé\u00a0: l'interface envoie le signal inverse de l'action de l'utilisateur.`,
+      },
+    ],
+  },
+  {
+    src: "/assets/design-system-audit-07-results.webp",
+    alt: "Step 2 in 2022: a computed analysis with a rule edited inline and the summary panel collapsed",
+    eyebrowEn: "Step 2 · Rules",
+    eyebrowFr: "Étape 2 · Règles",
+    titleEn: "The results",
+    titleFr: "Les résultats",
+    notes: [
+      {
+        pin: [82, 54.4],
+        spot: [83.5, 52.8, 11.5, 3.4],
+        theme: "guide",
+        titleEn: `The main action, styled as a detail`,
+        titleFr: `L'action principale traitée comme un détail`,
+        textEn: `"Compute indication score" is what the whole flow leads to, yet it's a small text link on the side, with none of the weight of a primary action.`,
+        textFr: `«\u00a0Compute indication score\u00a0», le but du parcours, n'est qu'un petit lien texte sur le côté, sans le poids d'une action principale.`,
+      },
+      {
+        pin: [37, 23.3],
+        spot: [21.3, 23, 15.5, 17.5],
+        theme: "system",
+        titleEn: `Two patterns for one object`,
+        titleFr: `Deux patterns pour un même objet`,
+        textEn: `Rules are created in a modal but edited inline in a card, with different controls: one object, two behaviors to learn.`,
+        textFr: `Une règle se crée dans une modale mais se modifie dans une carte, avec d'autres contrôles\u00a0: un objet, deux comportements à apprendre.`,
+      },
+      {
+        pin: [11.5, 40.8],
+        spot: [4.6, 16.5, 32.4, 26],
+        theme: "system",
+        titleEn: `No button hierarchy`,
+        titleFr: `Aucune hiérarchie de boutons`,
+        textEn: `Filled green, outlined, red text, icon links: nothing sets primary, secondary and destructive apart, and placement changes across screens.`,
+        textFr: `Vert plein, encadré, texte rouge, lien avec icône\u00a0: rien ne distingue principal, secondaire et destructif, et leur place change selon l'écran.`,
+      },
+    ],
+  },
+  {
+    src: "/assets/design-system-audit-08-saving.webp",
+    alt: "Step 2 in 2022: the computed analysis with the blue summary panel open",
+    eyebrowEn: "Step 2 · Rules",
+    eyebrowFr: "Étape 2 · Règles",
+    titleEn: "Saving the analysis",
+    titleFr: "Enregistrer l'analyse",
+    notes: [
+      {
+        pin: [90, 16.2],
+        spot: [92, 14.3, 5, 3.8],
+        theme: "experience",
+        titleEn: `A key action that feels optional`,
+        titleFr: `Une action clé qui semble optionnelle`,
+        textEn: `Save sits inside the summary panel, which can be collapsed. Far from the work, an action users need all the time looks optional, with a real risk of losing work.`,
+        textFr: `Save est placé dans le panneau récapitulatif, qui peut être replié. Loin du travail en cours, une action très sollicitée paraît optionnelle, avec un vrai risque de perdre son travail.`,
+      },
+      {
+        pin: [81, 32],
+        spot: [81, 11, 16.7, 42.5],
+        theme: "experience",
+        titleEn: `Text that's hard to read`,
+        titleFr: `Un texte difficile à lire`,
+        textEn: `Small white text on light blue barely stands out from its background. It's tiring for everyone, and out of reach for people with low vision.`,
+        textFr: `Le texte blanc, en petite taille, sur fond bleu clair se détache à peine du fond. Il rend lecture difficile voir illisible.`,
+      },
+    ],
+  },
+];
 ---
 
 <Layout
@@ -85,8 +344,8 @@ import CardSection from "../components/CardSection.astro";
             <CardSection
               titleEn="Result"
               titleFr="Résultat"
-              textEn={`Design became a commercial argument. Users described the product as "user-friendly", and the term went into every marketing post and into pitches to leading biopharma organizations, alongside cloud architecture and data coverage. A rare differentiator in a field where design is often an afterthought.`}
-              textFr="Le design est devenu un argument commercial. Les utilisateurs qualifiaient le produit de «&nbsp;user-friendly&nbsp;», et le terme s'est retrouvé dans tous les posts marketing et dans les pitchs destinés aux grandes organisations biopharma, aux côtés de l'architecture cloud et de la couverture data. Un vrai différenciant dans un milieu où le design passe souvent au second plan."
+              textEn={`Design became a selling point. Users described the product as "user-friendly", and the term went into every marketing post and into pitches to leading biopharma organizations, alongside cloud architecture and data coverage. A rare differentiator in a field where design is often an afterthought.`}
+              textFr="Le design est devenu un argument commercial. Les utilisateurs qualifiaient le produit de « user-friendly », et le terme s'est retrouvé dans tous les posts marketing et dans les pitchs destinés aux grandes organisations biopharma, aux côtés de l'architecture cloud et de la couverture data. Un vrai différenciant dans un milieu où le design passe souvent au second plan."
             />
           </Card>
         </div>
@@ -102,7 +361,7 @@ import CardSection from "../components/CardSection.astro";
           <p class="cs-section-heading-legend">
             <span class="en">
               Epigene Labs is a <span class="text-accent">biotech startup</span> specializing
-              in <span class="text-accent"> precision oncology </span>.
+              in <span class="text-accent">precision oncology</span>.
             </span>
             <span class="fr">
               Epigene Labs est une <span class="text-accent"
@@ -134,8 +393,8 @@ import CardSection from "../components/CardSection.astro";
 
       <section class="cs-section reveal" id="problem">
         <h2 class="cs-section-heading">
-          <span class="en">The problem</span>
-          <span class="fr">Le problème</span>
+          <span class="en">Problem</span>
+          <span class="fr">Problème</span>
         </h2>
         <div class="cs-section-content">
           <div class="grid-2 items-baseline">
@@ -170,6 +429,7 @@ import CardSection from "../components/CardSection.astro";
               </p>
             </div>
           </div>
+          <!-- Before screenshots, hidden while the audit walkthrough is in progress
           <div
             class="cs-img-wrapper cs-img-grid cs-img-grid-2"
             data-slider-mobile
@@ -211,6 +471,7 @@ import CardSection from "../components/CardSection.astro";
               />
             </div>
           </div>
+          -->
         </div>
       </section>
 
@@ -226,92 +487,259 @@ import CardSection from "../components/CardSection.astro";
           </h2>
           <div>
             <p class="en text-align-center">
-              With no system to guarantee consistency and usability, the same
-              flaws came back from one screen to the next.
+              Before designing anything, I ran a UI/UX audit of the product, to
+              lay out screen by screen what was getting in users' way.
             </p>
             <p class="fr text-align-center">
-              Faute de système garantissant cohérence et ergonomie, les mêmes
-              failles revenaient d'un écran à l'autre.
-            </p>
-            <p class="en text-align-center">
-              When I arrived, I ran a UI/UX audit of the product to lay the
-              problems out.
-            </p>
-            <p class="fr text-align-center">
-              À mon arrivée, j'ai initié un audit UI/UX du produit pour mettre
-              les problèmes à plat.
+              Avant de concevoir quoi que ce soit, j'ai mené un audit UI/UX du
+              produit, pour mettre à plat, écran par écran, ce qui freinait les
+              utilisateurs.
             </p>
           </div>
           <div class="cs-subsections">
-            <div class="cs-subsection grid-2">
+            <div class="flex flex-col gap-2">
+              <h3 class="cs-subsection-subheading">
+                <span class="en">One flow, problems found everywhere</span>
+                <span class="fr"
+                  >Un parcours, des problèmes présents partout</span
+                >
+              </h3>
+              <p class="en">
+                An excerpt from the audit: creating an analysis, from the empty
+                list to the results. These problems weren't isolated, the same
+                ones came back across the rest of the app. Each point is tagged
+                with the kind of problem it reveals.
+              </p>
+              <p class="fr">
+                Un extrait de l'audit&nbsp;: la création d'une analyse, de la
+                liste vide jusqu'aux résultats. Ces problèmes n'étaient pas
+                isolés, les mêmes revenaient dans le reste de l'application.
+                Chaque point est associé au type de problème qu'il révèle.
+              </p>
+              <AuditTour
+                labelEn="Creating an analysis in 2022"
+                labelFr="Créer une analyse en 2022"
+                screens={auditScreens}
+              />
+            </div>
+            <!-- What the audit revealed: two causes lead to one consequence -->
+            <div class="flex flex-col gap-4">
               <div class="flex flex-col gap-2">
-                <h3 class="cs-subsection-subheading">
-                  <span class="en">Emerging problems</span>
-                  <span class="fr">Problèmes émergents</span>
+                <h3 class="cs-subsection-subheading text-align-center">
+                  <span class="en">What the audit revealed</span>
+                  <span class="fr">Ce que l'audit a révélé</span>
                 </h3>
-                <div class="cs-cards">
-                  <Card
-                    variant="hollow"
-                    titleEn="No system, inconsistencies everywhere"
-                    titleFr="Aucun système, des incohérences"
-                    textEn={`Styles followed no rules: the same gray meant "selected" in one place and "disabled" in another, button order and placement changed from screen to screen, and components like the switch or the modal were used against their purpose.`}
-                    textFr="Les styles n'obéissaient à aucune règle : un même gris servait tantôt à « sélectionné », tantôt à « désactivé », l'ordre et le placement des boutons changeaient d'un écran à l'autre, et des composants comme le switch ou la modale étaient détournés de leur usage."
-                  />
-                  <Card
-                    variant="hollow"
-                    titleEn="An interface that didn't guide"
-                    titleFr="Une interface qui ne guidait pas"
-                    textEn={`No system status, no UX writing: a change wasn't reflected on screen, loading gave no indication, the main action ("Compute indicator score") stayed hidden, and some icons had no label. The user moved forward with no bearings, at the risk of losing their work.`}
-                    textFr="Ni statut système, ni UX writing : un changement ne se reflétait pas à l'écran, les chargements n'indiquaient rien, l'action principale (« Compute indicator score ») restait cachée, et des icônes n'avaient aucun label. L'utilisateur avançait sans repère, au risque de perdre son travail."
-                  />
-                  <Card
-                    variant="hollow"
-                    titleEn="A poor experience, a weakened product"
-                    titleFr="Une expérience pauvre, un produit affaibli"
-                    textEn="Across the whole flow, these frictions degraded the experience on the entire platform and weakened the product and its image with users and clients alike."
-                    textFr="Cumulées sur tout le parcours, ces frictions dégradaient l'expérience sur l'ensemble de la plateforme et affaiblissaient le produit comme son image auprès des utilisateurs et des clients."
-                  />
-                </div>
+                <p class="text-align-center">
+                  <span class="en"
+                    >With no system to guarantee consistency and usability, the
+                    same flaws came back from one screen to the next.</span
+                  >
+                  <span class="fr"
+                    >Faute de système garantissant cohérence et ergonomie, les
+                    mêmes failles revenaient d'un écran à l'autre.</span
+                  >
+                </p>
               </div>
-              <div class="cs-img transparent">
-                <video
-                  src="/assets/design-system-audit.mp4"
-                  data-placeholder="/assets/design-system-audit.webp"
-                  aria-label="UI/UX audit"
-                  data-play-on-view
-                  muted
-                  playsinline
-                  disablepictureinpicture
-                  disableRemotePlayback
-                  preload="metadata"></video>
+              <div class="flex flex-col gap-1">
+                <div class="cs-cards cs-cards-2">
+                  <Card variant="hollow">
+                    <div class="flex flex-col gap-1">
+                      <div class="flex flex-col gap-0 items-start">
+                        <span class="cs-ds-tour-tag">
+                          <span class="en">No system</span>
+                          <span class="fr">Aucun système</span>
+                        </span>
+                        <p class="card-heading">
+                          <span class="en"
+                            >No system, inconsistencies everywhere</span
+                          >
+                          <span class="fr"
+                            >Aucun système, des incohérences partout</span
+                          >
+                        </p>
+                      </div>
+                      <p class="body-sm">
+                        <span class="en"
+                          >Without shared rules, every screen made its own
+                          choices. The same gray could mean "selected" here and
+                          "disabled" there, buttons moved from one page to the
+                          next, and components like the switch or the modal were
+                          used against their purpose.</span
+                        >
+                        <span class="fr"
+                          >Sans règles partagées, chaque écran faisait ses
+                          propres choix. Un même gris pouvait signifier
+                          «&nbsp;sélectionné&nbsp;» ici et
+                          «&nbsp;désactivé&nbsp;» là, les boutons changeaient de
+                          place d'une page à l'autre, et des composants comme le
+                          switch ou la modale étaient détournés de leur usage.</span
+                        >
+                      </p>
+                    </div>
+                  </Card>
+                  <Card variant="hollow">
+                    <div class="flex flex-col gap-1">
+                      <div class="flex flex-col gap-0 items-start">
+                        <span class="cs-ds-tour-tag">
+                          <span class="en">Didn't guide</span>
+                          <span class="fr">Ne guidait pas</span>
+                        </span>
+                        <p class="card-heading">
+                          <span class="en">An interface that didn't guide</span>
+                          <span class="fr"
+                            >Une interface qui ne guidait pas</span
+                          >
+                        </p>
+                      </div>
+                      <p class="body-sm">
+                        <span class="en"
+                          >The interface rarely told users what was happening:
+                          changes didn't show on screen, loading gave no sign of
+                          progress, and the main action stayed hidden. With no
+                          clear labels or help along the way, people moved
+                          forward without bearings, at the risk of losing their
+                          work.</span
+                        >
+                        <span class="fr"
+                          >L'interface disait rarement à l'utilisateur ce qui se
+                          passait&nbsp;: les changements ne s'affichaient pas,
+                          les chargements ne donnaient aucun signe d'avancement
+                          et l'action principale restait cachée. Sans libellés
+                          clairs ni aide en chemin, il avançait sans repères, au
+                          risque de perdre son travail.</span
+                        >
+                      </p>
+                    </div>
+                  </Card>
+                </div>
+                <div class="cs-ds-findings-link">
+                  <svg
+                    class="cs-ds-findings-link-arrow"
+                    viewBox="0 0 12 32"
+                    aria-hidden="true"
+                    ><path d="M6 0v30M1.5 25.5 6 30l4.5-4.5"></path></svg
+                  >
+                  <span class="cs-ds-findings-link-label">
+                    <span class="en">which led to</span>
+                    <span class="fr">ce qui a mené à</span>
+                  </span>
+                </div>
+                <Card variant="accent">
+                  <div class="flex flex-col gap-1">
+                    <div class="flex flex-col gap-0 items-start">
+                      <span class="cs-ds-tour-tag">
+                        <span class="en">Poor experience</span>
+                        <span class="fr">Expérience pauvre</span>
+                      </span>
+                      <p class="cs-subsection-heading">
+                        <span class="en"
+                          >A poor experience, a weakened product</span
+                        >
+                        <span class="fr"
+                          >Une expérience pauvre, un produit affaibli</span
+                        >
+                      </p>
+                    </div>
+                    <p class="body">
+                      <span class="en"
+                        >Added up across the whole platform, these frictions
+                        made everyday work slower and more error-prone, and
+                        weakened the product and its image with users and
+                        clients alike.</span
+                      >
+                      <span class="fr"
+                        >Cumulées sur toute la plateforme, ces frictions
+                        ralentissaient le travail au quotidien, multipliaient
+                        les erreurs et affaiblissaient le produit comme son
+                        image auprès des utilisateurs et des clients.</span
+                      >
+                    </p>
+                  </div>
+                </Card>
               </div>
             </div>
+
             <div class="flex flex-col gap-2">
               <h3 class="cs-subsection-subheading text-align-center">
-                <span class="en">How the audit was built</span>
-                <span class="fr">Comment l'audit était construit</span>
+                <span class="en">What the audit covered</span>
+                <span class="fr">Ce que couvrait l'audit</span>
               </h3>
-              <div class="cs-cards cs-cards-3">
-                <Card
-                  titleEn="1 — The usability problems"
-                  titleFr="1 — Les problèmes ergonomiques"
-                  textEn="What was observed, what it caused, and what could be improved."
-                  textFr="Ce qui était relevé, ce que ça provoquait, et ce qui pouvait être amélioré."
-                />
-                <Card
-                  titleEn="2 — The missing UI/UX concepts"
-                  titleFr="2 — Les concepts UI/UX manquants"
-                  textEn="The absent principles to introduce, and their benefit to the user."
-                  textFr="Les principes absents à introduire, et leur bénéfice pour l'utilisateur."
-                />
-                <Card
-                  titleEn="3 — Feature ideas"
-                  titleFr="3 — Des pistes de features"
-                  textEn="Low-cost, but high-impact."
-                  textFr="Peu coûteuses, mais à fort impact."
-                />
-              </div>
+              <!-- Three parts of the audit: numbered columns, no cards -->
+              <ol class="cs-ds-parts">
+                <li class="cs-ds-part">
+                  <span class="cs-ds-part-num" aria-hidden="true">01</span>
+                  <p class="cs-ds-part-title">
+                    <span class="en">Usability problems</span>
+                    <span class="fr">Les problèmes d'usage</span>
+                  </p>
+                  <p class="body-sm cs-ds-part-text">
+                    <span class="en"
+                      >Screen by screen, from login to geneset creation: what
+                      was observed, what it caused for users, and what could be
+                      improved.</span
+                    >
+                    <span class="fr"
+                      >Écran par écran, de la connexion à la création de
+                      geneset&nbsp;: ce qui était observé, ce que ça provoquait
+                      pour l'utilisateur, et ce qui pouvait être amélioré.</span
+                    >
+                  </p>
+                </li>
+                <li class="cs-ds-part">
+                  <span class="cs-ds-part-num" aria-hidden="true">02</span>
+                  <p class="cs-ds-part-title">
+                    <span class="en">Missing UI/UX principles</span>
+                    <span class="fr">Les principes UI/UX manquants</span>
+                  </p>
+                  <p class="body-sm cs-ds-part-text">
+                    <span class="en"
+                      >The basics to introduce, each with its benefit for users:
+                      labeled action icons, explicit wording, loading
+                      indicators, button order and placement, modals, disabled
+                      buttons, visual rhythm.</span
+                    >
+                    <span class="fr"
+                      >Les bases à introduire, chacune avec son bénéfice pour
+                      l'utilisateur&nbsp;: icônes d'action labellisées,
+                      formulations explicites, indicateurs de chargement, ordre
+                      et placement des boutons, modales, boutons désactivés,
+                      rythme visuel.</span
+                    >
+                  </p>
+                </li>
+                <li class="cs-ds-part">
+                  <span class="cs-ds-part-num" aria-hidden="true">03</span>
+                  <p class="cs-ds-part-title">
+                    <span class="en">Feature ideas</span>
+                    <span class="fr">Des pistes de features</span>
+                  </p>
+                  <p class="body-sm cs-ds-part-text">
+                    <span class="en"
+                      >Low-cost, high-impact additions, such as a support page
+                      and a better analysis list.</span
+                    >
+                    <span class="fr"
+                      >Des ajouts peu coûteux mais à fort impact, comme une page
+                      de support et une liste d'analyses améliorée.</span
+                    >
+                  </p>
+                </li>
+              </ol>
             </div>
+
+            <!-- Bridge to Goals -->
+            <p class="cs-subsection-heading text-align-center">
+              <span class="en"
+                >The audit made it clear: the experience needed a redesign, and
+                fixing screens one by one wouldn't be enough.<br /> The product needed
+                shared foundations.</span
+              >
+              <span class="fr"
+                >L'audit l'a montré clairement&nbsp;: l'expérience devait être
+                repensée, et corriger les écrans un par un ne suffirait pas.<br
+                />Le produit avait besoin de fondations communes.</span
+              >
+            </p>
           </div>
         </div>
       </section>
@@ -320,97 +748,153 @@ import CardSection from "../components/CardSection.astro";
           <span class="en">Goals</span>
           <span class="fr">Objectifs</span>
         </h2>
-        <div class="grid-2 items-baseline">
-          <p class="cs-section-heading-legend">
-            <span class="en">
-              Give the product a <span class="text-accent"
-                >coherent foundation</span
-              >,<br />built to last.
-            </span>
-            <span class="fr">
-              Donner au produit un <span class="text-accent"
-                >socle cohérent</span
-              >, pensé pour durer.
-            </span>
-          </p>
-          <div>
-            <ul class="cs-list en">
-              <li>
-                <strong>A single source of truth for design and code.</strong> Unify
-                the two, improve communication; the code was already based on a design-system
-                concept.
-              </li>
-              <li>
-                <strong>Scalability.</strong> Foundations that anticipate the product's
-                growth.
-              </li>
-              <li>
-                <strong>Product lifecycle efficiency.</strong> Speed up design, prototyping,
-                and updates, making the design system an accelerator at every stage.
-              </li>
-              <li>
-                <strong>Consistency.</strong> Guarantee a uniform experience from
-                one screen to the next.
-              </li>
-              <li>
-                <strong>Team autonomy.</strong> Reduce the bottleneck between design
-                and development.
-              </li>
-            </ul>
-            <ul class="cs-list fr">
-              <li>
-                <strong
-                  >Une source unique de vérité pour le design et le code.</strong
-                >
-                Unifier les deux, améliorer la communication ; le code reposait déjà
-                sur un concept de design system.
-              </li>
-              <li>
-                <strong>Scalabilité.</strong> Des fondations qui anticipent la croissance
-                du produit.
-              </li>
-              <li>
-                <strong>Efficacité du cycle de vie produit.</strong> Accélérer conception,
-                prototypage et mises à jour pour faire du design system un accélérateur
-                à chaque étape.
-              </li>
-              <li>
-                <strong>Cohérence.</strong> Garantir une expérience homogène d'un
-                écran à l'autre.
-              </li>
-              <li>
-                <strong>Autonomie des équipes.</strong> Réduire le goulot d'étranglement
-                entre design et développement.
-              </li>
-            </ul>
+        <div class="cs-section-content">
+          <div class="grid-2 items-baseline">
+            <p class="cs-section-heading-legend">
+              <span class="en">
+                <span class="text-accent">Give the product and the team</span> a <span
+                  class="text-accent">coherent foundation</span
+                >, built to last.
+              </span>
+              <span class="fr">
+                <span class="text-accent">Donner au produit et à l'équipe</span> un
+                <span class="text-accent">socle cohérent</span>, pensé pour
+                durer.
+              </span>
+            </p>
+            <p class="en">
+              I had full ownership of the project, in a small team: two
+              front-end developers, me included. The goals had to serve both the
+              product and the people building it.
+            </p>
+            <p class="fr">
+              J'avais carte blanche sur le projet, dans une petite équipe&nbsp;:
+              deux développeurs front, moi incluse. Les objectifs devaient
+              servir le produit autant que ceux qui le construisaient.
+            </p>
+          </div>
+          <!-- Two scales: what the audit asked for (answers its two causes), what the context required (product and team) -->
+          <div class="cs-ds-goals">
+            <div class="cs-ds-goals-group">
+              <p class="heading-label uppercase">
+                <span class="en">What the audit asked for</span>
+                <span class="fr">Ce que l'audit demandait</span>
+              </p>
+              <ul class="cs-ds-goals-list">
+                <li class="cs-ds-goal">
+                  <span class="cs-ds-goal-icon"><Icon name="link" /></span>
+                  <div class="flex flex-col gap-0">
+                    <p class="cs-ds-goal-title">
+                      <span class="en">One source of truth</span>
+                      <span class="fr">Une source unique de vérité</span>
+                    </p>
+                    <p class="body-sm cs-ds-goal-text">
+                      <span class="en"
+                        >{
+                          `Design and code share one system: same tokens, same structure, same names. The code already relied on a design-system concept, and design had to speak the same language.`
+                        }</span
+                      >
+                      <span class="fr"
+                        >{
+                          `Design et code partagent un seul système\u00a0: mêmes tokens, même structure, même nommage. Le code reposait déjà sur un concept de design system, et le design devait parler la même langue.`
+                        }</span
+                      >
+                    </p>
+                  </div>
+                </li>
+                <li class="cs-ds-goal">
+                  <span class="cs-ds-goal-icon"><Icon name="grid" /></span>
+                  <div class="flex flex-col gap-0">
+                    <p class="cs-ds-goal-title">
+                      <span class="en">Consistency by default</span>
+                      <span class="fr">La cohérence par défaut</span>
+                    </p>
+                    <p class="body-sm cs-ds-goal-text">
+                      <span class="en"
+                        >{
+                          `Components carry the right patterns, from button hierarchy to states and labels. Every new screen starts consistent and guides users, with no extra effort.`
+                        }</span
+                      >
+                      <span class="fr"
+                        >{
+                          `Les composants portent les bons patterns, de la hiérarchie des boutons aux états et aux libellés. Chaque nouvel écran naît cohérent et guide l'utilisateur, sans effort supplémentaire.`
+                        }</span
+                      >
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="cs-ds-goals-group">
+              <p class="heading-label uppercase">
+                <span class="en">What the context required</span>
+                <span class="fr">Ce que le contexte imposait</span>
+              </p>
+              <ul class="cs-ds-goals-list">
+                <li class="cs-ds-goal">
+                  <span class="cs-ds-goal-icon"><Icon name="growth" /></span>
+                  <div class="flex flex-col gap-0">
+                    <p class="cs-ds-goal-title">
+                      <span class="en">Built to grow</span>
+                      <span class="fr">Pensé pour grandir</span>
+                    </p>
+                    <p class="body-sm cs-ds-goal-text">
+                      <span class="en"
+                        >{
+                          `mCUBE was a small product with new flows ahead. The foundations had to absorb that growth without being rebuilt.`
+                        }</span
+                      >
+                      <span class="fr"
+                        >{
+                          `mCUBE était un petit produit, avec de nouveaux parcours à venir. Les fondations devaient absorber cette croissance sans être reconstruites.`
+                        }</span
+                      >
+                    </p>
+                  </div>
+                </li>
+                <li class="cs-ds-goal">
+                  <span class="cs-ds-goal-icon"><Icon name="bolt" /></span>
+                  <div class="flex flex-col gap-0">
+                    <p class="cs-ds-goal-title">
+                      <span class="en">A small team, moving faster</span>
+                      <span class="fr">Une petite équipe, plus rapide</span>
+                    </p>
+                    <p class="body-sm cs-ds-goal-text">
+                      <span class="en"
+                        >{
+                          `With two front-end developers, every hour counts. Reusing blocks instead of rebuilding them speeds up design, prototyping and delivery, and cuts the back-and-forth between design and code.`
+                        }</span
+                      >
+                      <span class="fr"
+                        >{
+                          `À deux développeurs front, chaque heure compte. Réutiliser des blocs plutôt que les reconstruire accélère la conception, le prototypage et la livraison, et réduit les allers-retours entre design et code.`
+                        }</span
+                      >
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="cs-section reveal" id="solution">
         <h2 class="cs-section-heading">
-          <span class="en">Solution — key projects</span>
-          <span class="fr">Solution — chantiers clés</span>
+          <span class="en">Solution: key projects</span>
+          <span class="fr">Solution&nbsp;: chantiers clés</span>
         </h2>
         <div class="cs-section-content">
           <div class="grid-2 items-baseline">
             <p class="cs-section-heading-legend">
               <span class="en">
-                A <span class="text-accent">design system</span> suited to the present
-                need, but built to support the product's growth.
+                A <span class="text-accent">design system</span> sized for the product
+                and the team, built to grow with both.
               </span>
               <span class="fr">
-                Un <span class="text-accent">design system</span> adapté au besoin
-                du moment, mais pensé pour accompagner la croissance du produit.
+                Un <span class="text-accent">design system</span> à l'échelle du produit
+                et de l'équipe, pensé pour grandir avec les deux.
               </span>
-            </p>
-            <p class="en">
-              At this stage, mCUBE was a small product bound to grow, with new
-              flows ahead.
-            </p>
-            <p class="fr">
-              À ce stade, mCUBE était un petit produit voué à grandir, avec de
-              nouveaux parcours à venir.
             </p>
           </div>
           <div class="cs-subsections">
@@ -436,7 +920,7 @@ import CardSection from "../components/CardSection.astro";
                 <video
                   src="/assets/design-system-core.mp4"
                   data-placeholder="/assets/design-system-core.webp"
-                  aria-label="UI/UX audit"
+                  aria-label="Design system foundations: colors, typography and spacing"
                   data-play-on-view
                   muted
                   playsinline
@@ -480,7 +964,7 @@ import CardSection from "../components/CardSection.astro";
                 <video
                   src="/assets/design-system-tokens.mp4"
                   data-placeholder="/assets/design-system-tokens.webp"
-                  aria-label="UI/UX audit"
+                  aria-label="Design tokens: shared values used across design and code"
                   data-play-on-view
                   muted
                   playsinline
@@ -587,24 +1071,24 @@ import CardSection from "../components/CardSection.astro";
           <div class="cs-cards cs-cards-3">
             <Card
               variant="hollow"
-              titleEn="A system that held"
-              titleFr="Un système qui a tenu"
-              textEn="Maintained from 2022 to today, while the product went from one type of analysis to three, plus a Data Explorer, on the same base."
-              textFr="Maintenu de 2022 à aujourd'hui, pendant que le produit passait d'un type d'analyse à trois, plus un Data Explorer, sur la même base."
+              titleEn="A system that lasted"
+              titleFr="Un système qui dure"
+              textEn="Maintained from 2022 to today: the product grew from one type of analysis to three, plus a Data Explorer, all on the same base."
+              textFr={`Maintenu de 2022 à aujourd'hui\u00a0: le produit est passé d'un à trois types d'analyse, puis s'est enrichi d'un Data Explorer, sans changer de base.`}
             />
             <Card
               variant="hollow"
               titleEn="A consistent experience"
               titleFr="Une expérience cohérente"
-              textEn="Uniform across the whole platform, and a strengthened brand image."
-              textFr="Homogène sur toute la plateforme, et une image de marque renforcée."
+              textEn="The same rules on every screen, across the whole platform, and a stronger brand image as a result."
+              textFr="Les mêmes règles d'un écran à l'autre, sur toute la plateforme, et une image de marque renforcée."
             />
             <Card
               variant="hollow"
               titleEn="Design and code aligned"
               titleFr="Design et code alignés"
-              textEn="A single source, documented in Figma as in the codebase."
-              textFr="Une seule source, documentée dans Figma comme dans la codebase."
+              textEn="One source, documented both in Figma and in Storybook."
+              textFr="Une seule source, documentée dans Figma comme dans Storybook."
             />
           </div>
           <div class="cs-pullquote text-align-center">
@@ -614,18 +1098,18 @@ import CardSection from "../components/CardSection.astro";
                 app.”
               </span>
               <span class="fr">
-                «&nbsp;Une exploration simplifiée via la web app user-friendly
-                de la société.&nbsp;»
+                «&nbsp;Une exploration simplifiée grâce à l'application web
+                user-friendly de l'entreprise.&nbsp;»
               </span>
             </p>
             <p class="cs-img-legend">
               <span class="en"
-                >Epigene's official communications, December 2025 — design
-                became a commercial argument.</span
+                >Epigene's official communications, December 2025: design had
+                become a selling point.</span
               >
               <span class="fr"
-                >Communications officielles d'Epigene, décembre 2025 — le design
-                devenu argument commercial.</span
+                >Communications officielles d'Epigene, décembre 2025&nbsp;: le
+                design est devenu un argument commercial.</span
               >
             </p>
           </div>
@@ -636,8 +1120,8 @@ import CardSection from "../components/CardSection.astro";
                   loading="lazy"
                   decoding="async"
                   src="/assets/design-system-page-before.webp"
-                  alt="My Analyses — before"
-                  onerror='this.parentElement.innerHTML=&apos;<div class="cs-img-placeholder" style="aspect-ratio:16/9">My Analyses — before</div>&apos;'
+                  alt="My Analyses, before"
+                  onerror='this.parentElement.innerHTML=&apos;<div class="cs-img-placeholder" style="aspect-ratio:16/9">My Analyses, before</div>&apos;'
                 />
                 <span class="cs-ba-tag">
                   <span class="en">Before</span><span class="fr">Avant</span>
@@ -648,8 +1132,8 @@ import CardSection from "../components/CardSection.astro";
                   loading="lazy"
                   decoding="async"
                   src="/assets/design-system-page-after.webp"
-                  alt="My Analyses — after"
-                  onerror='this.parentElement.innerHTML=&apos;<div class="cs-img-placeholder" style="aspect-ratio:16/9">My Analyses — after</div>&apos;'
+                  alt="My Analyses, after"
+                  onerror='this.parentElement.innerHTML=&apos;<div class="cs-img-placeholder" style="aspect-ratio:16/9">My Analyses, after</div>&apos;'
                 />
                 <span class="cs-ba-tag cs-ba-tag-after">
                   <span class="en">After</span><span class="fr">Après</span>
@@ -657,77 +1141,86 @@ import CardSection from "../components/CardSection.astro";
               </div>
             </div>
             <p class="cs-img-legend">
-              <span class="en">My Analyses · Listing</span>
-              <span class="fr">My Analyses · Liste</span>
+              <span class="en">My Analyses · List view</span>
+              <span class="fr">My Analyses · Vue liste</span>
             </p>
           </div>
         </div>
       </section>
 
-      <section class="cs-section reveal" id="impact">
+      <section class="cs-section reveal" id="looking-back">
         <h2 class="cs-section-heading">
-          <span class="en">What I learned</span>
-          <span class="fr">Ce que j'ai appris</span>
+          <span class="en">Looking back</span>
+          <span class="fr">Avec du recul</span>
         </h2>
-        <div class="cs-section-content">
-          <p class="en">
-            Building a design system isn't just designing a system. It's
-            understanding that it's a living system: it evolves, it's
-            maintained, and it keeps the product coherent along with the link to
-            the other teams.
-          </p>
-          <p class="fr">
-            Créer un design system, ce n'est pas seulement concevoir un système.
-            C'est comprendre que c'est un système vivant : il évolue, se
-            maintient, et garde la cohésion du produit comme le lien avec les
-            autres équipes.
-          </p>
-          <div class="cs-cards cs-cards-2">
-            <Card
-              titleEn="Build to last"
-              titleFr="Construire pour durer"
-              textEn="The system was designed, from the start, for its maintenance and adaptation over time, not just for its initial creation."
-              textFr="Le système a été pensé, dès le départ, pour sa maintenance et son adaptation dans le temps, pas seulement pour sa conception initiale."
-            />
-            <Card
-              titleEn="The design / dev bridge"
-              titleFr="Le pont design / dev"
-              textEn="Being both a designer and a front-end engineer: fewer back-and-forths, a more faithful implementation, and a system that lives as well in Figma as in code."
-              textFr="Être à la fois designer et développeuse front-end : moins d'allers-retours, une implémentation plus fidèle, et un système qui vit aussi bien dans Figma que dans le code."
-            />
+        <div class="cs-subsections">
+          <div class="flex flex-col gap-2">
+            <h3 class="cs-subsection-subheading">
+              <span class="en">What I learned</span>
+              <span class="fr">Ce que j'ai appris</span>
+            </h3>
+            <div class="cs-section-content">
+              <p class="en">
+                Building a design system isn't just designing a system. It's
+                understanding that it's a living system: it evolves, it's
+                maintained, and it keeps the product coherent along with the
+                link to the other teams.
+              </p>
+              <p class="fr">
+                Créer un design system, ce n'est pas seulement concevoir un
+                système. C'est comprendre que c'est un système vivant : il
+                évolue, se maintient, et garde la cohésion du produit comme le
+                lien avec les autres équipes.
+              </p>
+              <div class="cs-cards cs-cards-2">
+                <Card
+                  titleEn="Build to last"
+                  titleFr="Construire pour durer"
+                  textEn="The system was designed, from the start, for its maintenance and adaptation over time, not just for its initial creation."
+                  textFr="Le système a été pensé, dès le départ, pour sa maintenance et son adaptation dans le temps, pas seulement pour sa conception initiale."
+                />
+                <Card
+                  titleEn="The design / dev bridge"
+                  titleFr="Le pont design / dev"
+                  textEn="Being both a designer and a front-end engineer: fewer back-and-forths, a more faithful implementation, and a system that lives as well in Figma as in code."
+                  textFr="Être à la fois designer et développeuse front-end : moins d'allers-retours, une implémentation plus fidèle, et un système qui vit aussi bien dans Figma que dans le code."
+                />
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
-
-      <section class="cs-section reveal" id="impact">
-        <h2 class="cs-section-heading">
-          <span class="en">What I'd improve</span>
-          <span class="fr">Ce que je souhaite améliorer</span>
-        </h2>
-        <div class="grid-2 items-baseline">
-          <p class="cs-section-heading-legend">
-            <span class="en"
-              >From palette to <span class="text-accent">language</span>.</span
-            >
-            <span class="fr"
-              >Passer de la palette au <span class="text-accent">langage</span
-              >.</span
-            >
-          </p>
-          <div>
-            <p class="en">
-              Add a semantic layer to the tokens: name colors by their role,
-              text, border, surface, rather than by their hue. Same logic for
-              typography. A clearer system, harder to misuse, and simpler to
-              evolve.
-            </p>
-            <p class="fr">
-              Ajouter une couche sémantique aux tokens : nommer les couleurs par
-              leur rôle, texte, bordure, surface, plutôt que par leur teinte.
-              Même logique pour les styles typographiques. Un système plus
-              clair, plus difficile à mal utiliser, et plus simple à faire
-              évoluer.
-            </p>
+          <div class="flex flex-col gap-2">
+            <h3 class="cs-subsection-subheading">
+              <span class="en">What I'd improve</span>
+              <span class="fr">Ce que je souhaite améliorer</span>
+            </h3>
+            <div class="grid-2 items-baseline">
+              <p class="cs-section-heading-legend">
+                <span class="en"
+                  >From palette to <span class="text-accent">language</span
+                  >.</span
+                >
+                <span class="fr"
+                  >Passer de la palette au <span class="text-accent"
+                    >langage</span
+                  >.</span
+                >
+              </p>
+              <div>
+                <p class="en">
+                  Add a semantic layer to the tokens: name colors by their role,
+                  text, border, surface, rather than by their hue. Same logic
+                  for typography. A clearer system, harder to misuse, and
+                  simpler to evolve.
+                </p>
+                <p class="fr">
+                  Ajouter une couche sémantique aux tokens : nommer les couleurs
+                  par leur rôle, texte, bordure, surface, plutôt que par leur
+                  teinte. Même logique pour les styles typographiques. Un
+                  système plus clair, plus difficile à mal utiliser, et plus
+                  simple à faire évoluer.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

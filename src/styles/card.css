@@ -20,6 +20,10 @@
   border-color: var(--border);
 }
 
+.card.accent {
+  background: color-mix(in srgb, var(--accent) 7%, var(--bg));
+}
+
 .card-heading-legend {
   color: var(--muted);
   font-style: italic;
@@ -34,11 +38,6 @@
 
 .card.hollow .card-section + .card-section {
   border-top-color: var(--border);
-}
-
-.card-text {
-  font-size: var(--fs-16);
-  line-height: 1.55;
 }
 
 .card-section > .heading-label {

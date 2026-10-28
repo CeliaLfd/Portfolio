@@ -26,6 +26,14 @@
   align-items: center;
 }
 
+.items-start {
+  align-items: start;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
 /* Gap utilities — based on spacing tokens (--s0 → --s9) */
 .gap-none { gap: 0; }
 .gap-0 { gap: var(--s0); }

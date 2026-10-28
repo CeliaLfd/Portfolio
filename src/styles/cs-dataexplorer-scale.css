@@ -223,8 +223,6 @@
 }
 
 .cs-de-timeline-text {
-  font-size: var(--fs-16);
-  line-height: 1.5;
   color: var(--muted);
 }
 

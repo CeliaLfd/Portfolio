@@ -86,12 +86,6 @@ body.dark .cs-de-quote {
   color: var(--accent);
 }
 
-.cs-de-quote-insight {
-  margin: 0;
-  font-size: var(--fs-16);
-  line-height: 1.5;
-}
-
 .cs-de-interviews-note {
   margin-top: var(--s2);
   font-size: var(--fs-14);

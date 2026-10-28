@@ -1,0 +1,191 @@
+---
+/* ============================================
+   AUDIT TOUR: a flow shown screen by screen, numbered pins on each screen,
+   one note per pin. Styles: cs-designsystem-audit.css. Script: public/js/audit-tour.js
+   Without JS, every screen is listed with its notes.
+============================================ */
+
+type Theme = "system" | "guide" | "experience";
+
+interface Note {
+  pin: [number, number]; // pin position, % of the screenshot (x, y)
+  spot: [number, number, number, number]; // highlighted zone, % (left, top, width, height)
+  theme: Theme;
+  titleEn: string;
+  titleFr: string;
+  textEn: string;
+  textFr: string;
+}
+
+interface Screen {
+  src: string;
+  alt: string;
+  eyebrowEn: string;
+  eyebrowFr: string;
+  titleEn: string;
+  titleFr: string;
+  notes: Note[];
+}
+
+interface Props {
+  labelEn: string;
+  labelFr: string;
+  screens: Screen[];
+}
+
+const { labelEn, labelFr, screens } = Astro.props;
+
+// Same three themes as the "Emerging problems" cards
+const themes: Record<Theme, { en: string; fr: string }> = {
+  system: { en: "No system", fr: "Aucun système" },
+  guide: { en: "Didn't guide", fr: "Ne guidait pas" },
+  experience: { en: "Poor experience", fr: "Expérience pauvre" },
+};
+
+const spotVars = ([l, t, w, h]: Note["spot"]) =>
+  `--spot-l:${l}%;--spot-t:${t}%;--spot-w:${w}%;--spot-h:${h}%`;
+---
+
+<div class="cs-ds-tour" data-tour>
+  <div class="cs-ds-tour-head">
+    <p class="heading-label uppercase cs-ds-tour-label">
+      <span class="en">{labelEn}</span>
+      <span class="fr">{labelFr}</span>
+    </p>
+    <div class="cs-ds-tour-nav">
+      <span class="cs-ds-tour-count" aria-live="polite">
+        <span data-tour-current>1</span> / {screens.length}
+      </span>
+      <button type="button" class="cs-ds-tour-arrow" data-tour-prev>
+        <span class="sr-only">
+          <span class="en">Previous screen</span>
+          <span class="fr">Écran précédent</span>
+        </span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"
+          ><polyline points="15 18 9 12 15 6"></polyline></svg
+        >
+      </button>
+      <button type="button" class="cs-ds-tour-arrow" data-tour-next>
+        <span class="sr-only">
+          <span class="en">Next screen</span>
+          <span class="fr">Écran suivant</span>
+        </span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"
+          ><polyline points="9 18 15 12 9 6"></polyline></svg
+        >
+      </button>
+    </div>
+  </div>
+
+  <!-- Timeline: one segment per screen, click to jump to it -->
+  <div class="cs-ds-tour-progress">
+    {
+      screens.map((screen, i) => (
+        <button
+          type="button"
+          class={`cs-ds-tour-step${i === 0 ? " is-done" : ""}`}
+          data-tour-step={i}
+          aria-current={i === 0 ? "step" : undefined}
+        >
+          <span class="sr-only">
+            <span class="en">
+              Screen {i + 1}: {screen.titleEn}
+            </span>
+            <span class="fr">
+              Écran {i + 1}&nbsp;: {screen.titleFr}
+            </span>
+          </span>
+        </button>
+      ))
+    }
+  </div>
+
+  <ol class="cs-ds-tour-screens">
+    {
+      screens.map((screen, i) => (
+        <li
+          class={`cs-ds-tour-screen${i === 0 ? " is-active" : ""}`}
+          data-tour-screen
+        >
+          <div class="cs-ds-tour-shot" style={spotVars(screen.notes[0].spot)}>
+            <!-- Pins and spotlight are placed in % of the image, not of the padded box -->
+            <div class="cs-ds-tour-frame">
+            <img
+              src={screen.src}
+              alt={screen.alt}
+              width="2000"
+              height="1200"
+              loading={i === 0 ? "eager" : "lazy"}
+              decoding="async"
+            />
+            <span class="cs-ds-tour-spot" aria-hidden="true" />
+            {screen.notes.map((note, k) => (
+              <button
+                type="button"
+                class="cs-ds-tour-pin"
+                data-tour-pin={k}
+                style={`--x:${note.pin[0]}%;--y:${note.pin[1]}%`}
+              >
+                <span aria-hidden="true">{k + 1}</span>
+                <span class="sr-only">
+                  <span class="en">
+                    Note {k + 1}: {note.titleEn}
+                  </span>
+                  <span class="fr">
+                    Note {k + 1}&nbsp;: {note.titleFr}
+                  </span>
+                </span>
+              </button>
+            ))}
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <div class="flex flex-row gap-0 items-baseline justify-between">
+              <h4 class="cs-ds-tour-title">
+                <span class="en">{screen.titleEn}</span>
+                <span class="fr">{screen.titleFr}</span>
+              </h4>
+              <p class="heading-label uppercase">
+                <span class="en">{screen.eyebrowEn}</span>
+                <span class="fr">{screen.eyebrowFr}</span>
+              </p>
+            </div>
+            <ol class="flex flex-col gap-1 cs-ds-tour-notes">
+              {screen.notes.map((note, k) => (
+                <li>
+                  <button
+                    type="button"
+                    class="cs-ds-tour-note"
+                    data-tour-note={k}
+                    data-spot={note.spot.join(" ")}
+                  >
+                    <span class="cs-ds-tour-note-num" aria-hidden="true">
+                      {k + 1}
+                    </span>
+                    <div class="flex flex-col gap-1">
+                      <div class="flex flex-row items-baseline justify-between gap-2">
+                        <p class="cs-ds-tour-note-title">
+                          <span class="en">{note.titleEn}</span>
+                          <span class="fr">{note.titleFr}</span>
+                        </p>
+                        <span class="cs-ds-tour-tag" data-theme={note.theme}>
+                          <span class="en">{themes[note.theme].en}</span>
+                          <span class="fr">{themes[note.theme].fr}</span>
+                        </span>
+                      </div>
+                      <p class="body-sm cs-ds-tour-note-text">
+                        <span class="en">{note.textEn}</span>
+                        <span class="fr">{note.textFr}</span>
+                      </p>
+                    </div>
+                  </button>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+</div>

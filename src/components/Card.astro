@@ -3,7 +3,7 @@ import Bilingual from "./Bilingual.astro";
 import CardSection from "./CardSection.astro";
 
 interface Props {
-  variant?: "filled" | "hollow";
+  variant?: "filled" | "hollow" | "accent";
   titleEn?: string;
   titleFr?: string;
   legendEn?: string;
@@ -24,17 +24,20 @@ const {
 ---
 
 <div class={`card ${variant}`}>
-  {
-    titleEn && (
-      <p class="card-heading">
-        <Bilingual en={titleEn} fr={titleFr} />{
-          legendEn && (
-            <span class="card-heading-legend"><Bilingual en={legendEn} fr={legendFr} /></span>
-          )
-        }
-      </p>
-    )
-  }
-  {textEn && <CardSection textEn={textEn} textFr={textFr} />}
+  <div class="flex flex-col gap-1">
+    {
+      titleEn && (
+        <p class="card-heading">
+          <Bilingual en={titleEn} fr={titleFr} />
+          {legendEn && (
+            <span class="card-heading-legend">
+              <Bilingual en={legendEn} fr={legendFr} />
+            </span>
+          )}
+        </p>
+      )
+    }
+    {textEn && <CardSection textEn={textEn} textFr={textFr} />}
+  </div>
   <slot />
 </div>
