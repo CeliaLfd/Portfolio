@@ -1,6 +1,6 @@
 /* ============================================
    DATA EXPLORER — THE SIX DECISIONS
-   Eyebrow "Decision 0X" · title · "Answers" bubble · text
+   Eyebrow "Decision 0X" · title · source bubble (data strategy, user feedback, researcher or business need) · text
    Decision 04 adds three cards (one per filter blocker)
 ============================================ */
 
@@ -9,7 +9,7 @@
 }
 
 
-/* "Answers" bubble, echoes the interview cards */
+/* source bubble (data strategy, user feedback, researcher or business need), echoes the interview cards */
 .cs-de-answers {
   display: flex;
   flex-direction: column;
@@ -97,16 +97,10 @@ body.dark .cs-de-tag[data-tone="unreviewed"] {
   border-radius: var(--radius-lg);
 }
 
-.cs-de-level-num {
-  font-family: var(--display);
-  font-size: var(--fs-16);
-  color: var(--muted);
-}
-
 .cs-de-level-title {
   margin: 0;
-  font-size: var(--fs-20);
-  font-weight: 600;
+  font-size: var(--fs-18);
+  font-weight: 500;
   line-height: 1.25;
 }
 
@@ -124,4 +118,57 @@ body.dark .cs-de-tag[data-tone="unreviewed"] {
   margin: 0;
   font-size: var(--fs-16);
   line-height: 1.5;
+}
+
+/* ---------- What we did next: Data Finder teaser ---------- */
+
+.cs-de-next {
+  display: grid;
+  gap: var(--s4);
+  align-items: center;
+  padding: var(--s4);
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+}
+
+@media (min-width: 900px) {
+  .cs-de-next {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: var(--s5);
+  }
+}
+
+.cs-de-next-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--s2);
+}
+
+.cs-de-next-text .cs-subsection-subheading,
+.cs-de-next-text .cs-subsection-heading {
+  margin-bottom: 0;
+}
+
+.cs-de-next-text p {
+  margin: 0;
+}
+
+.cs-de-next-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s1);
+  padding: 0.35em 0.9em;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-14);
+  color: var(--muted);
+}
+
+.cs-de-next-pill::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
 }
