@@ -7,10 +7,6 @@
   gap: var(--s2);
 }
 
-.cs-de-workshop > p {
-  max-width: 62ch;
-}
-
 /* ---------- Sticky notes ---------- */
 
 .cs-de-notes {
@@ -40,7 +36,7 @@
   padding: var(--s3) var(--s3) var(--s4);
   background: var(--note-bg);
   color: #1f1b16;
-  border-radius: 4px;
+  border-radius: var(--radius);
   transform: rotate(var(--r, 0deg));
   transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -54,21 +50,16 @@
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 22px;
-  height: 22px;
+  width: var(--s3);
+  height: var(--s3);
   background: linear-gradient(135deg, var(--bg) 50%, hsl(0 0% 0% / 0.12) 50%);
-  border-top-left-radius: 4px;
+  border-radius: var(--radius) 0 var(--radius);
 }
 
 .cs-de-note:hover {
   transform: rotate(0deg) translateY(-4px);
 }
 
-.cs-de-note-eyebrow {
-  margin: 0;
-  font-size: var(--fs-14);
-  opacity: 0.7;
-}
 
 .cs-de-note-question {
   margin: 0 0 var(--s1);

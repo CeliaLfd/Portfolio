@@ -1,0 +1,34 @@
+---
+import Bilingual from "./Bilingual.astro";
+
+interface Props {
+  titleEn?: string;
+  titleFr?: string;
+  textEn: string;
+  textFr?: string;
+  captionEn?: string;
+  captionFr?: string;
+}
+
+const { titleEn, titleFr, textEn, textFr, captionEn, captionFr } = Astro.props;
+---
+
+<div class="card-section">
+  {
+    titleEn && (
+      <p class="card-heading">
+        <Bilingual en={titleEn} fr={titleFr} />
+      </p>
+    )
+  }
+  <p class="card-text">
+    <Bilingual en={textEn} fr={textFr} />
+  </p>
+  {
+    captionEn && (
+      <p class="heading-label">
+        <Bilingual en={captionEn} fr={captionFr} />
+      </p>
+    )
+  }
+</div>

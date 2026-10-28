@@ -1,0 +1,127 @@
+/* ============================================
+   DATA EXPLORER — THE SIX DECISIONS
+   Eyebrow "Decision 0X" · title · "Answers" bubble · text
+   Decision 04 adds three cards (one per filter blocker)
+============================================ */
+
+.cs-de-decision {
+  row-gap: var(--s3);
+}
+
+
+/* "Answers" bubble, echoes the interview cards */
+.cs-de-answers {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  gap: var(--s0);
+  margin: 0;
+  padding: var(--s1) var(--s2);
+  background: var(--surface);
+  border-radius: var(--radius-lg) var(--radius-lg) var(--radius-lg) 0;
+}
+
+.cs-de-answers-label {
+  font-size: var(--fs-14);
+  color: var(--muted);
+}
+
+.cs-de-answers-label::before {
+  content: "\2192\00a0";
+  color: var(--accent);
+}
+
+.cs-de-answers-text {
+  font-family: var(--serif);
+  font-size: var(--fs-16);
+  line-height: 1.35;
+}
+
+.cs-de-decision-body p {
+  margin: 0;
+}
+
+/* Status tags quoted in decision 01, like the product UI */
+.cs-de-tag {
+  display: inline-block;
+  padding: 0.05em 0.55em;
+  border-radius: var(--radius-pill);
+  font-size: 0.85em;
+  line-height: 1.5;
+  vertical-align: 0.05em;
+}
+
+.cs-de-tag[data-tone="reviewed"] {
+  background: hsl(95 50% 90%);
+  color: hsl(95 70% 22%);
+}
+
+.cs-de-tag[data-tone="unreviewed"] {
+  background: hsl(40 12% 92%);
+  color: hsl(40 4% 28%);
+}
+
+body.dark .cs-de-tag[data-tone="reviewed"] {
+  background: hsl(95 30% 22%);
+  color: hsl(95 50% 82%);
+}
+
+body.dark .cs-de-tag[data-tone="unreviewed"] {
+  background: hsl(40 6% 26%);
+  color: hsl(40 6% 84%);
+}
+
+/* ---------- Decision 04: three levels ---------- */
+
+.cs-de-levels {
+  display: grid;
+  gap: var(--s2);
+  margin: var(--s4) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 900px) {
+  .cs-de-levels {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--s3);
+  }
+}
+
+.cs-de-level {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s1);
+  padding: var(--s3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.cs-de-level-num {
+  font-family: var(--display);
+  font-size: var(--fs-16);
+  color: var(--muted);
+}
+
+.cs-de-level-title {
+  margin: 0;
+  font-size: var(--fs-20);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.cs-de-level-quote {
+  margin: var(--s0) 0 var(--s1);
+  padding-left: var(--s2);
+  border-left: 2px solid var(--accent);
+  font-family: var(--serif);
+  font-size: var(--fs-16);
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.cs-de-level-text {
+  margin: 0;
+  font-size: var(--fs-16);
+  line-height: 1.5;
+}

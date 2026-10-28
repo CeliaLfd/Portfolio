@@ -1,16 +1,29 @@
+/* Reset CSS, CSS variables, structure */
 @import './global.css';
+
+/* Components - Molecules */
 @import './grid.css';
 @import './text.css';
+
+/* Components - Molecules */
+@import './card.css';
+@import './viewer.css';
+
+/* Components - organisms */
 @import './hero.css';
+@import './slider.css';
 @import './header.css';
 @import './footer.css';
 @import './case-study-card.css';
-@import './case-study.css';
 @import './before-after.css';
-@import './slider.css';
+
+/* Pages */
+@import './case-study.css';
 @import './about.css';
+
+/* Page - organisms */
 @import './cs-dataexplorer-scale.css';
 @import './cs-dataexplorer-needs.css';
 @import './cs-dataexplorer-interviews.css';
 @import './cs-dataexplorer-workshop.css';
-@import './viewer.css';
+@import './cs-dataexplorer-decisions.css';

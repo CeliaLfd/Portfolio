@@ -1,0 +1,46 @@
+/* ============================================
+   CARD
+   Styles :
+    - filled
+    - Hollow
+============================================ */
+
+.card {
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  padding: var(--s3);
+}
+
+.card.filled {
+  background: var(--surface);
+}
+
+.card.hollow {
+  background: var(--bg-card);
+  border-color: var(--border);
+}
+
+.card-heading-legend {
+  color: var(--muted);
+  font-style: italic;
+  margin-left: var(--s1);
+}
+
+.card-section + .card-section {
+  border-top: 1px solid var(--bg);
+  margin-top: var(--s2);
+  padding-top: var(--s2);
+}
+
+.card.hollow .card-section + .card-section {
+  border-top-color: var(--border);
+}
+
+.card-text {
+  font-size: var(--fs-16);
+  line-height: 1.55;
+}
+
+.card-section > .heading-label {
+  margin-top: var(--s0);
+}

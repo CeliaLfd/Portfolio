@@ -87,7 +87,7 @@
 
 .cs-de-scale-grid span {
   aspect-ratio: 1;
-  border-radius: 3px;
+  border-radius: var(--radius);
   background: var(--border);
   transition: background-color 0.35s ease;
 }
@@ -190,7 +190,7 @@
   padding: var(--s3);
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
 }
 
 .cs-de-timeline-card-top {
@@ -205,7 +205,7 @@
   place-items: center;
   width: 44px;
   height: 44px;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   background: color-mix(in srgb, var(--accent) 12%, transparent);
   color: var(--accent);
 }

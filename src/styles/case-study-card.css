@@ -35,7 +35,7 @@
   left: 0;
   pointer-events: none;
   background: var(--accent);
-  border-radius: 100px;
+  border-radius: var(--radius-pill);
   padding: calc(var(--s0) + 1px) var(--s2) var(--s0);
   font-size: var(--fs-12);
   font-weight: 500;

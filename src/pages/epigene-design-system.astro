@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import CardSection from "../components/CardSection.astro";
 ---
 
 <Layout
@@ -34,156 +36,59 @@ import Layout from "../layouts/Layout.astro";
       </div>
       <div class="cs-hero-summary reveal">
         <div class="cs-summary-col">
-          <div class="cs-summary-card">
-            <span class="cs-summary-title">
-              <span class="en"
-                >Product<span class="cs-summary-title-legend"
-                  >mCUBE's Design System</span
-                ></span
-              >
-              <span class="fr"
-                >Produit<span class="cs-summary-title-legend"
-                  >Le Design System de mCUBE</span
-                ></span
-              >
-            </span>
-            <p class="cs-summary-value">
-              <span class="en"
-                >mCUBE is a genomic data analysis platform for oncology
-                researchers. It was built by engineers, with no designer and no
-                design decisions documented anywhere. I led the redesign from a
-                UI audit to a full design system, implemented directly in the
-                codebase.</span
-              >
-              <span class="fr"
-                >mCUBE est une plateforme d'analyse de données génomiques pour
-                les chercheurs en oncologie. Elle a été construite par des
-                ingénieurs, sans designer et sans aucune décision de design
-                documentée. J'ai piloté la refonte, d'un audit UI jusqu'à un
-                design system complet, implémenté directement dans la codebase.</span
-              >
-            </p>
-          </div>
-          <div class="cs-summary-card">
-            <span class="cs-summary-title">
-              <span class="en">Details</span>
-              <span class="fr">Détails</span>
-            </span>
-            <div class="cs-summary-details">
-              <div class="cs-summary-item">
-                <p class="cs-summary-value">
-                  Product Designer ∙ Frontend Engineer
-                </p>
-                <span class="heading-label">
-                  <span class="en">Role</span>
-                  <span class="fr">Rôle</span>
-                </span>
-              </div>
-              <div class="cs-summary-item">
-                <p class="cs-summary-value">Figma ∙ React.js ∙ ReScript</p>
-                <span class="heading-label">
-                  <span class="en">Tools / Stack</span>
-                  <span class="fr">Outils / Stack</span>
-                </span>
-              </div>
-              <div class="cs-summary-item">
-                <p class="cs-summary-value">
-                  <span class="en"
-                    >1 product designer & front-end engineer (me) ∙ VP & CTO as
-                    stakeholders</span
-                  >
-                  <span class="fr"
-                    >1 designeuse & développeuse front-end (moi) ∙ VP & CTO
-                    comme parties prenantes</span
-                  >
-                </p>
-                <span class="heading-label">
-                  <span class="en">Team</span>
-                  <span class="fr">Équipe</span>
-                </span>
-              </div>
-              <div class="cs-summary-item">
-                <p class="cs-summary-value en">
-                  UX/UI Audit ∙ Design Systems ∙ Component Architecture
-                </p>
-                <p class="cs-summary-value fr">
-                  Audit UX/UI ∙ Design Systems ∙ Architecture de composants
-                </p>
-                <span class="heading-label">Scope</span>
-              </div>
-            </div>
-          </div>
+          <Card
+            titleEn="Product"
+            titleFr="Produit"
+            legendEn="mCUBE's Design System"
+            legendFr="Le Design System de mCUBE"
+            textEn="mCUBE is a genomic data analysis platform for oncology researchers. It was built by engineers, with no designer and no design decisions documented anywhere. I led the redesign from a UI audit to a full design system, implemented directly in the codebase."
+            textFr="mCUBE est une plateforme d'analyse de données génomiques pour les chercheurs en oncologie. Elle a été construite par des ingénieurs, sans designer et sans aucune décision de design documentée. J'ai piloté la refonte, d'un audit UI jusqu'à un design system complet, implémenté directement dans la codebase."
+          />
+          <Card titleEn="Details" titleFr="Détails">
+            <CardSection
+              textEn="Product Designer ∙ Frontend Engineer"
+              captionEn="Role"
+              captionFr="Rôle"
+            />
+            <CardSection
+              textEn="Figma ∙ React.js ∙ ReScript"
+              captionEn="Tools / Stack"
+              captionFr="Outils / Stack"
+            />
+            <CardSection
+              textEn="1 product designer & front-end engineer (me) ∙ VP & CTO as stakeholders"
+              textFr="1 designeuse & développeuse front-end (moi) ∙ VP & CTO comme parties prenantes"
+              captionEn="Team"
+              captionFr="Équipe"
+            />
+            <CardSection
+              textEn="UX/UI Audit ∙ Design Systems ∙ Component Architecture"
+              textFr="Audit UX/UI ∙ Design Systems ∙ Architecture de composants"
+              captionEn="Scope"
+            />
+          </Card>
         </div>
         <div class="cs-summary-col">
-          <div class="cs-summary-card">
-            <div class="cs-summary-details">
-              <div class="cs-summary-item">
-                <span class="cs-summary-title">
-                  <span class="en">Problem</span>
-                  <span class="fr">Problème</span>
-                </span>
-                <p class="cs-summary-value">
-                  <span class="en"
-                    >An interface never designed for the people using it: no
-                    landmarks in the flows, primary actions hidden, no feedback,
-                    and components that behaved differently from one screen to
-                    the next.</span
-                  >
-                  <span class="fr"
-                    >Une interface jamais pensée pour ses utilisateurs : pas de
-                    repères dans les parcours, des actions principales cachées,
-                    aucun feedback, et des composants incohérents d'un écran à
-                    l'autre.</span
-                  >
-                </p>
-              </div>
-              <div class="cs-summary-item">
-                <span class="cs-summary-title">
-                  <span class="en">Solution</span>
-                  <span class="fr">Solution</span>
-                </span>
-                <p class="cs-summary-value">
-                  <span class="en"
-                    >I built a complete design system from scratch: colors,
-                    typography, spacing, components, grid. Then I redesigned the
-                    product around it, implementing it directly in the front-end
-                    to keep design and code in sync.</span
-                  >
-                  <span class="fr"
-                    >J'ai construit un design system complet de zéro : couleurs,
-                    typographie, espacement, composants, grille. Puis j'ai
-                    redesigné le produit autour de cette base, en l'implémentant
-                    directement en front-end pour garder design et code alignés.</span
-                  >
-                </p>
-              </div>
-              <div class="cs-summary-item">
-                <span class="cs-summary-title">
-                  <span class="en">Result</span>
-                  <span class="fr">Résultat</span>
-                </span>
-                <p class="cs-summary-value">
-                  <span class="en"
-                    >Design became a commercial argument. Users described the
-                    product as "user-friendly", and the term went into every
-                    marketing post and into pitches to leading biopharma
-                    organizations, alongside cloud architecture and data
-                    coverage. A rare differentiator in a field where design is
-                    often an afterthought.</span
-                  >
-                  <span class="fr">
-                    Le design est devenu un argument commercial. Les
-                    utilisateurs qualifiaient le produit de
-                    «&nbsp;user-friendly&nbsp;», et le terme s'est retrouvé dans
-                    tous les posts marketing et dans les pitchs destinés aux
-                    grandes organisations biopharma, aux côtés de l'architecture
-                    cloud et de la couverture data. Un vrai différenciant dans
-                    un milieu où le design passe souvent au second plan.</span
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
+          <Card>
+            <CardSection
+              titleEn="Problem"
+              titleFr="Problème"
+              textEn="An interface never designed for the people using it: no landmarks in the flows, primary actions hidden, no feedback, and components that behaved differently from one screen to the next."
+              textFr="Une interface jamais pensée pour ses utilisateurs : pas de repères dans les parcours, des actions principales cachées, aucun feedback, et des composants incohérents d'un écran à l'autre."
+            />
+            <CardSection
+              titleEn="Solution"
+              titleFr="Solution"
+              textEn="I built a complete design system from scratch: colors, typography, spacing, components, grid. Then I redesigned the product around it, implementing it directly in the front-end to keep design and code in sync."
+              textFr="J'ai construit un design system complet de zéro : couleurs, typographie, espacement, composants, grille. Puis j'ai redesigné le produit autour de cette base, en l'implémentant directement en front-end pour garder design et code alignés."
+            />
+            <CardSection
+              titleEn="Result"
+              titleFr="Résultat"
+              textEn={`Design became a commercial argument. Users described the product as "user-friendly", and the term went into every marketing post and into pitches to leading biopharma organizations, alongside cloud architecture and data coverage. A rare differentiator in a field where design is often an afterthought.`}
+              textFr="Le design est devenu un argument commercial. Les utilisateurs qualifiaient le produit de «&nbsp;user-friendly&nbsp;», et le terme s'est retrouvé dans tous les posts marketing et dans les pitchs destinés aux grandes organisations biopharma, aux côtés de l'architecture cloud et de la couverture data. Un vrai différenciant dans un milieu où le design passe souvent au second plan."
+            />
+          </Card>
         </div>
       </div>
     </div>
@@ -339,82 +244,33 @@ import Layout from "../layouts/Layout.astro";
           </div>
           <div class="cs-subsections">
             <div class="cs-subsection grid-2">
-              <div class="">
+              <div class="flex flex-col gap-2">
                 <h3 class="cs-subsection-subheading">
                   <span class="en">Emerging problems</span>
                   <span class="fr">Problèmes émergents</span>
                 </h3>
                 <div class="cs-cards">
-                  <div class="cs-subsection-card">
-                    <span class="cs-summary-title">
-                      <span class="en"
-                        >No system, inconsistencies everywhere</span
-                      >
-                      <span class="fr">Aucun système, des incohérences</span>
-                    </span>
-                    <p class="cs-summary-value">
-                      <span class="en"
-                        >Styles followed no rules: the same gray meant
-                        "selected" in one place and "disabled" in another,
-                        button order and placement changed from screen to
-                        screen, and components like the switch or the modal were
-                        used against their purpose.</span
-                      >
-                      <span class="fr"
-                        >Les styles n'obéissaient à aucune règle : un même gris
-                        servait tantôt à « sélectionné », tantôt à « désactivé
-                        », l'ordre et le placement des boutons changeaient d'un
-                        écran à l'autre, et des composants comme le switch ou la
-                        modale étaient détournés de leur usage.</span
-                      >
-                    </p>
-                  </div>
-                  <div class="cs-subsection-card">
-                    <span class="cs-summary-title">
-                      <span class="en">An interface that didn't guide</span>
-                      <span class="fr">Une interface qui ne guidait pas</span>
-                    </span>
-                    <p class="cs-summary-value">
-                      <span class="en"
-                        >No system status, no UX writing: a change wasn't
-                        reflected on screen, loading gave no indication, the
-                        main action ("Compute indicator score") stayed hidden,
-                        and some icons had no label. The user moved forward with
-                        no bearings, at the risk of losing their work.</span
-                      >
-                      <span class="fr"
-                        >Ni statut système, ni UX writing : un changement ne se
-                        reflétait pas à l'écran, les chargements n'indiquaient
-                        rien, l'action principale (« Compute indicator score »)
-                        restait cachée, et des icônes n'avaient aucun label.
-                        L'utilisateur avançait sans repère, au risque de perdre
-                        son travail.</span
-                      >
-                    </p>
-                  </div>
-                  <div class="cs-subsection-card">
-                    <span class="cs-summary-title">
-                      <span class="en"
-                        >A poor experience, a weakened product</span
-                      >
-                      <span class="fr"
-                        >Une expérience pauvre, un produit affaibli</span
-                      >
-                    </span>
-                    <p class="cs-summary-value">
-                      <span class="en"
-                        >Across the whole flow, these frictions degraded the
-                        experience on the entire platform and weakened the
-                        product and its image with users and clients alike.</span
-                      >
-                      <span class="fr"
-                        >Cumulées sur tout le parcours, ces frictions
-                        dégradaient l'expérience sur l'ensemble de la plateforme
-                        et affaiblissaient le produit comme son image auprès des
-                        utilisateurs et des clients.</span
-                      >
-                    </p>
-                  </div>
+                  <Card
+                    variant="hollow"
+                    titleEn="No system, inconsistencies everywhere"
+                    titleFr="Aucun système, des incohérences"
+                    textEn={`Styles followed no rules: the same gray meant "selected" in one place and "disabled" in another, button order and placement changed from screen to screen, and components like the switch or the modal were used against their purpose.`}
+                    textFr="Les styles n'obéissaient à aucune règle : un même gris servait tantôt à « sélectionné », tantôt à « désactivé », l'ordre et le placement des boutons changeaient d'un écran à l'autre, et des composants comme le switch ou la modale étaient détournés de leur usage."
+                  />
+                  <Card
+                    variant="hollow"
+                    titleEn="An interface that didn't guide"
+                    titleFr="Une interface qui ne guidait pas"
+                    textEn={`No system status, no UX writing: a change wasn't reflected on screen, loading gave no indication, the main action ("Compute indicator score") stayed hidden, and some icons had no label. The user moved forward with no bearings, at the risk of losing their work.`}
+                    textFr="Ni statut système, ni UX writing : un changement ne se reflétait pas à l'écran, les chargements n'indiquaient rien, l'action principale (« Compute indicator score ») restait cachée, et des icônes n'avaient aucun label. L'utilisateur avançait sans repère, au risque de perdre son travail."
+                  />
+                  <Card
+                    variant="hollow"
+                    titleEn="A poor experience, a weakened product"
+                    titleFr="Une expérience pauvre, un produit affaibli"
+                    textEn="Across the whole flow, these frictions degraded the experience on the entire platform and weakened the product and its image with users and clients alike."
+                    textFr="Cumulées sur tout le parcours, ces frictions dégradaient l'expérience sur l'ensemble de la plateforme et affaiblissaient le produit comme son image auprès des utilisateurs et des clients."
+                  />
                 </div>
               </div>
               <div class="cs-img transparent">
@@ -430,54 +286,30 @@ import Layout from "../layouts/Layout.astro";
                   preload="metadata"></video>
               </div>
             </div>
-            <div>
+            <div class="flex flex-col gap-2">
               <h3 class="cs-subsection-subheading text-align-center">
                 <span class="en">How the audit was built</span>
                 <span class="fr">Comment l'audit était construit</span>
               </h3>
               <div class="cs-cards cs-cards-3">
-                <div class="cs-subsection-card filled">
-                  <span class="cs-summary-title">
-                    <span class="en">1 — The usability problems</span>
-                    <span class="fr">1 — Les problèmes ergonomiques</span>
-                  </span>
-                  <p class="cs-summary-value">
-                    <span class="en"
-                      >What was observed, what it caused, and what could be
-                      improved.</span
-                    >
-                    <span class="fr"
-                      >Ce qui était relevé, ce que ça provoquait, et ce qui
-                      pouvait être amélioré.</span
-                    >
-                  </p>
-                </div>
-                <div class="cs-subsection-card filled">
-                  <span class="cs-summary-title">
-                    <span class="en">2 — The missing UI/UX concepts</span>
-                    <span class="fr">2 — Les concepts UI/UX manquants</span>
-                  </span>
-                  <p class="cs-summary-value">
-                    <span class="en"
-                      >The absent principles to introduce, and their benefit to
-                      the user.</span
-                    >
-                    <span class="fr"
-                      >Les principes absents à introduire, et leur bénéfice pour
-                      l'utilisateur.</span
-                    >
-                  </p>
-                </div>
-                <div class="cs-subsection-card filled">
-                  <span class="cs-summary-title">
-                    <span class="en">3 — Feature ideas</span>
-                    <span class="fr">3 — Des pistes de features</span>
-                  </span>
-                  <p class="cs-summary-value">
-                    <span class="en">Low-cost, but high-impact.</span>
-                    <span class="fr">Peu coûteuses, mais à fort impact.</span>
-                  </p>
-                </div>
+                <Card
+                  titleEn="1 — The usability problems"
+                  titleFr="1 — Les problèmes ergonomiques"
+                  textEn="What was observed, what it caused, and what could be improved."
+                  textFr="Ce qui était relevé, ce que ça provoquait, et ce qui pouvait être amélioré."
+                />
+                <Card
+                  titleEn="2 — The missing UI/UX concepts"
+                  titleFr="2 — Les concepts UI/UX manquants"
+                  textEn="The absent principles to introduce, and their benefit to the user."
+                  textFr="Les principes absents à introduire, et leur bénéfice pour l'utilisateur."
+                />
+                <Card
+                  titleEn="3 — Feature ideas"
+                  titleFr="3 — Des pistes de features"
+                  textEn="Low-cost, but high-impact."
+                  textFr="Peu coûteuses, mais à fort impact."
+                />
               </div>
             </div>
           </div>
@@ -753,55 +585,27 @@ import Layout from "../layouts/Layout.astro";
         </h2>
         <div class="cs-section-content">
           <div class="cs-cards cs-cards-3">
-            <div class="cs-subsection-card">
-              <span class="cs-summary-title">
-                <span class="en">A system that held</span>
-                <span class="fr">Un système qui a tenu</span>
-              </span>
-              <p class="cs-summary-value">
-                <span class="en"
-                  >Maintained from 2022 to today, while the product went from
-                  one type of analysis to three, plus a Data Explorer, on the
-                  same base.</span
-                >
-                <span class="fr"
-                  >Maintenu de 2022 à aujourd'hui, pendant que le produit
-                  passait d'un type d'analyse à trois, plus un Data Explorer,
-                  sur la même base.</span
-                >
-              </p>
-            </div>
-            <div class="cs-subsection-card">
-              <span class="cs-summary-title">
-                <span class="en">A consistent experience</span>
-                <span class="fr">Une expérience cohérente</span>
-              </span>
-              <p class="cs-summary-value">
-                <span class="en"
-                  >Uniform across the whole platform, and a strengthened brand
-                  image.</span
-                >
-                <span class="fr"
-                  >Homogène sur toute la plateforme, et une image de marque
-                  renforcée.</span
-                >
-              </p>
-            </div>
-            <div class="cs-subsection-card">
-              <span class="cs-summary-title">
-                <span class="en">Design and code aligned</span>
-                <span class="fr">Design et code alignés</span>
-              </span>
-              <p class="cs-summary-value">
-                <span class="en"
-                  >A single source, documented in Figma as in the codebase.</span
-                >
-                <span class="fr"
-                  >Une seule source, documentée dans Figma comme dans la
-                  codebase.</span
-                >
-              </p>
-            </div>
+            <Card
+              variant="hollow"
+              titleEn="A system that held"
+              titleFr="Un système qui a tenu"
+              textEn="Maintained from 2022 to today, while the product went from one type of analysis to three, plus a Data Explorer, on the same base."
+              textFr="Maintenu de 2022 à aujourd'hui, pendant que le produit passait d'un type d'analyse à trois, plus un Data Explorer, sur la même base."
+            />
+            <Card
+              variant="hollow"
+              titleEn="A consistent experience"
+              titleFr="Une expérience cohérente"
+              textEn="Uniform across the whole platform, and a strengthened brand image."
+              textFr="Homogène sur toute la plateforme, et une image de marque renforcée."
+            />
+            <Card
+              variant="hollow"
+              titleEn="Design and code aligned"
+              titleFr="Design et code alignés"
+              textEn="A single source, documented in Figma as in the codebase."
+              textFr="Une seule source, documentée dans Figma comme dans la codebase."
+            />
           </div>
           <div class="cs-pullquote text-align-center">
             <p class="cs-pullquote-heading">
@@ -879,41 +683,18 @@ import Layout from "../layouts/Layout.astro";
             autres équipes.
           </p>
           <div class="cs-cards cs-cards-2">
-            <div class="cs-subsection-card filled">
-              <span class="cs-summary-title">
-                <span class="en">Build to last</span>
-                <span class="fr">Construire pour durer</span>
-              </span>
-              <p class="cs-summary-value">
-                <span class="en"
-                  >The system was designed, from the start, for its maintenance
-                  and adaptation over time, not just for its initial creation.</span
-                >
-                <span class="fr"
-                  >Le système a été pensé, dès le départ, pour sa maintenance et
-                  son adaptation dans le temps, pas seulement pour sa conception
-                  initiale.</span
-                >
-              </p>
-            </div>
-            <div class="cs-subsection-card filled">
-              <span class="cs-summary-title">
-                <span class="en">The design / dev bridge</span>
-                <span class="fr">Le pont design / dev</span>
-              </span>
-              <p class="cs-summary-value">
-                <span class="en"
-                  >Being both a designer and a front-end engineer: fewer
-                  back-and-forths, a more faithful implementation, and a system
-                  that lives as well in Figma as in code.</span
-                >
-                <span class="fr"
-                  >Être à la fois designer et développeuse front-end : moins
-                  d'allers-retours, une implémentation plus fidèle, et un
-                  système qui vit aussi bien dans Figma que dans le code.</span
-                >
-              </p>
-            </div>
+            <Card
+              titleEn="Build to last"
+              titleFr="Construire pour durer"
+              textEn="The system was designed, from the start, for its maintenance and adaptation over time, not just for its initial creation."
+              textFr="Le système a été pensé, dès le départ, pour sa maintenance et son adaptation dans le temps, pas seulement pour sa conception initiale."
+            />
+            <Card
+              titleEn="The design / dev bridge"
+              titleFr="Le pont design / dev"
+              textEn="Being both a designer and a front-end engineer: fewer back-and-forths, a more faithful implementation, and a system that lives as well in Figma as in code."
+              textFr="Être à la fois designer et développeuse front-end : moins d'allers-retours, une implémentation plus fidèle, et un système qui vit aussi bien dans Figma que dans le code."
+            />
           </div>
         </div>
       </section>

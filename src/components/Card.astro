@@ -1,0 +1,40 @@
+---
+import Bilingual from "./Bilingual.astro";
+import CardSection from "./CardSection.astro";
+
+interface Props {
+  variant?: "filled" | "hollow";
+  titleEn?: string;
+  titleFr?: string;
+  legendEn?: string;
+  legendFr?: string;
+  textEn?: string;
+  textFr?: string;
+}
+
+const {
+  variant = "filled",
+  titleEn,
+  titleFr,
+  legendEn,
+  legendFr,
+  textEn,
+  textFr,
+} = Astro.props;
+---
+
+<div class={`card ${variant}`}>
+  {
+    titleEn && (
+      <p class="card-heading">
+        <Bilingual en={titleEn} fr={titleFr} />{
+          legendEn && (
+            <span class="card-heading-legend"><Bilingual en={legendEn} fr={legendFr} /></span>
+          )
+        }
+      </p>
+    )
+  }
+  {textEn && <CardSection textEn={textEn} textFr={textFr} />}
+  <slot />
+</div>

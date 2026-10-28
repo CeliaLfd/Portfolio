@@ -68,7 +68,7 @@
   top: var(--spot-t);
   width: var(--spot-w);
   height: var(--spot-h);
-  border-radius: 6px;
+  border-radius: var(--radius);
   outline: 2px solid var(--accent);
   box-shadow: 0 0 0 200vmax hsl(17 20% 10% / 0.45);
   opacity: 0;
@@ -174,7 +174,7 @@
   padding: var(--s3);
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 

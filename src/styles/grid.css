@@ -75,3 +75,9 @@
 /* Flex direction */
 .flex-row { flex-direction: row; }
 .flex-col { flex-direction: column; }
+
+
+/* width */
+.max-w-50-content {
+  max-width: calc(var(--content) / 2);
+}

@@ -19,6 +19,7 @@
 @media (min-width: 720px) {
   .cs-page {
     --page-gutter: var(--s3);
+    gap: var(--s8);
     margin: var(--s5) auto 40vh;
   }
 }
@@ -138,58 +139,8 @@
   gap: var(--s0);
 }
 
-.cs-summary-col .cs-summary-card:last-child {
+.cs-summary-col > .card:last-child {
   flex-grow: 1;
-}
-
-.cs-summary-card {
-  background: var(--surface);
-  border-radius: var(--radius);
-  padding: var(--s3);
-}
-
-.cs-summary-title {
-  display: block;
-  font-size: 1.2rem;
-  font-family: var(--serif);
-  font-weight: 500;
-  margin-bottom: var(--s1);
-}
-
-.cs-summary-title-legend {
-  color: var(--muted);
-  font-style: italic;
-  margin-left: var(--s1);
-}
-
-.cs-summary-title:has(+ .cs-summary-details) {
-  margin-bottom: var(--s3);
-}
-
-.cs-summary-details {
-  display: flex;
-  flex-direction: column;
-  gap: var(--s2);
-}
-
-
-
-.cs-summary-value {
-  font-size: var(--fs-16);
-  line-height: 1.55;
-  color: var(--ink);
-  margin: 0;
-}
-
-.cs-summary-item {
-  display: flex;
-  flex-direction: column;
-  gap: var(--s0);
-}
-
-.cs-summary-item:not(:last-child) {
-  padding-bottom: var(--s2);
-  border-bottom: 1px solid var(--bg)
 }
 
 
@@ -218,26 +169,6 @@
   gap: var(--s4);
 }
 
-.cs-section-heading {
-  font-size: var(--fs-14);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
-  font-weight: 450;
-  margin-bottom: var(--s2);
-}
-
-.cs-section-heading-legend {
-  font-size: clamp(var(--fs-20), 2.8vw, var(--fs-32));
-  line-height: 1.3;
-  font-family: var(--serif);
-  color: var(--muted);
-}
-
-.cs-section-subheading {
-  font-family: var(--serif);
-  font-size: clamp(var(--fs-18), 2.2vw, var(--fs-24));
-}
 
 .text-accent {
   color: var(--ink);
@@ -260,7 +191,7 @@
 .cs-subsections { 
   display: flex;
   flex-direction: column; 
-  gap: var(--s6) 
+  gap: var(--s7) 
 }
 
 .cs-subsection {
@@ -278,7 +209,9 @@
    The stroke is 12px high with half-circle ends (6px radius) and follows a
    slight upward arc (3px). It is built from three background layers so the
    ends keep their 6px radius whatever the title length:
-   left cap · stretched arc · right cap. Colour: accent (#FF4F1F) at 30%. */
+   left cap · stretched arc · right cap. Colour: --underline-background at 30%.
+   The layers are gradients, not data-URI SVGs, because an SVG in url()
+   cannot read CSS variables. */
 @property --hl-p {
   syntax: "<number>";
   inherits: false;
@@ -286,14 +219,23 @@
 }
 
 .cs-subsection-subheading {
-  --hl-cap-l: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 15'%3E%3Cpath d='M6 3A6 6 0 0 0 6 15Z' fill='%23FF4F1F' fill-opacity='0.3'/%3E%3C/svg%3E");
-  --hl-cap-r: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 15'%3E%3Cpath d='M0 3A6 6 0 0 1 0 15Z' fill='%23FF4F1F' fill-opacity='0.3'/%3E%3C/svg%3E");
-  --hl-mid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 15' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q50 -3 100 3L100 15Q50 9 0 15Z' fill='%23FF4F1F' fill-opacity='0.3'/%3E%3C/svg%3E");
+  --underline-background: #FF4F1F;
+  --hl-color: color-mix(in srgb, var(--underline-background) 30%, transparent);
+
+  --hl-cap-l: radial-gradient(circle 6px at 100% 9px, var(--hl-color) 5.5px, transparent 6px);
+  --hl-cap-r: radial-gradient(circle 6px at 0 9px, var(--hl-color) 5.5px, transparent 6px);
+  /* Slice of a large elliptical ring: outer edge 0 → 3px, inner edge 12 → 15px */
+  --hl-mid: radial-gradient(ellipse 354.4% 300px at 50% 300px,
+    transparent 95.9%, var(--hl-color) 96.1%, var(--hl-color) 99.9%, transparent 100.1%);
   display: block;
   font-size: var(--fs-18);
   font-weight: 500;
   line-height: 1.4;
-  margin-bottom: var(--s2);
+}
+
+.cs-subsection-subheading.uppercase {
+  text-transform: uppercase;
+  font-size: var(--fs-14);
 }
 
 .cs-subsection-subheading > span {
@@ -324,34 +266,7 @@
   }
 }
 
-/* Small counter label above a subsection title (Solution 1/6…) */
-.cs-subsection-eyebrow {
-  display: block;
-  letter-spacing: 0.06em;
-  font-size: var(--fs-12);
-  font-weight: 500;
-  text-transform: uppercase;
-  margin-bottom: var(--s2);
-  color: var(--muted);
-}
 
-.cs-subsection-heading {
-  font-size: var(--fs-20);
-  font-family: var(--serif);
-  font-weight: 500;
-  margin-bottom: var(--s1);
-}
-
-.cs-subsection-card {
-  padding: var(--s2);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background-color: var(--bg-card);
-}
-.cs-subsection-card.filled {
-  background-color: var(--surface);
-  border-color: var(--surface);
-}
 
 .cs-pullquote {
   padding: var(--s3) var(--s3);
@@ -370,7 +285,7 @@
 
 .cs-img {
   width: 100%;
-  border-radius: 8px;
+  border-radius: var(--radius);
   overflow: hidden;
   background: var(--bg-image);
 }

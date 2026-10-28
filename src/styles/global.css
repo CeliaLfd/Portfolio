@@ -61,7 +61,8 @@ body.dark {
 
   /* Radius */
   --radius: 8px;
-  --radius-pill: 999px;
+  --radius-lg: 16px;
+  --radius-pill: 100px;
 
   /* Font size */
   --fs-10: 0.625rem;

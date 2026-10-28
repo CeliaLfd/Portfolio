@@ -9,7 +9,6 @@
   flex-wrap: wrap;
   justify-content: center; /* centers the incomplete last row */
   gap: var(--iv-gap);
-  margin-top: var(--s3);
 }
 
 .cs-de-interviews > .cs-de-quote {
@@ -36,7 +35,7 @@
   position: relative;
   padding: var(--s3);
   background: var(--bubble);
-  border-radius: 22px 22px 22px 4px;
+  border-radius: var(--radius-lg);
   filter: drop-shadow(0 1px 1px hsl(17 20% 10% / 0.05))
     drop-shadow(0 8px 18px hsl(17 20% 10% / 0.08));
 }
