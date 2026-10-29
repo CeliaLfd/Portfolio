@@ -17,18 +17,6 @@
   --bg-card: var(--bg);
 }
 
-body.dark {
-  --bg:       hsl(17deg 14.89% 15.23%);
-  --ink:      hsl(0 0% 90%);
-  --accent:   hsl(13 100% 56%);
-  --selected:  var(--accent);
-  --muted:    hsl(50 17% 73%);
-  --border:   hsl(17 13% 21%);
-  --surface:  hsl(17 11% 19%);
-  --bg-image: var(--surface);
-  --bg-card: hsl(17 11% 18%);
-}
-
 :root {
   /* Typography */
   --display: 'Special Gothic Condensed One', 'Arial Narrow', sans-serif;

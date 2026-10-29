@@ -40,10 +40,6 @@
     drop-shadow(0 8px 18px hsl(17 20% 10% / 0.08));
 }
 
-body.dark .cs-de-quote {
-  --bubble: var(--bg-card);
-}
-
 /* Message tail, bottom left */
 .cs-de-quote::after {
   content: "";

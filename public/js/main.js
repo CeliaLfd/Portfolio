@@ -3,7 +3,6 @@
    One file per concept in this folder.
 ============================================ */
 
-import { setTheme, initTheme } from './theme.js';
 import { setLang, initLang } from './lang.js';
 import { initReveal } from './reveal.js';
 import { initPlayOnView } from './play-on-view.js';
@@ -19,8 +18,7 @@ import { initWorkshopNotes } from './workshop-notes.js';
 import { initViewers } from './image-viewer.js';
 import { initAuditTour } from './audit-tour.js';
 
-// Called from onclick attributes (Footer.astro, Header.astro)
-window.setTheme = setTheme;
+// Called from onclick attributes (Header.astro)
 window.setLang = setLang;
 
 /* ============================================
@@ -28,7 +26,6 @@ window.setLang = setLang;
 ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initTheme();
   initLang();
   initReveal();
   initPlayOnView();
