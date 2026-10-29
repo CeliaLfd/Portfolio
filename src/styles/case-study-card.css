@@ -45,11 +45,21 @@
   .cs-card:nth-child(even) > .cs-card-info { order: 2; }
 }
 
-.cs-card .cs-card-image img {
+.cs-card .cs-card-image img,
+.cs-card .cs-card-image video {
   transition: all 0.1s ease-out;
 }
 
-.cs-card:hover .cs-card-image img {
+/* Video rendered as a still-looking image: no controls, no interaction */
+.cs-card .cs-card-image video {
+  display: block;
+  pointer-events: none;
+}
+.cs-card .cs-card-image video::-webkit-media-controls { display: none !important; }
+.cs-card .cs-card-image video::-webkit-media-controls-start-playback-button { display: none !important; }
+
+.cs-card:hover .cs-card-image img,
+.cs-card:hover .cs-card-image video {
   transform: scale(1.05);
 }
 

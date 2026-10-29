@@ -2,6 +2,7 @@
 interface Props {
   href?: string;
   image: string;
+  video?: string;
   imageAlt: string;
   titleEn: string;
   titleFr: string;
@@ -16,6 +17,7 @@ interface Props {
 const {
   href,
   image,
+  video,
   imageAlt,
   titleEn,
   titleFr,
@@ -33,7 +35,25 @@ const {
     class={`cs-card-image cs-hero-image ${imageVariant ? `cs-hero-image-${imageVariant}` : ""}`}
     style={backgroundColor ? { backgroundColor } : undefined}
   >
-    <img src={image} alt={imageAlt} loading={loading} decoding="async" onerror="this.style.display='none'" />
+    {
+      video ? (
+        <video
+          src={video}
+          poster={image}
+          data-placeholder={image}
+          aria-label={imageAlt}
+          data-play-on-view
+          muted
+          loop
+          playsinline
+          disablepictureinpicture
+          disableRemotePlayback
+          preload={loading === "eager" ? "auto" : "metadata"}
+        />
+      ) : (
+        <img src={image} alt={imageAlt} loading={loading} decoding="async" onerror="this.style.display='none'" />
+      )
+    }
   </div>
   <div class="cs-card-info">
     <p class="cs-card-meta">{meta}</p>
