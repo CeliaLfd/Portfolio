@@ -1,0 +1,47 @@
+/* ============================================
+   BUTTON — src/components/Button.astro
+   Ink pill, accent on hover. Same look as a link or a button.
+============================================ */
+
+.btn {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s1);
+  padding: 0.7em 1.15em;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--bg);
+  font: inherit;
+  font-size: var(--fs-16);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.btn:hover {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+}

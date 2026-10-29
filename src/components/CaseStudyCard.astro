@@ -12,6 +12,8 @@ interface Props {
   imageVariant?: string;
   backgroundColor?: string;
   loading?: "lazy" | "eager";
+  /* Case study page exists but is still being written: "Sneak peek" instead of "Read the case study" */
+  preview?: boolean;
 }
 
 const {
@@ -27,6 +29,7 @@ const {
   imageVariant,
   backgroundColor,
   loading = "lazy",
+  preview = false,
 } = Astro.props;
 ---
 
@@ -72,8 +75,17 @@ const {
     {
       href ? (
         <span class="cs-card-cta">
-          <span class="en">Read the case study</span>
-          <span class="fr">Lire le case study</span>
+          {preview ? (
+            <>
+              <span class="en">Sneak peek</span>
+              <span class="fr">Aperçu</span>
+            </>
+          ) : (
+            <>
+              <span class="en">Read the case study</span>
+              <span class="fr">Lire le case study</span>
+            </>
+          )}
           <span aria-hidden="true">→</span>
         </span>
       ) : (
@@ -86,7 +98,12 @@ const {
   </div>
   <div class="cs-cursor-label" aria-hidden="true">
     {
-      href ? (
+      href && preview ? (
+        <>
+          <span class="en">Sneak peek</span>
+          <span class="fr">Aperçu</span>
+        </>
+      ) : href ? (
         <>
           <span class="en">View case study</span>
           <span class="fr">Voir le projet</span>

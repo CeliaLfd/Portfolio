@@ -4,6 +4,7 @@ import Card from "../components/Card.astro";
 import CardSection from "../components/CardSection.astro";
 import ImageViewer from "../components/ImageViewer.astro";
 import Icon from "../components/Icon.astro";
+import Button from "../components/Button.astro";
 import type { IconName } from "../components/icons";
 
 const cells = Array.from({ length: 100 }, (_, i) => i);
@@ -812,19 +813,14 @@ const steps: {
                 </p>
               </li>
             </ul>
-            <button
-              type="button"
-              class="cs-de-board-btn"
-              data-viewer-open="workshop-board"
-              aria-haspopup="dialog"
-            >
+            <Button data-viewer-open="workshop-board" aria-haspopup="dialog">
               <svg viewBox="0 0 16 16" aria-hidden="true"
                 ><path d="M9.5 2.5h4v4M6.5 13.5h-4v-4M13.5 2.5 9 7M2.5 13.5 7 9"
                 ></path></svg
               >
               <span class="en">See the full workshop board</span>
               <span class="fr">Voir le board complet du workshop</span>
-            </button>
+            </Button>
             <ImageViewer
               id="workshop-board"
               src="/assets/data-explorer-workshop-board-preview.webp"
@@ -852,8 +848,8 @@ const steps: {
         <div class="cs-subsections">
           <p class="cs-section-heading-legend text-align-center">
             <span class="en">
-              <span class="text-accent">Six decisions</span>, each answering
-              <span class="text-accent"
+              <span class="text-accent">Six decisions</span>, each answering <span
+                class="text-accent"
                 >what the interviews and the workshop surfaced</span
               >.
             </span>

@@ -1,0 +1,170 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import CardSection from "../components/CardSection.astro";
+import Icon from "../components/Icon.astro";
+import Button from "../components/Button.astro";
+
+/* Phrases typed by the "case study in progress" animation (public/js/ai-writing.js) */
+const writingEn = [
+  "Writing the case study",
+  "Sorting the research notes",
+  "Drafting the design decisions",
+];
+const writingFr = [
+  "Écriture du case study",
+  "Tri des notes de recherche",
+  "Rédaction des choix de design",
+];
+---
+
+<Layout
+  title="Data Finder, AI Assistant | Epigene Labs | Célia Lafond"
+  description="Data Finder, the AI assistant I designed and built for mCUBE's Data Explorer: researchers describe what they need in plain language and get the matching filters."
+>
+  <div class="cs-page">
+    <div class="cs-page-hero">
+      <a href="/" class="cs-back">
+        <svg viewBox="0 0 24 24"
+          ><polyline points="15 18 9 12 15 6"></polyline></svg
+        >
+        <span class="en">Work</span>
+        <span class="fr">Projets</span>
+      </a>
+      <h1 class="cs-page-title reveal">
+        <span class="en"
+          >Speeding up dataset discovery with an AI filter assistant</span
+        >
+        <span class="fr"
+          >Accélérer la découverte de datasets avec un assistant IA</span
+        >
+      </h1>
+      <p class="cs-page-company reveal">Epigene Labs &middot; 2026</p>
+      <div class="cs-hero-image reveal">
+        <video
+          src="/assets/cover-ai-assistant.mp4"
+          poster="/assets/cover-ai-assistant.webp"
+          data-placeholder="/assets/cover-ai-assistant.webp"
+          aria-label="Data Finder: the AI assistant suggesting filters in the Data Explorer"
+          data-play-on-view
+          muted
+          loop
+          playsinline
+          disablepictureinpicture
+          disableRemotePlayback
+          preload="auto"></video>
+      </div>
+
+      <div class="cs-hero-summary reveal">
+        <div class="cs-summary-col">
+          <Card
+            titleEn="Product"
+            titleFr="Produit"
+            legendEn="Data Finder, mCUBE's AI assistant"
+            legendFr="Data Finder, l'assistant IA de mCUBE"
+            textEn="Data Finder is an AI assistant built into mCUBE's Data Explorer. Researchers describe the data they need in plain language, and it suggests the matching filters."
+            textFr="Data Finder est un assistant IA intégré au Data Explorer de mCUBE. Les chercheurs décrivent en langage naturel les données qu'ils cherchent, et il propose les filtres correspondants."
+          />
+          <Card titleEn="Details" titleFr="Détails">
+            <CardSection
+              textEn="Product Designer ∙ Frontend Engineer"
+              captionEn="Role"
+              captionFr="Rôle"
+            />
+            <CardSection
+              textEn="Figma ∙ FigJam ∙ React.js ∙ ReScript"
+              captionEn="Tools / Stack"
+              captionFr="Outils / Stack"
+            />
+            <CardSection
+              textEn="1 PM ∙ 1 designer & front-end engineer (me) ∙ 1 back-end engineer ∙ 2 domain experts"
+              textFr="1 PM ∙ 1 designeuse & développeuse front-end (moi) ∙ 1 développeur back-end ∙ 2 experts métier"
+              captionEn="Team"
+              captionFr="Équipe"
+            />
+            <CardSection
+              textEn="Product Design ∙ Workshop Facilitation ∙ Prototyping ∙ Front-end development"
+              textFr="Product design ∙ Animation de workshop ∙ Prototypage ∙ Développement Front-end"
+              captionEn="Scope"
+            />
+          </Card>
+        </div>
+        <div class="cs-summary-col">
+          <Card>
+            <CardSection
+              titleEn="Problem"
+              titleFr="Problème"
+              textEn="With 20,000+ datasets and many scientific filters, finding the right data still meant knowing which filters to set, and how."
+              textFr="Avec plus de 20 000 datasets et de nombreux filtres scientifiques, trouver les bonnes données demandait encore de savoir quels filtres régler, et comment."
+            />
+            <CardSection
+              titleEn="Solution"
+              titleFr="Solution"
+              textEn="I designed and built an AI assistant inside the Data Explorer: researchers describe what they need, the assistant suggests the matching filters, they refine and confirm, and the sidebar fills in for them."
+              textFr={`J'ai conçu et développé un assistant IA dans le Data Explorer : les chercheurs décrivent leur besoin, l'assistant propose les filtres correspondants, ils les ajustent et les valident, et la sidebar se remplit pour eux.`}
+            />
+            <CardSection
+              titleEn="Result"
+              titleFr="Résultat"
+              textEn="An assistant now in production: researchers go from a plain-language question to ready-to-use filters, without knowing filter names, and keep the final say on every suggestion."
+              textFr={`Un assistant aujourd'hui en production : les chercheurs passent d'une question en langage naturel à des filtres prêts à l'emploi, sans connaître le nom des filtres, et gardent le dernier mot sur chaque suggestion.`}
+            />
+          </Card>
+        </div>
+      </div>
+    </div>
+
+    <main class="cs-main">
+      <section class="cs-section reveal" id="in-progress">
+        <h2 class="cs-section-heading">
+          <span class="en">Case study in progress</span>
+          <span class="fr">Case study en cours d'écriture</span>
+        </h2>
+        <div class="grid-2 items-center cs-ai-progress">
+          <div class="flex flex-col gap-3 items-start">
+            <p class="en">
+              I'm writing up this case study: the research, the workshop, the
+              design decisions and the build. In the meantime, the Data Explorer
+              case study tells the story that led to it, and why researchers
+              needed a faster way in.
+            </p>
+            <p class="fr">
+              J'écris ce case study&nbsp;: la recherche, le workshop, les choix
+              de design et le développement. En attendant, le case study Data
+              Explorer raconte ce qui y a mené, et pourquoi les chercheurs
+              avaient besoin d'un accès plus rapide aux données.
+            </p>
+            <Button href="/epigene-data-explorer">
+              <span class="en">Read the Data Explorer case study</span>
+              <span class="fr">Lire le case study Data Explorer</span>
+              <span aria-hidden="true">→</span>
+            </Button>
+          </div>
+
+          <!-- A prompt that writes itself, then skeleton lines "generating" (ai-writing.js) -->
+          <div
+            class="cs-ai-writing"
+            data-ai-writing
+            data-phrases-en={JSON.stringify(writingEn)}
+            data-phrases-fr={JSON.stringify(writingFr)}
+            aria-hidden="true"
+          >
+            <div class="cs-ai-writing-field">
+              <span class="cs-ai-writing-icon"><Icon name="sparkle" /></span>
+              <span class="cs-ai-writing-text" data-ai-writing-text>
+                <span class="en">{writingEn[0]}…</span>
+                <span class="fr">{writingFr[0]}…</span>
+              </span>
+              <span class="cs-ai-writing-caret"></span>
+            </div>
+            <div class="cs-ai-writing-lines">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</Layout>

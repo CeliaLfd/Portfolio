@@ -69,44 +69,6 @@
 }
 
 
-/* ---------- Board button (viewer wired later) ---------- */
-
-.cs-de-board-btn {
-  justify-self: start;
-  display: inline-flex;
-  align-items: center;
-  gap: var(--s1);
-  padding: 0.7em 1.15em;
-  border: 0;
-  border-radius: var(--radius-pill);
-  background: var(--ink);
-  color: var(--bg);
-  font: inherit;
-  font-size: var(--fs-16);
-  cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.cs-de-board-btn svg {
-  width: 16px;
-  height: 16px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.cs-de-board-btn:hover {
-  background: var(--accent);
-  color: var(--on-accent);
-}
-
-.cs-de-board-btn:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-}
-
 /* ---------- Entrance: notes land one after the other (guard: see global.css) ---------- */
 
 @media (prefers-reduced-motion: no-preference) {
@@ -134,8 +96,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .cs-de-note,
-  .cs-de-board-btn {
+  .cs-de-note {
     transition: none;
   }
 }

@@ -1,0 +1,115 @@
+/* ============================================
+   AI ASSISTANT — CASE STUDY IN PROGRESS
+   Text + link to the Data Explorer, and a prompt that writes itself.
+============================================ */
+
+.cs-ai-progress {
+  row-gap: var(--s5);
+}
+
+.cs-ai-progress p {
+  margin: 0;
+}
+
+/* ---------- The prompt ---------- */
+
+.cs-ai-writing {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  padding: var(--s4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.cs-ai-writing-field {
+  display: flex;
+  align-items: center;
+  gap: var(--s1);
+  padding: var(--s2) var(--s3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  font-size: var(--fs-16);
+}
+
+/* The typed text always keeps one line of height, even when empty,
+   and never wraps: the field height stays fixed during the animation */
+.cs-ai-writing-text {
+  display: block;
+  min-width: 0;
+  min-height: 1.5em;
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cs-ai-writing-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+}
+
+.cs-ai-writing-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.cs-ai-writing-caret {
+  flex: none;
+  display: block;
+  visibility: hidden;
+  width: 2px;
+  height: 1.2em;
+  margin-left: -2px;
+  background: var(--accent);
+}
+
+/* Skeleton lines: what the "AI" is generating */
+.cs-ai-writing-lines {
+  display: grid;
+  gap: var(--s1);
+}
+
+.cs-ai-writing-lines span {
+  height: 12px;
+  border-radius: var(--radius-pill);
+  background: var(--border);
+}
+
+.cs-ai-writing-lines span:nth-child(2) { width: 85%; }
+.cs-ai-writing-lines span:nth-child(3) { width: 60%; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .cs-ai-writing.is-typing .cs-ai-writing-caret {
+    visibility: visible;
+    animation: cs-ai-caret 1s steps(1) infinite;
+  }
+
+  /* Lines shimmer while a phrase is "being generated" */
+  .cs-ai-writing.is-generating .cs-ai-writing-lines span {
+    background: linear-gradient(
+      90deg,
+      var(--border) 0%,
+      color-mix(in srgb, var(--accent) 25%, var(--border)) 50%,
+      var(--border) 100%
+    );
+    background-size: 200% 100%;
+    animation: cs-ai-shimmer 1.4s ease-in-out infinite;
+  }
+
+  .cs-ai-writing.is-generating .cs-ai-writing-lines span:nth-child(2) { animation-delay: 0.15s; }
+  .cs-ai-writing.is-generating .cs-ai-writing-lines span:nth-child(3) { animation-delay: 0.3s; }
+}
+
+@keyframes cs-ai-caret {
+  50% { opacity: 0; }
+}
+
+@keyframes cs-ai-shimmer {
+  from { background-position: 100% 0; }
+  to { background-position: -100% 0; }
+}

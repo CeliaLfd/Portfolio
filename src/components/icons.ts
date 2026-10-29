@@ -16,6 +16,8 @@ export const icons = {
     '<path d="M3.5 17.5l6-6 4 4 7-7"/><path d="M15 8.5h5.5V14"/>',
   bolt:
     '<path d="M13 3 4.5 13.5H12L11 21l8.5-10.5H12L13 3z"/>',
+  sparkle:
+    '<path d="M11 3.5l1.8 4.9 4.9 1.8-4.9 1.8L11 16.9l-1.8-4.9-4.9-1.8 4.9-1.8L11 3.5z"/><path d="M18 14.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8.8-2z"/>',
 } as const;
 
 export type IconName = keyof typeof icons;

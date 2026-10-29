@@ -17,6 +17,7 @@ import { initInterviews } from './interviews.js';
 import { initWorkshopNotes } from './workshop-notes.js';
 import { initViewers } from './image-viewer.js';
 import { initAuditTour } from './audit-tour.js';
+import { initAiWriting } from './ai-writing.js';
 
 // Called from onclick attributes (Header.astro)
 window.setLang = setLang;
@@ -40,4 +41,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initWorkshopNotes();
   initViewers();
   initAuditTour();
+  initAiWriting();
 });
