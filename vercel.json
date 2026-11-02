@@ -7,8 +7,20 @@
       ]
     },
     {
+      "source": "/fun(/?)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    },
+    {
+      "source": "/_astro/(.*)\\.(webp|avif|jpg|jpeg|png)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex" }
+      ]
+    },
+    {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "portfolio-celia-preprod-main.vercel.app" }],
+      "has":[{ "type": "host", "value": "portfolio-celia-preprod-main.vercel.app" }],
       "headers": [
         { "key": "X-Robots-Tag", "value": "noindex" }
       ]

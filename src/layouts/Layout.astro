@@ -8,11 +8,14 @@ import "../styles/style.css";
 interface Props {
   title: string;
   description?: string;
+  /* Private pages (e.g. /fun): kept out of search engines */
+  noindex?: boolean;
 }
 
 const {
   title,
   description = "Portfolio of Célia Lafond, Senior Product Designer & Frontend Engineer.",
+  noindex = false,
 } = Astro.props;
 ---
 
@@ -39,6 +42,7 @@ const {
     </script>
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="icon" href="/favicon.ico" sizes="any" />

@@ -20,6 +20,11 @@
   overscroll-behavior: contain;
 }
 
+/* Focus lands on the dialog itself when it opens (image-viewer.js) */
+.viewer:focus {
+  outline: none;
+}
+
 .viewer[open] {
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;
@@ -119,7 +124,7 @@
 .viewer-close:focus-visible,
 .viewer-zoom:focus-visible,
 .viewer-stage:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--ink);
   outline-offset: 2px;
 }
 

@@ -90,13 +90,19 @@ function setupViewer(dlg) {
   // Open with the default image, or with the one passed (lightbox)
   dlg.openViewer = ({ src, alt } = {}) => {
     if (src) {
-      img.src = src;
+      // New image: hidden until loaded, so the previous one never flashes
+      if (img.getAttribute('src') !== src) {
+        img.style.visibility = 'hidden';
+        img.onload = img.onerror = () => { img.style.visibility = ''; };
+        img.src = src;
+      }
       img.alt = alt || '';
     } else if (!img.getAttribute('src') && dlg.dataset.src) {
       img.src = dlg.dataset.src;
     }
     setZoom(false);
     dlg.showModal();
+    dlg.focus(); // focus on the dialog itself, not the close button (no focus ring on open)
     document.documentElement.style.overflow = 'hidden';
   };
 }
@@ -117,10 +123,11 @@ export function initViewers() {
   const bpMobile = getComputedStyle(document.documentElement)
     .getPropertyValue('--bp-mobile').trim() || '750px';
   const desktop = window.matchMedia('(min-width: ' + bpMobile + ')');
-  document.querySelectorAll('.cs-img img').forEach((img) => {
+  // [data-lightbox] images (e.g. /fun photos) too; data-full = larger version for the lightbox
+  document.querySelectorAll('.cs-img img, img[data-lightbox]').forEach((img) => {
     img.addEventListener('click', () => {
       if (!desktop.matches) return;
-      lightbox.openViewer({ src: img.currentSrc || img.src, alt: img.alt });
+      lightbox.openViewer({ src: img.dataset.full || img.currentSrc || img.src, alt: img.alt });
     });
   });
 }

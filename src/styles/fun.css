@@ -1,0 +1,77 @@
+/* ============================================
+   FUN — private photo page (src/pages/fun.astro)
+   Justified rows: flex-grow and flex-basis follow each photo's ratio (--r),
+   so a row's photos share one height and are never cropped.
+============================================ */
+
+/* .fun-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s2);
+  margin-bottom: var(--s6);
+  text-align: center;
+}
+
+.fun-head .cs-page-title {
+  margin: 0;
+} */
+
+/* .fun-intro {
+  max-width: 56ch;
+  margin: 0;
+  color: var(--muted);
+} */
+
+
+.fun-grid {
+  --row-h: 220px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Keeps the last row from stretching its photos to full width */
+.fun-grid::after {
+  content: "";
+  flex-grow: 999999;
+}
+
+.fun-photo {
+  flex: var(--r) 1 calc(var(--r) * var(--row-h));
+  margin: 0;
+}
+
+.fun-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--bg-image);
+}
+
+@media (min-width: 750px) {
+  .fun-grid { --row-h: 260px; }
+  .fun-photo img { cursor: zoom-in; }
+}
+
+@media (min-width: 1200px) {
+  .fun-grid {
+    --row-h: 320px;
+  }
+
+
+.fun-page {
+  margin-top: var(--s8);
+}
+
+}
+
+/* Phones: one photo per line, full width */
+@media (max-width: 749px) {
+  .fun-photo {
+    flex: 1 1 100%;
+  }
+}
