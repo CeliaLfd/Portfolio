@@ -521,8 +521,6 @@
 
 /* ---------- Causes → consequence ---------- */
 
-/* Connector: a bracket from the centre of each cause card, converging into an arrow.
-   Cards stack below 568px (cs-cards-2), so the bracket becomes a single arrow there. */
 .cs-ds-findings-link {
   position: relative;
   display: flex;
@@ -581,3 +579,69 @@
   }
 }
 
+
+/* ============================================
+   DESIGN SYSTEM — WHAT THE SYSTEM CHANGED
+   One row per effect: effect on the left, what supports it on the right
+   (bubble like the Data Explorer decision sources).
+============================================ */
+
+
+.cs-ds-impact {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cs-ds-impact-row {
+  display: grid;
+  gap: var(--s2);
+  padding: var(--s3) 0;
+  border-top: 1px solid var(--border);
+}
+
+.cs-ds-impact-row:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+@media (min-width: 900px) {
+  .cs-ds-impact-row {
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    column-gap: var(--s6);
+    align-items: start;
+  }
+}
+
+.cs-ds-impact-text {
+  color: var(--muted);
+}
+
+.cs-ds-impact-text a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.2em;
+}
+
+.cs-ds-impact-text a:hover {
+  color: var(--ink);
+}
+
+/* Proof bubble */
+.cs-ds-impact-proof {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s0);
+  margin: 0;
+  padding: var(--s2) var(--s3);
+  background: var(--surface);
+  border-radius: var(--radius-lg) var(--radius-lg) var(--radius-lg) 0;
+  font-size: var(--fs-16);
+  line-height: 1.45;
+}
+
+
+.cs-ds-impact-proof-label::before {
+  content: "\2192\00a0";
+  color: var(--accent);
+}

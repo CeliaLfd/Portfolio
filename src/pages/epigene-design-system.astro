@@ -776,7 +776,7 @@ const auditScreens = [
           <!-- Two scales: what the audit asked for (answers its two causes), what the context required (product and team) -->
           <div class="cs-ds-goals">
             <div class="cs-ds-goals-group">
-              <p class="heading-label uppercase">
+              <p class="heading-label cs-ds-impact-proof-label uppercase">
                 <span class="en">What the audit asked for</span>
                 <span class="fr">Ce que l'audit demandait</span>
               </p>
@@ -826,7 +826,7 @@ const auditScreens = [
               </ul>
             </div>
             <div class="cs-ds-goals-group">
-              <p class="heading-label uppercase">
+              <p class="heading-label cs-ds-impact-proof-label uppercase">
                 <span class="en">What the context required</span>
                 <span class="fr">Ce que le contexte imposait</span>
               </p>
@@ -1068,51 +1068,160 @@ const auditScreens = [
           <span class="fr">Ce que le système a changé</span>
         </h2>
         <div class="cs-section-content">
-          <div class="cs-cards cs-cards-3">
-            <Card
-              variant="hollow"
-              titleEn="A system that lasted"
-              titleFr="Un système qui dure"
-              textEn="Maintained from 2022 to today: the product grew from one type of analysis to three, plus a Data Explorer, all on the same base."
-              textFr={`Maintenu de 2022 à aujourd'hui\u00a0: le produit est passé d'un à trois types d'analyse, puis s'est enrichi d'un Data Explorer, sans changer de base.`}
-            />
-            <Card
-              variant="hollow"
-              titleEn="A consistent experience"
-              titleFr="Une expérience cohérente"
-              textEn="The same rules on every screen, across the whole platform, and a stronger brand image as a result."
-              textFr="Les mêmes règles d'un écran à l'autre, sur toute la plateforme, et une image de marque renforcée."
-            />
-            <Card
-              variant="hollow"
-              titleEn="Design and code aligned"
-              titleFr="Design et code alignés"
-              textEn="One source, documented both in Figma and in Storybook."
-              textFr="Une seule source, documentée dans Figma comme dans Storybook."
-            />
-          </div>
-          <div class="cs-pullquote text-align-center">
-            <p class="cs-pullquote-heading">
-              <span class="en">
-                “Streamlined exploration through the company's user-friendly web
-                app.”
-              </span>
-              <span class="fr">
-                «&nbsp;Une exploration simplifiée grâce à l'application web
-                user-friendly de l'entreprise.&nbsp;»
-              </span>
-            </p>
-            <p class="cs-img-legend">
-              <span class="en"
-                >Epigene's official communications, December 2025: design had
-                become a selling point.</span
-              >
-              <span class="fr"
-                >Communications officielles d'Epigene, décembre 2025&nbsp;: le
-                design est devenu un argument commercial.</span
-              >
-            </p>
-          </div>
+          <!-- Each effect comes with what supports it (no usage metrics were tracked) -->
+          <p>
+            <span class="en"
+              >We didn't track usage metrics at the time. Here is what we could
+              observe, and how we know it.</span
+            >
+            <span class="fr"
+              >Nous ne suivions pas de métriques d'usage à l'époque. Voici ce
+              que nous avons pu observer, et comment nous le savons.</span
+            >
+          </p>
+          <ul class="cs-ds-impact">
+            <li class="cs-ds-impact-row">
+              <div class="flex flex-col gap-0">
+                <h3 class="cs-subsection-heading">
+                  <span class="en">A consistent experience</span>
+                  <span class="fr">Une expérience cohérente</span>
+                </h3>
+                <p class="body-sm cs-ds-impact-text">
+                  <span class="en"
+                    >The audit had found an interface that didn't guide and
+                    changed from screen to screen. With shared rules, every
+                    screen now looks and behaves the same way, across the whole
+                    platform.</span
+                  >
+                  <span class="fr"
+                    >L'audit avait relevé une interface qui ne guidait pas et
+                    changeait d'un écran à l'autre. Avec des règles communes,
+                    chaque écran a désormais le même aspect et le même
+                    comportement, sur toute la plateforme.</span
+                  >
+                </p>
+              </div>
+              <p class="cs-ds-impact-proof">
+                <span class="heading-label cs-ds-impact-proof-label">
+                  <span class="en">How we know</span>
+                  <span class="fr">Comment on le sait</span>
+                </span>
+                <span class="en"
+                  >User feedback. Users highlighted how easy, clear and polished
+                  the interfaces were, and called the product user-friendly.</span
+                >
+                <span class="fr"
+                  >Retours utilisateurs. Ils soulignaient la facilité
+                  d'utilisation, la clarté et le soin des interfaces, et
+                  qualifiaient le produit de user-friendly.</span
+                >
+              </p>
+            </li>
+            <li class="cs-ds-impact-row">
+              <div class="flex flex-col gap-0">
+                <h3 class="cs-subsection-heading">
+                  <span class="en">A stronger, more mature brand image</span>
+                  <span class="fr">Une image de marque renforcée et mature</span
+                  >
+                </h3>
+                <p class="body-sm cs-ds-impact-text">
+                  <span class="en"
+                    >Design became a selling point. Ease of use sat alongside
+                    cloud architecture and data coverage in pitches to biopharma
+                    organizations, and gave Epigene a more mature image with its
+                    clients.</span
+                  >
+                  <span class="fr"
+                    >Le design est devenu un argument commercial. La facilité
+                    d'utilisation figurait aux côtés de l'architecture cloud et
+                    de la couverture data dans les pitchs auprès des acteurs
+                    biopharma, et donnait à Epigene une image plus mature auprès
+                    de ses clients.</span
+                  >
+                </p>
+              </div>
+              <p class="cs-ds-impact-proof">
+                <span class="heading-label cs-ds-impact-proof-label">
+                  <span class="en">How we know</span>
+                  <span class="fr">Comment on le sait</span>
+                </span>
+                <span class="en"
+                  >The term "user-friendly" went into Epigene's marketing, up to
+                  its official communications in December 2025.</span
+                >
+                <span class="fr"
+                  >Le terme «&nbsp;user-friendly&nbsp;» s'est retrouvé dans la
+                  communication d'Epigene, jusqu'à sa communication officielle
+                  de décembre 2025.</span
+                >
+              </p>
+            </li>
+            <li class="cs-ds-impact-row">
+              <div class="flex flex-col gap-0">
+                <h3 class="cs-subsection-heading">
+                  <span class="en">A team that started working with design</span
+                  >
+                  <span class="fr"
+                    >Une équipe qui a commencé à travailler avec le design</span
+                  >
+                </h3>
+                <p class="body-sm cs-ds-impact-text">
+                  <span class="en"
+                    >Before, there was no designer and no user research. The
+                    audit gave the team words for what was wrong and made the
+                    case for a full redesign. I then introduced user interviews
+                    and handed the method over to the PMs.</span
+                  >
+                  <span class="fr"
+                    >Avant, il n'y avait ni designer ni recherche utilisateur.
+                    L'audit a donné à l'équipe des mots sur ce qui n'allait pas
+                    et a appuyé une refonte complète. J'ai ensuite introduit les
+                    interviews utilisateurs et transmis la méthode aux PM.</span
+                  >
+                </p>
+              </div>
+              <p class="cs-ds-impact-proof">
+                <span class="heading-label cs-ds-impact-proof-label">
+                  <span class="en">How we know</span>
+                  <span class="fr">Comment on le sait</span>
+                </span>
+                <span class="en"
+                  >The PMs went on to run at least ten interviews on their own.</span
+                >
+                <span class="fr"
+                  >Les PM en ont ensuite mené seuls au moins une dizaine.</span
+                >
+              </p>
+            </li>
+            <li class="cs-ds-impact-row">
+              <div class="flex flex-col gap-0">
+                <h3 class="cs-subsection-heading">
+                  <span class="en">A system that lasted</span>
+                  <span class="fr">Un système qui dure</span>
+                </h3>
+                <p class="body-sm cs-ds-impact-text">
+                  <span class="en"
+                    >From 2022 to 2026, the product grew from one type of
+                    analysis to three, plus a Data Explorer, without rebuilding
+                    the base.</span
+                  >
+                  <span class="fr"
+                    >De 2022 à 2026, le produit est passé d'un à trois types
+                    d'analyse, puis s'est enrichi d'un Data Explorer, sans
+                    reconstruire la base.</span
+                  >
+                </p>
+              </div>
+              <p class="cs-ds-impact-proof">
+                <span class="heading-label cs-ds-impact-proof-label">
+                  <span class="en">How we know</span>
+                  <span class="fr">Comment on le sait</span>
+                </span>
+                <span class="en">The analyses added after 2022, and the Data Explorer in 2025, were all built with the components created at the start.</span>
+                <span class="fr">Les analyses ajoutées après 2022, puis le Data Explorer en 2025, ont toutes été construites avec les composants créés au départ.</span>
+              </p>
+            </li>
+          </ul>
           <div class="cs-ba" data-ba>
             <div class="cs-ba-stage">
               <div class="cs-ba-pane cs-ba-before" data-ba-before>
@@ -1145,6 +1254,28 @@ const auditScreens = [
               <span class="fr">My Analyses · Vue liste</span>
             </p>
           </div>
+          <div class="cs-pullquote text-align-center">
+            <p class="cs-pullquote-heading">
+              <span class="en">
+                “Streamlined exploration through the company's user-friendly web
+                app.”
+              </span>
+              <span class="fr">
+                «&nbsp;Une exploration simplifiée grâce à l'application web
+                user-friendly de l'entreprise.&nbsp;»
+              </span>
+            </p>
+            <p class="cs-img-legend">
+              <span class="en"
+                >Epigene's official communications, December 2025: design had
+                become a selling point.</span
+              >
+              <span class="fr"
+                >Communications officielles d'Epigene, décembre 2025&nbsp;: le
+                design est devenu un argument commercial.</span
+              >
+            </p>
+          </div>
         </div>
       </section>
 
@@ -1153,73 +1284,57 @@ const auditScreens = [
           <span class="en">Looking back</span>
           <span class="fr">Avec du recul</span>
         </h2>
+        <!-- Each lesson: what happened, what I decided, what I take from it -->
         <div class="cs-subsections">
           <div class="flex flex-col gap-2">
             <h3 class="cs-subsection-subheading">
               <span class="en">What I learned</span>
               <span class="fr">Ce que j'ai appris</span>
             </h3>
-            <div class="cs-section-content">
-              <p class="en">
-                Building a design system isn't just designing a system. It's
-                understanding that it's a living system: it evolves, it's
-                maintained, and it keeps the product coherent along with the
-                link to the other teams.
-              </p>
-              <p class="fr">
-                Créer un design system, ce n'est pas seulement concevoir un
-                système. C'est comprendre que c'est un système vivant : il
-                évolue, se maintient, et garde la cohésion du produit comme le
-                lien avec les autres équipes.
-              </p>
-              <div class="cs-cards cs-cards-2">
-                <Card
-                  titleEn="Build to last"
-                  titleFr="Construire pour durer"
-                  textEn="The system was designed, from the start, for its maintenance and adaptation over time, not just for its initial creation."
-                  textFr="Le système a été pensé, dès le départ, pour sa maintenance et son adaptation dans le temps, pas seulement pour sa conception initiale."
-                />
-                <Card
-                  titleEn="The design / dev bridge"
-                  titleFr="Le pont design / dev"
-                  textEn="Being both a designer and a front-end engineer: fewer back-and-forths, a more faithful implementation, and a system that lives as well in Figma as in code."
-                  textFr="Être à la fois designer et développeuse front-end : moins d'allers-retours, une implémentation plus fidèle, et un système qui vit aussi bien dans Figma que dans le code."
-                />
-              </div>
+            <div class="cs-cards cs-cards-3">
+              <Card
+                variant="filled"
+                titleEn="Make the problems visible first"
+                titleFr="Rendre les problèmes visibles d'abord"
+                textEn={`As the only designer, I couldn't just say the interface needed work. The audit put words on what was wrong, screen by screen, and gave the team a shared view of the problems. That's what made the case for a full redesign.`}
+                textFr={`Seule designer, je ne pouvais pas simplement dire que l'interface devait être retravaillée. L'audit a mis des mots sur ce qui n'allait pas, écran par écran, et donné à l'équipe une vision commune des problèmes. C'est ce qui a permis de défendre une refonte complète.`}
+              />
+              <Card
+                variant="filled"
+                titleEn="Start from the code"
+                titleFr="Partir du code"
+                textEn={`The code already relied on a design-system concept. Instead of designing a library in Figma and asking developers to follow, I started from what existed and mirrored its structure and names. Implementing the components myself is how I learned the codebase, and it kept design and code from drifting apart.`}
+                textFr={`Le code reposait déjà sur un concept de design system. Plutôt que de concevoir une librairie dans Figma et de demander aux développeurs de suivre, je suis partie de l'existant et j'en ai repris la structure et le nommage. Implémenter les composants moi-même m'a permis d'apprendre la codebase, et a évité que design et code s'éloignent.`}
+              />
+              <Card
+                variant="filled"
+                titleEn="Size the system to the team"
+                titleFr="Dimensionner le système à l'équipe"
+                textEn={`With two front-end developers, one of them me, owning the system, I kept the tokens at a primitive level. A semantic layer would have been a plus, but at our size the system could live without it, with no visual or code debt.`}
+                textFr={`À deux développeurs front, dont moi, propriétaire du système, j'ai gardé les tokens à un niveau primitif. Une couche sémantique aurait été un plus, mais à notre échelle le système pouvait s'en passer, sans créer de dette visuelle ni dans le code.`}
+              />
             </div>
           </div>
           <div class="flex flex-col gap-2">
             <h3 class="cs-subsection-subheading">
-              <span class="en">What I'd improve</span>
-              <span class="fr">Ce que je souhaite améliorer</span>
+              <span class="en">What I'd improve next</span>
+              <span class="fr">Ce que j'améliorerais ensuite</span>
             </h3>
-            <div class="grid-2 items-baseline">
-              <p class="cs-section-heading-legend">
-                <span class="en"
-                  >From palette to <span class="text-accent">language</span
-                  >.</span
-                >
-                <span class="fr"
-                  >Passer de la palette au <span class="text-accent"
-                    >langage</span
-                  >.</span
-                >
-              </p>
-              <div>
-                <p class="en">
-                  Add a semantic layer to the tokens: name colors by their role,
-                  text, border, surface, rather than by their hue. Same logic
-                  for typography. A clearer system, harder to misuse, and
-                  simpler to evolve.
-                </p>
-                <p class="fr">
-                  Ajouter une couche sémantique aux tokens : nommer les couleurs
-                  par leur rôle, texte, bordure, surface, plutôt que par leur
-                  teinte. Même logique pour les styles typographiques. Un
-                  système plus clair, plus difficile à mal utiliser, et plus
-                  simple à faire évoluer.
-                </p>
-              </div>
+            <div class="cs-cards cs-cards-2">
+              <Card
+                variant="hollow"
+                titleEn="Add a semantic layer as the team grows"
+                titleFr="Ajouter une couche sémantique quand l'équipe grandit"
+                textEn={`Primitive tokens worked at our size, but the semantic level was sometimes missing when working with the other front-end developer. With more people or more products, naming tokens by role (text, border, surface) becomes necessary.`}
+                textFr={`Les tokens primitifs suffisaient à notre échelle, mais le niveau sémantique manquait parfois dans le travail avec l'autre développeur front. Avec plus de personnes ou plus de produits, nommer les tokens par leur rôle (texte, bordure, surface) devient nécessaire.`}
+              />
+              <Card
+                variant="hollow"
+                titleEn="Make the system its own product"
+                titleFr="Faire du système un produit à part entière"
+                textEn={`In Figma, I had already split the design system and mCUBE into two projects. The next step was to extract the system from mCUBE's code, so other products could use it.`}
+                textFr={`Dans Figma, j'avais déjà séparé le design system et mCUBE en deux projets. L'étape suivante était d'extraire le système du code de mCUBE, pour que d'autres produits puissent l'utiliser.`}
+              />
             </div>
           </div>
         </div>
