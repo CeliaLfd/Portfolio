@@ -1,14 +1,4 @@
 ---
-/* ============================================
-   FUN: private photo page (/fun)
-   Not linked anywhere on the site, noindex + nofollow.
-   Its photos are the only images processed by astro:assets: vercel.json
-   sends X-Robots-Tag: noindex on every image in /_astro/.
-   Photos: drop them in src/assets/fun/ (JPG, PNG, WebP or AVIF).
-   Order = file name order (prefix them 01-, 02-…).
-   Alt text = file name without the number and extension
-   (01-lyon-at-dusk.jpg → "Lyon at dusk").
-============================================ */
 import type { ImageMetadata } from "astro";
 import { Image, getImage } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
@@ -50,27 +40,23 @@ const photos = await Promise.all(
 ---
 
 <Layout
-  title="Fun | Célia Lafond"
+  title="Through my lens | Célia Lafond"
   description="Photography by Célia Lafond."
   noindex
 >
-  <div class="cs-page fun-page">
-    <!-- <header class="fun-head reveal">
-      <h1 class="cs-page-title">
-        <span class="en">[Title]</span>
-        <span class="fr">[Titre]</span>
-      </h1>
-      <p class="fun-intro">
-        <span class="en">[Intro sentence]</span>
-        <span class="fr">[Phrase d'intro]</span>
-      </p>
-    </header> -->
-
+  <div class="page container flex flex-col gap-6">
+    <h1 class="reveal cs-section-heading-legend text-accent text-align-center">
+      <span class="en">Through my lens</span>
+      <span class="fr">À travers mon objectif</span>
+    </h1>
     <main>
       <ul class="fun-grid">
         {
           photos.map((photo, i) => (
-            <li class="fun-photo" style={`--r:${photo.ratio.toFixed(4)}`}>
+            <li
+              class="fun-photo reveal"
+              style={`--r:${photo.ratio.toFixed(4)}`}
+            >
               <Image
                 src={photo.src}
                 alt={photo.alt}

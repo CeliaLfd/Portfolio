@@ -1,8 +1,9 @@
 ---
 const path = Astro.url.pathname.replace(/\/$/, "") || "/";
 const isAbout = path === "/about";
+const isFun = path === "/fun";
 // Work couvre la homepage et toutes les pages case study
-const isWork = !isAbout;
+const isWork = !isAbout && !isFun;
 ---
 
 <header class="site-header">
@@ -16,6 +17,7 @@ const isWork = !isAbout;
       <span class="en">About</span>
       <span class="fr">À propos</span>
     </a>
+    <a href="/fun" class:list={{ active: isFun }} aria-current={isFun ? "page" : undefined}>Fun</a>
     <a href="/assets/CeliaLafond_CV_EN.pdf?v=2" target="_blank" class="en">Resume</a>
     <a href="/assets/CeliaLafond_CV_FR.pdf?v=2" target="_blank" class="fr">CV</a>
   </nav>
