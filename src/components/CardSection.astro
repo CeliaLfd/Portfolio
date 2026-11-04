@@ -14,21 +14,23 @@ const { titleEn, titleFr, textEn, textFr, captionEn, captionFr } = Astro.props;
 ---
 
 <div class="card-section">
-  {
-    titleEn && (
-      <p class="card-heading">
-        <Bilingual en={titleEn} fr={titleFr} />
-      </p>
-    )
-  }
-  <p class="body-sm">
-    <Bilingual en={textEn} fr={textFr} />
-  </p>
-  {
-    captionEn && (
-      <p class="heading-label">
-        <Bilingual en={captionEn} fr={captionFr} />
-      </p>
-    )
-  }
+  <div class="flex flex-col gap-1">
+    {
+      titleEn && (
+        <p class="card-heading">
+          <Bilingual en={titleEn} fr={titleFr} />
+        </p>
+      )
+    }
+    <p class="body-sm">
+      <Bilingual en={textEn} fr={textFr} />
+    </p>
+    {
+      captionEn && (
+        <p class="heading-label">
+          <Bilingual en={captionEn} fr={captionFr} />
+        </p>
+      )
+    }
+  </div>
 </div>

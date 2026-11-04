@@ -19,8 +19,10 @@
 @import './before-after.css';
 
 /* Pages */
+@import './layout.css';
 @import './case-study.css';
 @import './about.css';
+@import './fun.css';
 
 /* Page - organisms */
 @import './cs-dataexplorer-scale.css';
@@ -30,4 +32,4 @@
 @import './cs-dataexplorer-decisions.css';
 @import './cs-designsystem-audit.css';
 @import './cs-aiassistant.css';
-@import './fun.css';
+

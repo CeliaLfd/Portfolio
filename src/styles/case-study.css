@@ -7,20 +7,18 @@
 ============================================ */
 
 .cs-page {
-  --page-gutter: var(--s2); /* also read by [data-slider-mobile] */
   display: flex;
   flex-direction: column;
   gap: var(--s6);
-  max-width: var(--container);
-  margin: var(--s4) auto;
-  padding: 0 var(--page-gutter);
+  margin-top: var(--s4);
+  margin-bottom: var(--s4);
 }
 
 @media (min-width: 720px) {
   .cs-page {
-    --page-gutter: var(--s3);
     gap: var(--s8);
-    margin: var(--s5) auto 40vh;
+    margin-top: var(--s5);
+    margin-bottom: 40vh;
   }
 }
 
@@ -188,7 +186,13 @@
 .cs-subsections { 
   display: flex;
   flex-direction: column; 
-  gap: var(--s7) 
+  gap: var(--s5) 
+}
+
+@media (min-width: 720px) {
+  .cs-subsections { 
+    gap: var(--s7) 
+  }
 }
 
 .cs-subsection {

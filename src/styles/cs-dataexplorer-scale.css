@@ -8,6 +8,7 @@
   gap: var(--s1);
   font-family: var(--display);
   font-size: var(--fs-14);
+  line-height: 1.1;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
@@ -107,7 +108,7 @@
 
 .cs-de-scale-cap {
   font-size: var(--fs-14);
-  line-height: 1.4;
+  line-height: 1.35;
   color: var(--muted);
   max-width: 28ch;
 }

@@ -1,0 +1,16 @@
+
+.container, [class^="container-"] {
+  max-width: var(--container);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--layout-gutter);
+  padding-right: var(--layout-gutter);
+}
+
+.container-lg {
+  max-width: var(--container-lg);
+}
+
+.page {
+  margin-top: var(--layout-spacing-top);
+}

@@ -31,13 +31,17 @@ const {
     <script is:inline>
       (() => {
         const root = document.documentElement;
-        if (!('IntersectionObserver' in window)) return;
-        if (!('noModule' in HTMLScriptElement.prototype)) return;
-        root.classList.add('js');
-        addEventListener('error', (e) => {
-          const src = e.filename || (e.target && e.target.src) || '';
-          if (src.includes('/js/')) root.classList.remove('js');
-        }, true);
+        if (!("IntersectionObserver" in window)) return;
+        if (!("noModule" in HTMLScriptElement.prototype)) return;
+        root.classList.add("js");
+        addEventListener(
+          "error",
+          (e) => {
+            const src = e.filename || (e.target && e.target.src) || "";
+            if (src.includes("/js/")) root.classList.remove("js");
+          },
+          true,
+        );
       })();
     </script>
     <title>{title}</title>
@@ -60,7 +64,6 @@ const {
     <slot />
     <Footer />
     <ImageViewer id="imgModal" />
-
     <script type="module" src="/js/main.js" is:inline></script>
   </body>
 </html>
