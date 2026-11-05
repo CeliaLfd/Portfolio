@@ -1,4 +1,5 @@
 ---
+import { asset } from "../lib/asset";
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import CardSection from "../components/CardSection.astro";
@@ -87,7 +88,7 @@ const steps: {
       <p class="cs-page-company reveal">Epigene Labs &middot; 2025</p>
       <div class="cs-hero-image reveal">
         <img
-          src="/assets/cover-data-explorer.webp"
+          src={asset("cover-data-explorer.webp")}
           alt="Data Explorer: redesigned interface"
           onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\'>Data Explorer: V2</div>'"
         />
@@ -386,7 +387,7 @@ const steps: {
                     decoding="async"
                     width="2000"
                     height="1427"
-                    src="/assets/data-explorer-context-needs.webp"
+                    src={asset("data-explorer-context-needs.webp")}
                     alt="Data Explorer V1: dataset counters above a table of datasets named by technical IDs"
                   />
                   <span class="cs-de-needs-spot" aria-hidden="true"></span>
@@ -816,8 +817,8 @@ const steps: {
             </Button>
             <ImageViewer
               id="workshop-board"
-              src="/assets/data-explorer-workshop-board-preview.webp"
-              srcFull="/assets/data-explorer-workshop-board.webp"
+              src={asset("data-explorer-workshop-board-preview.webp")}
+              srcFull={asset("data-explorer-workshop-board.webp")}
               fullWidth={9507}
               zoom
               alt="Workshop board: the brief, a brainstorm on two questions, then the ideas grouped by theme and voted on"
@@ -916,7 +917,7 @@ const steps: {
               <img
                 loading="lazy"
                 decoding="async"
-                src="/assets/data-explorer-solution-reviewed.webp"
+                src={asset("data-explorer-solution-reviewed.webp")}
                 alt="Data Explorer: every dataset, clearly labeled"
                 onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: every dataset, clearly labeled</div>'"
               />
@@ -978,7 +979,7 @@ const steps: {
                 <img
                   loading="lazy"
                   decoding="async"
-                  src="/assets/data-explorer-solution-richer-context-1.webp"
+                  src={asset("data-explorer-solution-richer-context-1.webp")}
                   alt="Data Explorer: datasets you can understand at a glance"
                   onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: datasets you can understand at a glance</div>'"
                 />
@@ -987,7 +988,7 @@ const steps: {
                 <img
                   loading="lazy"
                   decoding="async"
-                  src="/assets/data-explorer-solution-richer-context-2.webp"
+                  src={asset("data-explorer-solution-richer-context-2.webp")}
                   alt="Data Explorer: datasets you can understand at a glance"
                   onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: datasets you can understand at a glance</div>'"
                 />
@@ -1037,8 +1038,8 @@ const steps: {
             </div>
             <div class="cs-img">
               <video
-                src="/assets/data-explorer-solution-smarter-search.mp4"
-                data-placeholder="/assets/data-explorer-solution-smarter-search.webp"
+                src={asset("data-explorer-solution-smarter-search.mp4")}
+                data-placeholder={asset("data-explorer-solution-smarter-search.webp")}
                 aria-label="Data Explorer: search that looks inside datasets"
                 data-play-on-view
                 muted
@@ -1182,7 +1183,7 @@ const steps: {
                 <img
                   loading="lazy"
                   decoding="async"
-                  src="/assets/data-explorer-solution-filters-1.webp"
+                  src={asset("data-explorer-solution-filters-1.webp")}
                   alt="Data Explorer: filters that are easier to navigate"
                   onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: filters that are easier to navigate</div>'"
                 />
@@ -1191,7 +1192,7 @@ const steps: {
                 <img
                   loading="lazy"
                   decoding="async"
-                  src="/assets/data-explorer-solution-filters-2.webp"
+                  src={asset("data-explorer-solution-filters-2.webp")}
                   alt="Data Explorer: filters that are easier to navigate"
                   onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: filters that are easier to navigate</div>'"
                 />
@@ -1242,7 +1243,7 @@ const steps: {
               <img
                 loading="lazy"
                 decoding="async"
-                src="/assets/data-explorer-solution-metrics.webp"
+                src={asset("data-explorer-solution-metrics.webp")}
                 alt="Data Explorer: metrics that show the scale"
                 onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: metrics that show the scale</div>'"
               />
@@ -1298,7 +1299,7 @@ const steps: {
                 <img
                   loading="lazy"
                   decoding="async"
-                  src="/assets/data-explorer-solution-bookmarks-1.webp"
+                  src={asset("data-explorer-solution-bookmarks-1.webp")}
                   alt="Data Explorer: datasets you can find again"
                   onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: datasets you can find again</div>'"
                 />
@@ -1307,7 +1308,7 @@ const steps: {
                 <img
                   loading="lazy"
                   decoding="async"
-                  src="/assets/data-explorer-solution-bookmarks-2.webp"
+                  src={asset("data-explorer-solution-bookmarks-2.webp")}
                   alt="Data Explorer: datasets you can find again"
                   onerror="this.parentElement.innerHTML='<div class=\'cs-img-placeholder\' style=\'aspect-ratio:16/9\'>Data Explorer: datasets you can find again</div>'"
                 />
@@ -1415,8 +1416,8 @@ const steps: {
             </div>
             <div class="cs-img">
               <video
-                src="/assets/cover-ai-assistant.mp4"
-                data-placeholder="/assets/cover-ai-assistant.webp"
+                src={asset("cover-ai-assistant.mp4")}
+                data-placeholder={asset("cover-ai-assistant.webp")}
                 aria-label="Data Finder: the AI assistant suggesting filters in the Data Explorer"
                 data-play-on-view
                 muted

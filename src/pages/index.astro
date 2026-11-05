@@ -1,4 +1,5 @@
 ---
+import { asset } from "../lib/asset";
 import CaseStudyCard from "../components/CaseStudyCard.astro";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -25,7 +26,7 @@ import Layout from "../layouts/Layout.astro";
         <div class="cs-grid">
           <CaseStudyCard
             href="/epigene-data-explorer"
-            image="/assets/cover-data-explorer.webp"
+            image={asset("cover-data-explorer.webp")}
             loading="eager"
             imageAlt="Data Explorer redesign"
             titleEn="Redesigning the Data Explorer for 10× more datasets"
@@ -38,7 +39,7 @@ import Layout from "../layouts/Layout.astro";
           />
           <CaseStudyCard
             href="/epigene-design-system"
-            image="/assets/cover-design-system.webp"
+            image={asset("cover-design-system.webp")}
             imageAlt="mCUBE design system"
             titleEn="Building mCUBE's first design system, from audit to code"
             titleFr="Construire le premier design system de mCUBE, de l'audit au code"
@@ -50,8 +51,8 @@ import Layout from "../layouts/Layout.astro";
           <CaseStudyCard
             href="/epigene-ai-assistant"
             preview
-            image="/assets/cover-ai-assistant.webp"
-            video="/assets/cover-ai-assistant.mp4"
+            image={asset("cover-ai-assistant.webp")}
+            video={asset("cover-ai-assistant.mp4")}
             imageAlt="AI assistant"
             titleEn="Speeding up dataset discovery with an AI filter assistant"
             titleFr="Accélérer la découverte de datasets avec un assistant IA"
