@@ -49,3 +49,68 @@
     flex: 1 1 100%;
   }
 }
+
+/* ---------- Theme filter (All / City / Landscape) ---------- */
+
+.fun-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--s1);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.fun-filter .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Native radio kept for keyboard and screen readers, drawn as a pill */
+.fun-filter-option {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45em 1.1em;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-14);
+  color: var(--muted);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.fun-filter-option input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.fun-filter-option:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.fun-filter-option:has(input:checked) {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--bg);
+}
+
+.fun-filter-option:has(input:focus-visible) {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Filtering: hide photos that don't match the checked theme */
+main:has(.fun-filter input[value="city"]:checked) .fun-photo:not([data-theme="city"]),
+main:has(.fun-filter input[value="landscape"]:checked) .fun-photo:not([data-theme="landscape"]) {
+  display: none;
+}

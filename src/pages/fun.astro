@@ -3,10 +3,21 @@ import type { ImageMetadata } from "astro";
 import { Image, getImage } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 
+/* Photos live in one subfolder per theme: src/assets/fun/city/, src/assets/fun/landscape/.
+   The folder name is the theme used by the filter. */
 const files = import.meta.glob<{ default: ImageMetadata }>(
-  "../assets/fun/*.{jpg,jpeg,JPG,JPEG,png,PNG,webp,WEBP,avif,AVIF}",
+  "../assets/fun/**/*.{jpg,jpeg,JPG,JPEG,png,PNG,webp,WEBP,avif,AVIF}",
   { eager: true },
 );
+
+const themes = [
+  { id: "all", en: "All", fr: "Tout" },
+  { id: "city", en: "City", fr: "Ville" },
+  { id: "landscape", en: "Landscape", fr: "Paysage" },
+];
+
+const themeOf = (path: string) => path.split("/").slice(-2, -1)[0];
+const fileName = (path: string) => path.split("/").pop()!;
 
 const toAlt = (path: string) => {
   const name = path
@@ -23,7 +34,10 @@ const toAlt = (path: string) => {
 
 const photos = await Promise.all(
   Object.entries(files)
-    .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
+    // File name order (camera numbers), themes mixed in the "All" view
+    .sort(([a], [b]) =>
+      fileName(a).localeCompare(fileName(b), undefined, { numeric: true }),
+    )
     .map(async ([path, mod], i) => {
       const src = mod.default;
       // Larger version for the lightbox, still compressed
@@ -34,7 +48,13 @@ const photos = await Promise.all(
         quality: 85,
       });
       const alt = toAlt(path) || `Photograph by Célia Lafond, ${i + 1}`;
-      return { src, alt, full: full.src, ratio: src.width / src.height };
+      return {
+        src,
+        alt,
+        full: full.src,
+        ratio: src.width / src.height,
+        theme: themeOf(path),
+      };
     }),
 );
 ---
@@ -49,12 +69,34 @@ const photos = await Promise.all(
       <span class="en">Through my lens</span>
       <span class="fr">À travers mon objectif</span>
     </h1>
-    <main>
+    <main class="flex flex-col gap-4">
+      <!-- Theme filter: plain radios, filtering done in CSS (fun.css, :has) -->
+      <fieldset class="fun-filter">
+        <legend class="sr-only">
+          <span class="en">Filter photos by theme</span>
+          <span class="fr">Filtrer les photos par thème</span>
+        </legend>
+        {
+          themes.map((t, i) => (
+            <label class="fun-filter-option">
+              <input
+                type="radio"
+                name="fun-theme"
+                value={t.id}
+                checked={i === 0}
+              />
+              <span class="en">{t.en}</span>
+              <span class="fr">{t.fr}</span>
+            </label>
+          ))
+        }
+      </fieldset>
       <ul class="fun-grid">
         {
           photos.map((photo, i) => (
             <li
               class="fun-photo reveal"
+              data-theme={photo.theme}
               style={`--r:${photo.ratio.toFixed(4)}`}
             >
               <Image
