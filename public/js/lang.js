@@ -7,10 +7,6 @@ export function setLang(lang) {
     .replace(/lang-(en|fr)/g, '')
     .trim() + ' lang-' + lang;
 
-  document.querySelectorAll('.lang-toggle button').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.lang === lang);
-  });
-
   localStorage.setItem('portfolio-lang', lang);
 }
 

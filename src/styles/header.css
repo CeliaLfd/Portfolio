@@ -94,7 +94,9 @@
 }
 
 .lang-toggle button:hover  { color: var(--ink); }
-.lang-toggle button.active { color: var(--ink); font-weight: 600; }
+/* Driven by the body class (not a JS-set .active) so it is right on first paint */
+body.lang-en .lang-toggle button[data-lang="en"],
+body.lang-fr .lang-toggle button[data-lang="fr"] { color: var(--ink); font-weight: 600; }
 
 .lang-sep {
   font-size: var(--fs-12);

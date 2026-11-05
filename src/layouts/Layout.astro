@@ -8,13 +8,12 @@ import "../styles/style.css";
 interface Props {
   title: string;
   description?: string;
-  /* Private pages (e.g. /fun): kept out of search engines */
   noindex?: boolean;
 }
 
 const {
   title,
-  description = "Portfolio of Célia Lafond, Senior Product Designer & Frontend Engineer.",
+  description = "Célia Lafond, a Senior Product Designer & Frontend Engineer. Designing new experiences and modernizing legacy ones.",
   noindex = false,
 } = Astro.props;
 ---
@@ -24,10 +23,6 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Animation guard: html.js is set before first paint, so CSS can hide
-         content that /js/main.js will reveal. If one of the /js/ modules fails
-         to load or throws, the class is removed and everything shows, without
-         animation. Browsers without ES modules never run main.js: no guard. -->
     <script is:inline>
       (() => {
         const root = document.documentElement;
@@ -60,6 +55,13 @@ const {
     <Analytics />
   </head>
   <body class="lang-en">
+    <script is:inline>
+      try {
+        if (localStorage.getItem("portfolio-lang") === "fr") {
+          document.body.classList.replace("lang-en", "lang-fr");
+        }
+      } catch (e) {}
+    </script>
     <Header />
     <slot />
     <Footer />
