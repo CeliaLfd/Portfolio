@@ -59,6 +59,7 @@ const {
       try {
         if (localStorage.getItem("portfolio-lang") === "fr") {
           document.body.classList.replace("lang-en", "lang-fr");
+          document.documentElement.lang = "fr";
         }
       } catch (e) {}
     </script>

@@ -7,7 +7,12 @@ const isWork = !isAbout && !isFun;
 ---
 
 <header class="site-header">
-  <a href="/" class="site-logo">CL</a>
+  <a href="/" class="site-logo">
+    CL<span class="sr-only">
+      <span class="en">, Célia Lafond, home</span>
+      <span class="fr">, Célia Lafond, accueil</span>
+    </span>
+  </a>
   <nav class="site-nav">
     <a href="/" class:list={{ active: isWork }} aria-current={isWork ? "page" : undefined}>
       <span class="en">Work</span>
@@ -18,12 +23,17 @@ const isWork = !isAbout && !isFun;
       <span class="fr">À propos</span>
     </a>
     <a href="/fun" class:list={{ active: isFun }} aria-current={isFun ? "page" : undefined}>Fun</a>
-    <a href="/assets/CeliaLafond_CV_EN.pdf?v=2" target="_blank" class="en">Resume</a>
-    <a href="/assets/CeliaLafond_CV_FR.pdf?v=2" target="_blank" class="fr">CV</a>
+    <a href="/assets/CeliaLafond_CV_EN.pdf?v=2" target="_blank" rel="noopener" class="en">
+      Resume<span class="sr-only"> (PDF, opens in a new tab)</span>
+    </a>
+    <a href="/assets/CeliaLafond_CV_FR.pdf?v=2" target="_blank" rel="noopener" class="fr">
+      CV<span class="sr-only"> (PDF, nouvel onglet)</span>
+    </a>
   </nav>
-  <div class="lang-toggle">
-    <button data-lang="en" onclick="setLang('en')">EN</button>
-    <span class="lang-sep">/</span>
-    <button data-lang="fr" onclick="setLang('fr')">FR</button>
+  <div class="lang-toggle" role="group" aria-label="Language / Langue">
+    <!-- aria-pressed is kept in sync by setLang() (public/js/lang.js) -->
+    <button type="button" data-lang="en" lang="en" aria-label="English" aria-pressed="true" onclick="setLang('en')">EN</button>
+    <span class="lang-sep" aria-hidden="true">/</span>
+    <button type="button" data-lang="fr" lang="fr" aria-label="Français" aria-pressed="false" onclick="setLang('fr')">FR</button>
   </div>
 </header>

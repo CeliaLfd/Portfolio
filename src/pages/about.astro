@@ -6,7 +6,7 @@ import Layout from "../layouts/Layout.astro";
   title="About | Célia Lafond"
   description="Célia Lafond, Senior Product Designer & Front-end Engineer based in Lyon. A product designer who engineers."
 >
-  <main class="page about container">
+  <main id="main" class="page about container">
     <!-- 1. Opening -->
     <section class="about-hero">
       <p class="about-label reveal">
@@ -212,7 +212,7 @@ import Layout from "../layouts/Layout.astro";
           target="_blank"
           rel="noopener"
         >
-          Resume <span aria-hidden="true">↗</span>
+          Resume <span aria-hidden="true">↗</span><span class="sr-only"> (PDF, opens in a new tab)</span>
         </a>
         <a
           class="fr"
@@ -220,14 +220,14 @@ import Layout from "../layouts/Layout.astro";
           target="_blank"
           rel="noopener"
         >
-          CV <span aria-hidden="true">↗</span>
+          CV <span aria-hidden="true">↗</span><span class="sr-only"> (PDF, nouvel onglet)</span>
         </a>
         <a
           href="https://linkedin.com/in/lafondcelia"
           target="_blank"
           rel="noopener"
         >
-          LinkedIn <span aria-hidden="true">↗</span>
+          LinkedIn <span aria-hidden="true">↗</span><span class="sr-only"><span class="en"> (opens in a new tab)</span><span class="fr"> (nouvel onglet)</span></span>
         </a>
       </div>
     </section>
