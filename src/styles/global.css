@@ -7,8 +7,9 @@
   --bg:       hsl(34, 47%, 97%);
   --ink:      hsl(53 100% 6.7%);
   --accent:   hsl(13 100% 56%);
+  --accent-darker:   hsl(13, 100%, 42%);
   --selected: var(--accent);
-  --muted:    hsl(20 4.1% 42.9%);
+  --muted:    hsl(20 4.1% 42%);
   --border:   hsl(0 0% 87.8%);
   --surface:  hsl(34 21% 94%);
   --on-accent: hsl(0 0% 100%);

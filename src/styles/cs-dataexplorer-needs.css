@@ -69,7 +69,7 @@
   width: var(--spot-w);
   height: var(--spot-h);
   border-radius: var(--radius);
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--accent-darker);
   box-shadow: 0 0 0 200vmax hsl(17 20% 10% / 0.45);
   opacity: 0;
   pointer-events: none;
@@ -129,7 +129,7 @@
     max-width: 30ch;
     padding: var(--s1) var(--s2);
     border-radius: var(--radius);
-    background: var(--accent);
+    background: var(--accent-darker);
     color: var(--on-accent);
     animation: cs-de-note-in 0.4s ease 0.25s both;
   }
@@ -188,7 +188,7 @@
 }
 
 .cs-de-needs-card.is-active .heading-label {
-  color: var(--accent);
+  color: var(--accent-darker);
 }
 
 .cs-de-needs-title {

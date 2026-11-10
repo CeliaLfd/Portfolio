@@ -16,7 +16,7 @@
   font-size: var(--fs-14);
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--accent);
+  color: var(--accent-darker);
   font-weight: 450;
   margin-bottom: var(--s2);
 }
