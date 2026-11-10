@@ -312,6 +312,39 @@
 .cs-img video::-webkit-media-controls { display: none !important; }
 .cs-img video::-webkit-media-controls-start-playback-button { display: none !important; }
 
+/* Play / pause button added by play-on-view.js (WCAG 2.2.2) */
+.has-video-control { position: relative; }
+
+.video-control {
+  position: absolute;
+  right: var(--s1);
+  bottom: var(--s1);
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--ink);
+  cursor: pointer;
+  opacity: 0.85;
+  transition: opacity 0.15s;
+}
+
+.video-control:hover { opacity: 1; }
+
+.video-control svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.video-control[data-state="playing"] .video-control-play,
+.video-control[data-state="paused"] .video-control-pause { display: none; }
+
 .cs-img-grid {
   display: grid;
   gap: var(--s1);

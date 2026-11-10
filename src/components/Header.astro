@@ -8,9 +8,11 @@ const isWork = !isAbout && !isFun;
 
 <header class="site-header">
   <a href="/" class="site-logo">
-    CL<span class="sr-only">
-      <span class="en">, Célia Lafond, home</span>
-      <span class="fr">, Célia Lafond, accueil</span>
+    <!-- Full name in the sr-only text, so no stray space after "CL" -->
+    <span aria-hidden="true">CL</span>
+    <span class="sr-only">
+      <span class="en">CL, Célia Lafond, home</span>
+      <span class="fr">CL, Célia Lafond, accueil</span>
     </span>
   </a>
   <nav class="site-nav">

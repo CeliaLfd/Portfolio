@@ -82,9 +82,13 @@ function setupViewer(dlg) {
 
   if (zoomBtn) zoomBtn.addEventListener('click', () => setZoom(!zoomed));
   closeBtn.addEventListener('click', () => dlg.close());
+  let opener = null;
   dlg.addEventListener('close', () => {
     document.documentElement.style.overflow = '';
     setZoom(false);
+    // Back to the button that opened the viewer (WCAG 2.4.3)
+    if (opener && opener.isConnected) opener.focus();
+    opener = null;
   });
 
   // Open with the default image, or with the one passed (lightbox)
@@ -101,6 +105,7 @@ function setupViewer(dlg) {
       img.src = dlg.dataset.src;
     }
     setZoom(false);
+    opener = document.activeElement;
     dlg.showModal();
     dlg.focus(); // focus on the dialog itself, not the close button (no focus ring on open)
     document.documentElement.style.overflow = 'hidden';
@@ -123,11 +128,32 @@ export function initViewers() {
   const bpMobile = getComputedStyle(document.documentElement)
     .getPropertyValue('--bp-mobile').trim() || '750px';
   const desktop = window.matchMedia('(min-width: ' + bpMobile + ')');
-  // [data-lightbox] images (e.g. /fun photos) too; data-full = larger version for the lightbox
-  document.querySelectorAll('.cs-img img, img[data-lightbox]').forEach((img) => {
-    img.addEventListener('click', () => {
-      if (!desktop.matches) return;
+  // [data-lightbox] images (e.g. /fun photos) too; data-full = larger version for the lightbox.
+  // Each image sits in a <button> on desktop so it can be opened with the keyboard
+  // (WCAG 2.1.1); on mobile, where there is no lightbox, it goes back to a plain image.
+  const pairs = [...document.querySelectorAll('.cs-img img, img[data-lightbox]')].map((img) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'zoom-trigger';
+    btn.setAttribute('aria-haspopup', 'dialog');
+    btn.innerHTML = '<span class="sr-only"><span class="en">Enlarge: </span><span class="fr">Agrandir&nbsp;: </span></span>';
+    btn.addEventListener('click', () => {
       lightbox.openViewer({ src: img.dataset.full || img.currentSrc || img.src, alt: img.alt });
     });
+    return { img, btn };
   });
+
+  function applyTriggers() {
+    pairs.forEach(({ img, btn }) => {
+      if (desktop.matches && !btn.isConnected && img.isConnected) {
+        img.replaceWith(btn);
+        btn.append(img);
+      } else if (!desktop.matches && btn.isConnected && btn.contains(img)) {
+        btn.replaceWith(img);
+      }
+    });
+  }
+
+  applyTriggers();
+  desktop.addEventListener('change', applyTriggers);
 }

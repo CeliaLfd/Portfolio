@@ -393,7 +393,7 @@ const steps: {
                   <span class="cs-de-needs-spot" aria-hidden="true"></span>
                 </div>
                 <figcaption class="cs-de-needs-notes">
-                  <p class="cs-de-needs-note" data-note="business">
+                  <p class="cs-de-needs-note" id="needs-note-business" data-note="business">
                     <span class="en"
                       >The counters showed reviewed datasets only, a fraction of
                       the database.</span
@@ -403,7 +403,7 @@ const steps: {
                       fraction de la base.</span
                     >
                   </p>
-                  <p class="cs-de-needs-note" data-note="users">
+                  <p class="cs-de-needs-note" id="needs-note-users" data-note="users">
                     <span class="en"
                       >Datasets named by technical IDs only: no title, no
                       description.</span
@@ -422,8 +422,11 @@ const steps: {
                     <span class="fr">Besoin business</span>
                   </span>
                   <h4 class="cs-de-needs-title">
-                    <span class="en">Show the full scale</span>
-                    <span class="fr">Montrer toute l'échelle</span>
+                    <!-- Stretched over the whole card (::after), state set by needs-lens.js -->
+                    <button type="button" class="cs-de-needs-toggle" aria-pressed="false" aria-controls="needs-note-business">
+                      <span class="en">Show the full scale</span>
+                      <span class="fr">Montrer toute l'échelle</span>
+                    </button>
                   </h4>
                   <p class="body-sm cs-de-needs-text">
                     <span class="en"
@@ -444,8 +447,11 @@ const steps: {
                     <span class="fr">Besoin des chercheurs</span>
                   </span>
                   <h4 class="cs-de-needs-title">
-                    <span class="en">Make discovery easier</span>
-                    <span class="fr">Faciliter la découverte</span>
+                    <!-- Stretched over the whole card (::after), state set by needs-lens.js -->
+                    <button type="button" class="cs-de-needs-toggle" aria-pressed="false" aria-controls="needs-note-users">
+                      <span class="en">Make discovery easier</span>
+                      <span class="fr">Faciliter la découverte</span>
+                    </button>
                   </h4>
                   <p class="body-sm cs-de-needs-text">
                     <span class="en"
@@ -1420,6 +1426,7 @@ const steps: {
                 data-placeholder={asset("cover-ai-assistant.webp")}
                 aria-label="Data Finder: the AI assistant suggesting filters in the Data Explorer"
                 data-play-on-view
+                data-no-control
                 muted
                 playsinline
                 disablepictureinpicture

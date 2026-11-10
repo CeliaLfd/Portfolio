@@ -14,6 +14,34 @@ export function initSliderWheel() {
   const smoothSupported = 'scrollBehavior' in document.documentElement.style;
   const LOCK_MS = 450;
 
+  // Keyboard access: a scrolling slider takes focus so arrow keys can scroll it
+  // (WCAG 2.1.1; Safari does not make scroll containers focusable by itself)
+  sliders.forEach((slider, i) => {
+    const label = document.createElement('span');
+    label.id = `slider-label-${i + 1}`;
+    label.className = 'sr-only';
+    label.innerHTML = '<span class="en">Images, scroll sideways</span><span class="fr">Images, défilement horizontal</span>';
+    slider.after(label);
+
+    const update = () => {
+      if (slider.scrollWidth > slider.clientWidth) {
+        slider.tabIndex = 0;
+        slider.setAttribute('role', 'group');
+        slider.setAttribute('aria-labelledby', label.id);
+      } else {
+        slider.removeAttribute('tabindex');
+        slider.removeAttribute('role');
+        slider.removeAttribute('aria-labelledby');
+      }
+    };
+    update();
+    // Overflow appears once lazy images load: watch the slider and its items
+    if ('ResizeObserver' in window) {
+      const ro = new ResizeObserver(update);
+      [slider, ...slider.children].forEach((el) => ro.observe(el));
+    }
+  });
+
   sliders.forEach(slider => {
     let locked = false;
 

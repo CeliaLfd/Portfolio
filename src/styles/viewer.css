@@ -178,3 +178,18 @@
   .viewer-close,
   .viewer-zoom { transition: none; }
 }
+
+/* Button wrapped around zoomable images by image-viewer.js (desktop only) */
+.zoom-trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: inherit;
+  background: none;
+  color: inherit;
+  cursor: zoom-in;
+}
+
+/* Inset ring: the image boxes clip their overflow */
+.zoom-trigger:focus-visible { outline-offset: -3px; }

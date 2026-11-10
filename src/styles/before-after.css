@@ -59,3 +59,12 @@
   left: auto;
   right: 10px;
 }
+
+/* Keyboard control (visually hidden range input): focus ring on the stage */
+.cs-ba { position: relative; }
+
+.cs-ba:has(.cs-ba-range:focus-visible) .cs-ba-stage {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+  border-radius: var(--radius);
+}

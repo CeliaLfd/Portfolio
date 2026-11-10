@@ -11,12 +11,14 @@
    - physical properties instead of logical ones (margin-inline: Safari 14.1+)
    - an ::after spacer for the right edge instead of padding-right
      (padding-end of scroll containers is ignored by older browsers)
+   - .cs-img-grid in the selectors: case-study.css (loaded later) sets
+     .cs-img-grid { display: grid }, which would win at equal specificity
 ============================================ */
 
 /* 749px = --bp-mobile - 1 */
 @media (max-width: 749px) {
   @supports (scroll-snap-type: x mandatory) and (scroll-snap-align: start) {
-    [data-slider-mobile] {
+    .cs-img-grid[data-slider-mobile] {
       --slider-gutter: var(--layout-gutter); /* = .cs-page horizontal padding */
       --slider-gap: var(--s1);
 
@@ -45,11 +47,14 @@
       -ms-overflow-style: none;
     }
 
-    [data-slider-mobile]::-webkit-scrollbar {
+    /* Inset ring: the slider bleeds to the viewport edges */
+    .cs-img-grid[data-slider-mobile]:focus-visible { outline-offset: -2px; }
+
+    .cs-img-grid[data-slider-mobile]::-webkit-scrollbar {
       display: none;
     }
 
-    [data-slider-mobile] > * {
+    .cs-img-grid[data-slider-mobile] > * {
       -webkit-box-flex: 0;
       -ms-flex: 0 0 90%;
       flex: 0 0 90%;
@@ -58,7 +63,7 @@
     }
 
     /* Right spacing after the last item (gap already adds --slider-gap before it) */
-    [data-slider-mobile]::after {
+    .cs-img-grid[data-slider-mobile]::after {
       content: "";
       -webkit-box-flex: 0;
       -ms-flex: 0 0 calc(var(--slider-gutter) - var(--slider-gap));

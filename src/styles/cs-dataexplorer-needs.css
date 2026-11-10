@@ -161,11 +161,7 @@
 
 
 
-@media (min-width: 1080px) {
-  .cs-de-needs-cards {
-    gap: var(--s3);
-  }
-}
+
 
 .cs-de-needs-card {
   display: flex;
@@ -180,6 +176,33 @@
 
 .js .cs-de-needs .cs-de-needs-card {
   cursor: pointer;
+}
+
+/* Title button stretched over the whole card: one click / keyboard target */
+.cs-de-needs-card { position: relative; }
+
+.cs-de-needs-toggle {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  cursor: inherit;
+}
+
+.js .cs-de-needs .cs-de-needs-toggle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+}
+
+.js .cs-de-needs .cs-de-needs-toggle:focus-visible { outline: none; }
+
+.js .cs-de-needs .cs-de-needs-toggle:focus-visible::after {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
 }
 
 .cs-de-needs-card.is-active {
