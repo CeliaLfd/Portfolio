@@ -17,6 +17,8 @@ interface Props {
   /** Natural width of the full image, in px (zoom size) */
   fullWidth?: number;
   alt?: string;
+  /** French alt, swapped in by lang.js */
+  altFr?: string;
   zoom?: boolean;
   titleEn?: string;
   titleFr?: string;
@@ -30,6 +32,7 @@ const {
   srcFull,
   fullWidth,
   alt = "",
+  altFr,
   zoom = false,
   titleEn,
   titleFr,
@@ -99,7 +102,7 @@ const hasCaption = Boolean(captionEn || captionFr);
   </div>
 
   <div class="viewer-stage" tabindex={zoom ? 0 : undefined} data-viewer-stage>
-    <img alt={alt} draggable="false" decoding="async" data-viewer-img />
+    <img alt={alt} data-alt-fr={altFr} draggable="false" decoding="async" data-viewer-img />
   </div>
 
   {

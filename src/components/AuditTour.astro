@@ -20,6 +20,7 @@ interface Note {
 interface Screen {
   src: string;
   alt: string;
+  altFr?: string;
   eyebrowEn: string;
   eyebrowFr: string;
   titleEn: string;
@@ -113,6 +114,7 @@ const spotVars = ([l, t, w, h]: Note["spot"]) =>
             <img
               src={screen.src}
               alt={screen.alt}
+              data-alt-fr={screen.altFr}
               width="2000"
               height="1200"
               loading={i === 0 ? "eager" : "lazy"}

@@ -13,6 +13,7 @@ const auditScreens = [
   {
     src: asset("design-system-audit-01-analysis-list.webp"),
     alt: "mCUBE in 2022: the My analyses page, empty except for a Create new Analysis card",
+    altFr: "mCUBE en 2022 : la page My analyses, vide à part une carte Create new Analysis",
     eyebrowEn: "Start",
     eyebrowFr: "Départ",
     titleEn: "The analysis list",
@@ -32,6 +33,7 @@ const auditScreens = [
   {
     src: asset("design-system-audit-02-cohort-start.webp"),
     alt: "Step 1 in 2022: data elements to drag and drop into an empty cohort zone",
+    altFr: "Étape 1 en 2022 : des data elements à glisser-déposer dans une zone de cohorte vide",
     eyebrowEn: "Step 1 · Cohort",
     eyebrowFr: "Étape 1 · Cohorte",
     titleEn: "Building the cohort",
@@ -69,6 +71,7 @@ const auditScreens = [
   {
     src: asset("design-system-audit-03-cohort-selection.webp"),
     alt: "Step 1 in 2022: two filters dropped into the cohort, next to the data element table",
+    altFr: "Étape 1 en 2022 : deux filtres déposés dans la cohorte, à côté du tableau des data elements",
     eyebrowEn: "Step 1 · Cohort",
     eyebrowFr: "Étape 1 · Cohorte",
     titleEn: "Picking values",
@@ -106,6 +109,7 @@ const auditScreens = [
   {
     src: asset("design-system-audit-04-cohort-full.webp"),
     alt: "Step 1 in 2022: a cohort filled with filters, with a large empty space above it",
+    altFr: "Étape 1 en 2022 : une cohorte remplie de filtres, avec un grand espace vide au-dessus",
     eyebrowEn: "Step 1 · Cohort",
     eyebrowFr: "Étape 1 · Cohorte",
     titleEn: "A cohort with many filters",
@@ -134,6 +138,7 @@ const auditScreens = [
   {
     src: asset("design-system-audit-05-rules-list.webp"),
     alt: "Step 2 in 2022: an empty rule list with a single Create new Rule card and a collapsed side tab",
+    altFr: "Étape 2 en 2022 : une liste de règles vide, avec une seule carte Create new Rule et un onglet latéral replié",
     eyebrowEn: "Step 2 · Rules",
     eyebrowFr: "Étape 2 · Règles",
     titleEn: "The rule list",
@@ -162,6 +167,7 @@ const auditScreens = [
   {
     src: asset("design-system-audit-06-rule-creation.webp"),
     alt: "Step 2 in 2022: the Add a rule modal, with a switch, scoring options and a boxplot",
+    altFr: "Étape 2 en 2022 : la modale Add a rule, avec un switch, des options de scoring et un boxplot",
     eyebrowEn: "Step 2 · Rules",
     eyebrowFr: "Étape 2 · Règles",
     titleEn: "Adding a rule",
@@ -199,6 +205,7 @@ const auditScreens = [
   {
     src: asset("design-system-audit-07-results.webp"),
     alt: "Step 2 in 2022: a computed analysis with a rule edited inline and the summary panel collapsed",
+    altFr: "Étape 2 en 2022 : une analyse calculée, avec une règle modifiée en ligne et le panneau de synthèse replié",
     eyebrowEn: "Step 2 · Rules",
     eyebrowFr: "Étape 2 · Règles",
     titleEn: "The results",
@@ -236,6 +243,7 @@ const auditScreens = [
   {
     src: asset("design-system-audit-08-saving.webp"),
     alt: "Step 2 in 2022: the computed analysis with the blue summary panel open",
+    altFr: "Étape 2 en 2022 : l'analyse calculée, avec le panneau de synthèse bleu ouvert",
     eyebrowEn: "Step 2 · Rules",
     eyebrowFr: "Étape 2 · Règles",
     titleEn: "Saving the analysis",
@@ -291,6 +299,7 @@ const auditScreens = [
         <img
           src={asset("cover-design-system.webp")}
           alt="mCUBE: Design System"
+          data-alt-fr="mCUBE : Design System"
           onerror="this.parentElement.innerHTML='<div class=&quot;cs-img-placeholder&quot;>mCUBE: Design System</div>'"
         />
       </div>
@@ -922,6 +931,7 @@ const auditScreens = [
                   src={asset("design-system-core.mp4")}
                   data-placeholder={asset("design-system-core.webp")}
                   aria-label="Design system foundations: colors, typography and spacing"
+                  data-label-fr="Les fondations du design system : couleurs, typographie et espacements"
                   data-play-on-view
                   muted
                   playsinline
@@ -966,6 +976,7 @@ const auditScreens = [
                   src={asset("design-system-tokens.mp4")}
                   data-placeholder={asset("design-system-tokens.webp")}
                   aria-label="Design tokens: shared values used across design and code"
+                  data-label-fr="Design tokens : des valeurs partagées entre le design et le code"
                   data-play-on-view
                   muted
                   playsinline
@@ -1055,6 +1066,7 @@ const auditScreens = [
                   decoding="async"
                   src={asset("design-system-figma-storybook.webp")}
                   alt="Figma next to Storybook"
+                  data-alt-fr="Figma à côté de Storybook"
                   onerror='this.parentElement.innerHTML=&apos;<div class="cs-img-placeholder" style="aspect-ratio:4/3">Figma / Storybook</div>&apos;'
                 />
               </div>
@@ -1238,6 +1250,7 @@ const auditScreens = [
                   decoding="async"
                   src={asset("design-system-page-before.webp")}
                   alt="My Analyses, before"
+                  data-alt-fr="My Analyses, avant"
                   onerror='this.parentElement.innerHTML=&apos;<div class="cs-img-placeholder" style="aspect-ratio:16/9">My Analyses, before</div>&apos;'
                 />
                 <span class="cs-ba-tag">
@@ -1250,6 +1263,7 @@ const auditScreens = [
                   decoding="async"
                   src={asset("design-system-page-after.webp")}
                   alt="My Analyses, after"
+                  data-alt-fr="My Analyses, après"
                   onerror='this.parentElement.innerHTML=&apos;<div class="cs-img-placeholder" style="aspect-ratio:16/9">My Analyses, after</div>&apos;'
                 />
                 <span class="cs-ba-tag cs-ba-tag-after">

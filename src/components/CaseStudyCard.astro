@@ -4,6 +4,8 @@ interface Props {
   image: string;
   video?: string;
   imageAlt: string;
+  /** French alt, swapped in by lang.js */
+  imageAltFr?: string;
   titleEn: string;
   titleFr: string;
   meta: string;
@@ -21,6 +23,7 @@ const {
   image,
   video,
   imageAlt,
+  imageAltFr,
   titleEn,
   titleFr,
   meta,
@@ -45,6 +48,7 @@ const {
           poster={image}
           data-placeholder={image}
           aria-label={imageAlt}
+          data-label-fr={imageAltFr}
           data-play-on-view
           muted
           loop
@@ -54,7 +58,7 @@ const {
           preload={loading === "eager" ? "auto" : "metadata"}
         />
       ) : (
-        <img src={image} alt={imageAlt} loading={loading} decoding="async" onerror="this.style.display='none'" />
+        <img src={image} alt={imageAlt} data-alt-fr={imageAltFr} loading={loading} decoding="async" onerror="this.style.display='none'" />
       )
     }
   </div>

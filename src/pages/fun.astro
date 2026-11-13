@@ -48,9 +48,11 @@ const photos = await Promise.all(
         quality: 85,
       });
       const alt = toAlt(path) || `Photograph by Célia Lafond, ${i + 1}`;
+      const altFr = toAlt(path) || `Photographie de Célia Lafond, ${i + 1}`;
       return {
         src,
         alt,
+        altFr,
         full: full.src,
         ratio: src.width / src.height,
         theme: themeOf(path),
@@ -61,6 +63,7 @@ const photos = await Promise.all(
 
 <Layout
   title="Through my lens | Célia Lafond"
+  titleFr="À travers mon objectif | Célia Lafond"
   description="Photography by Célia Lafond."
   noindex
 >
@@ -102,6 +105,7 @@ const photos = await Promise.all(
               <Image
                 src={photo.src}
                 alt={photo.alt}
+                data-alt-fr={photo.altFr}
                 widths={[480, 800, 1200, 1600]}
                 sizes="(max-width: 749px) 100vw, (max-width: 1199px) 50vw, 34vw"
                 format="webp"

@@ -7,12 +7,15 @@ import "../styles/style.css";
 
 interface Props {
   title: string;
+  /** French page title, swapped in by lang.js (defaults to title) */
+  titleFr?: string;
   description?: string;
   noindex?: boolean;
 }
 
 const {
   title,
+  titleFr,
   description = "Célia Lafond, a Senior Product Designer & Frontend Engineer. Designing new experiences and modernizing legacy ones.",
   noindex = false,
 } = Astro.props;
@@ -39,7 +42,7 @@ const {
         );
       })();
     </script>
-    <title>{title}</title>
+    <title data-fr={titleFr}>{title}</title>
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -60,6 +63,12 @@ const {
         if (localStorage.getItem("portfolio-lang") === "fr") {
           document.body.classList.replace("lang-en", "lang-fr");
           document.documentElement.lang = "fr";
+          // French tab title right away, not after main.js loads
+          const t = document.querySelector("title[data-fr]");
+          if (t) {
+            t.dataset.en = t.textContent;
+            document.title = t.dataset.fr;
+          }
         }
       } catch (e) {}
     </script>

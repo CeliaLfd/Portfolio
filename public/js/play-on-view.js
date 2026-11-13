@@ -14,6 +14,11 @@ function showVideoPlaceholder(video) {
   const img = new Image();
   img.alt = video.getAttribute('aria-label') || '';
   img.className = 'cs-video-placeholder';
+  // Keep the bilingual label (lang.js stored the English one in data-label-en)
+  if (video.dataset.labelFr) {
+    img.dataset.altFr = video.dataset.labelFr;
+    img.dataset.altEn = video.dataset.labelEn || img.alt;
+  }
   // Keep the video if the image is missing
   img.onload = () => {
     video.parentElement?.querySelector('.video-control')?.remove();
